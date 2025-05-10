@@ -1,0 +1,105 @@
+import { memo } from "react";
+
+import { StyleSheet } from "react-native";
+import SkeletonContainerComponent from "components/skeleton/skeletonContainer.component";
+import isEqual from "react-fast-compare";
+
+import { MHS } from "constants/sizes.constant";
+
+import BDivider from "components/base/divider.base";
+import {
+  s_flex1_gapXxxs,
+  s_row,
+  s_row_justifyBetween_itemsCenter,
+} from "constants/styles.constant";
+import BView from "components/base/view.base";
+import BList from "components/base/list.base";
+import { useTheme } from "@shopify/restyle";
+
+const SkeletonListNotificationComponent = memo((): JSX.Element => {
+  const theme = useTheme();
+
+  const renderItem = () => {
+    return (
+      <BView style={{ backgroundColor: theme.colors.background }}>
+        <SkeletonContainerComponent>
+          <BView style={styles.viewCategory}>
+            <BView style={styles.image} />
+            <BView style={s_flex1_gapXxxs}>
+              <BView
+                style={{
+                  width: MHS._220,
+                  height: MHS._18,
+                  borderRadius: MHS._12,
+                }}
+              />
+              <BView
+                style={{
+                  width: "100%",
+                  height: MHS._16,
+                  borderRadius: MHS._12,
+                }}
+              />
+              <BView
+                style={{
+                  width: MHS._120,
+                  height: MHS._16,
+                  borderRadius: MHS._12,
+                }}
+              />
+              <BView
+                style={{
+                  width: MHS._72,
+                  height: MHS._14,
+                  borderRadius: MHS._12,
+                }}
+              />
+            </BView>
+          </BView>
+        </SkeletonContainerComponent>
+      </BView>
+    );
+  };
+
+  return (
+    <BList
+      bounces={false}
+      showsVerticalScrollIndicator={false}
+      data={[1, 2, 3, 4, 5, 6]}
+      renderItem={renderItem}
+      ItemSeparatorComponent={BDivider}
+    />
+  );
+}, isEqual);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  viewTitle: {
+    gap: MHS._12,
+    ...s_row_justifyBetween_itemsCenter,
+  },
+  contentContainer: {
+    gap: MHS._12,
+  },
+  viewCategory: {
+    padding: MHS._12,
+    gap: MHS._12,
+    ...s_row,
+  },
+  image: {
+    width: MHS._52,
+    height: MHS._52,
+    borderRadius: MHS._12,
+  },
+  badge: {
+    alignSelf: "center",
+  },
+  viewImageCategory: {
+    padding: MHS._8,
+    borderRadius: MHS._12,
+  },
+});
+
+export default SkeletonListNotificationComponent;

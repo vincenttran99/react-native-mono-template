@@ -1,0 +1,62 @@
+{
+  "light": [
+    {
+      "background": "#f5f5f5"
+    },
+    {
+      "name": "primary",
+      "values": [
+        {
+          "name": "primary100",
+          "contrast": 1,
+          "value": "#f3f3ff"
+        },
+        {
+          "name": "primary200",
+          "contrast": 3,
+          "value": "#7f7ffe"
+        },
+        {
+          "name": "primary300",
+          "contrast": 4.5,
+          "value": "#5959fe"
+        },
+        {
+          "name": "primary400",
+          "contrast": 7,
+          "value": "#2323fe"
+        }
+      ]
+    }
+  ],
+  "dark": [
+    {
+      "background": "#1b1b1b"
+    },
+    {
+      "name": "primary",
+      "values": [
+        {
+          "name": "primary100",
+          "contrast": 1,
+          "value": "#0a0a63"
+        },
+        {
+          "name": "primary200",
+          "contrast": 3,
+          "value": "#4949fe"
+        },
+        {
+          "name": "primary300",
+          "contrast": 4.5,
+          "value": "#7171fe"
+        },
+        {
+          "name": "primary400",
+          "contrast": 7,
+          "value": "#9b9bff"
+        }
+      ]
+    }
+  ]
+}

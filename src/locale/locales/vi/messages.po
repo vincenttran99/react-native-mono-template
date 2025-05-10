@@ -1,0 +1,435 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-04-30 14:20+0700\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: vi\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: field?.value?.length
+#: src/components/form/imageSelect.form.component.tsx:345
+msgid "{0} ảnh đã được chọn"
+msgstr "{0} ảnh đã được chọn"
+
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:123
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:130
+msgid "Ẩn bớt"
+msgstr "Ẩn bớt"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:181
+msgid "Bạn chưa nhận được mã OTP?"
+msgstr "Bạn chưa nhận được mã OTP?"
+
+#: src/screens/account/account.screen.tsx:93
+msgid "Bạn có chắc chắn muốn đăng xuất?"
+msgstr "Bạn có chắc chắn muốn đăng xuất?"
+
+#: src/screens/account/account.screen.tsx:45
+msgid "Bạn đã đăng xuất"
+msgstr "Bạn đã đăng xuất"
+
+#: src/components/global/bottomSheetDialog.global.component.tsx:175
+msgid "Bỏ qua"
+msgstr "Bỏ qua"
+
+#: src/navigation/main.navigation.tsx:60
+msgid "Cài đặt"
+msgstr "Cài đặt"
+
+#: src/helpers/permission.helper.tsx:54
+msgid "Cần cấp quyền"
+msgstr "Cần cấp quyền"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:142
+msgid "Cập nhật đơn hàng"
+msgstr "Cập nhật đơn hàng"
+
+#: src/screens/account/account.screen.tsx:76
+msgid "Cập nhật không thành công"
+msgstr "Cập nhật không thành công"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:117
+msgid "Cập nhật mới nhất từ hệ thống"
+msgstr "Cập nhật mới nhất từ hệ thống"
+
+#: src/components/global/update.system.global.component.tsx:34
+#: src/components/global/update.system.global.component.tsx:102
+msgid "Cập nhật ngay"
+msgstr "Cập nhật ngay"
+
+#: src/screens/account/account.screen.tsx:75
+msgid "Cập nhật thành công"
+msgstr "Cập nhật thành công"
+
+#: src/navigation/main.navigation.tsx:43
+msgid "Chi tiết chuyến xe"
+msgstr "Chi tiết chuyến xe"
+
+#: src/components/form/imageSelect.form.component.tsx:324
+msgid "Chọn ảnh"
+msgstr "Chọn ảnh"
+
+#: src/screens/ride/statistic.ride.screen.tsx:425
+msgid "Chốt lệnh"
+msgstr "Chốt lệnh"
+
+#: src/helpers/permission.helper.tsx:82
+msgid "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thiết bị của bạn"
+msgstr "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thiết bị của bạn"
+
+#: src/components/base/system/camera.system.component.tsx:161
+msgid "Chụp lại"
+msgstr "Chụp lại"
+
+#: src/screens/ride/list.ride.screen.tsx:131
+msgid "Chuyến đi của bạn"
+msgstr "Chuyến đi của bạn"
+
+#: src/screens/logsBugFileStorage/logsBug.screen.tsx:81
+#: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:53
+#: src/screens/logsBugFileStorage/components/item.bug.tsx:36
+msgid "Đã cập nhật"
+msgstr "Đã cập nhật"
+
+#: src/components/list/defaultError.list.component.tsx:30
+msgid "Đã có lỗi xảy ra"
+msgstr "Đã có lỗi xảy ra"
+
+#: src/components/global/modal.network.global.component.tsx:26
+msgid "Đã khôi phục kết nối mạng"
+msgstr "Đã khôi phục kết nối mạng"
+
+#: src/screens/webview/webview.screen.tsx:55
+#: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:37
+msgid "Đã sao chép"
+msgstr "Đã sao chép"
+
+#: src/screens/logsBugFileStorage/logsBug.screen.tsx:89
+#: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:62
+#: src/screens/logsBugFileStorage/components/item.bug.tsx:45
+msgid "Đã xóa"
+msgstr "Đã xóa"
+
+#: src/components/global/update.system.global.component.tsx:73
+msgid "Đang bảo trì hệ thống"
+msgstr "Đang bảo trì hệ thống"
+
+#: src/screens/account/account.screen.tsx:89
+#: src/screens/account/account.screen.tsx:106
+#: src/screens/account/account.screen.tsx:205
+msgid "Đăng xuất"
+msgstr "Đăng xuất"
+
+#: src/components/list/defaultEmpty.list.component.tsx:40
+msgid "Danh sách trống"
+msgstr "Danh sách trống"
+
+#: src/components/form/singleSelect.form.tsx:234
+#: src/components/form/imageSelect.form.component.tsx:329
+msgid "Đóng"
+msgstr "Đóng"
+
+#: src/screens/webview/webview.screen.tsx:72
+msgid "Đường dẫn không hợp lệ"
+msgstr "Đường dẫn không hợp lệ"
+
+#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:167
+msgid "Ghi chú lý do thu thêm"
+msgstr "Ghi chú lý do thu thêm"
+
+#: src/screens/settings/settings.screen.tsx:24
+msgid "Giao diện tối"
+msgstr "Giao diện tối"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:52
+#: src/screens/register/verifyOTP.register.screen.tsx:70
+msgid "giây"
+msgstr "giây"
+
+#: src/helpers/date.helper.ts:116
+msgid "giờ"
+msgstr "giờ"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:62
+#: src/screens/register/verifyOTP.register.screen.tsx:82
+msgid "Gửi lại mã"
+msgstr "Gửi lại mã"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:52
+#: src/screens/register/verifyOTP.register.screen.tsx:68
+msgid "Gửi lại mã sau"
+msgstr "Gửi lại mã sau"
+
+#: src/screens/ride/list.ride.screen.tsx:98
+msgid "Hãy chờ thêm một chút, quản trị viên đang thêm khách hàng mới cho bạn!"
+msgstr "Hãy chờ thêm một chút, quản trị viên đang thêm khách hàng mới cho bạn!"
+
+#: src/screens/login/login.screen.tsx:49
+msgid "Hãy nhập số điện thoại để tiếp tục"
+msgstr "Hãy nhập số điện thoại để tiếp tục"
+
+#: src/components/system/picker.modal.date.system.component.tsx:78
+msgid "Hôm nay"
+msgstr "Hôm nay"
+
+#: src/helpers/date.helper.ts:93
+#: src/components/system/picker.modal.date.system.component.tsx:79
+msgid "Hôm qua"
+msgstr "Hôm qua"
+
+#: src/screens/account/account.screen.tsx:100
+#: src/screens/account/account.screen.tsx:125
+#: src/components/global/update.system.global.component.tsx:35
+#: src/components/global/bottomSheetDialog.global.component.tsx:163
+msgid "Huỷ"
+msgstr "Huỷ"
+
+#: src/helpers/permission.helper.tsx:84
+#: src/helpers/file.helper.tsx:113
+#: src/components/form/imageSelect.form.component.tsx:289
+msgid "Hủy"
+msgstr "Hủy"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:127
+msgid "Khám phá những khuyến mãi mới nhất"
+msgstr "Khám phá những khuyến mãi mới nhất"
+
+#: src/screens/account/account.screen.tsx:119
+msgid "Khi xác nhận xoá, tài khoản của bạn sẽ bị xoá vĩnh viễn. Bạn có chắc chắn muốn thực hiện hành động này?"
+msgstr "Khi xác nhận xoá, tài khoản của bạn sẽ bị xoá vĩnh viễn. Bạn có chắc chắn muốn thực hiện hành động này?"
+
+#: src/helpers/permission.helper.tsx:94
+msgid "Không được cấp quyền"
+msgstr "Không được cấp quyền"
+
+#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:159
+#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:171
+msgid "Không được trống"
+msgstr "Không được trống"
+
+#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:91
+msgid "Không thể thay đổi biển số"
+msgstr "Không thể thay đổi biển số"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:125
+msgid "Khuyến mãi"
+msgstr "Khuyến mãi"
+
+#: src/components/list/defaultErrorItem.list.component.tsx:29
+msgid "Lỗi khi tải thêm"
+msgstr "Lỗi khi tải thêm"
+
+#: src/components/system/picker.modal.date.system.component.tsx:396
+msgid "Lưu"
+msgstr "Lưu"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:134
+msgid "Mã OTP có hiệu lực đến"
+msgstr "Mã OTP có hiệu lực đến"
+
+#: src/components/global/modal.network.global.component.tsx:57
+msgid "Mất kết nối mạng"
+msgstr "Mất kết nối mạng"
+
+#: src/helpers/permission.helper.tsx:63
+#: src/helpers/file.helper.tsx:116
+#: src/components/form/imageSelect.form.component.tsx:292
+msgid "Mở cài đặt"
+msgstr "Mở cài đặt"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:137
+msgid "Nắm bắt những sự kiện mới nhất"
+msgstr "Nắm bắt những sự kiện mới nhất"
+
+#: src/components/system/picker.modal.date.system.component.tsx:86
+msgid "Năm nay"
+msgstr "Năm nay"
+
+#: src/components/system/picker.modal.date.system.component.tsx:87
+msgid "Năm trước"
+msgstr "Năm trước"
+
+#: src/helpers/date.helper.ts:118
+msgid "ngày"
+msgstr "ngày"
+
+#: src/screens/settings/settings.screen.tsx:40
+#: src/navigation/main.navigation.tsx:76
+msgid "Ngôn ngữ"
+msgstr "Ngôn ngữ"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:127
+msgid "Nhập mã OTP gửi về số điện thoại"
+msgstr "Nhập mã OTP gửi về số điện thoại"
+
+#: src/screens/register/verifyOTP.register.screen.tsx:124
+msgid "Nhập mã xác thực"
+msgstr "Nhập mã xác thực"
+
+#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:150
+msgid "Nhập số tiền thu thêm"
+msgstr "Nhập số tiền thu thêm"
+
+#: src/helpers/permission.helper.tsx:85
+msgid "OK"
+msgstr "OK"
+
+#: src/components/global/update.system.global.component.tsx:30
+#: src/components/global/update.system.global.component.tsx:92
+msgid "Phiên bản cập nhật quan trọng"
+msgstr "Phiên bản cập nhật quan trọng"
+
+#: src/api/api.ts:140
+msgid "Phiên đăng nhập đã hết hạn"
+msgstr "Phiên đăng nhập đã hết hạn"
+
+#: src/helpers/date.helper.ts:114
+msgid "phút"
+msgstr "phút"
+
+#: src/components/system/picker.modal.date.system.component.tsx:84
+msgid "Quý này"
+msgstr "Quý này"
+
+#: src/components/system/picker.modal.date.system.component.tsx:85
+msgid "Quý trước"
+msgstr "Quý trước"
+
+#: src/helpers/permission.helper.tsx:80
+msgid "Quyền tải xuống"
+msgstr "Quyền tải xuống"
+
+#: src/screens/login/login.screen.tsx:63
+msgid "Số điện thoại"
+msgstr "Số điện thoại"
+
+#: src/screens/login/login.screen.tsx:67
+msgid "Số điện thoại không được bỏ trống"
+msgstr "Số điện thoại không được bỏ trống"
+
+#: src/screens/login/login.screen.tsx:71
+msgid "Số điện thoại không hợp lệ"
+msgstr "Số điện thoại không hợp lệ"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:135
+msgid "Sự kiện"
+msgstr "Sự kiện"
+
+#: src/navigation/main.navigation.tsx:66
+msgid "Tài khoản của bạn"
+msgstr "Tài khoản của bạn"
+
+#: src/screens/account/account.screen.tsx:186
+msgid "Tài xế"
+msgstr "Tài xế"
+
+#: src/components/system/picker.modal.date.system.component.tsx:82
+msgid "Tháng này"
+msgstr "Tháng này"
+
+#: src/components/system/picker.modal.date.system.component.tsx:83
+msgid "Tháng trước"
+msgstr "Tháng trước"
+
+#: src/navigation/main.navigation.tsx:53
+msgid "Thông báo"
+msgstr "Thông báo"
+
+#: src/screens/notifications/components/header.list.notifications.tsx:115
+msgid "Thông báo chung"
+msgstr "Thông báo chung"
+
+#: src/navigation/main.navigation.tsx:48
+msgid "Thống kê chuyến"
+msgstr "Thống kê chuyến"
+
+#: src/screens/login/login.screen.tsx:84
+#: src/components/form/imageSelect.form.component.tsx:347
+#: src/components/base/system/camera.system.component.tsx:163
+msgid "Tiếp tục"
+msgstr "Tiếp tục"
+
+#: src/components/form/singleSelect.form.tsx:168
+msgid "Tìm kiếm"
+msgstr "Tìm kiếm"
+
+#: src/components/form/imageSelect.form.component.tsx:287
+msgid "Truy cập cài đặt để cấp quyền"
+msgstr "Truy cập cài đặt để cấp quyền"
+
+#: src/helpers/file.helper.tsx:111
+msgid "Truy cập cài đặt để cấp quyền?"
+msgstr "Truy cập cài đặt để cấp quyền?"
+
+#: src/components/global/update.system.global.component.tsx:75
+msgid "Truy cập lại sau"
+msgstr "Truy cập lại sau"
+
+#: src/helpers/file.helper.tsx:110
+msgid "Truy cập thư viện bị từ chối"
+msgstr "Truy cập thư viện bị từ chối"
+
+#: src/components/form/imageSelect.form.component.tsx:286
+msgid "Truy cập thư viện hoặc máy ảnh bị từ chối"
+msgstr "Truy cập thư viện hoặc máy ảnh bị từ chối"
+
+#: src/components/system/picker.modal.date.system.component.tsx:80
+msgid "Tuần này"
+msgstr "Tuần này"
+
+#: src/components/system/picker.modal.date.system.component.tsx:81
+msgid "Tuần trước"
+msgstr "Tuần trước"
+
+#: src/components/system/picker.modal.date.system.component.tsx:88
+msgid "Tùy chỉnh"
+msgstr "Tùy chỉnh"
+
+#: src/helpers/permission.helper.tsx:58
+msgid "Ứng dụng cần quyền sử dụng máy ảnh. Truy cập vào cài đặt và cấp quyền."
+msgstr "Ứng dụng cần quyền sử dụng máy ảnh. Truy cập vào cài đặt và cấp quyền."
+
+#: src/helpers/date.helper.ts:112
+msgid "Vừa xong"
+msgstr "Vừa xong"
+
+#: src/components/global/update.system.global.component.tsx:32
+#: src/components/global/update.system.global.component.tsx:96
+msgid "Vui lòng cập nhật phiên bản mới nhất của ứng dụng để có trải nghiệm tốt nhất."
+msgstr "Vui lòng cập nhật phiên bản mới nhất của ứng dụng để có trải nghiệm tốt nhất."
+
+#: src/components/global/modal.network.global.component.tsx:59
+msgid "Vui lòng thử kết nối lại"
+msgstr "Vui lòng thử kết nối lại"
+
+#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:175
+#: src/components/global/bottomSheetDialog.global.component.tsx:188
+msgid "Xác nhận"
+msgstr "Xác nhận"
+
+#: src/helpers/api.helper.ts:59
+msgid "Xảy ra vấn đề"
+msgstr "Xảy ra vấn đề"
+
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:54
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:123
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:59
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:130
+msgid "Xem thêm"
+msgstr "Xem thêm"
+
+#: src/screens/login/login.screen.tsx:46
+msgid "Xin chào"
+msgstr "Xin chào"
+
+#: src/screens/account/account.screen.tsx:134
+#: src/screens/account/account.screen.tsx:215
+msgid "Xoá tài khoản"
+msgstr "Xoá tài khoản"

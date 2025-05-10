@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+. "$(dirname "$0")/_/husky.sh"
+
+# 1. Extract thông điệp từ mã nguồn và làm sạch
+npx lingui extract --clean
+
+# 2. Tự động dịch các bản dịch trống (nếu được bật)
+bash scripts/auto-translate.sh
+
+# 3. Compile các thông điệp đã dịch với TypeScript
+npx lingui compile --typescript
+
+# 4. Thêm lại thư mục chứa các file dịch vào git
+git add src/locale/locales
