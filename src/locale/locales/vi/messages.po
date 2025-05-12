@@ -151,7 +151,7 @@ msgstr "Vách ngăn"
 msgid "Dogs"
 msgstr "Chó"
 
-#: src/components/form/singleSelect.form.tsx:234
+#: src/components/form/singleSelect.form.tsx:230
 #: src/components/form/imageSelect.form.component.tsx:329
 msgid "Đóng"
 msgstr "Đóng"
@@ -352,7 +352,7 @@ msgstr "Đây là một văn bản dài. Đây là một văn bản dài. Đây 
 msgid "Tiếp tục"
 msgstr "Tiếp tục"
 
-#: src/components/form/singleSelect.form.tsx:168
+#: src/components/form/singleSelect.form.tsx:165
 msgid "Tìm kiếm"
 msgstr "Tìm kiếm"
 

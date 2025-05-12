@@ -151,7 +151,7 @@ msgstr "Divider"
 msgid "Dogs"
 msgstr "Dogs"
 
-#: src/components/form/singleSelect.form.tsx:234
+#: src/components/form/singleSelect.form.tsx:230
 #: src/components/form/imageSelect.form.component.tsx:329
 msgid "Đóng"
 msgstr "Close"
@@ -352,7 +352,7 @@ msgstr "This is a long text. This is a long text. This is a long text. This is a
 msgid "Tiếp tục"
 msgstr "Continue"
 
-#: src/components/form/singleSelect.form.tsx:168
+#: src/components/form/singleSelect.form.tsx:165
 msgid "Tìm kiếm"
 msgstr "Search"
 

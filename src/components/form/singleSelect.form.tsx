@@ -123,8 +123,6 @@ export default function FSingleSelect({
   );
 
   const SearchBar = useCallback(() => {
-    const [searchQuery, setSearchQuery] = useState<string>("");
-
     const onSearch = useCallback(
       async (
         text: string,
@@ -157,7 +155,6 @@ export default function FSingleSelect({
 
     const onChangeText = useCallback(
       (text: string) => {
-        setSearchQuery(text);
         onSearchDebounce(text, initData, onChangeSearchValue);
       },
       [initData, onChangeSearchValue]
@@ -167,7 +164,6 @@ export default function FSingleSelect({
       <BTextInput
         placeholder={searchPlaceHolder || _(msg`Tìm kiếm`)}
         onChangeText={onChangeText}
-        value={searchQuery}
         maxFontSizeMultiplier={1}
         allowFontScaling={false}
         style={styles.searchBar}

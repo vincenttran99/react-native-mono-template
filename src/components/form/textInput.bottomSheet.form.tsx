@@ -103,7 +103,7 @@ const FTextInputBottomSheet = forwardRef(
           onBlur={handleOnBlur}
           style={[style, { textAlign: "auto" }]}
           error={fieldState.invalid}
-          value={field.value}
+          // value={field.value}
           ref={field.ref}
         />
 
