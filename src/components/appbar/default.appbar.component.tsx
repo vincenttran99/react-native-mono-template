@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
 import { getHeaderTitle } from "@react-navigation/elements";
 import BIconButton from "components/base/iconButton.base";
-import BView from "components/base/view.base";
 import BText from "components/base/text.base";
 import { Device } from "constants/device.constant";
-import { mhs } from "helpers/system.helper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { memo, useMemo } from "react";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
+import BSurface from "components/base/surface.base";
 
 const DefaultAppbarComponent = memo(
   ({ navigation, route, options, back }: NativeStackHeaderProps) => {
@@ -24,7 +23,8 @@ const DefaultAppbarComponent = memo(
     }, [insets.top]);
 
     return (
-      <BView
+      <BSurface
+        variant="xs"
         backgroundColor="background"
         gap="xxxs"
         paddingHorizontal="xxs"
@@ -44,7 +44,7 @@ const DefaultAppbarComponent = memo(
             onPress={() => navigation.navigate(screen)}
           />
         ))}
-      </BView>
+      </BSurface>
     );
   }
 );
