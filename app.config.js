@@ -142,17 +142,15 @@ module.exports = function () {
         ],
       },
       web: {
-        bundler: "metro",
-        output: "static",
+        // bundler: "metro",
+        // output: "static",
         favicon: "./src/assets/images/favicon.png",
       },
       plugins: [
-        "expo-router",
         "@react-native-firebase/app",
         "@react-native-firebase/messaging",
         "expo-localization",
         "expo-font",
-        "expo-web-browser",
         [
           "expo-build-properties",
           {
