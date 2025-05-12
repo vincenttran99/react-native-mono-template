@@ -51,7 +51,7 @@ const BTextEllipsisComponent = ({
   const isDoneCalculateRef = useRef(false);
   const isPropsChangeRef = useRef(false);
   const { _ } = useLingui();
-  const lengthNeedToCutRef = useMemo(() => _(msg`Xem thêm`).length + 5, [_]);
+  const lengthNeedToCutRef = useMemo(() => _(msg`see more`).length + 5, [_]);
 
   useLayoutEffect(() => {
     isPropsChangeRef.current = true;
@@ -119,8 +119,12 @@ const BTextEllipsisComponent = ({
     >
       {textRef.current}
       {isNeedReadMore ? (
-        <BText onPress={switchShowStatus} style={styleReadMoreText}>
-          {isShowAll ? " " + _(msg`Ẩn bớt`) : _(msg`Xem thêm`)}
+        <BText
+          fontWeight={"bold"}
+          onPress={switchShowStatus}
+          style={styleReadMoreText}
+        >
+          {isShowAll ? " " + _(msg`hide`) : _(msg`see more`)}
         </BText>
       ) : null}
     </BText>

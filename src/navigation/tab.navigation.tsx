@@ -1,25 +1,22 @@
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
 import {
-  BottomTabBarButtonProps,
   BottomTabBarProps,
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { NavigationRoute, ParamListBase } from "@react-navigation/native";
-import { useTheme } from "@shopify/restyle";
 import BIcon from "components/base/icon.base";
 import BPressable from "components/base/pressable.base";
 import BSurface from "components/base/surface.base";
 import BText from "components/base/text.base";
-import BView from "components/base/view.base";
 import {
-  NAVIGATION_HOME_SCREEN,
+  NAVIGATION_INTRODUCTION_SCREEN,
   NAVIGATION_DOG_SCREEN,
 } from "constants/navigation.constant";
 import { MHS } from "constants/sizes.constant";
 import React, { useCallback, useMemo } from "react";
-import HomeScreen from "screens/home/home.screen";
 import DogScreen from "screens/dog/dog.screen";
+import IntroductionScreen from "screens/Introduction/introduction.screen";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +25,7 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
 
   const IconAndlabelScreen: any = useMemo(() => {
     return {
-      [NAVIGATION_HOME_SCREEN]: {
+      [NAVIGATION_INTRODUCTION_SCREEN]: {
         icon: "menu",
         label: _(msg`Introduce`),
       },
@@ -107,21 +104,22 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
 }
 
 const TabNavigation = () => {
-  // const TabbarIcon = useCa;
-
   const renderTabbar = useCallback((props: BottomTabBarProps) => {
     return <Tabbar {...props} />;
   }, []);
 
   return (
     <Tab.Navigator
-      initialRouteName={NAVIGATION_HOME_SCREEN}
+      initialRouteName={NAVIGATION_INTRODUCTION_SCREEN}
       tabBar={renderTabbar}
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Tab.Screen name={NAVIGATION_HOME_SCREEN} component={HomeScreen} />
+      <Tab.Screen
+        name={NAVIGATION_INTRODUCTION_SCREEN}
+        component={IntroductionScreen}
+      />
       <Tab.Screen name={NAVIGATION_DOG_SCREEN} component={DogScreen} />
     </Tab.Navigator>
   );

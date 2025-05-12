@@ -6,7 +6,7 @@ import {
 } from "constants/navigation.constant";
 import React from "react";
 import LoginScreen from "screens/login/login.screen";
-import { WelcomeScreen } from "screens/welcome/Welcome.screen";
+import { WelcomeScreen } from "screens/welcome/welcome.screen";
 import { useSystemStore } from "store/system.store";
 
 const StackNavigator = createNativeStackNavigator();

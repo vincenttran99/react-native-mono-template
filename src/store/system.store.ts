@@ -19,7 +19,7 @@ interface ISystemStore {
 
 const initialState = {
   theme: "dark" as const,
-  appLanguage: "vi",
+  appLanguage: "en",
   maintenanceMode: false,
   isFirstOpen: true,
 };

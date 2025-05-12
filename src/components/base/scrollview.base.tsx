@@ -1,59 +1,76 @@
 import React, { forwardRef, useMemo, useCallback, Children } from "react";
-import { FlashList, FlashListProps } from "@shopify/flash-list";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { ScrollView, ScrollViewProps } from "react-native";
 import { Device } from "constants/device.constant";
+import {
+  LegendList,
+  LegendListProps,
+  LegendListRenderItemProps,
+} from "@legendapp/list";
+import {
+  backgroundColor,
+  BackgroundColorProps,
+  createRestyleComponent,
+  layout,
+  LayoutProps,
+  spacing,
+  SpacingProps,
+} from "@shopify/restyle";
+import { Theme } from "constants/theme.constant";
 
-export type BScrollviewProps = Omit<FlashListProps<any>, "data" | "renderItem">;
+export type BScrollviewProps = SpacingProps<Theme> &
+  BackgroundColorProps<Theme> &
+  LayoutProps<Theme> &
+  Omit<LegendListProps<any>, "data" | "renderItem">;
 
-const RenderScrollComponent = React.forwardRef<ScrollView, ScrollViewProps>(
-  (props, ref) => <KeyboardAwareScrollView {...props} ref={ref} />
+const RenderScrollComponent = (props: ScrollViewProps) => (
+  <KeyboardAwareScrollView {...props} />
 );
 
-// BContainer implementation with optimizations and new features
+const LegendListRestyle = createRestyleComponent<
+  BScrollviewProps & {
+    data: ReadonlyArray<any>;
+    renderItem: (props: LegendListRenderItemProps<any>) => React.ReactNode;
+  },
+  Theme
+>([spacing, backgroundColor, layout], LegendList);
+
+// BContainer implementation with optimizations
 const BScrollview = forwardRef(
   (
     {
       children,
       estimatedItemSize,
-      drawDistance = Device.height * 1.3,
-      estimatedListSize = {
-        width: Device.width,
-        height: Device.height - Device.heightAppBar,
-      },
+      drawDistance = Device.height / 4,
       ...rest
-    }: BScrollviewProps,
-    ref: React.Ref<FlashList<any>>
+    }: Omit<BScrollviewProps, "data" | "renderItem">,
+    ref: any
   ) => {
     // Convert children to array or use function to create virtual data
-    const data = useMemo(() => {
-      return Array.isArray(children) ? children : Children.toArray(children);
-    }, [children]);
+    const data = Array.isArray(children)
+      ? children
+      : Children.toArray(children);
 
     const renderItem = useCallback(({ item }: { item: any }) => item, []);
 
-    const getItemType = useCallback((_: any, index: number) => {
-      // Disable recycling by assigning unique type to each item
-      return index;
+    const keyExtractor = useCallback((_: any, index: number) => {
+      return index.toString();
     }, []);
 
     if (estimatedItemSize === undefined) {
-      console.warn(
-        "BScrollview: 'estimatedItemSize' is missing, check FlashList warnings for suggested value."
-      );
+      console.warn("BScrollview: 'estimatedItemSize' is missing");
     }
 
     return (
-      <FlashList
+      <LegendListRestyle
         ref={ref}
         showsVerticalScrollIndicator={false}
         bounces={false}
+        keyExtractor={keyExtractor}
         {...rest}
         data={data}
         renderItem={renderItem}
         estimatedItemSize={estimatedItemSize}
-        estimatedListSize={estimatedListSize}
-        getItemType={getItemType}
         drawDistance={drawDistance}
         renderScrollComponent={RenderScrollComponent}
       />

@@ -1,0 +1,62 @@
+import React, { useCallback } from "react";
+import { MHS } from "constants/sizes.constant";
+import BText from "components/base/text.base";
+
+import BView from "components/base/view.base";
+import { msg } from "@lingui/core/macro";
+import { useLingui } from "@lingui/react";
+import BFlashList from "components/base/flashList.base";
+import BDivider from "components/base/divider.base";
+import BSafeAreaView from "components/base/safeAreaView.base";
+import { NAVIGATION_BASE_SCREEN } from "constants/navigation.constant";
+import BPressable from "components/base/pressable.base";
+import { navigateNavHelper } from "helpers/navigation.helper";
+
+export default function IntroductionScreen() {
+  const { _ } = useLingui();
+
+  const DATA = [
+    {
+      title: _(msg`Base components`),
+      screen: NAVIGATION_BASE_SCREEN,
+    },
+    // {
+    //   title: _(msg`Flash List`),
+    //   screen: "",
+    // },
+    // {
+    //   title: _(msg`Legend List`),
+    //   screen: "",
+    // },
+  ];
+
+  const renderItem = useCallback(
+    ({ item }: { item: { title: string; screen: string } }) => {
+      return (
+        <BPressable
+          height={MHS._60}
+          justifyContent="center"
+          paddingHorizontal="xl"
+          onPress={() => navigateNavHelper(item.screen)}
+        >
+          <BText fontWeight={"bold"} variant="xxl" numberOfLines={1}>
+            {item.title}
+          </BText>
+        </BPressable>
+      );
+    },
+    []
+  );
+
+  return (
+    <BSafeAreaView backgroundColor="background" flex={1}>
+      <BFlashList
+        keyAttribute={"screen"}
+        estimatedItemSize={MHS._60}
+        data={DATA}
+        renderItem={renderItem}
+        ItemSeparatorComponent={BDivider}
+      />
+    </BSafeAreaView>
+  );
+}

@@ -18,16 +18,52 @@ msgstr ""
 msgid "{0} ảnh đã được chọn"
 msgstr "{0} The image has been selected"
 
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:123
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:130
-msgid "Ẩn bớt"
-msgstr "Hide"
+#: src/screens/Introduction/introduction.screen.tsx:20
+#: src/navigation/main.navigation.tsx:40
+msgid "Base components"
+msgstr "Base components"
+
+#: src/screens/Introduction/base.screen.tsx:115
+msgid "BIcon"
+msgstr "BIcon"
 
 #: src/components/global/bottomSheetDialog.global.component.tsx:175
 msgid "Bỏ qua"
 msgstr "Skip"
 
-#: src/navigation/main.navigation.tsx:37
+#: src/screens/Introduction/base.screen.tsx:123
+msgid "BPressable"
+msgstr "BPressable"
+
+#: src/screens/Introduction/base.screen.tsx:136
+msgid "BSurface"
+msgstr "BSurface"
+
+#: src/screens/Introduction/base.screen.tsx:43
+msgid "BText"
+msgstr "BText"
+
+#: src/screens/Introduction/base.screen.tsx:144
+msgid "Button"
+msgstr "Button"
+
+#: src/screens/Introduction/base.screen.tsx:166
+msgid "Button outline"
+msgstr "Button outline"
+
+#: src/screens/Introduction/base.screen.tsx:151
+msgid "Button primary"
+msgstr "Button primary"
+
+#: src/screens/Introduction/base.screen.tsx:159
+msgid "Button secondary"
+msgstr "Button secondary"
+
+#: src/screens/Introduction/base.screen.tsx:106
+msgid "BView"
+msgstr "BView"
+
+#: src/navigation/main.navigation.tsx:47
 msgid "Cài đặt"
 msgstr "Setting"
 
@@ -39,6 +75,19 @@ msgstr "Need to grant rights"
 #: src/components/global/update.system.global.component.tsx:102
 msgid "Cập nhật ngay"
 msgstr "Update now"
+
+#: src/screens/Introduction/base.screen.tsx:190
+msgid "Cat"
+msgstr "Cat"
+
+#: src/screens/Introduction/base.screen.tsx:206
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: src/screens/Introduction/base.screen.tsx:182
+#: src/screens/Introduction/base.screen.tsx:184
+msgid "Chip"
+msgstr "Chip"
 
 #: src/components/form/imageSelect.form.component.tsx:324
 msgid "Chọn ảnh"
@@ -52,7 +101,12 @@ msgstr "This function requires the right to load and save the filter to your dev
 msgid "Chụp lại"
 msgstr "Capture"
 
-#: src/screens/welcome/Welcome.screen.tsx:59
+#: src/screens/Introduction/base.screen.tsx:209
+#: src/screens/Introduction/base.screen.tsx:217
+msgid "Coming soon"
+msgstr "Coming soon"
+
+#: src/screens/welcome/welcome.screen.tsx:59
 msgid "Continue"
 msgstr "Continue"
 
@@ -89,7 +143,11 @@ msgstr "System maintenance"
 msgid "Danh sách trống"
 msgstr "Drum list"
 
-#: src/navigation/tab.navigation.tsx:37
+#: src/screens/Introduction/base.screen.tsx:196
+msgid "Divider"
+msgstr "Divider"
+
+#: src/navigation/tab.navigation.tsx:34
 msgid "Dogs"
 msgstr "Dogs"
 
@@ -110,7 +168,11 @@ msgstr "Email is not valid"
 msgid "Email should not be empty"
 msgstr "Email should not be empty"
 
-#: src/screens/welcome/Welcome.screen.tsx:56
+#: src/screens/Introduction/base.screen.tsx:55
+msgid "Extra large warning text"
+msgstr "Extra large warning text"
+
+#: src/screens/welcome/welcome.screen.tsx:56
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
@@ -125,6 +187,11 @@ msgstr "hour"
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
 msgstr "Hello"
+
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:127
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:134
+msgid "hide"
+msgstr "hide"
 
 #: src/helpers/date.helper.ts:93
 msgid "Hôm qua"
@@ -141,13 +208,25 @@ msgstr "Cancel"
 msgid "Hủy"
 msgstr "Cancel"
 
-#: src/navigation/tab.navigation.tsx:33
+#: src/screens/Introduction/base.screen.tsx:171
+msgid "Icon Button"
+msgstr "Icon Button"
+
+#: src/navigation/tab.navigation.tsx:30
 msgid "Introduce"
 msgstr "Introduce"
 
 #: src/helpers/permission.helper.tsx:94
 msgid "Không được cấp quyền"
 msgstr "Unprecedented"
+
+#: src/screens/Introduction/base.screen.tsx:52
+msgid "Large success text"
+msgstr "Large success text"
+
+#: src/screens/Introduction/base.screen.tsx:33
+msgid "Lazy view"
+msgstr "Lazy view"
 
 #: src/screens/login/login.screen.tsx:116
 msgid "Login"
@@ -169,18 +248,26 @@ msgstr "Error when downloading more"
 msgid "Mất kết nối mạng"
 msgstr "Lost network connection"
 
+#: src/screens/Introduction/base.screen.tsx:49
+msgid "Medium primary text"
+msgstr "Medium primary text"
+
 #: src/helpers/permission.helper.tsx:63
 #: src/helpers/file.helper.tsx:107
 #: src/components/form/imageSelect.form.component.tsx:292
 msgid "Mở cài đặt"
 msgstr "Open settings"
 
+#: src/screens/Introduction/base.screen.tsx:60
+msgid "Multi text"
+msgstr "Multi text"
+
 #: src/helpers/date.helper.ts:118
 msgid "ngày"
 msgstr "day"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:43
+#: src/navigation/main.navigation.tsx:53
 msgid "Ngôn ngữ"
 msgstr "Language"
 
@@ -209,6 +296,14 @@ msgstr "The login session has expired"
 msgid "phút"
 msgstr "minute"
 
+#: src/screens/Introduction/base.screen.tsx:131
+msgid "Pressable"
+msgstr "Pressable"
+
+#: src/screens/Introduction/base.screen.tsx:96
+msgid "Preview URL"
+msgstr "Preview URL"
+
 #: src/screens/dog/components/item.dog.tsx:61
 msgid "Purpose"
 msgstr "Purpose"
@@ -216,6 +311,41 @@ msgstr "Purpose"
 #: src/helpers/permission.helper.tsx:80
 msgid "Quyền tải xuống"
 msgstr "Downloading"
+
+#: src/screens/Introduction/base.screen.tsx:214
+msgid "Radio"
+msgstr "Radio"
+
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:54
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:127
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:59
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:134
+msgid "see more"
+msgstr "see more"
+
+#: src/screens/Introduction/base.screen.tsx:46
+msgid "Small error text"
+msgstr "Small error text"
+
+#: src/screens/Introduction/base.screen.tsx:37
+msgid "Suprise! You are seeing this text after 2 seconds"
+msgstr "Suprise! You are seeing this text after 2 seconds"
+
+#: src/screens/Introduction/base.screen.tsx:139
+msgid "Surface"
+msgstr "Surface"
+
+#: src/screens/Introduction/base.screen.tsx:73
+msgid "Text Ellipsis"
+msgstr "Text Ellipsis"
+
+#: src/screens/Introduction/base.screen.tsx:83
+msgid "Text input"
+msgstr "Text input"
+
+#: src/screens/Introduction/base.screen.tsx:77
+msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
+msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 
 #: src/components/form/imageSelect.form.component.tsx:347
 #: src/components/base/system/camera.system.component.tsx:163
@@ -263,7 +393,7 @@ msgstr "Please update the latest version of the application to have the best exp
 msgid "Vui lòng thử kết nối lại"
 msgstr "Please try again"
 
-#: src/screens/welcome/Welcome.screen.tsx:52
+#: src/screens/welcome/welcome.screen.tsx:52
 msgid "Welcome to"
 msgstr "Welcome to"
 
@@ -274,13 +404,6 @@ msgstr "Confirm"
 #: src/helpers/api.helper.ts:59
 msgid "Xảy ra vấn đề"
 msgstr "Happen"
-
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:54
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:123
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:59
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:130
-msgid "Xem thêm"
-msgstr "See more"
 
 #: src/screens/login/login.screen.tsx:97
 msgid "Your email"

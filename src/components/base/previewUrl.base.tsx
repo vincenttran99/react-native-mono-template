@@ -1,11 +1,12 @@
 import { memo, useEffect, useState } from "react";
 import { useMemo } from "react";
-import { Linking, Pressable, PressableProps } from "react-native";
+import { Linking } from "react-native";
 
 import { getPreviewDataHelper, PreviewData } from "helpers/web.helper";
 import BText from "components/base/text.base";
 import BImage from "components/base/image.base";
 import { renderSpecialElementHelper } from "helpers/system.helper";
+import BPressable, { BPressableProps } from "./pressable.base";
 
 enum EBPreviewUrl {
   Title = "BPreviewUrl.Title",
@@ -13,7 +14,7 @@ enum EBPreviewUrl {
   Image = "BPreviewUrl.Image",
 }
 
-export interface IBPreviewUrlComponentProps extends PressableProps {
+export interface IBPreviewUrlComponentProps extends BPressableProps {
   onPreviewDataFetched?: (previewData: PreviewData) => void;
   previewData?: PreviewData;
   requestTimeout?: number;
@@ -75,9 +76,9 @@ const BPreviewUrlComponent = memo(
     );
 
     return (
-      <Pressable onPress={handlePress} {...props}>
+      <BPressable onPress={handlePress} {...props}>
         {ContentPreview}
-      </Pressable>
+      </BPressable>
     );
   }
 );

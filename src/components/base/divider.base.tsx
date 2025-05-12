@@ -1,8 +1,29 @@
-import React, { useMemo } from "react";
+import React, { memo, useMemo } from "react";
 import { StyleSheet } from "react-native";
 import { MHS } from "constants/sizes.constant";
 import BView, { BViewProps } from "./view.base";
-import { useTheme } from "@shopify/restyle";
+import {
+  backgroundColor,
+  border,
+  composeRestyleFunctions,
+  layout,
+  opacity,
+  shadow,
+  spacing,
+  useRestyle,
+  useTheme,
+} from "@shopify/restyle";
+import { Theme } from "constants/theme.constant";
+import isEqual from "react-fast-compare";
+
+const restyleFunctions = composeRestyleFunctions<Theme, BViewProps>([
+  spacing,
+  backgroundColor,
+  opacity,
+  layout,
+  border,
+  shadow,
+]);
 
 type BDividerProps = BViewProps & {
   type?: "solid" | "dotted" | "dashed";
@@ -10,83 +31,77 @@ type BDividerProps = BViewProps & {
   bold?: boolean;
 };
 
-const BDivider = ({
-  type = "solid",
-  style,
-  bold,
-  vertical = false,
-  ...props
-}: BDividerProps): React.JSX.Element => {
-  const theme = useTheme();
-  const styleBase = useMemo(
-    () => ({
-      height: !vertical
-        ? Number(
-            StyleSheet.flatten(style || {})?.height ||
-              (bold ? MHS._1 : StyleSheet.hairlineWidth)
-          )
-        : undefined,
-      // flexGrow: 1,
-      width: vertical
-        ? Number(
-            StyleSheet.flatten(style || {})?.width ||
-              (bold ? MHS._1 : StyleSheet.hairlineWidth)
-          )
-        : undefined,
-      backgroundColor:
-        StyleSheet.flatten(style || {})?.backgroundColor ||
-        theme.colors.outline,
-    }),
-    [style, type, bold, vertical]
-  );
+const BDivider = memo(
+  ({
+    type = "solid",
+    bold,
+    vertical = false,
+    ...rest
+  }: BDividerProps): React.JSX.Element => {
+    const theme = useTheme();
+    const props = useRestyle(restyleFunctions, rest);
 
-  const styleDashOrDot = useMemo(
-    () => ({
-      borderStyle: type,
-      borderColor:
-        StyleSheet.flatten(style || {})?.backgroundColor ||
-        theme.colors.outline,
-      ...(vertical
-        ? {
-            borderWidth: Number(
-              StyleSheet.flatten(style || {})?.width ||
-                (bold ? MHS._1 : StyleSheet.hairlineWidth)
-            ),
-            marginHorizontal: -Number(
-              StyleSheet.flatten(style || {})?.width ||
-                (bold ? MHS._1 : StyleSheet.hairlineWidth)
-            ),
-            marginLeft: 0,
-            // flexGrow: 1,
-            width: 0,
-            backgroundColor: "#00000000",
-          }
-        : {
-            borderWidth: Number(
-              StyleSheet.flatten(style || {})?.height ||
-                (bold ? MHS._1 : StyleSheet.hairlineWidth)
-            ),
-            marginVertical: -Number(
-              StyleSheet.flatten(style || {})?.height ||
-                (bold ? MHS._1 : StyleSheet.hairlineWidth)
-            ),
-            marginTop: 0,
-            height: 0,
-            backgroundColor: "#00000000",
-          }),
-    }),
-    [style, type, bold, vertical]
-  );
+    const styleBase = useMemo(() => {
+      let propsStyle = StyleSheet.flatten(props.style || {});
+      let height =
+        propsStyle?.height || (bold ? MHS._1 : StyleSheet.hairlineWidth);
+      let width =
+        propsStyle?.width || (bold ? MHS._1 : StyleSheet.hairlineWidth);
+      return {
+        height: !vertical ? height : undefined,
+        // flexGrow: 1,
+        width: vertical ? width : undefined,
+      };
+    }, [props.style, type, bold, vertical]);
 
-  return (
-    <BView style={styles.container}>
-      <BView
-        {...props}
-        style={[style, type === "solid" ? styleBase : styleDashOrDot]}
-      />
-    </BView>
-  );
-};
+    const styleDashOrDot = useMemo(() => {
+      let propsStyle = StyleSheet.flatten(props.style || {});
+      let backgroundColor = propsStyle?.backgroundColor || theme.colors.ground;
+      let width =
+        (typeof propsStyle?.width === "number"
+          ? propsStyle?.width
+          : bold
+          ? MHS._1
+          : StyleSheet.hairlineWidth) * 2.04;
+      let height =
+        (typeof propsStyle?.height === "number"
+          ? propsStyle?.height
+          : bold
+          ? MHS._1
+          : StyleSheet.hairlineWidth) * 2.04;
+      return {
+        borderStyle: type,
+        borderColor: backgroundColor,
+        ...(vertical
+          ? {
+              borderWidth: width,
+              marginHorizontal: -width * 1.51,
+              marginLeft: 0,
+              // flexGrow: 1,
+              width: 0,
+              backgroundColor: "#00000000",
+            }
+          : {
+              borderWidth: height,
+              marginVertical: -height * 1.51,
+              marginTop: 0,
+              height: 0,
+              backgroundColor: "#00000000",
+            }),
+      };
+    }, [props.style, type, bold, vertical]);
+
+    return (
+      <BView style={styles.container}>
+        <BView
+          {...rest}
+          style={[props.style, type === "solid" ? styleBase : styleDashOrDot]}
+        />
+      </BView>
+    );
+  },
+  isEqual
+);
 
 const styles = StyleSheet.create({
   container: { overflow: "hidden" },
