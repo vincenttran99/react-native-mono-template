@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { CONFIG } from "constants/config.constant";
-import { MobileAppPassport } from "helpers/passport.helper";
 import { MMKVStorage } from "helpers/storage.helper";
 import { useAuthStore } from "store/auth.store";
 import { authApi } from "./auth/auth.api";
@@ -10,27 +9,12 @@ import { msg } from "@lingui/core/macro";
 import { removeEmptyFieldsHelper } from "helpers/object.helper";
 import { createLogsFromResponseHelper } from "helpers/axios.helper";
 
-export const router_must_sign = [
-  "login",
-  "register",
-  "recover_password",
-  "user/set_new_password",
-  "user/active_account",
-  "quick-login",
-  "contactform",
-  "user/onetimepassword",
-  "webauthn/generate-registration-options",
-  "webauthn/generate-authentication-options",
-];
-
 let Reset = "\x1b[0m";
 let Bright = "\x1b[1m";
 let FgGreen = "\x1b[32m";
 let BgGreen = "\x1b[42m";
 let BgBlue = "\x1b[44m";
 let BgMagenta = "\x1b[45m";
-
-const PASSPORT = new MobileAppPassport();
 
 const TIMEOUT = Number(CONFIG.REQUEST_TIMEOUT);
 const api = axios.create({
@@ -47,19 +31,6 @@ const api = axios.create({
  * @param axiosConfig
  */
 const onRequestSuccess = async (axiosConfig: any) => {
-  const isURLAllowed = router_must_sign.some((allowedURL: any) =>
-    axiosConfig.url.includes(allowedURL)
-  );
-  if (isURLAllowed) {
-    let passportData = await PASSPORT.init();
-    axiosConfig.headers["user-agent"] = passportData.USER_AGENT;
-    axiosConfig.headers["X-Passport"] = passportData.__passport;
-    axiosConfig.headers["X-Passport-Verified"] =
-      passportData.__passport_verified;
-    axiosConfig.headers["X-Passport-With-Key"] =
-      passportData.__passport_with_key;
-  }
-
   axiosConfig.headers["X-Authorization"] = MMKVStorage.getString("token");
 
   // Append cache buster to URL

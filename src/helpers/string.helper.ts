@@ -1,5 +1,4 @@
 import { NAVIGATION_DETAIL_PRODUCT_SCREEN } from "constants/navigation.constant";
-import crypto from "react-native-quick-crypto";
 import { CONFIG } from "constants/config.constant";
 import { setRefCodeHelper, setTargetScreenHelper } from "./storage.helper";
 
@@ -280,11 +279,6 @@ export function slugifyHelper(value: string) {
   } catch (_) {
     return value;
   }
-}
-
-export async function getSha1FromStringHelper(string: string): Promise<string> {
-  let encode = crypto.createHash("sha1").update(string).digest("hex");
-  return encode;
 }
 
 export function splitStringForWheelHelper(

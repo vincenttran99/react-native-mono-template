@@ -201,7 +201,7 @@ msgstr "Mật khẩu không nên trống"
 msgid "Phiên bản cập nhật quan trọng"
 msgstr "Phiên bản cập nhật quan trọng"
 
-#: src/api/api.ts:140
+#: src/api/api.ts:111
 msgid "Phiên đăng nhập đã hết hạn"
 msgstr "Phiên đăng nhập đã hết hạn"
 

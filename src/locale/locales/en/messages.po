@@ -201,7 +201,7 @@ msgstr "Password should not be empty"
 msgid "Phiên bản cập nhật quan trọng"
 msgstr "Important update version"
 
-#: src/api/api.ts:140
+#: src/api/api.ts:111
 msgid "Phiên đăng nhập đã hết hạn"
 msgstr "The login session has expired"
 
