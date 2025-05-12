@@ -133,6 +133,7 @@ const BTextInput = forwardRef(
           fontSize={FontSize.md}
           color={"reverse"}
           flex={1}
+          paddingVertical="none"
           placeholderTextColor={theme.colors.secondary}
           {...props}
         />

@@ -33,7 +33,7 @@ const getItemTypeDefault = (item: any) => {
   return item?.type;
 };
 
-const BListComponent = (
+const BFlashListComponent = (
   {
     onEndReached,
     LoadingComponent,
@@ -47,7 +47,7 @@ const BListComponent = (
       width: Device.width,
       height: Device.height - Device.heightAppBar,
     },
-    drawDistance = Device.height * 1.3,
+    drawDistance = Device.height,
     getItemType = getItemTypeDefault,
     ...props
   }: BListProps,
@@ -117,5 +117,5 @@ const BListComponent = (
   );
 };
 
-const BList = forwardRef(BListComponent);
-export default BList;
+const BFlashList = forwardRef(BFlashListComponent);
+export default BFlashList;

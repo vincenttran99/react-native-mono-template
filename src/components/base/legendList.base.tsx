@@ -1,6 +1,6 @@
 import React, { forwardRef, MemoExoticComponent, useCallback } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-import { ScrollView, ScrollViewProps } from "react-native";
+import { ScrollViewProps } from "react-native";
 import {
   ERROR_ITEM,
   LOAD_MORE_ERROR_ITEM,
@@ -26,14 +26,11 @@ type BListProps = React.ComponentProps<typeof LegendList> & {
   keyAttribute: string;
 };
 
-const RenderScrollComponent = React.forwardRef<ScrollView, ScrollViewProps>(
-  (props, ref) => <KeyboardAwareScrollView {...props} ref={ref} />
+const RenderScrollComponent = (props: ScrollViewProps) => (
+  <KeyboardAwareScrollView {...props} />
 );
-const getItemTypeDefault = (item: any) => {
-  return item?.type;
-};
 
-const BList2Component = (
+const BLegendListComponent = (
   {
     onEndReached,
     LoadingComponent,
@@ -43,12 +40,7 @@ const BList2Component = (
     refreshing,
     renderItem,
     horizontal,
-    // estimatedListSize = {
-    //   width: Device.width,
-    //   height: Device.height - Device.heightAppBar,
-    // },
-    drawDistance = Device.height * 1.3,
-    // getItemType = getItemTypeDefault,
+    drawDistance = Device.height / 2,
     ...props
   }: BListProps,
   ref: any
@@ -102,7 +94,7 @@ const BList2Component = (
   return (
     <LegendList
       ref={ref}
-      // renderScrollComponent={RenderScrollComponent}
+      renderScrollComponent={RenderScrollComponent}
       keyExtractor={keyExtractor}
       renderItem={renderItemHandle}
       ListEmptyComponent={DefaultEmptyListComponent}
@@ -110,9 +102,6 @@ const BList2Component = (
       showsHorizontalScrollIndicator={false}
       onEndReachedThreshold={0.5}
       onEndReached={onEndReachedHandle}
-      // refreshing={refreshing}
-      // getItemType={getItemType}
-      // estimatedListSize={estimatedListSize}
       drawDistance={drawDistance}
       horizontal={horizontal}
       recycleItems
@@ -121,5 +110,5 @@ const BList2Component = (
   );
 };
 
-const BList2 = BList2Component;
-export default BList2;
+const BLegendList = forwardRef(BLegendListComponent);
+export default BLegendList;

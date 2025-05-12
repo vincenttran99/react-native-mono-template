@@ -24,9 +24,5 @@ import { navigateNavHelper } from "helpers/navigation.helper";
 import BScrollview from "components/base/scrollview.base";
 
 export default function HomeScreen() {
-  return (
-    <BView backgroundColor="background" flex={1}>
-      <BScrollview></BScrollview>
-    </BView>
-  );
+  return <BView backgroundColor="background" flex={1}></BView>;
 }

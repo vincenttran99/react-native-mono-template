@@ -162,6 +162,7 @@ export const Radius = {
 } as const;
 
 export const Space = {
+  none: 0,
   xxxxs: MHS._2,
   xxxs: MHS._4,
   xxs: MHS._6,

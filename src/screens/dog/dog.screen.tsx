@@ -1,15 +1,19 @@
-import React, { useCallback, useMemo, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { StyleSheet } from "react-native";
 
 import BView from "components/base/view.base";
-import BScrollview from "components/base/scrollview.base";
-import { useRoute } from "@react-navigation/native";
 import { useDogListQuery } from "api/dog/dog.queries";
 import { IDog } from "models/dog.model";
 import { useInfiniteList } from "helpers/hooks/list.hook";
-import BList from "components/base/list.base";
 import { MHS } from "constants/sizes.constant";
 import ItemDog from "./components/item.dog";
+import BLegendList from "components/base/legendList.base";
 
 export default function DogScreen() {
   const { items, onRefresh, isRefetching, onEndReached } =
@@ -23,10 +27,10 @@ export default function DogScreen() {
   }, []);
 
   return (
-    <BView backgroundColor="background" flex={1}>
-      <BList
+    <BView backgroundColor="background" flex={1} paddingTop="xxxl">
+      <BLegendList
         keyAttribute={"notification_id"}
-        estimatedItemSize={MHS._70}
+        estimatedItemSize={450}
         data={items}
         renderItem={renderItem}
         onEndReached={onEndReached}

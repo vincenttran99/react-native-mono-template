@@ -23,23 +23,11 @@ msgstr "{0} The image has been selected"
 msgid "Ẩn bớt"
 msgstr "Hide"
 
-#: src/screens/register/verifyOTP.register.screen.tsx:181
-msgid "Bạn chưa nhận được mã OTP?"
-msgstr "You have not received OTP code yet?"
-
-#: src/screens/account/account.screen.tsx:93
-msgid "Bạn có chắc chắn muốn đăng xuất?"
-msgstr "Are you sure you want to log out?"
-
-#: src/screens/account/account.screen.tsx:45
-msgid "Bạn đã đăng xuất"
-msgstr "You have logged out"
-
 #: src/components/global/bottomSheetDialog.global.component.tsx:175
 msgid "Bỏ qua"
 msgstr "Skip"
 
-#: src/navigation/main.navigation.tsx:60
+#: src/navigation/main.navigation.tsx:37
 msgid "Cài đặt"
 msgstr "Setting"
 
@@ -47,38 +35,14 @@ msgstr "Setting"
 msgid "Cần cấp quyền"
 msgstr "Need to grant rights"
 
-#: src/screens/notifications/components/header.list.notifications.tsx:142
-msgid "Cập nhật đơn hàng"
-msgstr "Update order"
-
-#: src/screens/account/account.screen.tsx:76
-msgid "Cập nhật không thành công"
-msgstr "Unsuccessful update"
-
-#: src/screens/notifications/components/header.list.notifications.tsx:117
-msgid "Cập nhật mới nhất từ hệ thống"
-msgstr "Latest update from the system"
-
 #: src/components/global/update.system.global.component.tsx:34
 #: src/components/global/update.system.global.component.tsx:102
 msgid "Cập nhật ngay"
 msgstr "Update now"
 
-#: src/screens/account/account.screen.tsx:75
-msgid "Cập nhật thành công"
-msgstr "Success update"
-
-#: src/navigation/main.navigation.tsx:43
-msgid "Chi tiết chuyến xe"
-msgstr "Details of the car"
-
 #: src/components/form/imageSelect.form.component.tsx:324
 msgid "Chọn ảnh"
 msgstr "Select photo"
-
-#: src/screens/ride/statistic.ride.screen.tsx:425
-msgid "Chốt lệnh"
-msgstr "Closing command"
 
 #: src/helpers/permission.helper.tsx:82
 msgid "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thiết bị của bạn"
@@ -88,9 +52,9 @@ msgstr "This function requires the right to load and save the filter to your dev
 msgid "Chụp lại"
 msgstr "Capture"
 
-#: src/screens/ride/list.ride.screen.tsx:131
-msgid "Chuyến đi của bạn"
-msgstr "Your trip"
+#: src/screens/welcome/Welcome.screen.tsx:59
+msgid "Continue"
+msgstr "Continue"
 
 #: src/screens/logsBugFileStorage/logsBug.screen.tsx:81
 #: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:53
@@ -106,7 +70,7 @@ msgstr "There was an error"
 msgid "Đã khôi phục kết nối mạng"
 msgstr "Has restored the network connection"
 
-#: src/screens/webview/webview.screen.tsx:55
+#: src/screens/webview/webview.screen.tsx:53
 #: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:37
 msgid "Đã sao chép"
 msgstr "Copied"
@@ -121,165 +85,116 @@ msgstr "Deleted"
 msgid "Đang bảo trì hệ thống"
 msgstr "System maintenance"
 
-#: src/screens/account/account.screen.tsx:89
-#: src/screens/account/account.screen.tsx:106
-#: src/screens/account/account.screen.tsx:205
-msgid "Đăng xuất"
-msgstr "Log out"
-
 #: src/components/list/defaultEmpty.list.component.tsx:40
 msgid "Danh sách trống"
 msgstr "Drum list"
+
+#: src/navigation/tab.navigation.tsx:37
+msgid "Dogs"
+msgstr "Dogs"
 
 #: src/components/form/singleSelect.form.tsx:234
 #: src/components/form/imageSelect.form.component.tsx:329
 msgid "Đóng"
 msgstr "Close"
 
-#: src/screens/webview/webview.screen.tsx:72
+#: src/screens/webview/webview.screen.tsx:70
 msgid "Đường dẫn không hợp lệ"
 msgstr "The path is invalid"
 
-#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:167
-msgid "Ghi chú lý do thu thêm"
-msgstr "Notes the reason for collecting extra"
+#: src/screens/login/login.screen.tsx:35
+msgid "Email is not valid"
+msgstr "Email is not valid"
+
+#: src/screens/login/login.screen.tsx:31
+msgid "Email should not be empty"
+msgstr "Email should not be empty"
+
+#: src/screens/welcome/Welcome.screen.tsx:56
+msgid "Fast and simple template"
+msgstr "Fast and simple template"
 
 #: src/screens/settings/settings.screen.tsx:24
 msgid "Giao diện tối"
 msgstr "Dark interface"
 
-#: src/screens/register/verifyOTP.register.screen.tsx:52
-#: src/screens/register/verifyOTP.register.screen.tsx:70
-msgid "giây"
-msgstr "second"
-
 #: src/helpers/date.helper.ts:116
 msgid "giờ"
 msgstr "hour"
 
-#: src/screens/register/verifyOTP.register.screen.tsx:62
-#: src/screens/register/verifyOTP.register.screen.tsx:82
-msgid "Gửi lại mã"
-msgstr "Send the code back"
-
-#: src/screens/register/verifyOTP.register.screen.tsx:52
-#: src/screens/register/verifyOTP.register.screen.tsx:68
-msgid "Gửi lại mã sau"
-msgstr "Send the following code back"
-
-#: src/screens/ride/list.ride.screen.tsx:98
-msgid "Hãy chờ thêm một chút, quản trị viên đang thêm khách hàng mới cho bạn!"
-msgstr "Please wait a little more, the administrator is more new customers for you!"
-
-#: src/screens/login/login.screen.tsx:49
-msgid "Hãy nhập số điện thoại để tiếp tục"
-msgstr "Please enter the phone number to continue"
-
-#: src/components/system/picker.modal.date.system.component.tsx:78
-msgid "Hôm nay"
-msgstr "Today"
+#: src/screens/login/login.screen.tsx:86
+msgid "Hello"
+msgstr "Hello"
 
 #: src/helpers/date.helper.ts:93
-#: src/components/system/picker.modal.date.system.component.tsx:79
 msgid "Hôm qua"
 msgstr "Yesterday"
 
-#: src/screens/account/account.screen.tsx:100
-#: src/screens/account/account.screen.tsx:125
 #: src/components/global/update.system.global.component.tsx:35
 #: src/components/global/bottomSheetDialog.global.component.tsx:163
 msgid "Huỷ"
 msgstr "Cancel"
 
 #: src/helpers/permission.helper.tsx:84
-#: src/helpers/file.helper.tsx:113
+#: src/helpers/file.helper.tsx:104
 #: src/components/form/imageSelect.form.component.tsx:289
 msgid "Hủy"
 msgstr "Cancel"
 
-#: src/screens/notifications/components/header.list.notifications.tsx:127
-msgid "Khám phá những khuyến mãi mới nhất"
-msgstr "Discover the latest promotions"
-
-#: src/screens/account/account.screen.tsx:119
-msgid "Khi xác nhận xoá, tài khoản của bạn sẽ bị xoá vĩnh viễn. Bạn có chắc chắn muốn thực hiện hành động này?"
-msgstr "When confirming the deletion, your account will be deleted permanently. Are you sure you want to perform this action?"
+#: src/navigation/tab.navigation.tsx:33
+msgid "Introduce"
+msgstr "Introduce"
 
 #: src/helpers/permission.helper.tsx:94
 msgid "Không được cấp quyền"
 msgstr "Unprecedented"
 
-#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:159
-#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:171
-msgid "Không được trống"
-msgstr "Unmarked"
+#: src/screens/login/login.screen.tsx:116
+msgid "Login"
+msgstr "Login"
 
-#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:91
-msgid "Không thể thay đổi biển số"
-msgstr "Cannot change the license plate"
+#: src/screens/login/login.screen.tsx:71
+msgid "Login failed"
+msgstr "Login failed"
 
-#: src/screens/notifications/components/header.list.notifications.tsx:125
-msgid "Khuyến mãi"
-msgstr "Promotion"
+#: src/screens/login/login.screen.tsx:89
+msgid "Login to continue"
+msgstr "Login to continue"
 
 #: src/components/list/defaultErrorItem.list.component.tsx:29
 msgid "Lỗi khi tải thêm"
 msgstr "Error when downloading more"
-
-#: src/components/system/picker.modal.date.system.component.tsx:396
-msgid "Lưu"
-msgstr "Save"
-
-#: src/screens/register/verifyOTP.register.screen.tsx:134
-msgid "Mã OTP có hiệu lực đến"
-msgstr "The OTP code takes effect"
 
 #: src/components/global/modal.network.global.component.tsx:57
 msgid "Mất kết nối mạng"
 msgstr "Lost network connection"
 
 #: src/helpers/permission.helper.tsx:63
-#: src/helpers/file.helper.tsx:116
+#: src/helpers/file.helper.tsx:107
 #: src/components/form/imageSelect.form.component.tsx:292
 msgid "Mở cài đặt"
 msgstr "Open settings"
-
-#: src/screens/notifications/components/header.list.notifications.tsx:137
-msgid "Nắm bắt những sự kiện mới nhất"
-msgstr "Grasp the latest events"
-
-#: src/components/system/picker.modal.date.system.component.tsx:86
-msgid "Năm nay"
-msgstr "This year"
-
-#: src/components/system/picker.modal.date.system.component.tsx:87
-msgid "Năm trước"
-msgstr "Previous year"
 
 #: src/helpers/date.helper.ts:118
 msgid "ngày"
 msgstr "day"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:76
+#: src/navigation/main.navigation.tsx:43
 msgid "Ngôn ngữ"
 msgstr "Language"
 
-#: src/screens/register/verifyOTP.register.screen.tsx:127
-msgid "Nhập mã OTP gửi về số điện thoại"
-msgstr "Enter the OTP code to send to the phone number"
-
-#: src/screens/register/verifyOTP.register.screen.tsx:124
-msgid "Nhập mã xác thực"
-msgstr "Enter the authentication code"
-
-#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:150
-msgid "Nhập số tiền thu thêm"
-msgstr "Enter the extra collection"
+#: src/screens/dog/components/item.dog.tsx:43
+msgid "No name"
+msgstr "No name"
 
 #: src/helpers/permission.helper.tsx:85
 msgid "OK"
 msgstr "OK"
+
+#: src/screens/login/login.screen.tsx:41
+msgid "Password should not be empty"
+msgstr "Password should not be empty"
 
 #: src/components/global/update.system.global.component.tsx:30
 #: src/components/global/update.system.global.component.tsx:92
@@ -294,63 +209,14 @@ msgstr "The login session has expired"
 msgid "phút"
 msgstr "minute"
 
-#: src/components/system/picker.modal.date.system.component.tsx:84
-msgid "Quý này"
-msgstr "This quarter"
-
-#: src/components/system/picker.modal.date.system.component.tsx:85
-msgid "Quý trước"
-msgstr "Precious"
+#: src/screens/dog/components/item.dog.tsx:61
+msgid "Purpose"
+msgstr "Purpose"
 
 #: src/helpers/permission.helper.tsx:80
 msgid "Quyền tải xuống"
 msgstr "Downloading"
 
-#: src/screens/login/login.screen.tsx:63
-msgid "Số điện thoại"
-msgstr "Phone number"
-
-#: src/screens/login/login.screen.tsx:67
-msgid "Số điện thoại không được bỏ trống"
-msgstr "The phone number is not blank"
-
-#: src/screens/login/login.screen.tsx:71
-msgid "Số điện thoại không hợp lệ"
-msgstr "The phone number is invalid"
-
-#: src/screens/notifications/components/header.list.notifications.tsx:135
-msgid "Sự kiện"
-msgstr "Event"
-
-#: src/navigation/main.navigation.tsx:66
-msgid "Tài khoản của bạn"
-msgstr "Your account"
-
-#: src/screens/account/account.screen.tsx:186
-msgid "Tài xế"
-msgstr "Driver"
-
-#: src/components/system/picker.modal.date.system.component.tsx:82
-msgid "Tháng này"
-msgstr "This month"
-
-#: src/components/system/picker.modal.date.system.component.tsx:83
-msgid "Tháng trước"
-msgstr "Last month"
-
-#: src/navigation/main.navigation.tsx:53
-msgid "Thông báo"
-msgstr "Notification"
-
-#: src/screens/notifications/components/header.list.notifications.tsx:115
-msgid "Thông báo chung"
-msgstr "General notice"
-
-#: src/navigation/main.navigation.tsx:48
-msgid "Thống kê chuyến"
-msgstr "Statistics of trip"
-
-#: src/screens/login/login.screen.tsx:84
 #: src/components/form/imageSelect.form.component.tsx:347
 #: src/components/base/system/camera.system.component.tsx:163
 msgid "Tiếp tục"
@@ -364,7 +230,7 @@ msgstr "Search"
 msgid "Truy cập cài đặt để cấp quyền"
 msgstr "Access settings to grant rights"
 
-#: src/helpers/file.helper.tsx:111
+#: src/helpers/file.helper.tsx:102
 msgid "Truy cập cài đặt để cấp quyền?"
 msgstr "Access settings to grant rights?"
 
@@ -372,25 +238,13 @@ msgstr "Access settings to grant rights?"
 msgid "Truy cập lại sau"
 msgstr "Return later"
 
-#: src/helpers/file.helper.tsx:110
+#: src/helpers/file.helper.tsx:101
 msgid "Truy cập thư viện bị từ chối"
 msgstr "The library access is rejected"
 
 #: src/components/form/imageSelect.form.component.tsx:286
 msgid "Truy cập thư viện hoặc máy ảnh bị từ chối"
 msgstr "Library access or camera is rejected"
-
-#: src/components/system/picker.modal.date.system.component.tsx:80
-msgid "Tuần này"
-msgstr "This week"
-
-#: src/components/system/picker.modal.date.system.component.tsx:81
-msgid "Tuần trước"
-msgstr "Last week"
-
-#: src/components/system/picker.modal.date.system.component.tsx:88
-msgid "Tùy chỉnh"
-msgstr "Custom"
 
 #: src/helpers/permission.helper.tsx:58
 msgid "Ứng dụng cần quyền sử dụng máy ảnh. Truy cập vào cài đặt và cấp quyền."
@@ -409,7 +263,10 @@ msgstr "Please update the latest version of the application to have the best exp
 msgid "Vui lòng thử kết nối lại"
 msgstr "Please try again"
 
-#: src/screens/ride/components/modal.edit.cost.detail.ride.tsx:175
+#: src/screens/welcome/Welcome.screen.tsx:52
+msgid "Welcome to"
+msgstr "Welcome to"
+
 #: src/components/global/bottomSheetDialog.global.component.tsx:188
 msgid "Xác nhận"
 msgstr "Confirm"
@@ -425,11 +282,10 @@ msgstr "Happen"
 msgid "Xem thêm"
 msgstr "See more"
 
-#: src/screens/login/login.screen.tsx:46
-msgid "Xin chào"
-msgstr "Hello"
+#: src/screens/login/login.screen.tsx:97
+msgid "Your email"
+msgstr "Your email"
 
-#: src/screens/account/account.screen.tsx:134
-#: src/screens/account/account.screen.tsx:215
-msgid "Xoá tài khoản"
-msgstr "Delete account"
+#: src/screens/login/login.screen.tsx:105
+msgid "Your password"
+msgstr "Your password"
