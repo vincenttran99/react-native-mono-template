@@ -1,9 +1,3 @@
-### Installation
-
-```
-$ yarn
-```
-
 ### Local Development
 
 ```
