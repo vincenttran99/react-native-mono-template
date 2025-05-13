@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/react-native-mono-template/blog","blogTitle":"Blog","authorsListPath":"/react-native-mono-template/blog/authors"}')}}]);
