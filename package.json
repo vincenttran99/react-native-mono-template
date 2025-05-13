@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "buildNumber": "1",
   "scripts": {
-    "init-project": "node ./scripts/init-project.js",
     "web": "cross-env EXPO_NO_DOTENV=1 expo start --web",
     "xcode": "xed -b ios",
     "doctor": "npx expo-doctor@latest",

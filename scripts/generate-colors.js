@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 // Temporary library needed
 const tempPackage = "@adobe/leonardo-contrast-colors";
 
-// Read primary color from init-project.json file
+// Read primary color from env.development file
 const envPath = path.resolve(`./.env.development`);
 
 // 2. read file and parse into object { KEY: 'value', … }
