@@ -6,7 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "React Native Mono Template",
-  tagline: "React Native Mono Template's documentation",
+  tagline: "Best Performance Templates for React Native Projects",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -63,12 +63,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/card.png",
     navbar: {
       title: "RN Mono Template",
       logo: {
         alt: "React native mono template Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
       items: [
         {
@@ -79,7 +79,7 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/vincenttran99/react-native-mono-template",
           label: "GitHub",
           position: "right",
         },
@@ -92,8 +92,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "Overview",
+              to: "/docs/overview",
             },
           ],
         },
@@ -101,16 +101,8 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
+              label: "Discussions",
+              href: "https://github.com/vincenttran99/react-native-mono-template/discussions",
             },
           ],
         },
@@ -123,12 +115,12 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/vincenttran99/react-native-mono-template",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} React Native Mono Template`,
     },
     prism: {
       theme: prismThemes.github,
