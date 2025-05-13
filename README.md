@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+<p align="center">
+    <img alt="React Native Mono Template" src="https://repository-images.githubusercontent.com/981127624/2f1ecded-acaf-4799-985e-dc09c3a4c886" width="200" />
+</p>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<h1 align="center">
+  React Native Mono Template
+</h1>
 
-## Get started
+![expo](https://img.shields.io/github/package-json/dependency-version/vincenttran99/react-native-mono-template/expo?label=expo) ![react-native](https://img.shields.io/github/package-json/dependency-version/vincenttran99/react-native-mono-template/react-native?label=react-native) ![GitHub Repo stars](https://img.shields.io/github/stars/vincenttran99/react-native-mono-template) ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/vincenttran99/react-native-mono-template) ![GitHub issues](https://img.shields.io/github/issues/vincenttran99/react-native-mono-template) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/vincenttran99/react-native-mono-template)
 
-1. Install dependencies
+📱 A template for your next React Native project 👍, Focus on optimizing application performance: Expo, TypeScript, ReStyle, Flashlist, Legend list, Husky, Lint-Staged, react-navigation, react-query, react-hook-form, Lingui, I18n, v.v....
 
-   ```bash
-   npm install
-   ```
+> Welcome to the React Native Mono Template!
 
-2. Start the app
+## 🚀 Getting Started
 
-   ```bash
-    npx expo start
-   ```
+If you don't have much time to read. Check out the [documentation website](https://vincenttran99.github.io/react-native-mono-template/).
 
-In the output, you'll find options to open the app in a
+## 💡 Introduction
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+After working with React Native for many years, I've initiated dozens of projects with various architectures, standards, and technologies. This process, while rich in experience, has also been quite exhausting: each time starting a new project requires careful consideration of CLI choices, state management libraries, build tools, followed by manual configuration, testing, and bug fixing. I believe many colleagues have experienced this same "awkward" feeling.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Previously, I developed a template based on pure CLI and Redux Thunk, helping to quickly initialize an application skeleton. However, I realized the old template was no longer suitable: it simply "created an application quickly" but not necessarily "created a fast application" in terms of performance. For the vast majority of React Native projects and development teams, optimizing smooth experiences and minimizing latency—that is, building a truly fast application—remains a significant challenge.
 
-## Get a fresh project
+Therefore, I decided to rebuild a React Native Mono Template from scratch, focusing on two main objectives:
 
-When you're ready, run:
+1. **Fast in terms of effort**: providing ready-made Expo configurations, folder structure, code samples, useful tips and tricks, scripts, helpful automated processes, and many interesting components rarely seen elsewhere, allowing you to launch your project in just minutes.
 
-```bash
-npm run reset-project
-```
+2. **Fast in terms of performance**: integrating best practices, plugins, and optimization methods that I've distilled from blogs, videos, and real-world projects, helping your application run smoothly from the first launch.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+With accumulated experience and knowledge, this Mono Template will serve as a solid framework allowing you to focus on building features rather than struggling with configuration. Let's explore the highlights in the following sections!
 
-## Learn more
+## ⭐ Key Features
 
-To learn more about developing your project with Expo, look at the following resources:
+- 🚀 Performance optimization with numerous compiled techniques
+- ✅ Latest Expo SDK: Leverage the best of the Expo ecosystem while maintaining full control over your app
+- 🌐 Easy multilingual integration in under 30 seconds with Lingui, automatic translation of installed languages, no need to remember keys for strings as in some traditional methods
+- 🧩 Interesting components like multi-format text, collapsible/expandable text, URL preview, simple dividers, etc.
+- 🎉 TypeScript for enhanced code quality and bug prevention through static type checking
+- 💅 Customizable UI built with Shopify/restyle for maximum reusability and readable code
+- ⚙️ Multi-environment build support (Production, Staging, Development) using Expo configuration, usable for native environments as well
+- 🦊 Husky for Git Hooks: Automate your git hooks and enforce code standards
+- 💡 Clean project structure with Absolute Imports for easier code navigation and management
+- 💫 Auth flow implementation using Zustand for state management and react-native-mmkv for secure data storage
+- 🔥 React Query and axios for efficient data fetching and state management
+- 🧵 Robust form handling with react-hook-form for validation, plus keyboard handling
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Maintenance and Development
 
-## Join the community
+I am committed to continuously improving this template to build React Native applications even faster. To achieve this goal, I regularly add new features and fix any discovered bugs.
 
-Join our community of developers creating universal apps.
+If you want to stay updated with the latest developments in our starter kit, you can follow the repository or click the "⭐️" button. This will allow you to receive notifications whenever there's a new update.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+I value feedback and welcome new contributors to join me in improving it. If you're interested in participating in the project, please don't hesitate to open an issue or submit a pull request. I'm always looking for ways to make it more effective and useful for the React Native community. So, feel free to reach out and share your thoughts with me.
+
+## ❓ Frequently Asked Questions
+
+If you have any questions about the starter kit and want answers, please check the [Discussions page](https://github.com/vincenttran99/react-native-mono-template/discussions).
+
+## 🔖 License
+
+This project is MIT licensed.

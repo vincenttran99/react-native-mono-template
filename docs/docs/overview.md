@@ -39,7 +39,7 @@ With accumulated experience and knowledge, this Mono Template will serve as a so
 
 I am committed to continuously improving this template to build React Native applications even faster. To achieve this goal, I regularly add new features and fix any discovered bugs.
 
-If you want to stay updated with the latest developments in our starter kit, you can follow the repository or click the "star" button. This will allow you to receive notifications whenever there's a new update.
+If you want to stay updated with the latest developments in our starter kit, you can follow the repository or click the "⭐️" button. This will allow you to receive notifications whenever there's a new update.
 
 I value feedback and welcome new contributors to join me in improving it. If you're interested in participating in the project, please don't hesitate to open an issue or submit a pull request. I'm always looking for ways to make it more effective and useful for the React Native community. So, feel free to reach out and share your thoughts with me.
 
