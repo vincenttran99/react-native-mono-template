@@ -23,7 +23,7 @@ msgstr "{0} ảnh đã được chọn"
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
 
-#: src/screens/Introduction/base.screen.tsx:115
+#: src/screens/Introduction/base.screen.tsx:134
 msgid "BIcon"
 msgstr "Bicon"
 
@@ -31,35 +31,35 @@ msgstr "Bicon"
 msgid "Bỏ qua"
 msgstr "Bỏ qua"
 
-#: src/screens/Introduction/base.screen.tsx:123
+#: src/screens/Introduction/base.screen.tsx:142
 msgid "BPressable"
 msgstr "BPRESSABLE"
 
-#: src/screens/Introduction/base.screen.tsx:136
+#: src/screens/Introduction/base.screen.tsx:155
 msgid "BSurface"
 msgstr "BSurface"
 
-#: src/screens/Introduction/base.screen.tsx:43
+#: src/screens/Introduction/base.screen.tsx:62
 msgid "BText"
 msgstr "BText"
 
-#: src/screens/Introduction/base.screen.tsx:144
+#: src/screens/Introduction/base.screen.tsx:163
 msgid "Button"
 msgstr "Cái nút"
 
-#: src/screens/Introduction/base.screen.tsx:166
+#: src/screens/Introduction/base.screen.tsx:185
 msgid "Button outline"
 msgstr "Đề cương nút"
 
-#: src/screens/Introduction/base.screen.tsx:151
+#: src/screens/Introduction/base.screen.tsx:170
 msgid "Button primary"
 msgstr "Nút chính"
 
-#: src/screens/Introduction/base.screen.tsx:159
+#: src/screens/Introduction/base.screen.tsx:178
 msgid "Button secondary"
 msgstr "Nút thứ cấp"
 
-#: src/screens/Introduction/base.screen.tsx:106
+#: src/screens/Introduction/base.screen.tsx:125
 msgid "BView"
 msgstr "Bview"
 
@@ -76,16 +76,16 @@ msgstr "Cần cấp quyền"
 msgid "Cập nhật ngay"
 msgstr "Cập nhật ngay"
 
-#: src/screens/Introduction/base.screen.tsx:190
+#: src/screens/Introduction/base.screen.tsx:209
 msgid "Cat"
 msgstr "Con mèo"
 
-#: src/screens/Introduction/base.screen.tsx:206
+#: src/screens/Introduction/base.screen.tsx:225
 msgid "Checkbox"
 msgstr "Hộp kiểm"
 
-#: src/screens/Introduction/base.screen.tsx:182
-#: src/screens/Introduction/base.screen.tsx:184
+#: src/screens/Introduction/base.screen.tsx:201
+#: src/screens/Introduction/base.screen.tsx:203
 msgid "Chip"
 msgstr "Chip"
 
@@ -101,8 +101,8 @@ msgstr "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thi�
 msgid "Chụp lại"
 msgstr "Chụp lại"
 
-#: src/screens/Introduction/base.screen.tsx:209
-#: src/screens/Introduction/base.screen.tsx:217
+#: src/screens/Introduction/base.screen.tsx:228
+#: src/screens/Introduction/base.screen.tsx:236
 msgid "Coming soon"
 msgstr "Sắp ra mắt"
 
@@ -143,7 +143,7 @@ msgstr "Đang bảo trì hệ thống"
 msgid "Danh sách trống"
 msgstr "Danh sách trống"
 
-#: src/screens/Introduction/base.screen.tsx:196
+#: src/screens/Introduction/base.screen.tsx:215
 msgid "Divider"
 msgstr "Vách ngăn"
 
@@ -168,7 +168,7 @@ msgstr "Email không hợp lệ"
 msgid "Email should not be empty"
 msgstr "Email không nên trống"
 
-#: src/screens/Introduction/base.screen.tsx:55
+#: src/screens/Introduction/base.screen.tsx:74
 msgid "Extra large warning text"
 msgstr "Văn bản cảnh báo thêm lớn"
 
@@ -208,7 +208,7 @@ msgstr "Huỷ"
 msgid "Hủy"
 msgstr "Hủy"
 
-#: src/screens/Introduction/base.screen.tsx:171
+#: src/screens/Introduction/base.screen.tsx:190
 msgid "Icon Button"
 msgstr "Nút biểu tượng"
 
@@ -220,11 +220,11 @@ msgstr "Giới thiệu"
 msgid "Không được cấp quyền"
 msgstr "Không được cấp quyền"
 
-#: src/screens/Introduction/base.screen.tsx:52
+#: src/screens/Introduction/base.screen.tsx:71
 msgid "Large success text"
 msgstr "Văn bản thành công lớn"
 
-#: src/screens/Introduction/base.screen.tsx:33
+#: src/screens/Introduction/base.screen.tsx:52
 msgid "Lazy view"
 msgstr "Quan điểm lười biếng"
 
@@ -248,7 +248,7 @@ msgstr "Lỗi khi tải thêm"
 msgid "Mất kết nối mạng"
 msgstr "Mất kết nối mạng"
 
-#: src/screens/Introduction/base.screen.tsx:49
+#: src/screens/Introduction/base.screen.tsx:68
 msgid "Medium primary text"
 msgstr "Văn bản chính trung bình"
 
@@ -258,7 +258,7 @@ msgstr "Văn bản chính trung bình"
 msgid "Mở cài đặt"
 msgstr "Mở cài đặt"
 
-#: src/screens/Introduction/base.screen.tsx:60
+#: src/screens/Introduction/base.screen.tsx:79
 msgid "Multi text"
 msgstr "Nhiều văn bản"
 
@@ -296,11 +296,11 @@ msgstr "Phiên đăng nhập đã hết hạn"
 msgid "phút"
 msgstr "phút"
 
-#: src/screens/Introduction/base.screen.tsx:131
+#: src/screens/Introduction/base.screen.tsx:150
 msgid "Pressable"
 msgstr "Có thể ép"
 
-#: src/screens/Introduction/base.screen.tsx:96
+#: src/screens/Introduction/base.screen.tsx:115
 msgid "Preview URL"
 msgstr "Xem trước URL"
 
@@ -312,7 +312,7 @@ msgstr "Mục đích"
 msgid "Quyền tải xuống"
 msgstr "Quyền tải xuống"
 
-#: src/screens/Introduction/base.screen.tsx:214
+#: src/screens/Introduction/base.screen.tsx:233
 msgid "Radio"
 msgstr "Radio"
 
@@ -323,27 +323,27 @@ msgstr "Radio"
 msgid "see more"
 msgstr "Xem thêm"
 
-#: src/screens/Introduction/base.screen.tsx:46
+#: src/screens/Introduction/base.screen.tsx:65
 msgid "Small error text"
 msgstr "Văn bản lỗi nhỏ"
 
-#: src/screens/Introduction/base.screen.tsx:37
+#: src/screens/Introduction/base.screen.tsx:56
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Sự ngạc nhiên! Bạn đang xem văn bản này sau 2 giây"
 
-#: src/screens/Introduction/base.screen.tsx:139
+#: src/screens/Introduction/base.screen.tsx:158
 msgid "Surface"
 msgstr "Bề mặt"
 
-#: src/screens/Introduction/base.screen.tsx:73
+#: src/screens/Introduction/base.screen.tsx:92
 msgid "Text Ellipsis"
 msgstr "Văn bản Ellipsis"
 
-#: src/screens/Introduction/base.screen.tsx:83
+#: src/screens/Introduction/base.screen.tsx:102
 msgid "Text input"
 msgstr "Đầu vào văn bản"
 
-#: src/screens/Introduction/base.screen.tsx:77
+#: src/screens/Introduction/base.screen.tsx:96
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài."
 

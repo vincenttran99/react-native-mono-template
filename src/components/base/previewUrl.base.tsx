@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import { useMemo } from "react";
-import { Linking } from "react-native";
+import { GestureResponderEvent, Linking } from "react-native";
 
 import { getPreviewDataHelper, PreviewData } from "helpers/web.helper";
 import BText, { BTextProps } from "components/base/text.base";
@@ -14,9 +14,13 @@ enum EBPreviewUrl {
   Image = "BPreviewUrl.Image",
 }
 
-export interface IBPreviewUrlComponentProps extends BPressableProps {
+export interface IBPreviewUrlComponentProps
+  extends Omit<BPressableProps, "onPress"> {
   onPreviewDataFetched?: (previewData: PreviewData) => void;
-  previewData?: PreviewData;
+  onPress?: (
+    data: PreviewData | undefined,
+    event: GestureResponderEvent
+  ) => void;
   requestTimeout?: number;
   url: string;
 }
@@ -24,20 +28,15 @@ export interface IBPreviewUrlComponentProps extends BPressableProps {
 const BPreviewUrlComponent = memo(
   ({
     onPreviewDataFetched,
-    previewData,
     requestTimeout = 5000,
     url,
     children,
     ...props
   }: IBPreviewUrlComponentProps) => {
-    const [data, setData] = useState(previewData);
+    const [data, setData] = useState<PreviewData>();
 
     useEffect(() => {
       let isCancelled = false;
-      if (previewData) {
-        setData(previewData);
-        return;
-      }
 
       const fetchData = async () => {
         setData(undefined);
@@ -56,11 +55,16 @@ const BPreviewUrlComponent = memo(
       return () => {
         isCancelled = true;
       };
-    }, [onPreviewDataFetched, previewData, requestTimeout, url]);
+    }, [onPreviewDataFetched, requestTimeout, url]);
 
-    const handlePress = () =>
-      data?.link &&
-      Linking.openURL(data.link).catch(() => console.log("ljafn"));
+    const handlePress = (event: GestureResponderEvent) => {
+      if (typeof props.onPress === "function") {
+        props.onPress(data, event);
+      } else {
+        if (data?.link)
+          Linking.openURL(data.link).catch(() => console.log("ljafn"));
+      }
+    };
 
     const ContentPreview = useMemo(
       () =>
@@ -76,7 +80,7 @@ const BPreviewUrlComponent = memo(
     );
 
     return (
-      <BPressable onPress={handlePress} {...props}>
+      <BPressable {...props} onPress={handlePress}>
         {ContentPreview}
       </BPressable>
     );
