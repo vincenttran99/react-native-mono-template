@@ -3,8 +3,8 @@ import { useMemo } from "react";
 import { Linking } from "react-native";
 
 import { getPreviewDataHelper, PreviewData } from "helpers/web.helper";
-import BText from "components/base/text.base";
-import BImage from "components/base/image.base";
+import BText, { BTextProps } from "components/base/text.base";
+import BImage, { TBImageProps } from "components/base/image.base";
 import { renderSpecialElementHelper } from "helpers/system.helper";
 import BPressable, { BPressableProps } from "./pressable.base";
 
@@ -83,19 +83,25 @@ const BPreviewUrlComponent = memo(
   }
 );
 
-const Title = (props: Omit<React.ComponentProps<typeof BText>, "children">) => (
-  <BText children={""} {...props} />
+const Title = ({
+  children,
+  placeholder,
+  ...props
+}: BTextProps & { placeholder?: string }) => (
+  <BText children={children || placeholder || ""} {...props} />
 );
 Title.displayName = EBPreviewUrl.Title;
 
-const Description = (
-  props: Omit<React.ComponentProps<typeof BText>, "children">
-) => <BText children={""} {...props} />;
+const Description = ({
+  children,
+  placeholder,
+  ...props
+}: BTextProps & { placeholder?: string }) => (
+  <BText children={children || placeholder || ""} {...props} />
+);
 Description.displayName = EBPreviewUrl.Description;
 
-const Image = (props: React.ComponentProps<typeof BImage>) => (
-  <BImage {...props} />
-);
+const Image = (props: TBImageProps) => <BImage {...props} />;
 Image.displayName = EBPreviewUrl.Image;
 
 const BPreviewUrl = Object.assign(BPreviewUrlComponent, {

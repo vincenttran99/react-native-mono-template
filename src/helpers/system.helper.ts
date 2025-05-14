@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
-import React from "react";
+import { Children, cloneElement, isValidElement } from "react";
 import { Dimensions } from "react-native";
 import DeviceInfo from "react-native-device-info";
 
@@ -78,9 +78,7 @@ export function sleep(ms: number) {
  * Recursively processes and renders special elements based on given filters and properties.
  *
  * @param {React.ReactNode} children - The children elements to be rendered.
- * @param {(string | boolean)[]} [renderOnly] - The list of element display names or booleans to render only.
- * @param {{ [key: string]: string }} [props={}] - Additional properties to pass to the children elements.
- *
+ * @param {Object} props - Additional properties to pass to the children elements.
  * @returns {React.ReactNode[]} - The filtered and modified children elements.
  */
 export function renderSpecialElementHelper({
@@ -90,23 +88,28 @@ export function renderSpecialElementHelper({
   children: React.ReactNode;
   props?: { [key: string]: { [key: string]: any } };
 }): React.ReactNode[] {
-  let renderOnly = Object.keys(props);
+  const renderOnly = Object.keys(props);
+
   // Recursive function to process each child
   const processChild = (child: React.ReactNode): React.ReactNode => {
-    // If child is an array, recursively process each element
-    // @ts-ignore
-    if (React.Children.toArray(child.props.children).length > 0) {
-      // @ts-ignore
-      return React.cloneElement(
+    // If child is a valid element with children, recursively process them
+    if (
+      isValidElement(child) &&
+      Children.toArray(child.props.children).length > 0
+    ) {
+      return cloneElement(
         child,
         child.props,
-        React.Children.toArray(child.props.children).map(processChild)
+        Children.toArray((child as React.ReactElement).props.children).map(
+          processChild
+        )
       );
     }
 
     // If child is a valid React element
-    if (React.isValidElement(child)) {
-      if (!React.isValidElement(child)) {
+    if (isValidElement(child)) {
+      // Redundant check - can be removed
+      if (!isValidElement(child)) {
         return child;
       }
 
@@ -118,8 +121,8 @@ export function renderSpecialElementHelper({
         return null;
       }
 
-      // Recursively process the child elements
-      return React.cloneElement(child, props?.[displayName]);
+      // Apply props to the child element
+      return cloneElement(child, props?.[displayName]);
     }
 
     // Return the original child if it is not a valid React element
@@ -127,5 +130,5 @@ export function renderSpecialElementHelper({
   };
 
   // Convert children to an array and process each child
-  return React.Children.toArray(children).map(processChild);
+  return Children.toArray(children).map(processChild);
 }

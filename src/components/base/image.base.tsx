@@ -6,12 +6,12 @@ import { StyleSheet } from "react-native";
 // You can generate in https://blurha.sh/
 const BLUR_HASH = { blurhash: "L9B~;g008w$_.TM_r=xuvKHqg%.m" };
 
-interface IBImageProps extends React.ComponentProps<typeof Image> {
+export type TBImageProps = React.ComponentProps<typeof Image> & {
   width?: number;
   height?: number;
   round?: boolean;
   hasBlur?: boolean;
-}
+};
 
 export default function BImage({
   width,
@@ -21,7 +21,7 @@ export default function BImage({
   style,
   transition,
   ...props
-}: IBImageProps): React.JSX.Element {
+}: TBImageProps): React.JSX.Element {
   const styleImage = useMemo(() => {
     let currentWidth = width || StyleSheet.flatten(style || {})?.width;
     let currentHeight =
