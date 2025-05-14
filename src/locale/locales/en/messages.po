@@ -23,7 +23,7 @@ msgstr "{0} The image has been selected"
 msgid "Base components"
 msgstr "Base components"
 
-#: src/screens/Introduction/base.screen.tsx:134
+#: src/screens/Introduction/base.screen.tsx:115
 msgid "BIcon"
 msgstr "BIcon"
 
@@ -31,35 +31,35 @@ msgstr "BIcon"
 msgid "Bỏ qua"
 msgstr "Skip"
 
-#: src/screens/Introduction/base.screen.tsx:142
+#: src/screens/Introduction/base.screen.tsx:123
 msgid "BPressable"
 msgstr "BPressable"
 
-#: src/screens/Introduction/base.screen.tsx:155
+#: src/screens/Introduction/base.screen.tsx:136
 msgid "BSurface"
 msgstr "BSurface"
 
-#: src/screens/Introduction/base.screen.tsx:62
+#: src/screens/Introduction/base.screen.tsx:43
 msgid "BText"
 msgstr "BText"
 
-#: src/screens/Introduction/base.screen.tsx:163
+#: src/screens/Introduction/base.screen.tsx:144
 msgid "Button"
 msgstr "Button"
 
-#: src/screens/Introduction/base.screen.tsx:185
+#: src/screens/Introduction/base.screen.tsx:166
 msgid "Button outline"
 msgstr "Button outline"
 
-#: src/screens/Introduction/base.screen.tsx:170
+#: src/screens/Introduction/base.screen.tsx:151
 msgid "Button primary"
 msgstr "Button primary"
 
-#: src/screens/Introduction/base.screen.tsx:178
+#: src/screens/Introduction/base.screen.tsx:159
 msgid "Button secondary"
 msgstr "Button secondary"
 
-#: src/screens/Introduction/base.screen.tsx:125
+#: src/screens/Introduction/base.screen.tsx:106
 msgid "BView"
 msgstr "BView"
 
@@ -76,16 +76,16 @@ msgstr "Need to grant rights"
 msgid "Cập nhật ngay"
 msgstr "Update now"
 
-#: src/screens/Introduction/base.screen.tsx:209
+#: src/screens/Introduction/base.screen.tsx:190
 msgid "Cat"
 msgstr "Cat"
 
-#: src/screens/Introduction/base.screen.tsx:225
+#: src/screens/Introduction/base.screen.tsx:206
 msgid "Checkbox"
 msgstr "Checkbox"
 
-#: src/screens/Introduction/base.screen.tsx:201
-#: src/screens/Introduction/base.screen.tsx:203
+#: src/screens/Introduction/base.screen.tsx:182
+#: src/screens/Introduction/base.screen.tsx:184
 msgid "Chip"
 msgstr "Chip"
 
@@ -101,8 +101,8 @@ msgstr "This function requires the right to load and save the filter to your dev
 msgid "Chụp lại"
 msgstr "Capture"
 
-#: src/screens/Introduction/base.screen.tsx:228
-#: src/screens/Introduction/base.screen.tsx:236
+#: src/screens/Introduction/base.screen.tsx:209
+#: src/screens/Introduction/base.screen.tsx:217
 msgid "Coming soon"
 msgstr "Coming soon"
 
@@ -143,7 +143,7 @@ msgstr "System maintenance"
 msgid "Danh sách trống"
 msgstr "Drum list"
 
-#: src/screens/Introduction/base.screen.tsx:215
+#: src/screens/Introduction/base.screen.tsx:196
 msgid "Divider"
 msgstr "Divider"
 
@@ -168,7 +168,7 @@ msgstr "Email is not valid"
 msgid "Email should not be empty"
 msgstr "Email should not be empty"
 
-#: src/screens/Introduction/base.screen.tsx:74
+#: src/screens/Introduction/base.screen.tsx:55
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
 
@@ -208,7 +208,7 @@ msgstr "Cancel"
 msgid "Hủy"
 msgstr "Cancel"
 
-#: src/screens/Introduction/base.screen.tsx:190
+#: src/screens/Introduction/base.screen.tsx:171
 msgid "Icon Button"
 msgstr "Icon Button"
 
@@ -220,11 +220,11 @@ msgstr "Introduce"
 msgid "Không được cấp quyền"
 msgstr "Unprecedented"
 
-#: src/screens/Introduction/base.screen.tsx:71
+#: src/screens/Introduction/base.screen.tsx:52
 msgid "Large success text"
 msgstr "Large success text"
 
-#: src/screens/Introduction/base.screen.tsx:52
+#: src/screens/Introduction/base.screen.tsx:33
 msgid "Lazy view"
 msgstr "Lazy view"
 
@@ -248,7 +248,7 @@ msgstr "Error when downloading more"
 msgid "Mất kết nối mạng"
 msgstr "Lost network connection"
 
-#: src/screens/Introduction/base.screen.tsx:68
+#: src/screens/Introduction/base.screen.tsx:49
 msgid "Medium primary text"
 msgstr "Medium primary text"
 
@@ -258,7 +258,7 @@ msgstr "Medium primary text"
 msgid "Mở cài đặt"
 msgstr "Open settings"
 
-#: src/screens/Introduction/base.screen.tsx:79
+#: src/screens/Introduction/base.screen.tsx:60
 msgid "Multi text"
 msgstr "Multi text"
 
@@ -296,11 +296,11 @@ msgstr "The login session has expired"
 msgid "phút"
 msgstr "minute"
 
-#: src/screens/Introduction/base.screen.tsx:150
+#: src/screens/Introduction/base.screen.tsx:131
 msgid "Pressable"
 msgstr "Pressable"
 
-#: src/screens/Introduction/base.screen.tsx:115
+#: src/screens/Introduction/base.screen.tsx:96
 msgid "Preview URL"
 msgstr "Preview URL"
 
@@ -312,7 +312,7 @@ msgstr "Purpose"
 msgid "Quyền tải xuống"
 msgstr "Downloading"
 
-#: src/screens/Introduction/base.screen.tsx:233
+#: src/screens/Introduction/base.screen.tsx:214
 msgid "Radio"
 msgstr "Radio"
 
@@ -323,27 +323,27 @@ msgstr "Radio"
 msgid "see more"
 msgstr "see more"
 
-#: src/screens/Introduction/base.screen.tsx:65
+#: src/screens/Introduction/base.screen.tsx:46
 msgid "Small error text"
 msgstr "Small error text"
 
-#: src/screens/Introduction/base.screen.tsx:56
+#: src/screens/Introduction/base.screen.tsx:37
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Suprise! You are seeing this text after 2 seconds"
 
-#: src/screens/Introduction/base.screen.tsx:158
+#: src/screens/Introduction/base.screen.tsx:139
 msgid "Surface"
 msgstr "Surface"
 
-#: src/screens/Introduction/base.screen.tsx:92
+#: src/screens/Introduction/base.screen.tsx:73
 msgid "Text Ellipsis"
 msgstr "Text Ellipsis"
 
-#: src/screens/Introduction/base.screen.tsx:102
+#: src/screens/Introduction/base.screen.tsx:83
 msgid "Text input"
 msgstr "Text input"
 
-#: src/screens/Introduction/base.screen.tsx:96
+#: src/screens/Introduction/base.screen.tsx:77
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 

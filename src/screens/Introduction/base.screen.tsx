@@ -18,7 +18,7 @@ import BTextMulti from "components/base/multiText.base";
 import BTextEllipsis from "components/base/textEllipsis/textEllipsis.base";
 import BPreviewUrl from "components/base/previewUrl.base";
 import BTextInput from "components/base/textInput.base";
-import UrlPreview from "rn-url-preview";
+
 export default function BaseScreen() {
   const { _ } = useLingui();
 
@@ -28,25 +28,6 @@ export default function BaseScreen() {
       paddingHorizontal="xl"
       contentContainerStyle={styles.contentContainerStyle}
     >
-      <UrlPreview
-        url="https://github.com/"
-        style={{
-          backgroundColor: "gainsboro",
-          borderRadius: 16,
-          padding: 12,
-          marginVertical: 12,
-          gap: 12,
-        }}
-      >
-        <UrlPreview.Image
-          style={{ width: "100%", height: 200, borderRadius: 12 }}
-        />
-        <UrlPreview.Title
-          style={{ fontWeight: "bold", fontSize: 18, color: "blue" }}
-        />
-        <UrlPreview.Description />
-      </UrlPreview>
-
       {/* Lazy view */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Lazy view`)}
