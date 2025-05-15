@@ -188,8 +188,8 @@ msgstr "giờ"
 msgid "Hello"
 msgstr "Xin chào"
 
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:127
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:134
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:289
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:283
 msgid "hide"
 msgstr "trốn"
 
@@ -316,10 +316,10 @@ msgstr "Quyền tải xuống"
 msgid "Radio"
 msgstr "Radio"
 
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:54
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:127
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:59
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:134
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:97
+#: src/components/base/textEllipsis/textEllipsis.base.tsx:290
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:97
+#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:284
 msgid "see more"
 msgstr "Xem thêm"
 

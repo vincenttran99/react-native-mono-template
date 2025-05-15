@@ -1,5 +1,5 @@
 import { createTheme } from "@shopify/restyle";
-import { Radius, Space } from "./sizes.constant";
+import { FontSize, Radius, Space } from "./sizes.constant";
 import { mhs, mvs } from "helpers/system.helper";
 
 export const COLORS = {
@@ -57,57 +57,57 @@ export const LIGHT_THEME = createTheme({
   },
   textVariants: {
     xxxxs: {
-      fontSize: mhs(4, 0.3),
+      fontSize: FontSize.xxxxs,
       letterSpacing: mhs(0.4, 0.3),
       lineHeight: mvs(5, 0.1),
     },
     xxxs: {
-      fontSize: mhs(8, 0.3),
+      fontSize: FontSize.xxxs,
       letterSpacing: mhs(0.4, 0.3),
       lineHeight: mvs(10, 0.1),
     },
     xxs: {
-      fontSize: mhs(10, 0.3),
+      fontSize: FontSize.xxs,
       letterSpacing: mhs(0.4, 0.3),
       lineHeight: mvs(13, 0.1),
     },
     xs: {
-      fontSize: mhs(12, 0.3),
+      fontSize: FontSize.xs,
       letterSpacing: mhs(0.4, 0.3),
       lineHeight: mvs(16, 0.1),
     },
     sm: {
-      fontSize: mhs(14, 0.3),
+      fontSize: FontSize.sm,
       letterSpacing: mhs(0.25, 0.3),
       lineHeight: mvs(20, 0.1),
     },
     md: {
-      fontSize: mhs(16, 0.3),
+      fontSize: FontSize.md,
       letterSpacing: mhs(0.15, 0.3),
       lineHeight: mvs(24, 0.1),
     },
     lg: {
-      fontSize: mhs(18, 0.3),
+      fontSize: FontSize.lg,
       letterSpacing: mhs(0.15, 0.3),
       lineHeight: mvs(25, 0.1),
     },
     xl: {
-      fontSize: mhs(20, 0.3),
+      fontSize: FontSize.xl,
       letterSpacing: mhs(0.07, 0.3),
       lineHeight: mvs(26, 0.1),
     },
     xxl: {
-      fontSize: mhs(24, 0.3),
+      fontSize: FontSize.xxl,
       letterSpacing: mhs(0, 0.3),
       lineHeight: mvs(32, 0.1),
     },
     xxxl: {
-      fontSize: mhs(30, 0.3),
+      fontSize: FontSize.xxxl,
       letterSpacing: mhs(0, 0.3),
       lineHeight: mvs(38, 0.1),
     },
     xxxxl: {
-      fontSize: mhs(42, 0.3),
+      fontSize: FontSize.xxxxl,
       letterSpacing: mhs(0, 0.3),
       lineHeight: mvs(51, 0.1),
     },
