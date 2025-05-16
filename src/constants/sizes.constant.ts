@@ -7,6 +7,7 @@ export const HIT_SLOP_EXPAND_10 = { top: 10, left: 10, right: 10, bottom: 10 };
  * Fontsize for text and icon
  */
 export const FontSize = {
+  none: mhs(2, 0.3),
   xxxxs: mhs(4, 0.3),
   xxxs: mhs(8, 0.3),
   xxs: mhs(10, 0.3),
@@ -147,6 +148,7 @@ export const MVS = {
 };
 
 export const Radius = {
+  none: 0,
   xxxxs: MHS._2,
   xxxs: MHS._4,
   xxs: MHS._6,

@@ -8,11 +8,11 @@ import Constants from "expo-constants";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { useNetInfo } from "@react-native-community/netinfo";
 import { NavigationContainer } from "@react-navigation/native";
-import BLazy from "components/base/lazy.base";
-import LoadingGlobalComponent from "components/global/loading.global.component";
-import ModalNetworkGlobalComponent from "components/global/modal.network.global.component";
-import ModalMediaGlobalComponent from "components/global/modalMedia.global.component";
-import UpdateSystemGlobalComponent from "components/global/update.system.global.component";
+import BLazy from "components/base/base.lazy";
+import GlobalLoadingComponent from "components/global/global.loading.component";
+import GlobalModalNetworkComponent from "components/global/global.modal.network.component";
+import GlobalModalMediaComponent from "components/global/global.modal.media.component";
+import GlobalUpdateSystemComponent from "components/global/global.modal.update.component";
 import {
   NAVIGATION_AUTH_NAVIGATION,
   NAVIGATION_MAIN_NAVIGATION,
@@ -22,19 +22,19 @@ import { DARK_THEME, LIGHT_THEME } from "constants/theme.constant";
 
 import MainNavigator from "navigation/main.navigation";
 import AuthNavigation from "navigation/auth.navigation";
-import BottomSheetDialogGlobalComponent from "components/global/bottomSheetDialog.global.component";
+import GlobalBottomSheetDialogComponent from "components/global/global.bottomSheetDialog.component";
 import { useSystemStore } from "store/system.store";
 import { ThemeProvider } from "@shopify/restyle";
 import { QueryProvider } from "api/reactQuery";
 import { useAuthStore } from "store/auth.store";
-import DialogGlobalComponent from "components/global/dialog.global.component";
+import GlobalDialogComponent from "components/global/global.dialog.component";
 import FlashMessage from "react-native-flash-message";
 import {
   BottomSheetDialogRef,
   DialogRef,
   LoadingRef,
   ModalMediaGlobalComponentRef,
-} from "helpers/globalHelper";
+} from "helpers/global.helper";
 import {
   getRouteNameNavHelper,
   navigationRef,
@@ -176,15 +176,15 @@ export default function AppNavigation() {
             </NavigationContainer>
 
             <BLazy timeRender={1500} haveIndicator={false}>
-              <BottomSheetDialogGlobalComponent ref={BottomSheetDialogRef} />
-              <LoadingGlobalComponent ref={LoadingRef} />
-              <ModalMediaGlobalComponent ref={ModalMediaGlobalComponentRef} />
-              <DialogGlobalComponent ref={DialogRef} />
+              <GlobalBottomSheetDialogComponent ref={BottomSheetDialogRef} />
+              <GlobalLoadingComponent ref={LoadingRef} />
+              <GlobalModalMediaComponent ref={ModalMediaGlobalComponentRef} />
+              <GlobalDialogComponent ref={DialogRef} />
             </BLazy>
             <FlashMessage position={"top"} />
-            <ModalNetworkGlobalComponent />
+            <GlobalModalNetworkComponent />
           </BottomSheetModalProvider>
-          <UpdateSystemGlobalComponent />
+          <GlobalUpdateSystemComponent />
         </QueryProvider>
       </ThemeProvider>
     </KeyboardProvider>

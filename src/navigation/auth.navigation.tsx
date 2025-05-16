@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import DefaultAppbarComponent from "components/appbar/default.appbar.component";
+import AppbarDefaultComponent from "components/appbar/appbar.default.component";
 import {
   NAVIGATION_LOGIN_SCREEN,
   NAVIGATION_WELCOME_SCREEN,
@@ -17,7 +17,7 @@ const AuthNavigator = () => {
   return (
     <StackNavigator.Navigator
       screenOptions={{
-        header: (props) => <DefaultAppbarComponent {...props} />,
+        header: (props) => <AppbarDefaultComponent {...props} />,
       }}
       initialRouteName={
         isFirstOpen ? NAVIGATION_WELCOME_SCREEN : NAVIGATION_LOGIN_SCREEN

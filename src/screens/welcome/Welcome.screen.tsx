@@ -11,14 +11,14 @@ import { navigateNavHelper } from "helpers/navigation.helper";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import { useSystemStore } from "store/system.store";
-import BView from "components/base/view.base";
+import BView from "components/base/base.view";
 import { NAVIGATION_LOGIN_SCREEN } from "constants/navigation.constant";
 import { MHS } from "constants/sizes.constant";
-import BSafeAreaView from "components/base/safeAreaView.base";
-import BImage from "components/base/image.base";
+import BSafeAreaView from "components/base/base.safeAreaView";
+import BImage from "components/base/base.image";
 import { Device } from "constants/device.constant";
-import BText from "components/base/text.base";
-import BButton from "components/base/button.base";
+import BText from "components/base/base.text";
+import BButton from "components/base/base.button";
 
 export function WelcomeScreen() {
   const setIsFirtOpen = useSystemStore.getState().setIsFirstOpen;

@@ -5,11 +5,11 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useSystemStore } from "store/system.store";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "components/base/view.base";
-import BText from "components/base/text.base";
+import BView from "components/base/base.view";
+import BText from "components/base/base.text";
 import { LANGUAGES_MAP_CODE2 } from "constants/languages.constant";
 import { Pressable } from "react-native-gesture-handler";
-import { NAVIGATION_LANGUAGE_SETTINGS_SCREEN } from "constants/navigation.constant";
+import { NAVIGATION_SETTINGS_LANGUAGE_SCREEN } from "constants/navigation.constant";
 import { navigateNavHelper } from "helpers/navigation.helper";
 
 const SettingsScreen = () => {
@@ -34,7 +34,7 @@ const SettingsScreen = () => {
 
         {/* Face ID */}
         <Pressable
-          onPress={() => navigateNavHelper(NAVIGATION_LANGUAGE_SETTINGS_SCREEN)}
+          onPress={() => navigateNavHelper(NAVIGATION_SETTINGS_LANGUAGE_SCREEN)}
         >
           <BView style={styles.optionRow}>
             <BText style={styles.optionText}>{_(msg`Ngôn ngữ`)}</BText>

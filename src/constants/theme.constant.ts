@@ -56,6 +56,11 @@ export const LIGHT_THEME = createTheme({
     ...Radius,
   },
   textVariants: {
+    none: {
+      fontSize: FontSize.none,
+      letterSpacing: mhs(0.3, 0.3),
+      lineHeight: mvs(3, 0.1),
+    },
     xxxxs: {
       fontSize: FontSize.xxxxs,
       letterSpacing: mhs(0.4, 0.3),

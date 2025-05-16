@@ -2,13 +2,13 @@ import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import { Camera } from "react-native-vision-camera";
 
-import BText from "components/base/text.base";
+import BText from "components/base/base.text";
 import { Linking, PermissionsAndroid } from "react-native";
 import { Device } from "constants/device.constant";
 import { Permission, requestMultiple, RESULTS } from "react-native-permissions";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
-import { showDialog, showErrorMessage } from "./globalHelper";
+import { showDialog, showErrorMessage } from "./global.helper";
 
 dayjs.extend(isBetween);
 

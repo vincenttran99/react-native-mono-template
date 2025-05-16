@@ -7,13 +7,13 @@ import React, {
 } from "react";
 import { StyleSheet } from "react-native";
 
-import BView from "components/base/view.base";
+import BView from "components/base/base.view";
 import { useDogListQuery } from "api/dog/dog.queries";
 import { IDog } from "models/dog.model";
 import { useInfiniteList } from "helpers/hooks/list.hook";
 import { MHS } from "constants/sizes.constant";
 import ItemDog from "./components/item.dog";
-import BLegendList from "components/base/legendList.base";
+import BLegendList from "components/base/base.legendList";
 
 export default function DogScreen() {
   const { items, onRefresh, isRefetching, onEndReached } =

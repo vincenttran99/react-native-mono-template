@@ -6,7 +6,7 @@ import {
   showErrorMessage,
   showGlobalLoading,
   showSuccessMessage,
-} from "./globalHelper";
+} from "./global.helper";
 import { removeSpecialCharactersHelper } from "./string.helper";
 
 export type HandleProps<T> = {

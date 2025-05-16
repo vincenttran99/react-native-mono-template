@@ -5,10 +5,10 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { NavigationRoute, ParamListBase } from "@react-navigation/native";
-import BIcon from "components/base/icon.base";
-import BPressable from "components/base/pressable.base";
-import BSurface from "components/base/surface.base";
-import BText from "components/base/text.base";
+import BIcon from "components/base/base.icon";
+import BPressable from "components/base/base.pressable";
+import BSurface from "components/base/base.surface";
+import BText from "components/base/base.text";
 import {
   NAVIGATION_INTRODUCTION_SCREEN,
   NAVIGATION_DOG_SCREEN,

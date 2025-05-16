@@ -16,8 +16,8 @@ import Reanimated, {
   useSharedValue,
 } from "react-native-reanimated";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import BImage from "components/base/image.base";
-import BIconButton from "components/base/iconButton.base";
+import BImage from "components/base/base.image";
+import BIconButton from "components/base/base.iconButton";
 import { MHS } from "constants/sizes.constant";
 
 import {
@@ -26,13 +26,13 @@ import {
   s_width100,
 } from "constants/styles.constant";
 import { Device } from "constants/device.constant";
-import BButton from "components/base/button.base";
+import BButton from "components/base/base.button";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 
-import { showErrorMessage } from "helpers/globalHelper";
+import { showErrorMessage } from "helpers/global.helper";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "../view.base";
+import BView from "../base.view";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const CameraSystemComponent = React.forwardRef(
@@ -149,7 +149,6 @@ const CameraSystemComponent = React.forwardRef(
           {photo ? (
             <BView style={styles.previewContainer}>
               <BImage
-                needConvertLink={false}
                 height={Device.height}
                 width={Device.width}
                 contentFit={"cover"}

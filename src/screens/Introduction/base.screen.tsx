@@ -1,23 +1,23 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import BText from "components/base/text.base";
-import BView from "components/base/view.base";
+import BText from "components/base/base.text";
+import BView from "components/base/base.view";
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
-import BScrollview from "components/base/scrollview.base";
+import BScrollview from "components/base/base.scrollview";
 import { MHS } from "constants/sizes.constant";
-import BIcon from "components/base/icon.base";
-import BSurface from "components/base/surface.base";
-import BPressable from "components/base/pressable.base";
-import BButton from "components/base/button.base";
-import BIconButton from "components/base/iconButton.base";
-import BChip from "components/base/chip.base";
-import BDivider from "components/base/divider.base";
-import BLazy from "components/base/lazy.base";
-import BTextMulti from "components/base/multiText.base";
-import BTextEllipsis from "components/base/textEllipsis/textEllipsis.base";
-import BPreviewUrl from "components/base/previewUrl.base";
-import BTextInput from "components/base/textInput.base";
+import BIcon from "components/base/base.icon";
+import BSurface from "components/base/base.surface";
+import BPressable from "components/base/base.pressable";
+import BButton from "components/base/base.button";
+import BIconButton from "components/base/base.iconButton";
+import BChip from "components/base/base.chip";
+import BDivider from "components/base/base.divider";
+import BLazy from "components/base/base.lazy";
+import BTextMulti from "components/base/base.multiText";
+import BTextEllipsis from "components/base/textEllipsis/base.textEllipsis";
+import BTextInput from "components/base/base.textInput";
+import BWebUrlPreviewComponent from "components/web/web.urlPreview.component";
 
 export default function BaseScreen() {
   const { _ } = useLingui();
@@ -95,11 +95,11 @@ export default function BaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Preview URL`)}
       </BText>
-      <BPreviewUrl url="https://github.com/" gap="md">
-        <BPreviewUrl.Image width={MHS._220} height={MHS._100} />
-        <BPreviewUrl.Title fontWeight={"bold"} />
-        <BPreviewUrl.Description />
-      </BPreviewUrl>
+      <BWebUrlPreviewComponent url="https://github.com/" gap="md">
+        <BWebUrlPreviewComponent.Image width={MHS._220} height={MHS._100} />
+        <BWebUrlPreviewComponent.Title fontWeight={"bold"} />
+        <BWebUrlPreviewComponent.Description />
+      </BWebUrlPreviewComponent>
 
       {/* View */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">

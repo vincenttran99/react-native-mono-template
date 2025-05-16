@@ -6,7 +6,7 @@ import { openSettings, RESULTS } from "react-native-permissions";
 import { PERMISSION } from "constants/permission.constant";
 
 import React from "react";
-import BText from "components/base/text.base";
+import BText from "components/base/base.text";
 import { PhotoFile } from "react-native-vision-camera";
 import { PhotoIdentifier } from "@react-native-camera-roll/camera-roll";
 import type { Orientation } from "react-native-vision-camera/src/types/Orientation";
@@ -17,7 +17,7 @@ import {
 } from "expo-file-system";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
-import { hideGlobalLoading, showDialog } from "./globalHelper";
+import { hideGlobalLoading, showDialog } from "./global.helper";
 import { requestPermissionHelper } from "./permission.helper";
 
 export const FOLDER_CACHE = cacheDirectory + "other/";

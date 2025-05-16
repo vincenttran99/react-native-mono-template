@@ -1,15 +1,15 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import BText from "components/base/text.base";
+import BText from "components/base/base.text";
 import { MHS } from "constants/sizes.constant";
-import BView from "components/base/view.base";
-import BIcon from "components/base/icon.base";
+import BView from "components/base/base.view";
+import BIcon from "components/base/base.icon";
 import { IDog } from "models/dog.model";
-import BSurface from "components/base/surface.base";
-import BImage from "components/base/image.base";
+import BSurface from "components/base/base.surface";
+import BImage from "components/base/base.image";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BTextMulti from "components/base/multiText.base";
+import BTextMulti from "components/base/base.multiText";
 
 export default function ItemDog({ item }: { item: IDog }) {
   const {

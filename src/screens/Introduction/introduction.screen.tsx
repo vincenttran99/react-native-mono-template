@@ -1,15 +1,15 @@
 import React, { useCallback } from "react";
 import { MHS } from "constants/sizes.constant";
-import BText from "components/base/text.base";
+import BText from "components/base/base.text";
 
-import BView from "components/base/view.base";
+import BView from "components/base/base.view";
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
-import BFlashList from "components/base/flashList.base";
-import BDivider from "components/base/divider.base";
-import BSafeAreaView from "components/base/safeAreaView.base";
+import BFlashList from "components/base/base.flashList";
+import BDivider from "components/base/base.divider";
+import BSafeAreaView from "components/base/base.safeAreaView";
 import { NAVIGATION_BASE_SCREEN } from "constants/navigation.constant";
-import BPressable from "components/base/pressable.base";
+import BPressable from "components/base/base.pressable";
 import { navigateNavHelper } from "helpers/navigation.helper";
 
 export default function IntroductionScreen() {

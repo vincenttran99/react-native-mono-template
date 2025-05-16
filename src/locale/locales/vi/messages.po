@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. placeholder {0}: field?.value?.length
-#: src/components/form/imageSelect.form.component.tsx:345
+#: src/components/form/form.select.image.tsx:343
 msgid "{0} ảnh đã được chọn"
 msgstr "{0} ảnh đã được chọn"
 
@@ -27,7 +27,7 @@ msgstr "Các thành phần cơ sở"
 msgid "BIcon"
 msgstr "Bicon"
 
-#: src/components/global/bottomSheetDialog.global.component.tsx:175
+#: src/components/global/global.bottomSheetDialog.component.tsx:179
 msgid "Bỏ qua"
 msgstr "Bỏ qua"
 
@@ -71,8 +71,8 @@ msgstr "Cài đặt"
 msgid "Cần cấp quyền"
 msgstr "Cần cấp quyền"
 
-#: src/components/global/update.system.global.component.tsx:34
-#: src/components/global/update.system.global.component.tsx:102
+#: src/components/global/global.modal.update.component.tsx:34
+#: src/components/global/global.modal.update.component.tsx:102
 msgid "Cập nhật ngay"
 msgstr "Cập nhật ngay"
 
@@ -89,7 +89,7 @@ msgstr "Hộp kiểm"
 msgid "Chip"
 msgstr "Chip"
 
-#: src/components/form/imageSelect.form.component.tsx:324
+#: src/components/form/form.select.image.tsx:322
 msgid "Chọn ảnh"
 msgstr "Chọn ảnh"
 
@@ -97,7 +97,7 @@ msgstr "Chọn ảnh"
 msgid "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thiết bị của bạn"
 msgstr "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thiết bị của bạn"
 
-#: src/components/base/system/camera.system.component.tsx:161
+#: src/components/base/system/camera.system.component.tsx:160
 msgid "Chụp lại"
 msgstr "Chụp lại"
 
@@ -110,36 +110,36 @@ msgstr "Sắp ra mắt"
 msgid "Continue"
 msgstr "Tiếp tục"
 
-#: src/screens/logsBugFileStorage/logsBug.screen.tsx:81
-#: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:53
-#: src/screens/logsBugFileStorage/components/item.bug.tsx:36
+#: src/screens/logs/logs.list.screen.tsx:81
+#: src/screens/logs/logs.detail.screen.tsx:53
+#: src/screens/logs/components/logs.list.item.tsx:36
 msgid "Đã cập nhật"
 msgstr "Đã cập nhật"
 
-#: src/components/list/defaultError.list.component.tsx:30
+#: src/components/list/list.defaultError.component.tsx:30
 msgid "Đã có lỗi xảy ra"
 msgstr "Đã có lỗi xảy ra"
 
-#: src/components/global/modal.network.global.component.tsx:26
+#: src/components/global/global.modal.network.component.tsx:26
 msgid "Đã khôi phục kết nối mạng"
 msgstr "Đã khôi phục kết nối mạng"
 
 #: src/screens/webview/webview.screen.tsx:53
-#: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:37
+#: src/screens/logs/logs.detail.screen.tsx:37
 msgid "Đã sao chép"
 msgstr "Đã sao chép"
 
-#: src/screens/logsBugFileStorage/logsBug.screen.tsx:89
-#: src/screens/logsBugFileStorage/detail.LogsBug.screen.tsx:62
-#: src/screens/logsBugFileStorage/components/item.bug.tsx:45
+#: src/screens/logs/logs.list.screen.tsx:89
+#: src/screens/logs/logs.detail.screen.tsx:62
+#: src/screens/logs/components/logs.list.item.tsx:45
 msgid "Đã xóa"
 msgstr "Đã xóa"
 
-#: src/components/global/update.system.global.component.tsx:73
+#: src/components/global/global.modal.update.component.tsx:73
 msgid "Đang bảo trì hệ thống"
 msgstr "Đang bảo trì hệ thống"
 
-#: src/components/list/defaultEmpty.list.component.tsx:40
+#: src/components/list/list.defaultEmpty.component.tsx:40
 msgid "Danh sách trống"
 msgstr "Danh sách trống"
 
@@ -151,8 +151,8 @@ msgstr "Vách ngăn"
 msgid "Dogs"
 msgstr "Chó"
 
-#: src/components/form/singleSelect.form.tsx:230
-#: src/components/form/imageSelect.form.component.tsx:329
+#: src/components/form/form.select.single.tsx:230
+#: src/components/form/form.select.image.tsx:327
 msgid "Đóng"
 msgstr "Đóng"
 
@@ -188,8 +188,8 @@ msgstr "giờ"
 msgid "Hello"
 msgstr "Xin chào"
 
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:289
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:283
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:296
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:289
 msgid "hide"
 msgstr "trốn"
 
@@ -197,14 +197,14 @@ msgstr "trốn"
 msgid "Hôm qua"
 msgstr "Hôm qua"
 
-#: src/components/global/update.system.global.component.tsx:35
-#: src/components/global/bottomSheetDialog.global.component.tsx:163
+#: src/components/global/global.modal.update.component.tsx:35
+#: src/components/global/global.bottomSheetDialog.component.tsx:167
 msgid "Huỷ"
 msgstr "Huỷ"
 
 #: src/helpers/permission.helper.tsx:84
 #: src/helpers/file.helper.tsx:104
-#: src/components/form/imageSelect.form.component.tsx:289
+#: src/components/form/form.select.image.tsx:287
 msgid "Hủy"
 msgstr "Hủy"
 
@@ -240,11 +240,11 @@ msgstr "Đăng nhập không thành công"
 msgid "Login to continue"
 msgstr "Đăng nhập để tiếp tục"
 
-#: src/components/list/defaultErrorItem.list.component.tsx:29
+#: src/components/list/list.defaultErrorItem.component.tsx:29
 msgid "Lỗi khi tải thêm"
 msgstr "Lỗi khi tải thêm"
 
-#: src/components/global/modal.network.global.component.tsx:57
+#: src/components/global/global.modal.network.component.tsx:57
 msgid "Mất kết nối mạng"
 msgstr "Mất kết nối mạng"
 
@@ -254,7 +254,7 @@ msgstr "Văn bản chính trung bình"
 
 #: src/helpers/permission.helper.tsx:63
 #: src/helpers/file.helper.tsx:107
-#: src/components/form/imageSelect.form.component.tsx:292
+#: src/components/form/form.select.image.tsx:290
 msgid "Mở cài đặt"
 msgstr "Mở cài đặt"
 
@@ -283,8 +283,8 @@ msgstr "OK"
 msgid "Password should not be empty"
 msgstr "Mật khẩu không nên trống"
 
-#: src/components/global/update.system.global.component.tsx:30
-#: src/components/global/update.system.global.component.tsx:92
+#: src/components/global/global.modal.update.component.tsx:30
+#: src/components/global/global.modal.update.component.tsx:92
 msgid "Phiên bản cập nhật quan trọng"
 msgstr "Phiên bản cập nhật quan trọng"
 
@@ -316,10 +316,10 @@ msgstr "Quyền tải xuống"
 msgid "Radio"
 msgstr "Radio"
 
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:97
-#: src/components/base/textEllipsis/textEllipsis.base.tsx:290
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:97
-#: src/components/base/textEllipsis/textEllipsis.base.ios.tsx:284
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:99
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:297
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:98
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:290
 msgid "see more"
 msgstr "Xem thêm"
 
@@ -347,16 +347,16 @@ msgstr "Đầu vào văn bản"
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài."
 
-#: src/components/form/imageSelect.form.component.tsx:347
-#: src/components/base/system/camera.system.component.tsx:163
+#: src/components/form/form.select.image.tsx:345
+#: src/components/base/system/camera.system.component.tsx:162
 msgid "Tiếp tục"
 msgstr "Tiếp tục"
 
-#: src/components/form/singleSelect.form.tsx:165
+#: src/components/form/form.select.single.tsx:165
 msgid "Tìm kiếm"
 msgstr "Tìm kiếm"
 
-#: src/components/form/imageSelect.form.component.tsx:287
+#: src/components/form/form.select.image.tsx:285
 msgid "Truy cập cài đặt để cấp quyền"
 msgstr "Truy cập cài đặt để cấp quyền"
 
@@ -364,7 +364,7 @@ msgstr "Truy cập cài đặt để cấp quyền"
 msgid "Truy cập cài đặt để cấp quyền?"
 msgstr "Truy cập cài đặt để cấp quyền?"
 
-#: src/components/global/update.system.global.component.tsx:75
+#: src/components/global/global.modal.update.component.tsx:75
 msgid "Truy cập lại sau"
 msgstr "Truy cập lại sau"
 
@@ -372,7 +372,7 @@ msgstr "Truy cập lại sau"
 msgid "Truy cập thư viện bị từ chối"
 msgstr "Truy cập thư viện bị từ chối"
 
-#: src/components/form/imageSelect.form.component.tsx:286
+#: src/components/form/form.select.image.tsx:284
 msgid "Truy cập thư viện hoặc máy ảnh bị từ chối"
 msgstr "Truy cập thư viện hoặc máy ảnh bị từ chối"
 
@@ -384,12 +384,12 @@ msgstr "Ứng dụng cần quyền sử dụng máy ảnh. Truy cập vào cài 
 msgid "Vừa xong"
 msgstr "Vừa xong"
 
-#: src/components/global/update.system.global.component.tsx:32
-#: src/components/global/update.system.global.component.tsx:96
+#: src/components/global/global.modal.update.component.tsx:32
+#: src/components/global/global.modal.update.component.tsx:96
 msgid "Vui lòng cập nhật phiên bản mới nhất của ứng dụng để có trải nghiệm tốt nhất."
 msgstr "Vui lòng cập nhật phiên bản mới nhất của ứng dụng để có trải nghiệm tốt nhất."
 
-#: src/components/global/modal.network.global.component.tsx:59
+#: src/components/global/global.modal.network.component.tsx:59
 msgid "Vui lòng thử kết nối lại"
 msgstr "Vui lòng thử kết nối lại"
 
@@ -397,7 +397,7 @@ msgstr "Vui lòng thử kết nối lại"
 msgid "Welcome to"
 msgstr "Chào mừng bạn đến"
 
-#: src/components/global/bottomSheetDialog.global.component.tsx:188
+#: src/components/global/global.bottomSheetDialog.component.tsx:192
 msgid "Xác nhận"
 msgstr "Xác nhận"
 

@@ -15,11 +15,11 @@ import {
   s_height100,
   s_justifyCenter_itemsCenter,
 } from "constants/styles.constant";
-import BView from "components/base/view.base";
+import BView from "components/base/base.view";
 import AppbarComponent from "components/appbar/appbar.component";
-import BIconButton from "components/base/iconButton.base";
-import BText from "components/base/text.base";
-import { showErrorMessage, showInfoMessage } from "helpers/globalHelper";
+import BIconButton from "components/base/base.iconButton";
+import BText from "components/base/base.text";
+import { showErrorMessage, showInfoMessage } from "helpers/global.helper";
 import { goBackNavHelper } from "helpers/navigation.helper";
 import { getPreviewDataHelper } from "helpers/web.helper";
 

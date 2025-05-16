@@ -3,7 +3,7 @@ import { CONFIG } from "constants/config.constant";
 import { MMKVStorage } from "helpers/storage.helper";
 import { useAuthStore } from "store/auth.store";
 import { authApi } from "./auth/auth.api";
-import { showErrorMessage } from "helpers/globalHelper";
+import { showErrorMessage } from "helpers/global.helper";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
 import { removeEmptyFieldsHelper } from "helpers/object.helper";

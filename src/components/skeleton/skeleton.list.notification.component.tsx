@@ -6,13 +6,13 @@ import isEqual from "react-fast-compare";
 
 import { MHS } from "constants/sizes.constant";
 
-import BDivider from "components/base/divider.base";
+import BDivider from "components/base/base.divider";
 import {
   s_flex1_gapXxxs,
   s_row,
   s_row_justifyBetween_itemsCenter,
 } from "constants/styles.constant";
-import BView from "components/base/view.base";
+import BView from "components/base/base.view";
 import BList from "components/base/list.base";
 import { useTheme } from "@shopify/restyle";
 
