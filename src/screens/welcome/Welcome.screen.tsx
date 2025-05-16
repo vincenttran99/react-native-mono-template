@@ -1,12 +1,4 @@
-import React, { use, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ImageBackground,
-  Pressable,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React, { useEffect } from "react";
 import { navigateNavHelper } from "helpers/navigation.helper";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";

@@ -4,7 +4,7 @@ import {
   NAVIGATION_SETTINGS_SCREEN,
   NAVIGATION_SETTINGS_LANGUAGE_SCREEN,
   NAVIGATION_TAB_NAVIGATION,
-  NAVIGATION_BASE_SCREEN,
+  NAVIGATION_INTRODUCTION_BASE_SCREEN,
 } from "constants/navigation.constant";
 import React from "react";
 import SettingsScreen from "screens/settings/settings.screen";
@@ -13,7 +13,7 @@ import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import { useMyProfileQuery } from "api/profile/profile.queries";
 import TabNavigation from "./tab.navigation";
-import BaseScreen from "screens/Introduction/base.screen";
+import IntroductionBaseScreen from "screens/Introduction/introduction.base.screen";
 
 const StackNavigator = createNativeStackNavigator();
 
@@ -35,11 +35,11 @@ const MainNavigator = () => {
 
       {/* Introduction */}
       <StackNavigator.Screen
-        name={NAVIGATION_BASE_SCREEN}
+        name={NAVIGATION_INTRODUCTION_BASE_SCREEN}
         options={{
           title: _(msg`Base components`),
         }}
-        component={BaseScreen}
+        component={IntroductionBaseScreen}
       />
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_SCREEN}
