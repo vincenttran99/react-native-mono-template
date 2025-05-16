@@ -7,8 +7,6 @@ import {
 import { NAVIGATION_WEB_VIEW_SCREEN } from "constants/navigation.constant";
 import { parseJSONHelper } from "./object.helper";
 
-export let TIMESTAMP_LAST_SCREEN_OPENING = 0;
-
 export const navigationRef = createNavigationContainerRef();
 
 // @ts-ignore
@@ -88,13 +86,6 @@ export const replaceNavHelper = (screenName: string, params?: object) => {
     navigationRef.dispatch(StackActions.replace(screenName, params));
   }
 };
-
-/**
- * Variable to store the timestamp of screen opening
- */
-export function updateTimestampLastScreenOpeningNavHepler() {
-  TIMESTAMP_LAST_SCREEN_OPENING = new Date().getTime();
-}
 
 export async function handleNavHelper({
   screen,

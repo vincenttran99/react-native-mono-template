@@ -26,6 +26,7 @@ export default function IntroductionBaseScreen() {
     <BScrollview
       backgroundColor="background"
       paddingHorizontal="xl"
+      estimatedItemSize={MHS._30}
       contentContainerStyle={styles.contentContainerStyle}
     >
       {/* Lazy view */}

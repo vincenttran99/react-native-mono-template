@@ -1,13 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { CONFIG } from "constants/config.constant";
-import { MMKVStorage } from "helpers/storage.helper";
-import { useAuthStore } from "store/auth.store";
-import { authApi } from "./auth/auth.api";
-import { showErrorMessage } from "helpers/global.helper";
-import { i18n } from "@lingui/core";
-import { msg } from "@lingui/core/macro";
 import { removeEmptyFieldsHelper } from "helpers/object.helper";
-import { createLogsFromResponseHelper } from "helpers/axios.helper";
+import { getTokenHelper } from "helpers/storage.helper";
 
 let Reset = "\x1b[0m";
 let Bright = "\x1b[1m";
@@ -31,7 +25,8 @@ const api = axios.create({
  * @param axiosConfig
  */
 const onRequestSuccess = async (axiosConfig: any) => {
-  axiosConfig.headers["X-Authorization"] = MMKVStorage.getString("token");
+  // You can modify the request config here or setup automated headers
+  // Example: axiosConfig.headers.Authorization = `Bearer ${getTokenHelper()}`;
 
   // Append cache buster to URL
   const cacheBuster = Math.round(Math.random() * 1000000);
@@ -73,8 +68,6 @@ const onRequestSuccess = async (axiosConfig: any) => {
  * @param response
  */
 const onResponseSuccess = async (response: AxiosResponse<any, any>) => {
-  createLogsFromResponseHelper(response, false);
-
   // Log response details
   let Method = String(response.config.method).toUpperCase();
   if (__DEV__) {
@@ -93,29 +86,10 @@ const onResponseSuccess = async (response: AxiosResponse<any, any>) => {
  * @param err
  */
 const onResponseError = async (err: any) => {
-  createLogsFromResponseHelper(err, true);
-  // set session
-  const session = err?.response?.headers["x-authorization"];
-  if (session) MMKVStorage.set("session", session);
-
-  /**
-   * 401 or 403: not auth or permission
-   */
-  const status = err.status || (err.response ? err?.response?.status : 0);
-  const requestUrl = err?.request?._url || "";
-  if (
-    (status === 401 || status === 403) &&
-    requestUrl.toLowerCase().includes(CONFIG.API_URL?.toLowerCase())
-  ) {
-    try {
-      showErrorMessage(i18n._(msg`Phiên đăng nhập đã hết hạn`));
-      useAuthStore.getState().logout();
-      authApi.logout();
-    } catch (e) {
-      console.log("Logout error", e);
-    }
+  // Log response error
+  if (__DEV__) {
+    console.log("Response Error", err);
   }
-
   return Promise.reject(err);
 };
 

@@ -2293,24 +2293,12 @@
   resolved "https://registry.npmjs.org/@react-native-community/netinfo/-/netinfo-11.4.1.tgz"
   integrity sha512-B0BYAkghz3Q2V09BF88RA601XursIEA111tnc2JOaN7axJWmNefmfjZqw/KdSxKZp7CZUuPpjBmz/WCR9uaHYg==
 
-"@react-native-firebase/analytics@^22.0.0":
-  version "22.1.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/analytics/-/analytics-22.1.0.tgz"
-  integrity sha512-ANZGYW9/GG+inJgba0yQC2f3ucwFul+fDiehYHPE2NeDbqucIc8zkp5GjXkdh9rQdgdJS5XjwL+TbYuUXFyvFg==
-  dependencies:
-    superstruct "^2.0.2"
-
 "@react-native-firebase/app@^22.0.0":
   version "22.1.0"
   resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-22.1.0.tgz"
   integrity sha512-s01yjF92Fpre7Ff5UzNpVE4q25x2eF+nD8SGzZzBp7nTQjK+4U+VllJ3ajvbjJkfIyMYNBowM135iK/DO5cwDA==
   dependencies:
     firebase "11.3.1"
-
-"@react-native-firebase/firestore@^22.0.0":
-  version "22.1.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-22.1.0.tgz"
-  integrity sha512-jiizCp+XGMDy7FjuuSAOhjp6dgkFOgZZRoWnSYAOxo9kHJKkJqwtXTO3Bmc94nTGudQGoRVFWG2D8CPv+Cj7hA==
 
 "@react-native-firebase/messaging@^22.0.0":
   version "22.1.0"
@@ -8443,11 +8431,6 @@ sucrase@3.35.0:
     mz "^2.7.0"
     pirates "^4.0.1"
     ts-interface-checker "^0.1.9"
-
-superstruct@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.npmjs.org/superstruct/-/superstruct-2.0.2.tgz"
-  integrity sha512-uV+TFRZdXsqXTL2pRvujROjdZQ4RAlBUS5BTh9IGm+jTqQntYThciG/qu57Gs69yjnVUSqdxF9YLmSnpupBW9A==
 
 supports-color@^5.3.0:
   version "5.5.0"

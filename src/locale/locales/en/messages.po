@@ -18,7 +18,7 @@ msgstr ""
 msgid "Base components"
 msgstr "Base components"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:115
+#: src/screens/Introduction/introduction.base.screen.tsx:116
 msgid "BIcon"
 msgstr "BIcon"
 
@@ -26,35 +26,35 @@ msgstr "BIcon"
 msgid "Bỏ qua"
 msgstr "Skip"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:123
+#: src/screens/Introduction/introduction.base.screen.tsx:124
 msgid "BPressable"
 msgstr "BPressable"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:136
+#: src/screens/Introduction/introduction.base.screen.tsx:137
 msgid "BSurface"
 msgstr "BSurface"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:43
+#: src/screens/Introduction/introduction.base.screen.tsx:44
 msgid "BText"
 msgstr "BText"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:144
+#: src/screens/Introduction/introduction.base.screen.tsx:145
 msgid "Button"
 msgstr "Button"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:166
+#: src/screens/Introduction/introduction.base.screen.tsx:167
 msgid "Button outline"
 msgstr "Button outline"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:151
+#: src/screens/Introduction/introduction.base.screen.tsx:152
 msgid "Button primary"
 msgstr "Button primary"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:159
+#: src/screens/Introduction/introduction.base.screen.tsx:160
 msgid "Button secondary"
 msgstr "Button secondary"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:106
+#: src/screens/Introduction/introduction.base.screen.tsx:107
 msgid "BView"
 msgstr "BView"
 
@@ -62,21 +62,21 @@ msgstr "BView"
 msgid "Cài đặt"
 msgstr "Setting"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:190
+#: src/screens/Introduction/introduction.base.screen.tsx:191
 msgid "Cat"
 msgstr "Cat"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:206
+#: src/screens/Introduction/introduction.base.screen.tsx:207
 msgid "Checkbox"
 msgstr "Checkbox"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:182
-#: src/screens/Introduction/introduction.base.screen.tsx:184
+#: src/screens/Introduction/introduction.base.screen.tsx:183
+#: src/screens/Introduction/introduction.base.screen.tsx:185
 msgid "Chip"
 msgstr "Chip"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:209
-#: src/screens/Introduction/introduction.base.screen.tsx:217
+#: src/screens/Introduction/introduction.base.screen.tsx:210
+#: src/screens/Introduction/introduction.base.screen.tsx:218
 msgid "Coming soon"
 msgstr "Coming soon"
 
@@ -84,32 +84,19 @@ msgstr "Coming soon"
 msgid "Continue"
 msgstr "Continue"
 
-#: src/screens/logs/logs.list.screen.tsx:81
-#: src/screens/logs/logs.detail.screen.tsx:53
-#: src/screens/logs/components/logs.list.item.tsx:36
-msgid "Đã cập nhật"
-msgstr "Updated"
-
 #: src/components/list/list.defaultError.component.tsx:30
 msgid "Đã có lỗi xảy ra"
 msgstr "There was an error"
 
 #: src/screens/webview/webview.screen.tsx:52
-#: src/screens/logs/logs.detail.screen.tsx:37
 msgid "Đã sao chép"
 msgstr "Copied"
-
-#: src/screens/logs/logs.list.screen.tsx:89
-#: src/screens/logs/logs.detail.screen.tsx:62
-#: src/screens/logs/components/logs.list.item.tsx:45
-msgid "Đã xóa"
-msgstr "Deleted"
 
 #: src/components/list/list.defaultEmpty.component.tsx:40
 msgid "Danh sách trống"
 msgstr "Drum list"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:196
+#: src/screens/Introduction/introduction.base.screen.tsx:197
 msgid "Divider"
 msgstr "Divider"
 
@@ -133,7 +120,7 @@ msgstr "Email is not valid"
 msgid "Email should not be empty"
 msgstr "Email should not be empty"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:55
+#: src/screens/Introduction/introduction.base.screen.tsx:56
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
 
@@ -166,7 +153,7 @@ msgstr "Yesterday"
 msgid "Huỷ"
 msgstr "Cancel"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:171
+#: src/screens/Introduction/introduction.base.screen.tsx:172
 msgid "Icon Button"
 msgstr "Icon Button"
 
@@ -174,11 +161,11 @@ msgstr "Icon Button"
 msgid "Introduce"
 msgstr "Introduce"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:52
+#: src/screens/Introduction/introduction.base.screen.tsx:53
 msgid "Large success text"
 msgstr "Large success text"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:33
+#: src/screens/Introduction/introduction.base.screen.tsx:34
 msgid "Lazy view"
 msgstr "Lazy view"
 
@@ -202,11 +189,11 @@ msgstr "Error when downloading more"
 msgid "Lost network connection"
 msgstr "Lost network connection"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:49
+#: src/screens/Introduction/introduction.base.screen.tsx:50
 msgid "Medium primary text"
 msgstr "Medium primary text"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:60
+#: src/screens/Introduction/introduction.base.screen.tsx:61
 msgid "Multi text"
 msgstr "Multi text"
 
@@ -231,10 +218,6 @@ msgstr "No name"
 msgid "Password should not be empty"
 msgstr "Password should not be empty"
 
-#: src/api/api.ts:111
-msgid "Phiên đăng nhập đã hết hạn"
-msgstr "The login session has expired"
-
 #: src/helpers/date.helper.ts:114
 msgid "phút"
 msgstr "minute"
@@ -243,11 +226,11 @@ msgstr "minute"
 msgid "Please try reconnecting"
 msgstr "Please try reconnecting"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:131
+#: src/screens/Introduction/introduction.base.screen.tsx:132
 msgid "Pressable"
 msgstr "Pressable"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:96
+#: src/screens/Introduction/introduction.base.screen.tsx:97
 msgid "Preview URL"
 msgstr "Preview URL"
 
@@ -255,7 +238,7 @@ msgstr "Preview URL"
 msgid "Purpose"
 msgstr "Purpose"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:214
+#: src/screens/Introduction/introduction.base.screen.tsx:215
 msgid "Radio"
 msgstr "Radio"
 
@@ -266,27 +249,27 @@ msgstr "Radio"
 msgid "see more"
 msgstr "see more"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:46
+#: src/screens/Introduction/introduction.base.screen.tsx:47
 msgid "Small error text"
 msgstr "Small error text"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:37
+#: src/screens/Introduction/introduction.base.screen.tsx:38
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Suprise! You are seeing this text after 2 seconds"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:139
+#: src/screens/Introduction/introduction.base.screen.tsx:140
 msgid "Surface"
 msgstr "Surface"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:73
+#: src/screens/Introduction/introduction.base.screen.tsx:74
 msgid "Text Ellipsis"
 msgstr "Text Ellipsis"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:83
+#: src/screens/Introduction/introduction.base.screen.tsx:84
 msgid "Text input"
 msgstr "Text input"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:77
+#: src/screens/Introduction/introduction.base.screen.tsx:78
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 

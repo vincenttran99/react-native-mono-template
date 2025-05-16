@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useMemo, useRef } from "react";
+import React, { useCallback, useMemo } from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "react-native";
@@ -6,7 +6,6 @@ import ErrorBoundary from "react-native-error-boundary";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import Constants from "expo-constants";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
-import { useNetInfo } from "@react-native-community/netinfo";
 import { NavigationContainer } from "@react-navigation/native";
 import BLazy from "components/base/base.lazy";
 import GlobalLoadingComponent from "components/global/global.loading.component";
@@ -32,21 +31,9 @@ import {
   DialogRef,
   LoadingRef,
 } from "helpers/global.helper";
-import {
-  getRouteNameNavHelper,
-  navigationRef,
-  updateTimestampLastScreenOpeningNavHepler,
-} from "helpers/navigation.helper";
-import {
-  clearBugLogHelper,
-  setBugDeviceHelper,
-  setBugLogHelper,
-} from "helpers/storage.helper";
+import { navigationRef } from "helpers/navigation.helper";
 import { extractRefLinkFromStringHelper } from "helpers/string.helper";
-import {
-  createLogBugHelper,
-  logScreenViewHelper,
-} from "helpers/firebase.helper";
+
 import * as SplashScreen from "expo-splash-screen";
 
 // Keep the splash screen visible while we fetch resources
@@ -98,45 +85,9 @@ export default function AppNavigation() {
     [theme]
   );
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  const routeNameRef = useRef("");
-  const netInfo = useNetInfo();
-
-  useLayoutEffect(() => {
-    if (!netInfo.isConnected) return;
-    clearBugLogHelper();
-    setBugDeviceHelper();
-  }, [netInfo.isConnected]);
-
-  const onErrorCrashApp = useCallback((error: any, stackTrace: string) => {
-    if (!__DEV__) {
-      createLogBugHelper(
-        String(error),
-        stackTrace,
-        "crash",
-        getRouteNameNavHelper() || ""
-      );
-    }
-  }, []);
 
   const onReady = useCallback(() => {
     SplashScreen.hide();
-    routeNameRef.current = navigationRef.current?.getCurrentRoute()?.name || "";
-    setBugLogHelper(routeNameRef.current);
-    updateTimestampLastScreenOpeningNavHepler();
-    logScreenViewHelper(routeNameRef.current);
-  }, []);
-
-  const onStateChange = useCallback(async () => {
-    updateTimestampLastScreenOpeningNavHepler();
-    const previousRouteName = routeNameRef.current;
-    const currentRouteName =
-      navigationRef.current?.getCurrentRoute()?.name || "";
-
-    if (previousRouteName !== currentRouteName) {
-      setBugLogHelper("|_|" + currentRouteName);
-      logScreenViewHelper(currentRouteName);
-    }
-    routeNameRef.current = currentRouteName;
   }, []);
 
   return (
@@ -148,14 +99,13 @@ export default function AppNavigation() {
               ref={navigationRef}
               linking={LINKING}
               onReady={onReady}
-              onStateChange={onStateChange}
             >
               <StatusBar
                 barStyle={theme === "light" ? "light-content" : "dark-content"}
                 translucent={true}
                 backgroundColor={"transparent"}
               />
-              <ErrorBoundary onError={onErrorCrashApp}>
+              <ErrorBoundary>
                 <NativeStack.Navigator screenOptions={SCREEN_OPTIONS}>
                   {isAuthenticated ? (
                     <NativeStack.Screen

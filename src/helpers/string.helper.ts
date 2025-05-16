@@ -1,7 +1,3 @@
-import { NAVIGATION_DETAIL_PRODUCT_SCREEN } from "constants/navigation.constant";
-import { CONFIG } from "constants/config.constant";
-import { setRefCodeHelper, setTargetScreenHelper } from "./storage.helper";
-
 /**
  * This function normalizes a Vietnamese string by removing accents and special characters.
  * It replaces Vietnamese characters with their closest English equivalents, removes combining accents,
@@ -377,58 +373,4 @@ export function extractRefLinkFromStringHelper(value: string): {
     targetValue: values[0],
     ref: values?.[1] || "",
   };
-}
-
-export function processUniversalLinkHelper(url: string) {
-  console.log(url, "urlurlurl");
-  const patterns = [
-    {
-      regex: new RegExp(`^${CONFIG.UNIVERSAL_URL}/product/(.+)`),
-      type: "product",
-    },
-    {
-      regex: new RegExp(`^${CONFIG.UNIVERSAL_URL}/(.+)`),
-      type: "global",
-    },
-  ];
-
-  for (const { regex, type } of patterns) {
-    const match = url.match(regex);
-    if (match) {
-      const extractedValue = match[1];
-      console.log(extractedValue, "extractedValue");
-      switch (type) {
-        case "product":
-          let product = extractedValue?.split("/")?.[0];
-          let valueFromProduct = extractRefLinkFromStringHelper(product);
-          console.log(valueFromProduct, "valueFromProduct");
-          if (valueFromProduct?.ref) {
-            setRefCodeHelper(valueFromProduct?.ref);
-          }
-          if (valueFromProduct?.targetValue) {
-            setTargetScreenHelper(
-              JSON.stringify({
-                route: NAVIGATION_DETAIL_PRODUCT_SCREEN,
-                params: {
-                  product: { product_id: valueFromProduct?.targetValue },
-                },
-                createdAt: new Date().getTime(),
-              })
-            );
-          }
-          break;
-        case "global":
-          let refCode = extractedValue?.split("/")?.[0];
-          console.log(refCode, "refCode");
-          if (refCode) {
-            setRefCodeHelper(refCode);
-          }
-          break;
-      }
-
-      return;
-    }
-  }
-
-  console.log("Universal link not match");
 }

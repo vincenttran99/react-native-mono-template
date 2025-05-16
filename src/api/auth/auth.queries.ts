@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { authApi, LoginResponse, LoginPayload } from "./auth.api";
 import { useAuthStore } from "store/auth.store";
-import { MMKVStorage } from "helpers/storage.helper";
+import { setTokenHelper } from "helpers/storage.helper";
 
 // use PERSIST_KEY if you want to keep data in local storage
 // use INSTANCE_KEY if you want to clear cache and local storage (ex: clear when user logout)
@@ -45,7 +45,7 @@ export const useLoginMutation = () => {
       /**
        * Save token to local storage here for Axios interceptor
        */
-      MMKVStorage.set("token", data?.access_token);
+      setTokenHelper(data?.access_token);
       /**
        * You can invalidate queries here for new user's data
        */
@@ -62,7 +62,7 @@ export const useLogoutMutation = () => {
        * Clear cache and local storage here
        */
       useAuthStore.getState().logout();
-      MMKVStorage.set("token", "");
+      setTokenHelper("");
     },
   });
 };

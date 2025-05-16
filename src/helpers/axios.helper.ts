@@ -1,8 +1,4 @@
-import { getTypeOfAttributesHelper, parseJSONHelper } from "./object.helper";
-import { getRouteNameNavHelper } from "./navigation.helper";
-import { setBugLogHelper } from "./storage.helper";
-import { createLogBugHelper } from "./firebase.helper";
-
+import { parseJSONHelper } from "./object.helper";
 /**
  * @param errorData
  * @returns
@@ -74,39 +70,4 @@ export function errorMiddlewareHelper() {
       return next(action);
     };
   };
-}
-
-export function createLogsFromResponseHelper(response: any, isError: boolean) {
-  if (__DEV__) return;
-
-  let dataToLog: any = {
-    endpoint: response?.config?.url,
-    hasAuth: !!response?.config?.headers?.["X-Authorization"],
-    type: response?.config?.method,
-    data: getTypeOfAttributesHelper(parseJSONHelper(response?.config?.data)),
-    responseCode: isError
-      ? response.status || (response.response ? response?.response?.status : 0)
-      : response?.status,
-    typeOfResponse: getTypeOfAttributesHelper(response?.data),
-  };
-
-  if (isError) {
-    dataToLog = {
-      ...dataToLog,
-      error: response?.response?.data?.error,
-      messageError: response?.response?.data?.message,
-    };
-  }
-  setBugLogHelper("|*|API_" + JSON.stringify(dataToLog));
-
-  if (isError) {
-    setTimeout(() => {
-      createLogBugHelper(
-        response?.response?.data?.message || "",
-        "",
-        "api",
-        getRouteNameNavHelper() || ""
-      );
-    }, 500);
-  }
 }

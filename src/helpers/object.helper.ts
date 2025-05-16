@@ -271,40 +271,6 @@ export function determineTypeHelper(obj: any): string | boolean | number {
   return typeof obj;
 }
 
-/**
- * This function determines the type of attributes in an object or array.
- * If the input is an object, it recursively checks the type of each attribute.
- * If the input is an array, it returns 'array'.
- *
- * @param {object | any[]} inputObject - The input object or array to determine the type of attributes.
- * @returns {object | string} - An object containing the types of attributes if input is an object,
- *                              or 'array' if input is an array, or the type of the input if it's not an object or array.
- *
- * Example:
- * getTypeOfAttributes({ name: 'John', age: 30 })
- * // Returns: { name: 'string', age: 'number' }
- */
-export function getTypeOfAttributesHelper(
-  inputObject: object | any[]
-): object | string {
-  if (typeof inputObject === "object") {
-    if (Array.isArray(inputObject)) {
-      return "array";
-    } else {
-      const result: { [key: string]: string } = {};
-      for (const key in inputObject) {
-        if (inputObject.hasOwnProperty(key)) {
-          // @ts-ignore
-          result[key] = determineTypeHelper(inputObject[key]);
-        }
-      }
-      return result;
-    }
-  } else {
-    return typeof inputObject;
-  }
-}
-
 export function removeUndefinedPropertiesHelper(
   obj: Record<string, any>
 ): Record<string, any> {

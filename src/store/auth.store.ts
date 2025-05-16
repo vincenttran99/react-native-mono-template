@@ -3,7 +3,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import { zustandStorage } from "store";
 import { IProfile } from "models/user.model";
 import { useProfileStore } from "./profile.store";
-import { MMKVStorage } from "helpers/storage.helper";
+import { setTokenHelper } from "helpers/storage.helper";
 
 interface IAuthStore {
   isAuthenticated: boolean;
@@ -48,7 +48,7 @@ export const useAuthStore = create<IAuthStore>()(
         useProfileStore.getState().reset();
 
         // Xóa token trong storage
-        MMKVStorage.set("token", "");
+        setTokenHelper("");
       },
 
       reset: () => {

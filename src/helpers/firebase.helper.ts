@@ -1,18 +1,6 @@
-import analytics, { firebase } from "@react-native-firebase/analytics";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import {
-  handleNavHelper,
-  TIMESTAMP_LAST_SCREEN_OPENING,
-} from "helpers/navigation.helper";
-import firestore, {
-  collection,
-  doc,
-  getDocs,
-  getFirestore,
-  query,
-} from "@react-native-firebase/firestore";
-import { ETypeOfBug } from "constants/firebase.constant";
+import { handleNavHelper } from "helpers/navigation.helper";
 import { MMKV } from "react-native-mmkv";
 import {
   addNotificationReceivedListener,
@@ -33,12 +21,11 @@ import messaging from "@react-native-firebase/messaging";
 import { AppState, Platform } from "react-native";
 import { CONFIG } from "constants/config.constant";
 import {
-  getBugDeviceHelper,
-  getBugLogHelper,
-  getBugOwnerIdHelper,
+  getFcmTokenHelper,
+  getTokenHelper,
+  setFcmTokenHelper,
 } from "./storage.helper";
 
-const MMKVStorage = new MMKV();
 dayjs.extend(utc);
 
 /**
@@ -74,7 +61,7 @@ export async function createDefaultChannelsHelper() {
 }
 
 export async function getFCMTokenHelper() {
-  const fcmToken = MMKVStorage.getString("fcmToken");
+  const fcmToken = getFcmTokenHelper();
   if (!fcmToken) {
     try {
       if (!messaging().isDeviceRegisteredForRemoteMessages) {
@@ -83,7 +70,7 @@ export async function getFCMTokenHelper() {
 
       const token = await messaging().getToken();
       if (token) {
-        MMKVStorage.set("fcmToken", token);
+        setFcmTokenHelper(token);
         return token;
       }
       return "";
@@ -182,7 +169,7 @@ export function setupNotificationHelper() {
   messaging().onTokenRefresh((newFcmToken: string) => {
     console.log("refreshFCMToken", newFcmToken);
 
-    let authToken = MMKVStorage.getString("token");
+    let authToken = getTokenHelper();
     if (authToken) {
       //call api update fcm token
     }
@@ -258,99 +245,6 @@ export async function bootstrapHelper() {
 //         return false;
 //       });
 //   }
-
-/**
- * Logs
- */
-export function logEventAnalyticsHelper({
-  event,
-  dataObj = {},
-  logWithTime = false,
-}: {
-  event: string;
-  dataObj?: object;
-  logWithTime?: boolean;
-}) {
-  try {
-    if (
-      !__DEV__ &&
-      CONFIG.ENABLE_LOG_EVENT_TO_FIREBASE?.toLowerCase() === "true"
-    ) {
-      if (logWithTime) {
-        event = `${event}_${dayjs(TIMESTAMP_LAST_SCREEN_OPENING).diff(
-          dayjs(),
-          "second"
-        )}`;
-      }
-      analytics()
-        .logEvent(event, dataObj)
-        .catch((error) => {
-          console.log(error, "slglesng");
-        });
-    }
-  } catch (error) {}
-}
-
-export function logScreenViewHelper(screen: string) {
-  firebase
-    .analytics()
-    .logScreenView({
-      screen_name: screen,
-      screen_class: screen,
-    })
-    .catch(console.log);
-}
-
-export async function createLogBugHelper(
-  error: string,
-  stackTrace: string,
-  typeError: "api" | "crash",
-  currentScreen: string
-) {
-  if (
-    __DEV__ ||
-    !(CONFIG.ENABLE_LOG_USER_BUGS_TO_FIREBASE?.toLowerCase() === "true")
-  )
-    return;
-
-  if (!error && !getBugDeviceHelper()) return;
-  // const db = getFirestore();
-  // const querySnapshot = await getDocs(
-  //   query(
-  //     collection(db, "Bugs"),
-  //     doc(db, currentScreen + dayjs.utc().format("_DD_MM_YY"))
-  //   )
-  // );
-
-  //check new log
-  const oldLog = await firestore()
-    .collection("Bugs")
-    .doc(currentScreen + dayjs.utc().format("_DD_MM_YY"))
-    .get();
-
-  if (oldLog.exists) return;
-
-  firestore()
-    .collection("Bugs")
-    .doc(currentScreen + dayjs.utc().format("_DD_MM_YY"))
-    .set({
-      device: getBugDeviceHelper(),
-      status: ETypeOfBug.New,
-      user: getBugOwnerIdHelper(),
-      time: new Date().getTime(),
-      isDevSite: process.env.APP_ENV === "development" || __DEV__,
-      detail: getBugLogHelper(),
-      type: typeError,
-      error: error,
-      stackTrace: stackTrace,
-    })
-    .then(() => {
-      console.log("Bug added!");
-    })
-    .catch((error) => {
-      console.log(error, "sdjsf");
-    });
-}
 
 export async function createTriggerNotificationHelper({
   title = "",
