@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import BText from "components/base/base.text";
 import BView from "components/base/base.view";
@@ -24,17 +24,17 @@ export default function IntroductionBaseScreen() {
 
   return (
     <BScrollview
-      backgroundColor="background"
-      paddingHorizontal="xl"
       estimatedItemSize={MHS._30}
-      contentContainerStyle={styles.contentContainerStyle}
+      backgroundColor="background"
+      paddingBottom="xxxl"
+      paddingHorizontal="md"
     >
       {/* Lazy view */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Lazy view`)}
       </BText>
       <BLazy timeRender={2000}>
-        <BText variant="md" color="error">
+        <BText variant="md" color="error" marginTop="md">
           {_(msg`Suprise! You are seeing this text after 2 seconds`)}
         </BText>
       </BLazy>
@@ -43,16 +43,16 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`BText`)}
       </BText>
-      <BText variant="sm" color="error">
+      <BText variant="sm" color="error" marginTop="md">
         {_(msg`Small error text`)}
       </BText>
-      <BText variant="md" color="primary">
+      <BText variant="md" color="primary" marginTop="md">
         {_(msg`Medium primary text`)}
       </BText>
-      <BText variant="lg" color="success">
+      <BText variant="lg" color="success" marginTop="md">
         {_(msg`Large success text`)}
       </BText>
-      <BText variant="xl" color="warning">
+      <BText variant="xl" color="warning" marginTop="md">
         {_(msg`Extra large warning text`)}
       </BText>
 
@@ -61,6 +61,7 @@ export default function IntroductionBaseScreen() {
         {_(msg`Multi text`)}
       </BText>
       <BTextMulti
+        marginTop="md"
         style1={styles.text1}
         style2={styles.text2}
         style3={styles.text3}
@@ -73,7 +74,7 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Text Ellipsis`)}
       </BText>
-      <BTextEllipsis variant="md" numberOfLines={3}>
+      <BTextEllipsis variant="md" numberOfLines={3} marginTop="md">
         {_(
           msg`This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. `
         )}
@@ -83,20 +84,38 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Text input`)}
       </BText>
-      <BTextInput placeholder={_("Enter your name")} />
-      <BTextInput leftIcon="home" placeholder={_("Enter your address")} />
+      <BTextInput
+        placeholder={_("Enter your name")}
+        containerProps={{
+          marginTop: "md",
+        }}
+      />
+      <BTextInput
+        leftIcon="home"
+        placeholder={_("Enter your address")}
+        containerProps={{
+          marginTop: "md",
+        }}
+      />
       <BTextInput
         leftIcon="email"
         leftIconProps={{ color: "error" }}
         rightIcon="close"
         placeholder={_("Enter your email")}
+        containerProps={{
+          marginTop: "md",
+        }}
       />
 
       {/* Preview URL */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Preview URL`)}
       </BText>
-      <BWebUrlPreviewComponent url="https://github.com/" gap="md">
+      <BWebUrlPreviewComponent
+        url="https://github.com/"
+        gap="md"
+        marginTop="md"
+      >
         <BWebUrlPreviewComponent.Image width={MHS._220} height={MHS._100} />
         <BWebUrlPreviewComponent.Title fontWeight={"bold"} />
         <BWebUrlPreviewComponent.Description />
@@ -106,10 +125,30 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`BView`)}
       </BText>
-      <BView backgroundColor="primary" width={"100%"} height={MHS._30} />
-      <BView backgroundColor="error" width={"100%"} height={MHS._30} />
-      <BView backgroundColor="success" width={"100%"} height={MHS._30} />
-      <BView backgroundColor="ground" width={"100%"} height={MHS._30} />
+      <BView
+        backgroundColor="primary"
+        width={"100%"}
+        height={MHS._30}
+        marginTop="md"
+      />
+      <BView
+        backgroundColor="error"
+        width={"100%"}
+        height={MHS._30}
+        marginTop="md"
+      />
+      <BView
+        backgroundColor="success"
+        width={"100%"}
+        height={MHS._30}
+        marginTop="md"
+      />
+      <BView
+        backgroundColor="ground"
+        width={"100%"}
+        height={MHS._30}
+        marginTop="md"
+      />
 
       {/* Icon */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
@@ -128,6 +167,7 @@ export default function IntroductionBaseScreen() {
         justifyContent="center"
         alignItems="center"
         padding="md"
+        marginTop="md"
       >
         <BText variant="md">{_(msg`Pressable`)}</BText>
       </BPressable>
@@ -136,7 +176,12 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`BSurface`)}
       </BText>
-      <BSurface variant="md" padding="md" backgroundColor="ground">
+      <BSurface
+        variant="md"
+        padding="md"
+        backgroundColor="ground"
+        marginTop="md"
+      >
         <BText variant="md">{_(msg`Surface`)}</BText>
       </BSurface>
 
@@ -149,6 +194,7 @@ export default function IntroductionBaseScreen() {
         justifyContent="center"
         alignItems="center"
         padding="md"
+        marginTop="md"
         label={_(msg`Button primary`)}
       />
       <BButton
@@ -157,6 +203,7 @@ export default function IntroductionBaseScreen() {
         alignItems="center"
         padding="md"
         labelColor="background"
+        marginTop="md"
         label={_(msg`Button secondary`)}
       />
       <BButton
@@ -164,6 +211,7 @@ export default function IntroductionBaseScreen() {
         justifyContent="center"
         alignItems="center"
         padding="md"
+        marginTop="md"
         label={_(msg`Button outline`)}
       />
 
@@ -171,25 +219,27 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Icon Button`)}
       </BText>
-      <BIconButton icon="dog" />
+      <BIconButton icon="dog" marginTop="md" />
       <BIconButton
         icon="cat"
         backgroundColor="primary"
         alignSelf="flex-start"
+        marginTop="md"
       />
 
       {/* Chip */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Chip`)}
       </BText>
-      <BChip label={_(msg`Chip`)} alignSelf="flex-start" />
-      <BChip icon="dog" alignSelf="flex-start" />
+      <BChip label={_(msg`Chip`)} alignSelf="flex-start" marginTop="md" />
+      <BChip icon="dog" alignSelf="flex-start" marginTop="md" />
       <BChip
         icon="cat"
         borderColor="warning"
         iconProps={{ color: "warning" }}
         label={_(msg`Cat`)}
         alignSelf="flex-start"
+        marginTop="md"
       />
 
       {/* Divider */}
@@ -197,16 +247,18 @@ export default function IntroductionBaseScreen() {
         {_(msg`Divider`)}
       </BText>
 
-      <BDivider backgroundColor="error" />
-      <BDivider bold backgroundColor="success" />
+      <BDivider backgroundColor="error" marginTop="md" />
+      <BDivider bold backgroundColor="success" marginTop="md" />
+      <BView height={MHS._12} />
       <BDivider bold type={"dashed"} height={MHS._4} backgroundColor="info" />
+      <BView height={MHS._12} />
       <BDivider bold type={"dotted"} height={MHS._6} backgroundColor="error" />
 
       {/* Checkbox */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Checkbox`)}
       </BText>
-      <BText variant="md" color="info">
+      <BText variant="md" color="info" marginTop="md">
         {_(msg`Coming soon`)}
       </BText>
 
@@ -214,7 +266,7 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Radio`)}
       </BText>
-      <BText variant="md" color="info">
+      <BText variant="md" color="info" marginTop="md">
         {_(msg`Coming soon`)}
       </BText>
     </BScrollview>
@@ -222,10 +274,6 @@ export default function IntroductionBaseScreen() {
 }
 
 const styles = StyleSheet.create({
-  contentContainerStyle: {
-    gap: MHS._6,
-    paddingBottom: MHS._100,
-  },
   text1: {
     fontSize: 26,
     color: "red",

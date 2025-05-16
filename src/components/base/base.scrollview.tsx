@@ -1,76 +1,85 @@
 import React, { forwardRef, useMemo, useCallback, Children } from "react";
+import { FlashList, FlashListProps } from "@shopify/flash-list";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { ScrollView, ScrollViewProps } from "react-native";
 import { Device } from "constants/device.constant";
 import {
-  LegendList,
-  LegendListProps,
-  LegendListRenderItemProps,
-} from "@legendapp/list";
-import {
   backgroundColor,
   BackgroundColorProps,
-  createRestyleComponent,
-  layout,
-  LayoutProps,
+  composeRestyleFunctions,
   spacing,
   SpacingProps,
+  useRestyle,
 } from "@shopify/restyle";
 import { Theme } from "constants/theme.constant";
 
-export type BScrollviewProps = SpacingProps<Theme> &
-  BackgroundColorProps<Theme> &
-  LayoutProps<Theme> &
-  Omit<LegendListProps<any>, "data" | "renderItem">;
+type RestyleProps = SpacingProps<Theme> & BackgroundColorProps<Theme>;
+const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
+  spacing,
+  backgroundColor,
+]);
+export type BScrollviewProps = Omit<
+  FlashListProps<any>,
+  "data" | "renderItem"
+> &
+  RestyleProps;
 
-const RenderScrollComponent = (props: ScrollViewProps) => (
-  <KeyboardAwareScrollView {...props} />
+const RenderScrollComponent = React.forwardRef<ScrollView, ScrollViewProps>(
+  (props, ref) => <KeyboardAwareScrollView {...props} ref={ref} />
 );
 
-const LegendListRestyle = createRestyleComponent<
-  BScrollviewProps & {
-    data: ReadonlyArray<any>;
-    renderItem: (props: LegendListRenderItemProps<any>) => React.ReactNode;
-  },
-  Theme
->([spacing, backgroundColor, layout], LegendList);
-
-// BContainer implementation with optimizations
+// BContainer implementation with optimizations and new features
 const BScrollview = forwardRef(
   (
     {
       children,
       estimatedItemSize,
-      drawDistance = Device.height / 4,
+      drawDistance = Device.height * 2,
+      estimatedListSize = {
+        width: Device.width,
+        height: Device.height - Device.heightAppBar,
+      },
+      contentContainerStyle,
       ...rest
-    }: Omit<BScrollviewProps, "data" | "renderItem">,
-    ref: any
+    }: BScrollviewProps,
+    ref: React.Ref<FlashList<any>>
   ) => {
+    const props = useRestyle(restyleFunctions, rest);
     // Convert children to array or use function to create virtual data
-    const data = Array.isArray(children)
-      ? children
-      : Children.toArray(children);
+    const data = useMemo(() => {
+      return Array.isArray(children) ? children : Children.toArray(children);
+    }, [children]);
 
     const renderItem = useCallback(({ item }: { item: any }) => item, []);
 
-    const keyExtractor = useCallback((_: any, index: number) => {
-      return index.toString();
+    const getItemType = useCallback((_: any, index: number) => {
+      // Disable recycling by assigning unique type to each item
+      return index;
     }, []);
 
+    const contentContainerStyleProps = useMemo(() => {
+      //@ts-ignore
+      return { ...(props.style?.[0] || {}), ...contentContainerStyle };
+    }, [contentContainerStyle, props.style]);
+
     if (estimatedItemSize === undefined) {
-      console.warn("BScrollview: 'estimatedItemSize' is missing");
+      console.warn(
+        "BScrollview: 'estimatedItemSize' is missing, check FlashList warnings for suggested value."
+      );
     }
 
     return (
-      <LegendListRestyle
+      <FlashList
         ref={ref}
         showsVerticalScrollIndicator={false}
         bounces={false}
-        keyExtractor={keyExtractor}
         {...rest}
+        contentContainerStyle={contentContainerStyleProps}
         data={data}
         renderItem={renderItem}
         estimatedItemSize={estimatedItemSize}
+        estimatedListSize={estimatedListSize}
+        getItemType={getItemType}
         drawDistance={drawDistance}
         renderScrollComponent={RenderScrollComponent}
       />
