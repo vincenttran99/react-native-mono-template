@@ -21,7 +21,7 @@ const SettingsScreen = () => {
       <BView style={styles.content}>
         {/* Remember me */}
         <BView style={styles.optionRow}>
-          <BText style={styles.optionText}>{_(msg`Giao diện tối`)}</BText>
+          <BText style={styles.optionText}>{_(msg`Dark Mode`)}</BText>
           <Switch
             value={theme === "dark"}
             onValueChange={() =>
@@ -37,7 +37,7 @@ const SettingsScreen = () => {
           onPress={() => navigateNavHelper(NAVIGATION_SETTINGS_LANGUAGE_SCREEN)}
         >
           <BView style={styles.optionRow}>
-            <BText style={styles.optionText}>{_(msg`Ngôn ngữ`)}</BText>
+            <BText style={styles.optionText}>{_(msg`Language`)}</BText>
             <BText style={styles.optionText}>
               {LANGUAGES_MAP_CODE2?.[appLanguage]?.local}
             </BText>

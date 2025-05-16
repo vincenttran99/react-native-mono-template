@@ -162,7 +162,7 @@ const FSelectSingle = ({
 
     return (
       <BTextInput
-        placeholder={searchPlaceHolder || _(msg`Tìm kiếm`)}
+        placeholder={searchPlaceHolder || _(msg`Search`)}
         onChangeText={onChangeText}
         maxFontSizeMultiplier={1}
         allowFontScaling={false}
@@ -227,7 +227,7 @@ const FSelectSingle = ({
             <BText
             // color={theme.colors.primary}
             >
-              {_(msg`Đóng`)}
+              {_(msg`Close`)}
             </BText>
           </Pressable>
         </BView>

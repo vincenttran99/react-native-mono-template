@@ -27,7 +27,7 @@ const ListDefaultErrorComponent = memo(
           color="error"
           textAlign="center"
         >
-          {_(msg`Đã có lỗi xảy ra`)}
+          {_(msg`Something went wrong`)}
         </BText>
       </BView>
     );

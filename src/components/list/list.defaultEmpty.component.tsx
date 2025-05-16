@@ -37,7 +37,7 @@ const ListDefaultEmptyComponent = memo(
           {bigText}
         </BText>
         <BText variant={"md"} {...smallTextStyle}>
-          {smallText || _(msg`Danh sách trống`)}
+          {smallText || _(msg`Empty`)}
         </BText>
       </BView>
     );

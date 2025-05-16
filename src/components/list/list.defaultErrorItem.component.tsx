@@ -26,7 +26,7 @@ const ListDefaultErrorItemComponent = memo(
           color="error"
           textAlign="center"
         >
-          {_(msg`Lỗi khi tải thêm`)}
+          {_(msg`Loadmore failed`)}
         </BText>
       </BView>
     );

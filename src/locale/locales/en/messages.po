@@ -22,10 +22,6 @@ msgstr "Base components"
 msgid "BIcon"
 msgstr "BIcon"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:179
-msgid "Bỏ qua"
-msgstr "Skip"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:124
 msgid "BPressable"
 msgstr "BPressable"
@@ -58,9 +54,9 @@ msgstr "Button secondary"
 msgid "BView"
 msgstr "BView"
 
-#: src/navigation/main.navigation.tsx:47
-msgid "Cài đặt"
-msgstr "Setting"
+#: src/components/global/global.bottomSheetDialog.component.tsx:167
+msgid "Cancel"
+msgstr "Cancel"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:191
 msgid "Cat"
@@ -75,22 +71,26 @@ msgstr "Checkbox"
 msgid "Chip"
 msgstr "Chip"
 
+#: src/components/form/form.select.single.tsx:230
+msgid "Close"
+msgstr "Close"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:210
 #: src/screens/Introduction/introduction.base.screen.tsx:218
 msgid "Coming soon"
 msgstr "Coming soon"
 
+#: src/components/global/global.bottomSheetDialog.component.tsx:192
+msgid "Confirm"
+msgstr "Confirm"
+
 #: src/screens/welcome/welcome.screen.tsx:51
 msgid "Continue"
 msgstr "Continue"
 
-#: src/components/list/list.defaultError.component.tsx:30
-msgid "Đã có lỗi xảy ra"
-msgstr "There was an error"
-
-#: src/components/list/list.defaultEmpty.component.tsx:40
-msgid "Danh sách trống"
-msgstr "Drum list"
+#: src/screens/settings/settings.screen.tsx:24
+msgid "Dark Mode"
+msgstr "Dark Mode"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:197
 msgid "Divider"
@@ -100,10 +100,6 @@ msgstr "Divider"
 msgid "Dogs"
 msgstr "Dogs"
 
-#: src/components/form/form.select.single.tsx:230
-msgid "Đóng"
-msgstr "Close"
-
 #: src/screens/login/login.screen.tsx:35
 msgid "Email is not valid"
 msgstr "Email is not valid"
@@ -112,6 +108,10 @@ msgstr "Email is not valid"
 msgid "Email should not be empty"
 msgstr "Email should not be empty"
 
+#: src/components/list/list.defaultEmpty.component.tsx:40
+msgid "Empty"
+msgstr "Empty"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:56
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
@@ -119,10 +119,6 @@ msgstr "Extra large warning text"
 #: src/screens/welcome/welcome.screen.tsx:48
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
-
-#: src/screens/settings/settings.screen.tsx:24
-msgid "Giao diện tối"
-msgstr "Dark interface"
 
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
@@ -133,17 +129,22 @@ msgstr "Hello"
 msgid "hide"
 msgstr "hide"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:167
-msgid "Huỷ"
-msgstr "Cancel"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:172
 msgid "Icon Button"
 msgstr "Icon Button"
 
+#: src/components/global/global.bottomSheetDialog.component.tsx:179
+msgid "Ignore"
+msgstr "Ignore"
+
 #: src/navigation/tab.navigation.tsx:30
 msgid "Introduce"
 msgstr "Introduce"
+
+#: src/screens/settings/settings.screen.tsx:40
+#: src/navigation/main.navigation.tsx:53
+msgid "Language"
+msgstr "Language"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:53
 msgid "Large success text"
@@ -152,6 +153,10 @@ msgstr "Large success text"
 #: src/screens/Introduction/introduction.base.screen.tsx:34
 msgid "Lazy view"
 msgstr "Lazy view"
+
+#: src/components/list/list.defaultErrorItem.component.tsx:29
+msgid "Loadmore failed"
+msgstr "Loadmore failed"
 
 #: src/screens/login/login.screen.tsx:116
 msgid "Login"
@@ -164,10 +169,6 @@ msgstr "Login failed"
 #: src/screens/login/login.screen.tsx:89
 msgid "Login to continue"
 msgstr "Login to continue"
-
-#: src/components/list/list.defaultErrorItem.component.tsx:29
-msgid "Lỗi khi tải thêm"
-msgstr "Error when downloading more"
 
 #: src/components/global/global.modal.network.component.tsx:52
 msgid "Lost network connection"
@@ -184,11 +185,6 @@ msgstr "Multi text"
 #: src/components/global/global.modal.network.component.tsx:26
 msgid "Network connection restored"
 msgstr "Network connection restored"
-
-#: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:53
-msgid "Ngôn ngữ"
-msgstr "Language"
 
 #: src/screens/dog/components/item.dog.tsx:43
 msgid "No name"
@@ -218,6 +214,10 @@ msgstr "Purpose"
 msgid "Radio"
 msgstr "Radio"
 
+#: src/components/form/form.select.single.tsx:165
+msgid "Search"
+msgstr "Search"
+
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:99
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:297
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:98
@@ -225,11 +225,16 @@ msgstr "Radio"
 msgid "see more"
 msgstr "see more"
 
+#: src/navigation/main.navigation.tsx:47
+msgid "Setting"
+msgstr "Setting"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:47
 msgid "Small error text"
 msgstr "Small error text"
 
 #: src/helpers/api.helper.ts:58
+#: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
@@ -253,17 +258,9 @@ msgstr "Text input"
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 
-#: src/components/form/form.select.single.tsx:165
-msgid "Tìm kiếm"
-msgstr "Search"
-
 #: src/screens/welcome/welcome.screen.tsx:44
 msgid "Welcome to"
 msgstr "Welcome to"
-
-#: src/components/global/global.bottomSheetDialog.component.tsx:192
-msgid "Xác nhận"
-msgstr "Confirm"
 
 #: src/screens/login/login.screen.tsx:97
 msgid "Your email"

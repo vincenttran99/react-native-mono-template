@@ -164,7 +164,7 @@ const GlobalBottomSheetDialog = (
                 dataDialog?.negativeButton?.props?.style,
               ]}
               onPress={() => onPress(dataDialog?.negativeButton?.onPress)}
-              label={dataDialog?.negativeButton?.label || _(msg`Huỷ`)}
+              label={dataDialog?.negativeButton?.label || _(msg`Cancel`)}
             />
 
             {dataDialog?.neutralButton ? (
@@ -176,7 +176,7 @@ const GlobalBottomSheetDialog = (
                   dataDialog?.neutralButton?.props?.style,
                 ]}
                 onPress={() => onPress(dataDialog?.neutralButton?.onPress)}
-                label={dataDialog?.neutralButton?.label || _(msg`Bỏ qua`)}
+                label={dataDialog?.neutralButton?.label || _(msg`Ignore`)}
               />
             ) : null}
 
@@ -189,7 +189,7 @@ const GlobalBottomSheetDialog = (
                   dataDialog?.positiveButton?.props?.style,
                 ]}
                 onPress={() => onPress(dataDialog?.positiveButton?.onPress)}
-                label={dataDialog?.positiveButton?.label || _(msg`Xác nhận`)}
+                label={dataDialog?.positiveButton?.label || _(msg`Confirm`)}
               />
             ) : null}
           </BView>

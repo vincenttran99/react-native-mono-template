@@ -22,10 +22,6 @@ msgstr "Các thành phần cơ sở"
 msgid "BIcon"
 msgstr "Bicon"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:179
-msgid "Bỏ qua"
-msgstr "Bỏ qua"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:124
 msgid "BPressable"
 msgstr "BPRESSABLE"
@@ -58,9 +54,9 @@ msgstr "Nút thứ cấp"
 msgid "BView"
 msgstr "Bview"
 
-#: src/navigation/main.navigation.tsx:47
-msgid "Cài đặt"
-msgstr "Cài đặt"
+#: src/components/global/global.bottomSheetDialog.component.tsx:167
+msgid "Cancel"
+msgstr "Hủy bỏ"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:191
 msgid "Cat"
@@ -75,22 +71,26 @@ msgstr "Hộp kiểm"
 msgid "Chip"
 msgstr "Chip"
 
+#: src/components/form/form.select.single.tsx:230
+msgid "Close"
+msgstr "Đóng"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:210
 #: src/screens/Introduction/introduction.base.screen.tsx:218
 msgid "Coming soon"
 msgstr "Sắp ra mắt"
 
+#: src/components/global/global.bottomSheetDialog.component.tsx:192
+msgid "Confirm"
+msgstr "Xác nhận"
+
 #: src/screens/welcome/welcome.screen.tsx:51
 msgid "Continue"
 msgstr "Tiếp tục"
 
-#: src/components/list/list.defaultError.component.tsx:30
-msgid "Đã có lỗi xảy ra"
-msgstr "Đã có lỗi xảy ra"
-
-#: src/components/list/list.defaultEmpty.component.tsx:40
-msgid "Danh sách trống"
-msgstr "Danh sách trống"
+#: src/screens/settings/settings.screen.tsx:24
+msgid "Dark Mode"
+msgstr "Chế độ tối"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:197
 msgid "Divider"
@@ -100,10 +100,6 @@ msgstr "Vách ngăn"
 msgid "Dogs"
 msgstr "Chó"
 
-#: src/components/form/form.select.single.tsx:230
-msgid "Đóng"
-msgstr "Đóng"
-
 #: src/screens/login/login.screen.tsx:35
 msgid "Email is not valid"
 msgstr "Email không hợp lệ"
@@ -112,6 +108,10 @@ msgstr "Email không hợp lệ"
 msgid "Email should not be empty"
 msgstr "Email không nên trống"
 
+#: src/components/list/list.defaultEmpty.component.tsx:40
+msgid "Empty"
+msgstr "Trống"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:56
 msgid "Extra large warning text"
 msgstr "Văn bản cảnh báo thêm lớn"
@@ -119,10 +119,6 @@ msgstr "Văn bản cảnh báo thêm lớn"
 #: src/screens/welcome/welcome.screen.tsx:48
 msgid "Fast and simple template"
 msgstr "Mẫu nhanh và đơn giản"
-
-#: src/screens/settings/settings.screen.tsx:24
-msgid "Giao diện tối"
-msgstr "Giao diện tối"
 
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
@@ -133,17 +129,22 @@ msgstr "Xin chào"
 msgid "hide"
 msgstr "trốn"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:167
-msgid "Huỷ"
-msgstr "Huỷ"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:172
 msgid "Icon Button"
 msgstr "Nút biểu tượng"
 
+#: src/components/global/global.bottomSheetDialog.component.tsx:179
+msgid "Ignore"
+msgstr "Phớt lờ"
+
 #: src/navigation/tab.navigation.tsx:30
 msgid "Introduce"
 msgstr "Giới thiệu"
+
+#: src/screens/settings/settings.screen.tsx:40
+#: src/navigation/main.navigation.tsx:53
+msgid "Language"
+msgstr "Ngôn ngữ"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:53
 msgid "Large success text"
@@ -152,6 +153,10 @@ msgstr "Văn bản thành công lớn"
 #: src/screens/Introduction/introduction.base.screen.tsx:34
 msgid "Lazy view"
 msgstr "Quan điểm lười biếng"
+
+#: src/components/list/list.defaultErrorItem.component.tsx:29
+msgid "Loadmore failed"
+msgstr "Loadmore không thành công"
 
 #: src/screens/login/login.screen.tsx:116
 msgid "Login"
@@ -164,10 +169,6 @@ msgstr "Đăng nhập không thành công"
 #: src/screens/login/login.screen.tsx:89
 msgid "Login to continue"
 msgstr "Đăng nhập để tiếp tục"
-
-#: src/components/list/list.defaultErrorItem.component.tsx:29
-msgid "Lỗi khi tải thêm"
-msgstr "Lỗi khi tải thêm"
 
 #: src/components/global/global.modal.network.component.tsx:52
 msgid "Lost network connection"
@@ -184,11 +185,6 @@ msgstr "Nhiều văn bản"
 #: src/components/global/global.modal.network.component.tsx:26
 msgid "Network connection restored"
 msgstr "Kết nối mạng được khôi phục"
-
-#: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:53
-msgid "Ngôn ngữ"
-msgstr "Ngôn ngữ"
 
 #: src/screens/dog/components/item.dog.tsx:43
 msgid "No name"
@@ -218,6 +214,10 @@ msgstr "Mục đích"
 msgid "Radio"
 msgstr "Radio"
 
+#: src/components/form/form.select.single.tsx:165
+msgid "Search"
+msgstr "Tìm kiếm"
+
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:99
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:297
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:98
@@ -225,11 +225,16 @@ msgstr "Radio"
 msgid "see more"
 msgstr "Xem thêm"
 
+#: src/navigation/main.navigation.tsx:47
+msgid "Setting"
+msgstr "Cài đặt"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:47
 msgid "Small error text"
 msgstr "Văn bản lỗi nhỏ"
 
 #: src/helpers/api.helper.ts:58
+#: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Có gì đó đã sai"
 
@@ -253,17 +258,9 @@ msgstr "Đầu vào văn bản"
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài."
 
-#: src/components/form/form.select.single.tsx:165
-msgid "Tìm kiếm"
-msgstr "Tìm kiếm"
-
 #: src/screens/welcome/welcome.screen.tsx:44
 msgid "Welcome to"
 msgstr "Chào mừng bạn đến"
-
-#: src/components/global/global.bottomSheetDialog.component.tsx:192
-msgid "Xác nhận"
-msgstr "Xác nhận"
 
 #: src/screens/login/login.screen.tsx:97
 msgid "Your email"

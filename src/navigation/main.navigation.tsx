@@ -44,13 +44,13 @@ const MainNavigator = () => {
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_SCREEN}
         options={{
-          title: _(msg`Cài đặt`),
+          title: _(msg`Setting`),
         }}
         component={SettingsScreen}
       />
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_LANGUAGE_SCREEN}
-        options={{ title: _(msg`Ngôn ngữ`) }}
+        options={{ title: _(msg`Language`) }}
         component={SettingsLanguageScreen}
       />
     </StackNavigator.Navigator>
