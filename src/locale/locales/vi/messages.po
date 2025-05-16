@@ -186,6 +186,10 @@ msgstr "Nhiều văn bản"
 msgid "Network connection restored"
 msgstr "Kết nối mạng được khôi phục"
 
+#: src/helpers/api.helper.ts:134
+msgid "Network Error"
+msgstr "Lỗi mạng"
+
 #: src/screens/dog/components/item.dog.tsx:43
 msgid "No name"
 msgstr "Không có tên"
@@ -233,7 +237,7 @@ msgstr "Cài đặt"
 msgid "Small error text"
 msgstr "Văn bản lỗi nhỏ"
 
-#: src/helpers/api.helper.ts:58
+#: src/helpers/api.helper.ts:146
 #: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Có gì đó đã sai"

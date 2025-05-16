@@ -12,6 +12,7 @@ import { useSystemStore } from "store/system.store";
 const StackNavigator = createNativeStackNavigator();
 
 const AuthNavigator = () => {
+  // For welcome screen
   const isFirstOpen = useSystemStore.getState().isFirstOpen;
 
   return (

@@ -1,12 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# ===================================================================
+# Auto-translation script for PO files
+# ===================================================================
+# This script automatically translates empty msgstr entries in PO files
+# using translate-shell. It can be used as a pre-commit hook or run manually.
+# 
+# Features:
+# - Translates only empty msgstr entries
+# - Supports auto-detection of source language
+# - Can process staged files or all PO files
+# - Configurable through environment variables
+# ===================================================================
+
 # Setup logging
+# Uncomment these lines to enable logging to a file
 # LOG_FILE="auto-translate.log"
 # exec > >(tee -a "$LOG_FILE") 2>&1
 echo "=== Auto-translate started at $(date) ==="
 
-# Read .env to get ENABLE_AUTO_TRANSLATE
+# Read environment variables from .env.development
+# This loads configuration settings like ENABLE_AUTO_TRANSLATE
 if [ -f .env.development ]; then
   export $(grep -v '^#' .env.development | xargs)
 else
@@ -14,18 +29,22 @@ else
   exit 1
 fi
 
+# Check if auto-translation is enabled in environment settings
+# Skip the entire process if disabled
 if [[ "${ENABLE_AUTO_TRANSLATE:-false}" != "true" ]]; then
   echo "Auto-translate disabled. Skipping."
   exit 0
 fi
 
-# Check if translate-shell is installed
+# Verify that translate-shell is installed
+# This is the core dependency for performing translations
 if ! command -v trans &> /dev/null; then
   echo "❌ translate-shell not found. Please install it from https://github.com/soimort/translate-shell"
   exit 1
 fi
 
-# Ensure DEFAULT_LANGUAGE_CODE has a value
+# Set the default source language for translations
+# Uses DEFAULT_LANGUAGE_CODE from .env or falls back to "vi"
 if [ -z "${DEFAULT_LANGUAGE_CODE:-}" ]; then
   DEFAULT_LANG="vi"
   echo "⚠️ DEFAULT_LANGUAGE_CODE is not defined, using default: $DEFAULT_LANG"
@@ -33,7 +52,8 @@ else
   DEFAULT_LANG="$DEFAULT_LANGUAGE_CODE"
 fi
 
-# Check ENABLE_AUTO_DETECT_WHEN_TRANSLATE flag
+# Determine whether to auto-detect source language
+# When enabled, translate-shell will try to identify the language automatically
 if [[ "${ENABLE_AUTO_DETECT_WHEN_TRANSLATE:-false}" == "true" ]]; then
   AUTO_DETECT=true
   echo "🔍 Auto-detection of source language enabled"
@@ -42,33 +62,40 @@ else
   echo "🔄 Auto-translating empty msgstr using source language: $DEFAULT_LANG"
 fi
 
-# Get list of staged .po files
+# Get list of PO files to process
+# First tries to get staged files from git, then falls back to all PO files
 STAGED_PO_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E "\.po$" || true)
 
-# If no .po files are staged, check all .po files
+# If no PO files are staged in git, find all PO files in the locale directory
 if [ -z "$STAGED_PO_FILES" ]; then
   echo "No .po files are staged, checking all .po files..."
   STAGED_PO_FILES=$(find src/locale/locales -type f -name "*.po" 2>/dev/null || echo "")
 fi
 
+# Exit if no PO files are found to process
 if [ -z "$STAGED_PO_FILES" ]; then
   echo "No .po files found. Skipping."
   exit 0
 fi
 
+# Track whether any files were changed during processing
 CHANGED=false
 
+# Process each PO file
 for po in $STAGED_PO_FILES; do
   # Skip if file doesn't exist
   if [ ! -f "$po" ]; then
     continue
   fi
   
+  # Extract locale from directory name
+  # Example: src/locale/locales/vi/messages.po -> locale is "vi"
   locale=$(basename "$(dirname "$po")")
   
-  # Skip if locale is the same as source language and not a new file
+  # Skip source language files that already exist in git
+  # This prevents modifying the source language files unnecessarily
   if [ "$locale" = "$DEFAULT_LANG" ]; then
-    # Check if the file is new
+    # Check if the file is already tracked by git
     if git ls-files --error-unmatch "$po" > /dev/null 2>&1; then
       echo "Skipping source language file (already exists): $po"
       continue
@@ -79,7 +106,8 @@ for po in $STAGED_PO_FILES; do
   
   echo "Processing: $po (locale: $locale)"
   
-  # Count the number of actual empty msgstr (excluding header)
+  # Count empty msgstr entries before processing
+  # This AWK script carefully excludes the header section
   empty_before=$(awk '
     BEGIN { count=0; header=1; }
     /^msgid / { 
@@ -97,54 +125,59 @@ for po in $STAGED_PO_FILES; do
   
   echo "Number of actual empty msgstr (excluding header): $empty_before"
   
-  # If there are no empty msgstr to translate, skip this file
+  # Skip files with no empty msgstr entries
   if [ "$empty_before" -eq 0 ]; then
     echo "No strings to translate in file $po. Skipping."
     continue
   fi
   
-  # Use a simpler method to process the file
+  # Begin processing the file
   echo "Starting file processing..."
   
-  # Create a copy of the original file
-#   cp "$po" "${po}.bak"
+  # Uncomment to create a backup of the original file
+  # cp "$po" "${po}.bak"
   
-  # Find and translate empty msgstr strings
+  # Initialize translation counter and array
   translations_count=0
-  
-  # Create an array to store source:target pairs
   declare -a translations
   
-  # Read the file and process each line to find msgid that need translation
+  # Process the file line by line to find msgid entries that need translation
+  # This extracts all msgid lines and their following msgstr lines
   while IFS= read -r line || [ -n "$line" ]; do
-    # Find msgid line
+    # Match lines starting with "msgid" followed by a quoted string
     if [[ "$line" =~ ^msgid\ \"(.*)\"$ ]]; then
+      # Extract the string content from the msgid line
       current_msgid="${BASH_REMATCH[1]}"
       
-      # Skip empty msgid (header)
+      # Skip empty msgid (part of the PO file header)
       if [[ -z "$current_msgid" ]]; then
         continue
       fi
       
-      # Find the next msgstr line
+      # Find the line number of the current msgid
       line_num=$(grep -n "msgid \"$current_msgid\"" "$po" | cut -d: -f1)
+      # The msgstr line is typically the next line after msgid
       next_line_num=$((line_num + 1))
       next_line=$(sed -n "${next_line_num}p" "$po")
       
-      # If msgstr is empty, translate and add to translations array
+      # Only translate if the msgstr is empty
       if [[ "$next_line" == 'msgstr ""' ]]; then
         echo "Translating string: '$current_msgid' from $DEFAULT_LANG to $locale"
         
-        # Perform translation with or without -s parameter depending on AUTO_DETECT
+        # Perform translation using translate-shell
+        # The approach differs based on whether auto-detection is enabled
         if [ "$AUTO_DETECT" = true ]; then
+          # Auto-detect source language
           translation=$(trans -b :"$locale" "$current_msgid" 2>/dev/null || echo "")
         else
+          # Use specified source language
           translation=$(trans -b :"$locale" -s "$DEFAULT_LANG" "$current_msgid" 2>/dev/null || echo "")
         fi
         
+        # Store successful translations for later processing
         if [[ -n "$translation" ]]; then
           echo "Translation result: '$translation'"
-          # Add to translations array
+          # Store as source:target pair
           translations+=("$current_msgid:$translation")
           ((translations_count++))
         else
@@ -156,20 +189,23 @@ for po in $STAGED_PO_FILES; do
   
   echo "Number of strings translated: $translations_count"
   
-  # Apply translations to the file
+  # Apply all translations to the file
   for trans in "${translations[@]}"; do
+    # Split the source:target pair
     IFS=':' read -r source target <<< "$trans"
     echo "Applying translation: '$source' -> '$target'"
     
-    # Find the position of msgid and the next msgstr line
+    # Find the position of the msgid line
     line_num=$(grep -n "msgid \"$source\"" "$po" | cut -d: -f1)
     if [ -n "$line_num" ]; then
+      # The msgstr line is the next line
       next_line_num=$((line_num + 1))
-      # Check if the next line is an empty msgstr
+      # Verify that the next line is an empty msgstr
       next_line=$(sed -n "${next_line_num}p" "$po")
       if [ "$next_line" = 'msgstr ""' ]; then
-        # Replace empty msgstr with translation
+        # Escape special characters in the target string for sed
         target_escaped=$(echo "$target" | sed 's/[\/&]/\\&/g')
+        # Replace the empty msgstr with the translation
         sed -i.tmp "${next_line_num}s/msgstr \"\"/msgstr \"$target_escaped\"/" "$po"
         echo "Updated line $next_line_num with translation"
       else
@@ -180,10 +216,11 @@ for po in $STAGED_PO_FILES; do
     fi
   done
   
-  # Remove temporary .tmp file if exists
+  # Clean up temporary files created by sed
   rm -f "${po}.tmp"
   
-  # Count the number of actual empty msgstr after processing (excluding header)
+  # Count empty msgstr entries after processing
+  # Uses the same AWK script as before to ensure consistent counting
   empty_after=$(awk '
     BEGIN { count=0; header=1; }
     /^msgid / { 
@@ -201,12 +238,13 @@ for po in $STAGED_PO_FILES; do
   
   echo "Number of actual empty msgstr after processing (excluding header): $empty_after"
   
-  # Show some translated lines for debugging
+  # Show examples of translated lines for debugging
   if [ "$empty_before" -ne "$empty_after" ]; then
     echo "Examples of translated lines:"
+    # Uncomment to show diff of changes
     # diff -u "${po}.bak" "$po" | grep -E "^\+msgstr" | head -n 5
     
-    # Add file to git
+    # Uncomment to automatically stage changes in git
     # git add "$po"
     echo "Added file to git: $po"
     
@@ -215,10 +253,11 @@ for po in $STAGED_PO_FILES; do
     echo "ℹ️ No changes in: $po"
   fi
   
-  # Remove backup file
-#   rm -f "${po}.bak"
+  # Uncomment to remove backup file if it was created
+  # rm -f "${po}.bak"
 done
 
+# Final status message
 if [ "$CHANGED" = true ]; then
   echo "✅ Auto-translate completed and changes have been staged."
 else

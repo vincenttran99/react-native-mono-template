@@ -8,7 +8,7 @@ dayjs.extend(isBetween);
 const { width, height } = Dimensions.get("window");
 
 /**
- * Copy from
+ * Thanks to
  * https://github.com/nirsky/react-native-size-matters
  */
 const [shortDimension, longDimension] =

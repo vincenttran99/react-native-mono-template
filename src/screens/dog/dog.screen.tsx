@@ -16,7 +16,7 @@ import ItemDog from "./components/item.dog";
 import BLegendList from "components/base/base.legendList";
 
 export default function DogScreen() {
-  const { items, onRefresh, isRefetching, onEndReached } =
+  const { listItems, onRefresh, isRefetching, onEndReached } =
     useInfiniteList<IDog>({
       query: useDogListQuery,
       keyAttribute: "notification_id",
@@ -31,7 +31,7 @@ export default function DogScreen() {
       <BLegendList
         keyAttribute={"notification_id"}
         estimatedItemSize={450}
-        data={items}
+        data={listItems}
         renderItem={renderItem}
         onEndReached={onEndReached}
         onRefresh={onRefresh}

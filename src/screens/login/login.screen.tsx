@@ -6,11 +6,11 @@ import BText from "components/base/base.text";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import BView from "components/base/base.view";
-import { handleRequestHelper } from "helpers/api.helper";
 import { useLoginMutation } from "api/auth/auth.queries";
 import { LoginPayload } from "api/auth/auth.api";
 import { showErrorMessage } from "helpers/global.helper";
 import BKeyboardAvoidingView from "components/base/base.keyboardAvoidingView";
+import { handleApiRequestHelper } from "helpers/api.helper";
 
 export default function LoginScreen() {
   // define the form
@@ -61,7 +61,7 @@ export default function LoginScreen() {
      * @param onSuccess: The function will be called when the request is success
      * @param onError: The function will be called when the request is error
      */
-    handleRequestHelper({
+    handleApiRequestHelper({
       request: loginUser,
       params: data,
       onSuccess: (response) => {

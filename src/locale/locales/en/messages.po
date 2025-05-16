@@ -186,6 +186,10 @@ msgstr "Multi text"
 msgid "Network connection restored"
 msgstr "Network connection restored"
 
+#: src/helpers/api.helper.ts:134
+msgid "Network Error"
+msgstr "Network Error"
+
 #: src/screens/dog/components/item.dog.tsx:43
 msgid "No name"
 msgstr "No name"
@@ -233,7 +237,7 @@ msgstr "Setting"
 msgid "Small error text"
 msgstr "Small error text"
 
-#: src/helpers/api.helper.ts:58
+#: src/helpers/api.helper.ts:146
 #: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Something went wrong"

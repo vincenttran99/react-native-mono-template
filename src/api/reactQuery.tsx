@@ -9,14 +9,27 @@ import {
 import { useProfileStore } from "store/profile.store";
 import axios from "axios";
 
+/**
+ * Key used for storing React Query cache in AsyncStorage
+ * This is the identifier for retrieving and saving query data
+ */
 const STORAGE_KEY = "queryClient-storage";
 
-// key allow to persist query data
+/**
+ * Constants for query key management
+ * PERSIST_KEY: Used to mark queries that should be persisted across app restarts
+ * INSTANCE_KEY: Used to mark queries that should be cleared on logout
+ */
 export const PERSIST_KEY = "persist-key";
-// key mark instance query data
 export const INSTANCE_KEY = "instance-key";
 
-// Check 401, 403 codes
+/**
+ * Utility function to check if an error is an unauthorized error (401 or 403)
+ * Used to determine if a query should be retried or if the user should be logged out
+ * 
+ * @param error - The error object to check
+ * @returns Boolean indicating if the error is an unauthorized error
+ */
 const isUnauthorizedError = (error: unknown): boolean => {
   return (
     axios.isAxiosError(error) &&
@@ -24,6 +37,10 @@ const isUnauthorizedError = (error: unknown): boolean => {
   );
 };
 
+/**
+ * Type definition for the persisted client state structure
+ * This represents the shape of data stored in AsyncStorage
+ */
 type PersistedClient = {
   clientState: {
     queries: Array<{
@@ -33,6 +50,12 @@ type PersistedClient = {
   };
 };
 
+/**
+ * Creates and configures a new QueryClient instance with default options
+ * This function centralizes the configuration for consistent query behavior
+ * 
+ * @returns A configured QueryClient instance
+ */
 const createQueryClient = () =>
   new QueryClient({
     defaultOptions: {
@@ -63,6 +86,12 @@ const createQueryClient = () =>
     },
   });
 
+/**
+ * Configuration for query dehydration/rehydration
+ * Controls which queries should be persisted to storage
+ * - Mutations are never persisted
+ * - Only queries with INSTANCE_KEY in their queryKey are persisted
+ */
 const dehydrateOptions: PersistQueryClientProviderProps["persistOptions"]["dehydrateOptions"] =
   {
     shouldDehydrateMutation: (_: any) => false,
@@ -71,17 +100,27 @@ const dehydrateOptions: PersistQueryClientProviderProps["persistOptions"]["dehyd
     },
   };
 
+/**
+ * Global QueryClient instance shared across the application
+ * Created once and reused to maintain consistent cache
+ */
 const globalQueryClient = createQueryClient();
 
+/**
+ * Component that tracks user authentication state changes
+ * Clears specific queries and AsyncStorage data when user logs out
+ * 
+ * @returns null - This is a utility component with no UI
+ */
 function UserIdTracker() {
   const userId = useProfileStore((state) => state.profile?.user_id);
   const prevUserIdRef = useRef<string | undefined>(userId);
 
   useEffect(() => {
-    //only run when logout
+    // Only run when logout is detected (userId changes from defined to undefined)
     if (prevUserIdRef.current !== undefined && userId === undefined) {
-      clearSpecificQueries();
-      removeDataFromAsyncStorage();
+      clearInstanceQueries();
+      removeInstanceDataFromStorage();
     }
 
     prevUserIdRef.current = userId;
@@ -90,6 +129,13 @@ function UserIdTracker() {
   return null;
 }
 
+/**
+ * Main React Query provider component
+ * Sets up the query client with persistence capabilities
+ * 
+ * @param children - React components to be wrapped by the provider
+ * @returns Provider component with configured persistence
+ */
 export function QueryProvider({ children }: { children: React.ReactNode }) {
   const [persistOptions, _setPersistOptions] = useState(() => {
     const asyncPersister = createAsyncStoragePersister({
@@ -113,36 +159,44 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-function clearSpecificQueries() {
+/**
+ * Clears all queries marked with INSTANCE_KEY from the query cache
+ * Called when user logs out to prevent stale data from persisting
+ */
+function clearInstanceQueries() {
   globalQueryClient.removeQueries({
     predicate: (q) =>
       Array.isArray(q.queryKey) && q.queryKey.includes(INSTANCE_KEY),
   });
 }
 
-// Function to remove old data from AsyncStorage
-async function removeDataFromAsyncStorage() {
+/**
+ * Removes instance-specific query data from AsyncStorage
+ * Filters out queries with INSTANCE_KEY from the persisted cache
+ * This ensures user-specific data doesn't persist after logout
+ */
+async function removeInstanceDataFromStorage() {
   try {
     const raw = await AsyncStorage.getItem(STORAGE_KEY);
     if (!raw) return;
 
     const parsed: PersistedClient = JSON.parse(raw);
 
-    const filtered = parsed.clientState.queries.filter((q) => {
-      // only keep if not an instance key
+    const filteredQueries = parsed.clientState.queries.filter((q) => {
+      // Only keep queries that don't have INSTANCE_KEY
       return !q.queryKey.includes(INSTANCE_KEY);
     });
 
-    const newBlob: PersistedClient = {
+    const updatedCache: PersistedClient = {
       ...parsed,
       clientState: {
         ...parsed.clientState,
-        queries: filtered,
+        queries: filteredQueries,
       },
     };
 
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(newBlob));
+    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updatedCache));
   } catch (err) {
-    console.error("cleanPersistedUserQueries failed:", err);
+    console.error("Failed to clean persisted user queries:", err);
   }
 }

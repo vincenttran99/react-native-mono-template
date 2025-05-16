@@ -1,23 +1,53 @@
 #!/usr/bin/env node
 
+/**
+ * Color Theme Generator Script
+ * 
+ * This script automatically generates a color palette for light and dark themes
+ * based on primary colors defined in environment variables.
+ * 
+ * It uses Adobe's Leonardo Color library to create accessible color scales
+ * with proper contrast ratios for both light and dark modes.
+ */
+
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const dotenv = require("dotenv");
 
-// Temporary library needed
+/**
+ * The temporary package to install for color generation
+ * Adobe Leonardo provides tools for creating accessible color systems
+ * with proper contrast ratios
+ */
 const tempPackage = "@adobe/leonardo-contrast-colors";
 
-// Read primary color from env.development file
+/**
+ * Read primary colors from the development environment file
+ * These colors will be used as the base for generating the entire color palette
+ */
 const envPath = path.resolve(`./.env.development`);
 
-// 2. read file and parse into object { KEY: 'value', … }
+/**
+ * Parse the environment file into a key-value object
+ * This extracts all variables defined in the .env.development file
+ */
 const fileBuffer = fs.readFileSync(envPath);
-const parsedEnv = dotenv.parse(fileBuffer); // dotenv.parse từ package dotenv
+const parsedEnv = dotenv.parse(fileBuffer); // dotenv.parse from the dotenv package
+
+/**
+ * Default fallback colors in case the environment variables are not defined
+ * These ensure the script doesn't fail if color values are missing
+ */
 let primaryLightColorHex = "#222222"; // Default if file cannot be read
 let primaryDarkColorHex = "#222222"; // Default if file cannot be read
 
 try {
+  /**
+   * Extract primary colors from environment variables if they exist
+   * PRIMARY_COLOR_LIGHT: Base color for light theme
+   * PRIMARY_COLOR_DARK: Base color for dark theme
+   */
   if (parsedEnv.PRIMARY_COLOR_LIGHT && parsedEnv.PRIMARY_COLOR_DARK) {
     primaryLightColorHex = parsedEnv.PRIMARY_COLOR_LIGHT;
     primaryDarkColorHex = parsedEnv.PRIMARY_COLOR_DARK;
@@ -28,7 +58,10 @@ try {
   console.log(`⚠️ Using default color`);
 }
 
-// Check if the library is already installed
+/**
+ * Check if the Leonardo Color library is already installed
+ * This prevents unnecessary installations if the package is already available
+ */
 let isInstalled = false;
 try {
   require.resolve(tempPackage);
@@ -37,21 +70,42 @@ try {
   isInstalled = false;
 }
 
-// Install the library if not available
+/**
+ * Install the Leonardo Color library if not already available
+ * Uses --no-save flag to avoid modifying package.json
+ */
 if (!isInstalled) {
   console.log(`📦 Temporarily installing ${tempPackage}...`);
   execSync(`npm install ${tempPackage} --no-save`, { stdio: "inherit" });
 }
 
-// Import the library after installation
+/**
+ * Import the Leonardo Color library components after ensuring installation
+ * Theme: Creates a theme with background and foreground colors
+ * Color: Defines a color with various contrast ratios
+ * BackgroundColor: Defines the background color for contrast calculations
+ */
 const { Theme, Color, BackgroundColor } = require(tempPackage);
 
-// Perform tasks with the library
+/**
+ * Define the background color for both themes
+ * This is used as the base for calculating contrast ratios
+ */
 const Background = new BackgroundColor({
   name: "Background",
   colorKeys: ["#ffffff"],
 });
 
+/**
+ * Define the primary color for light theme with various contrast ratios
+ * Each ratio creates a different shade of the primary color:
+ * - primaryLightest: Very subtle shade (lowest contrast)
+ * - primaryLight: Light shade
+ * - primary: Base color
+ * - primaryDark: Dark shade
+ * - primaryDarkest: Very dark shade
+ * - reverse: High contrast version for text on colored backgrounds
+ */
 const primaryLightColor = new Color({
   name: "primary",
   colorKeys: [primaryLightColorHex],
@@ -65,6 +119,11 @@ const primaryLightColor = new Color({
   },
 });
 
+/**
+ * Define the primary color for dark theme with various contrast ratios
+ * The ratios are different from light theme to ensure proper visibility
+ * in dark mode environments
+ */
 const primaryDarkColor = new Color({
   name: "primary",
   colorKeys: [primaryDarkColorHex],
@@ -78,12 +137,21 @@ const primaryDarkColor = new Color({
   },
 });
 
+/**
+ * Create the light theme with high lightness value (97%)
+ * This generates a bright background with appropriate contrast colors
+ */
 const lightTheme = new Theme({
   colors: [primaryLightColor],
   backgroundColor: Background,
   lightness: 97,
 });
 
+/**
+ * Create the dark theme with low lightness value (10%)
+ * This generates a dark background with higher contrast (3)
+ * to ensure visibility of elements
+ */
 const darkTheme = new Theme({
   colors: [primaryDarkColor],
   backgroundColor: Background,
@@ -91,16 +159,28 @@ const darkTheme = new Theme({
   contrast: 3,
 });
 
-// Convert results from array to flat object
+/**
+ * Transform the Leonardo theme output into a flat object structure
+ * This makes it easier to use in the application's theme system
+ * 
+ * @param {Array} themeColors - The array of colors from Leonardo Theme
+ * @returns {Object} A flat object with color name/value pairs
+ */
 const transformToFlatObject = (themeColors) => {
   const result = {};
 
-  // Get background color from the first element
+  /**
+   * Extract background color from the first element of the array
+   * This is typically the base background color
+   */
   if (themeColors[0] && themeColors[0].background) {
     result.background = themeColors[0].background;
   }
 
-  // Get colors from the second element (if available)
+  /**
+   * Extract all color variations from the second element
+   * These are the different shades of the primary color
+   */
   if (themeColors[1] && themeColors[1].values) {
     themeColors[1].values.forEach((color) => {
       result[color.name] = color.value;
@@ -110,24 +190,40 @@ const transformToFlatObject = (themeColors) => {
   return result;
 };
 
+/**
+ * Create the final color object with both light and dark themes
+ * This will be used to update the theme constants file
+ */
 const result = {
   light: transformToFlatObject(lightTheme.contrastColors),
   dark: transformToFlatObject(darkTheme.contrastColors),
 };
 
-// Update COLORS in theme.constant.ts
+/**
+ * Update the COLORS constant in the theme.constant.ts file
+ * This makes the generated colors available to the application
+ */
 const themeConstantPath = path.resolve(
   process.cwd(),
   "src/constants/theme.constant.ts"
 );
 try {
+  /**
+   * Read the current theme constants file
+   */
   let themeContent = fs.readFileSync(themeConstantPath, "utf-8");
 
-  // Use stronger regex to find and replace the entire COLORS declaration
+  /**
+   * Regular expression to find the existing COLORS declaration
+   * This matches the entire export statement including nested objects
+   */
   const colorsRegex = /export\s+const\s+COLORS\s*=\s*\{[\s\S]*?\};/;
 
   if (colorsRegex.test(themeContent)) {
-    // If COLORS declaration is found, replace it
+    /**
+     * If COLORS declaration is found, replace it with the new values
+     * This preserves the rest of the file while updating only the colors
+     */
     themeContent = themeContent.replace(
       colorsRegex,
       `export const COLORS = ${JSON.stringify(result, null, 2)};`
@@ -135,7 +231,10 @@ try {
     fs.writeFileSync(themeConstantPath, themeContent, "utf-8");
     console.log(`✅ COLORS updated in theme.constant.ts`);
   } else {
-    // If not found, add to the end of file
+    /**
+     * If COLORS declaration is not found, add it to the end of the file
+     * This handles the case where the file exists but doesn't have COLORS yet
+     */
     console.log(`⚠️ COLORS declaration not found in theme.constant.ts`);
     console.log(`⚠️ Adding COLORS to the end of file`);
     themeContent += `\n\nexport const COLORS = ${JSON.stringify(

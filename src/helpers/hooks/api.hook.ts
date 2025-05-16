@@ -1,39 +1,62 @@
 import { useEffect } from "react";
 
 /**
- * Custom hook to execute an asynchronous function and handle the results when the component is mounted.
- * This hook prevents memory leaks by canceling actions if the component is unmounted before the async operation completes.
+ * Custom hook to execute an asynchronous function and process its results when the component mounts.
+ * This hook safely handles component unmounting to prevent memory leaks and state updates on unmounted components.
  *
- * @param asyncFn - The asynchronous function to be executed.
- * @param arrayCallbackFunction - An array of callback functions to handle the results of the asynchronous function.
+ * @template T - The type of data returned by the asynchronous function and processed by callbacks
+ * @param asyncOperation - The asynchronous function that returns a Promise resolving to an array of type T
+ * @param resultHandlers - An array of callback functions, each processing one item from the result array
+ * 
+ * @example
+ * // Example usage with multiple API calls
+ * useAsyncOperation(
+ *   () => Promise.all([fetchUserProfile(), fetchUserSettings()]),
+ *   [
+ *     (profile) => setUserProfile(profile),
+ *     (settings) => setUserSettings(settings)
+ *   ]
+ * );
  */
-export function useAsync<T>(
-  asyncFn: () => Promise<T[]>,
-  arrayCallbackFunction: ((item: T) => void)[]
+export function useAsyncOperation<T>(
+  asyncOperation: () => Promise<T[]>,
+  resultHandlers: ((item: T) => void)[]
 ) {
   useEffect(() => {
-    let isActive = true;
+    // Flag to track if the component is still mounted
+    let isComponentMounted = true;
 
     try {
-      asyncFn()
-        .then((data: T[]) => {
-          if (isActive) {
-            data.forEach((itemResult, index) => {
+      // Execute the async operation
+      asyncOperation()
+        .then((results: T[]) => {
+          // Only process results if the component is still mounted
+          if (isComponentMounted) {
+            // Process each result with its corresponding handler function
+            results.forEach((result, index) => {
+              // Ensure the result exists and a valid handler function is available
               if (
-                itemResult &&
-                typeof arrayCallbackFunction[index] === "function"
-              )
-                arrayCallbackFunction[index](itemResult);
+                result &&
+                typeof resultHandlers[index] === "function"
+              ) {
+                // Call the handler with the result
+                resultHandlers[index](result);
+              }
             });
           }
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+          // Log any errors that occur during the async operation
+          console.error("Async operation failed:", error);
+        });
     } catch (error) {
-      console.error(error);
+      // Catch and log any synchronous errors that might occur
+      console.error("Error setting up async operation:", error);
     }
 
+    // Cleanup function to prevent updates if the component unmounts
     return () => {
-      isActive = false;
+      isComponentMounted = false;
     };
-  }, [asyncFn]);
+  }, [asyncOperation]); // Re-run effect if the async function reference changes
 }

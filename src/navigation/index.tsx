@@ -35,11 +35,27 @@ import { navigationRef } from "helpers/navigation.helper";
 
 import * as SplashScreen from "expo-splash-screen";
 
-// Keep the splash screen visible while we fetch resources
+/**
+ * Prevent the splash screen from auto-hiding
+ * This allows us to control when to hide the splash screen
+ * after all resources and initial rendering are complete
+ */
 SplashScreen.preventAutoHideAsync();
 
+/**
+ * Create a native stack navigator for the main navigation structure
+ * This provides a stack-based navigation with native transitions
+ */
 const NativeStack = createNativeStackNavigator();
 
+/**
+ * Deep linking configuration for the application
+ * Enables opening the app from external links and handling specific routes
+ *
+ * Structure:
+ * - prefixes: URLs that can open the app
+ * - config: Mapping between URL paths and app screens
+ */
 const LINKING = {
   prefixes: [
     `${Constants.expoConfig?.extra?.deeplink}://`,
@@ -62,41 +78,85 @@ const LINKING = {
   },
 };
 
+/**
+ * Default screen options applied to all screens in the navigator
+ * Configures transition animations and header visibility
+ */
 const SCREEN_OPTIONS = {
   animation: "slide_from_right" as "slide_from_right",
   headerBackTitleVisible: false,
   headerShown: false,
 };
 
+/**
+ * Main navigation component that sets up the entire navigation structure
+ *
+ * This component:
+ * 1. Provides keyboard handling through KeyboardProvider
+ * 2. Sets up theming with ThemeProvider
+ * 3. Configures API data fetching with QueryProvider
+ * 4. Handles bottom sheet modals with BottomSheetModalProvider
+ * 5. Manages navigation with NavigationContainer
+ * 6. Renders either authenticated or unauthenticated navigation stack
+ * 7. Includes global UI components like loading indicators and dialogs
+ *
+ * @returns The root navigation component with all providers and UI components
+ */
 export default function AppNavigation() {
+  /**
+   * Get the current theme from system store
+   * Used to determine which theme (light/dark) to apply
+   */
   const theme = useSystemStore((state) => state.theme);
+
+  /**
+   * Memoized theme value to prevent unnecessary re-renders
+   * Converts theme string to the actual theme object
+   */
   const themeValue = useMemo(
     () => (theme !== "light" ? LIGHT_THEME : DARK_THEME),
     [theme]
   );
+
+  /**
+   * Get authentication status from auth store
+   * Used to determine which navigation stack to show
+   */
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
+  /**
+   * Callback executed when navigation container is ready
+   * Hides the splash screen once navigation is initialized
+   */
   const onReady = useCallback(() => {
     SplashScreen.hide();
   }, []);
 
   return (
     <KeyboardProvider>
+      {/* Theme provider for consistent styling across the app */}
       <ThemeProvider theme={themeValue}>
+        {/* Provider for React Query data fetching */}
         <QueryProvider>
+          {/* Provider for bottom sheet modals */}
           <BottomSheetModalProvider>
+            {/* Main navigation container that manages navigation state */}
             <NavigationContainer
               ref={navigationRef}
               linking={LINKING}
               onReady={onReady}
             >
+              {/* Status bar configuration */}
               <StatusBar
                 barStyle={theme === "light" ? "light-content" : "dark-content"}
                 translucent={true}
                 backgroundColor={"transparent"}
               />
+              {/* Error boundary to catch and handle navigation errors */}
               <ErrorBoundary>
+                {/* Main navigation stack */}
                 <NativeStack.Navigator screenOptions={SCREEN_OPTIONS}>
+                  {/* Conditional rendering based on authentication status */}
                   {isAuthenticated ? (
                     <NativeStack.Screen
                       name={NAVIGATION_MAIN_NAVIGATION}
@@ -112,12 +172,15 @@ export default function AppNavigation() {
               </ErrorBoundary>
             </NavigationContainer>
 
+            {/* Lazy-loaded global UI components */}
             <BLazy timeRender={1500} haveIndicator={false}>
               <GlobalBottomSheetDialogComponent ref={BottomSheetDialogRef} />
               <GlobalLoadingComponent ref={LoadingRef} />
               <GlobalDialogComponent ref={DialogRef} />
             </BLazy>
+            {/* Flash message component for toast notifications */}
             <FlashMessage position={"top"} />
+            {/* Modal for network status notifications */}
             <GlobalModalNetworkComponent />
           </BottomSheetModalProvider>
         </QueryProvider>

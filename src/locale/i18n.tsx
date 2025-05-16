@@ -51,12 +51,20 @@ import { messages as messagesVi } from "locale/locales/vi/messages";
 import { I18nProvider as DefaultI18nProvider } from "@lingui/react";
 import { useSystemStore } from "store/system.store";
 import { AppLanguage } from "constants/languages.constant";
-import { sanitizeAppLanguageSetting } from "helpers/language.helper";
+import { sanitizeAppLanguageSettingHelper } from "helpers/language.helper";
 
 /**
- * We do a dynamic import of just the catalog that we need
+ * Dynamically activates a specific language locale
+ * 
+ * This function loads and activates the appropriate translation messages
+ * and imports the necessary locale-specific data for formatting numbers
+ * and handling pluralization rules. This approach optimizes bundle size
+ * by only loading the required language resources when needed.
+ * 
+ * @param locale - The language locale to activate from AppLanguage enum
+ * @returns Promise that resolves when locale activation is complete
  */
-export async function dynamicActivate(locale: AppLanguage) {
+export async function activateLocale(locale: AppLanguage) {
   switch (locale) {
     // case AppLanguage.an: {
     //   i18n.loadAndActivate({ locale, messages: messagesAn });
@@ -365,18 +373,46 @@ export async function dynamicActivate(locale: AppLanguage) {
   }
 }
 
-export function useLocaleLanguage() {
+/**
+ * Custom hook that manages the application's current locale
+ * 
+ * This hook subscribes to the application language setting from the system store
+ * and activates the appropriate locale whenever the language setting changes.
+ * It ensures that the correct translations are loaded and applied throughout
+ * the application.
+ * 
+ * The hook sanitizes the language setting to ensure it's a valid AppLanguage value
+ * before activating it.
+ */
+export function useApplicationLocale() {
   const appLanguage = useSystemStore((state) => state.appLanguage);
+  
   useEffect(() => {
-    dynamicActivate(sanitizeAppLanguageSetting(appLanguage));
+    // Sanitize the language setting and activate the appropriate locale
+    activateLocale(sanitizeAppLanguageSettingHelper(appLanguage));
   }, [appLanguage]);
 }
 
+/**
+ * Main I18n provider component for the application
+ * 
+ * This component sets up the internationalization context for the entire
+ * application. It uses the useApplicationLocale hook to ensure the correct
+ * locale is activated and provides the i18n instance to all child components
+ * through the Lingui I18nProvider.
+ * 
+ * @param props - Component props
+ * @param props.children - Child components that will have access to i18n context
+ * @returns I18nProvider component with activated locale
+ */
 export default function I18nProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  useLocaleLanguage();
+  // Initialize and manage the application locale
+  useApplicationLocale();
+  
+  // Provide the i18n instance to all child components
   return <DefaultI18nProvider i18n={i18n}>{children}</DefaultI18nProvider>;
 }
