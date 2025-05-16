@@ -79,5 +79,5 @@ Except for base and form components (which use the special prefixes `B**` and `F
 
 - Interface: `IOrder`, `IUser`, `IProduct`
 - Enum: `EOrderStatus`, `EUserRole`
-- Type: `TOrder`, `TUser`, `TProduct`
+- Type: Type used for quick definition, usually comes with corresponding suffix: BButtonProps, LoginResponse, etc
 - Constant: `ORDER_STATUS`, `USER_ROLE`
