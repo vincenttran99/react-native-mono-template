@@ -32,7 +32,6 @@ import {
   LoadingRef,
 } from "helpers/global.helper";
 import { navigationRef } from "helpers/navigation.helper";
-import { extractRefLinkFromStringHelper } from "helpers/string.helper";
 
 import * as SplashScreen from "expo-splash-screen";
 
@@ -55,15 +54,6 @@ const LINKING = {
         screens: {
           NAVIGATION_DETAIL_PRODUCT_SCREEN: {
             path: "product/:product",
-            parse: {
-              product: (product: string) => {
-                let value = extractRefLinkFromStringHelper(product);
-                return {
-                  product_id: value?.targetValue || "",
-                  ref: value?.ref || "",
-                };
-              },
-            },
           },
           NAVIGATION_TAB_NAVIGATION: "*/:ref?",
         },

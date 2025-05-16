@@ -4,12 +4,9 @@ import {
   PartialState,
   StackActions,
 } from "@react-navigation/native";
-import { NAVIGATION_WEB_VIEW_SCREEN } from "constants/navigation.constant";
-import { parseJSONHelper } from "./object.helper";
 
 export const navigationRef = createNavigationContainerRef();
 
-// @ts-ignore
 export const navigateNavHelper = (screenName: string, params?: object) => {
   if (navigationRef.isReady()) {
     // @ts-ignore
@@ -86,37 +83,3 @@ export const replaceNavHelper = (screenName: string, params?: object) => {
     navigationRef.dispatch(StackActions.replace(screenName, params));
   }
 };
-
-export async function handleNavHelper({
-  screen,
-  param,
-  timeOut = 500,
-}: {
-  screen: string;
-  param: any;
-  timeOut?: number;
-}) {
-  try {
-    switch (screen) {
-      case "NAVIGATION_OPEN_EXTERNAL_LINK": {
-        pushWithTimeoutNavHelper(
-          NAVIGATION_WEB_VIEW_SCREEN,
-          { link: param },
-          timeOut
-        );
-        break;
-      }
-      default: {
-        if (
-          navigationRef
-            .getRootState()
-            ?.routes?.[0]?.state?.routeNames?.includes(screen)
-        ) {
-          pushWithTimeoutNavHelper(screen, parseJSONHelper(param), timeOut);
-        }
-      }
-    }
-  } catch (error: any) {
-    console.log(error, "handleNavigation");
-  }
-}

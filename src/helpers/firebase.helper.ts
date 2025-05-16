@@ -1,7 +1,5 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import { handleNavHelper } from "helpers/navigation.helper";
-import { MMKV } from "react-native-mmkv";
 import {
   addNotificationReceivedListener,
   addNotificationResponseReceivedListener,
@@ -133,7 +131,7 @@ export function setupNotificationHelper() {
           remoteMessage.notification
         );
         const data: any = remoteMessage?.data || {};
-        handleNavHelper(data);
+        // Handle logic
       }
     });
 
@@ -143,7 +141,7 @@ export function setupNotificationHelper() {
       remoteMessage.notification
     );
     const data: any = remoteMessage?.data || {};
-    handleNavHelper(data);
+    // Handle logic
   });
 
   // Xử lý sự kiện khi người dùng nhấn vào thông báo
@@ -158,7 +156,7 @@ export function setupNotificationHelper() {
     (response) => {
       console.log("Notification response received!", response);
       const data: any = response.notification.request.content.data;
-      handleNavHelper(data);
+      // Handle logic
     }
   );
 
@@ -194,7 +192,7 @@ export async function bootstrapHelper() {
     );
     const data: any =
       lastNotificationResponse.notification.request.content.data;
-    handleNavHelper(data);
+    // Handle logic
   }
 }
 

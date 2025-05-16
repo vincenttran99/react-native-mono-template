@@ -88,10 +88,6 @@ msgstr "Tiếp tục"
 msgid "Đã có lỗi xảy ra"
 msgstr "Đã có lỗi xảy ra"
 
-#: src/screens/webview/webview.screen.tsx:52
-msgid "Đã sao chép"
-msgstr "Đã sao chép"
-
 #: src/components/list/list.defaultEmpty.component.tsx:40
 msgid "Danh sách trống"
 msgstr "Danh sách trống"
@@ -107,10 +103,6 @@ msgstr "Chó"
 #: src/components/form/form.select.single.tsx:230
 msgid "Đóng"
 msgstr "Đóng"
-
-#: src/screens/webview/webview.screen.tsx:69
-msgid "Đường dẫn không hợp lệ"
-msgstr "Đường dẫn không hợp lệ"
 
 #: src/screens/login/login.screen.tsx:35
 msgid "Email is not valid"
@@ -132,10 +124,6 @@ msgstr "Mẫu nhanh và đơn giản"
 msgid "Giao diện tối"
 msgstr "Giao diện tối"
 
-#: src/helpers/date.helper.ts:116
-msgid "giờ"
-msgstr "giờ"
-
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
 msgstr "Xin chào"
@@ -144,10 +132,6 @@ msgstr "Xin chào"
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:289
 msgid "hide"
 msgstr "trốn"
-
-#: src/helpers/date.helper.ts:93
-msgid "Hôm qua"
-msgstr "Hôm qua"
 
 #: src/components/global/global.bottomSheetDialog.component.tsx:167
 msgid "Huỷ"
@@ -201,10 +185,6 @@ msgstr "Nhiều văn bản"
 msgid "Network connection restored"
 msgstr "Kết nối mạng được khôi phục"
 
-#: src/helpers/date.helper.ts:118
-msgid "ngày"
-msgstr "ngày"
-
 #: src/screens/settings/settings.screen.tsx:40
 #: src/navigation/main.navigation.tsx:53
 msgid "Ngôn ngữ"
@@ -217,10 +197,6 @@ msgstr "Không có tên"
 #: src/screens/login/login.screen.tsx:41
 msgid "Password should not be empty"
 msgstr "Mật khẩu không nên trống"
-
-#: src/helpers/date.helper.ts:114
-msgid "phút"
-msgstr "phút"
 
 #: src/components/global/global.modal.network.component.tsx:54
 msgid "Please try reconnecting"
@@ -253,6 +229,10 @@ msgstr "Xem thêm"
 msgid "Small error text"
 msgstr "Văn bản lỗi nhỏ"
 
+#: src/helpers/api.helper.ts:58
+msgid "Something went wrong"
+msgstr "Có gì đó đã sai"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:38
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Sự ngạc nhiên! Bạn đang xem văn bản này sau 2 giây"
@@ -277,10 +257,6 @@ msgstr "Đây là một văn bản dài. Đây là một văn bản dài. Đây 
 msgid "Tìm kiếm"
 msgstr "Tìm kiếm"
 
-#: src/helpers/date.helper.ts:112
-msgid "Vừa xong"
-msgstr "Vừa xong"
-
 #: src/screens/welcome/welcome.screen.tsx:44
 msgid "Welcome to"
 msgstr "Chào mừng bạn đến"
@@ -288,10 +264,6 @@ msgstr "Chào mừng bạn đến"
 #: src/components/global/global.bottomSheetDialog.component.tsx:192
 msgid "Xác nhận"
 msgstr "Xác nhận"
-
-#: src/helpers/api.helper.ts:59
-msgid "Xảy ra vấn đề"
-msgstr "Xảy ra vấn đề"
 
 #: src/screens/login/login.screen.tsx:97
 msgid "Your email"

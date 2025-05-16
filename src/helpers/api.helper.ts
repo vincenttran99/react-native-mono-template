@@ -7,7 +7,6 @@ import {
   showGlobalLoading,
   showSuccessMessage,
 } from "./global.helper";
-import { removeSpecialCharactersHelper } from "./string.helper";
 
 export type HandleProps<T> = {
   params?: any;
@@ -56,10 +55,9 @@ export async function handleRequestHelper<T>({
     const messages = error?.response?.data?.message;
     const message = Array.isArray(messages)
       ? messages?.[0]
-      : messages || i18n._(msg`Xảy ra vấn đề`);
+      : messages || i18n._(msg`Something went wrong`);
     if (showMessageFailed) {
-      let messageContent = removeSpecialCharactersHelper(message);
-      showErrorMessage(messageFailed || messageContent || message);
+      showErrorMessage(messageFailed || message);
     }
     actionFailed?.(error);
   }

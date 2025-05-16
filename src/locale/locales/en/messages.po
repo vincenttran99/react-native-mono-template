@@ -88,10 +88,6 @@ msgstr "Continue"
 msgid "Đã có lỗi xảy ra"
 msgstr "There was an error"
 
-#: src/screens/webview/webview.screen.tsx:52
-msgid "Đã sao chép"
-msgstr "Copied"
-
 #: src/components/list/list.defaultEmpty.component.tsx:40
 msgid "Danh sách trống"
 msgstr "Drum list"
@@ -107,10 +103,6 @@ msgstr "Dogs"
 #: src/components/form/form.select.single.tsx:230
 msgid "Đóng"
 msgstr "Close"
-
-#: src/screens/webview/webview.screen.tsx:69
-msgid "Đường dẫn không hợp lệ"
-msgstr "The path is invalid"
 
 #: src/screens/login/login.screen.tsx:35
 msgid "Email is not valid"
@@ -132,10 +124,6 @@ msgstr "Fast and simple template"
 msgid "Giao diện tối"
 msgstr "Dark interface"
 
-#: src/helpers/date.helper.ts:116
-msgid "giờ"
-msgstr "hour"
-
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
 msgstr "Hello"
@@ -144,10 +132,6 @@ msgstr "Hello"
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:289
 msgid "hide"
 msgstr "hide"
-
-#: src/helpers/date.helper.ts:93
-msgid "Hôm qua"
-msgstr "Yesterday"
 
 #: src/components/global/global.bottomSheetDialog.component.tsx:167
 msgid "Huỷ"
@@ -201,10 +185,6 @@ msgstr "Multi text"
 msgid "Network connection restored"
 msgstr "Network connection restored"
 
-#: src/helpers/date.helper.ts:118
-msgid "ngày"
-msgstr "day"
-
 #: src/screens/settings/settings.screen.tsx:40
 #: src/navigation/main.navigation.tsx:53
 msgid "Ngôn ngữ"
@@ -217,10 +197,6 @@ msgstr "No name"
 #: src/screens/login/login.screen.tsx:41
 msgid "Password should not be empty"
 msgstr "Password should not be empty"
-
-#: src/helpers/date.helper.ts:114
-msgid "phút"
-msgstr "minute"
 
 #: src/components/global/global.modal.network.component.tsx:54
 msgid "Please try reconnecting"
@@ -253,6 +229,10 @@ msgstr "see more"
 msgid "Small error text"
 msgstr "Small error text"
 
+#: src/helpers/api.helper.ts:58
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:38
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Suprise! You are seeing this text after 2 seconds"
@@ -277,10 +257,6 @@ msgstr "This is a long text. This is a long text. This is a long text. This is a
 msgid "Tìm kiếm"
 msgstr "Search"
 
-#: src/helpers/date.helper.ts:112
-msgid "Vừa xong"
-msgstr "Just finished"
-
 #: src/screens/welcome/welcome.screen.tsx:44
 msgid "Welcome to"
 msgstr "Welcome to"
@@ -288,10 +264,6 @@ msgstr "Welcome to"
 #: src/components/global/global.bottomSheetDialog.component.tsx:192
 msgid "Xác nhận"
 msgstr "Confirm"
-
-#: src/helpers/api.helper.ts:59
-msgid "Xảy ra vấn đề"
-msgstr "Happen"
 
 #: src/screens/login/login.screen.tsx:97
 msgid "Your email"
