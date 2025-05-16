@@ -1,24 +1,9 @@
-import { CONFIG } from "constants/config.constant";
-
 import { IMedia } from "models/file.model";
-import ImageCropPicker from "react-native-image-crop-picker";
-import { openSettings, RESULTS } from "react-native-permissions";
-import { PERMISSION } from "constants/permission.constant";
-
-import React from "react";
-import BText from "components/base/base.text";
-import { PhotoFile } from "react-native-vision-camera";
-import { PhotoIdentifier } from "@react-native-camera-roll/camera-roll";
-import type { Orientation } from "react-native-vision-camera/src/types/Orientation";
 import {
   cacheDirectory,
   getInfoAsync,
   makeDirectoryAsync,
 } from "expo-file-system";
-import { i18n } from "@lingui/core";
-import { msg } from "@lingui/core/macro";
-import { hideGlobalLoading, showDialog } from "./global.helper";
-import { requestPermissionHelper } from "./permission.helper";
 
 export const FOLDER_CACHE = cacheDirectory + "other/";
 export const FOLDER_CACHE_IMAGES = cacheDirectory + "images/";
@@ -83,129 +68,6 @@ export function pickImageFromMediaHelper(
   );
 }
 
-export const selectMediaHelper = async ({
-  config,
-  callback,
-  isNeedCrop = true,
-}: {
-  isNeedCrop?: boolean;
-  callback: (images: any) => void;
-  config: any;
-}) => {
-  const permission = await requestPermissionHelper(
-    PERMISSION.permissionLibrary
-  );
-
-  if (permission === RESULTS.BLOCKED) {
-    showDialog({
-      title: i18n._(msg`Truy cập thư viện bị từ chối`),
-      content: <BText>{i18n._(msg`Truy cập cài đặt để cấp quyền?`)}</BText>,
-      negativeButton: {
-        title: i18n._(msg`Hủy`),
-      },
-      positiveButton: {
-        title: i18n._(msg`Mở cài đặt`),
-        onPress: async () =>
-          await openSettings().catch(() =>
-            console.warn("cannot open settings")
-          ),
-      },
-    });
-    return;
-  }
-  if (permission !== RESULTS.GRANTED) {
-    return;
-  }
-  if (isNeedCrop) {
-    ImageCropPicker.openPicker({
-      smartAlbums: [
-        "Favorites",
-        "Screenshots",
-        "Generic",
-        "AllHidden",
-        "RecentlyAdded",
-        "Imported",
-        "LivePhotos",
-        "Panoramas",
-        "Bursts",
-        "UserLibrary",
-        "SyncedAlbum",
-        "Regular",
-      ],
-      ...config,
-    })
-      .then(async (image) => {
-        if (image) {
-          callback?.(image);
-        }
-      })
-      .catch(console.log)
-      .finally(() => hideGlobalLoading());
-    return;
-  }
-
-  // launchImageLibrary({
-  //     selectionLimit: 0,
-  //     includeExtra: true,
-  //     ...config
-  // })
-  //     .then((image) => {
-  //         if (image.assets?.[0]) {
-  //             callback?.(image.assets)
-  //         }
-  //     })
-  //     .catch(console.log)
-  //     .finally(() => hideLoading())
-};
-
-// Hàm chuyển đổi từ PhotoFile sang PhotoIdentifier
-export function convertPhotoFileToIdentifierHelper(
-  photoFile: PhotoFile
-): PhotoIdentifier | null {
-  // Kiểm tra tính hợp lệ của photoFile trước khi thực hiện chuyển đổi
-  if (!photoFile || typeof photoFile.path !== "string") {
-    console.error("Invalid photoFile data");
-    return null;
-  }
-
-  try {
-    // Lấy tên file từ path, có thể sử dụng regex hoặc split
-    const filename = photoFile.path.split("/").pop() || "";
-
-    // Tạo đối tượng PhotoIdentifier từ PhotoFile
-    const photoIdentifier: PhotoIdentifier = {
-      node: {
-        id: filename.split(".")?.[0], // Giả định tạo id ngẫu nhiên
-        type: "camera", // Bạn có thể tùy chỉnh lại tùy thuộc vào loại file
-        subTypes: "PhotoLive",
-        sourceType: "UserLibrary",
-        group_name: [], // Đặt tên nhóm mặc định
-        image: {
-          filename: filename,
-          filepath: photoFile.path,
-          extension: filename ? filename?.split(".")?.pop() || "jpg" : null, // Lấy đuôi file (extension)
-          uri: photoFile.path, // URI với tiền tố 'file://'
-          height: photoFile.height || 0, // Kiểm tra height
-          width: photoFile.width || 0, // Kiểm tra width
-          fileSize: null, // Không có thông tin kích thước file từ PhotoFile
-          playableDuration: 0, // Không có duration vì đây là ảnh, có thể bỏ qua
-          orientation: photoFile.orientation
-            ? convertOrientationHelper(photoFile.orientation)
-            : null, // Chuyển đổi orientation
-        },
-        timestamp: Date.now(), // Mặc định thời gian hiện tại
-        modificationTimestamp: Date.now(), // Mặc định thời gian hiện tại
-        location: null, // Có thể gán giá trị location nếu có từ metadata
-      },
-    };
-
-    return photoIdentifier;
-  } catch (error) {
-    console.error("Error converting PhotoFile to PhotoIdentifier:", error);
-    return null;
-  }
-}
-
 export async function createFolderHelper(pathFolder: string): Promise<boolean> {
   const dirInfo = await getInfoAsync(pathFolder);
   if (dirInfo.exists) {
@@ -220,21 +82,5 @@ export async function createFolderHelper(pathFolder: string): Promise<boolean> {
       console.error("Error creating directory:", error);
       return false;
     }
-  }
-}
-
-// Hàm hỗ trợ để chuyển đổi orientation từ PhotoFile sang PhotoIdentifier
-function convertOrientationHelper(orientation: Orientation): number {
-  switch (orientation) {
-    case "portrait-upside-down":
-      return 1;
-    case "portrait":
-      return 6;
-    case "landscape-left":
-      return 8;
-    case "landscape-right":
-      return 3;
-    default:
-      return 1; // Mặc định là landscape
   }
 }

@@ -13,11 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: field?.value?.length
-#: src/components/form/form.select.image.tsx:343
-msgid "{0} ảnh đã được chọn"
-msgstr "{0} The image has been selected"
-
 #: src/screens/Introduction/introduction.screen.tsx:20
 #: src/navigation/main.navigation.tsx:40
 msgid "Base components"
@@ -67,15 +62,6 @@ msgstr "BView"
 msgid "Cài đặt"
 msgstr "Setting"
 
-#: src/helpers/permission.helper.tsx:54
-msgid "Cần cấp quyền"
-msgstr "Need to grant rights"
-
-#: src/components/global/global.modal.update.component.tsx:34
-#: src/components/global/global.modal.update.component.tsx:102
-msgid "Cập nhật ngay"
-msgstr "Update now"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:190
 msgid "Cat"
 msgstr "Cat"
@@ -88,18 +74,6 @@ msgstr "Checkbox"
 #: src/screens/Introduction/introduction.base.screen.tsx:184
 msgid "Chip"
 msgstr "Chip"
-
-#: src/components/form/form.select.image.tsx:322
-msgid "Chọn ảnh"
-msgstr "Select photo"
-
-#: src/helpers/permission.helper.tsx:82
-msgid "Chức năng này yêu cầu quyền tải và lưu tệp tinh vào thiết bị của bạn"
-msgstr "This function requires the right to load and save the filter to your device"
-
-#: src/components/base/system/camera.system.component.tsx:160
-msgid "Chụp lại"
-msgstr "Capture"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:209
 #: src/screens/Introduction/introduction.base.screen.tsx:217
@@ -120,11 +94,7 @@ msgstr "Updated"
 msgid "Đã có lỗi xảy ra"
 msgstr "There was an error"
 
-#: src/components/global/global.modal.network.component.tsx:26
-msgid "Đã khôi phục kết nối mạng"
-msgstr "Has restored the network connection"
-
-#: src/screens/webview/webview.screen.tsx:53
+#: src/screens/webview/webview.screen.tsx:52
 #: src/screens/logs/logs.detail.screen.tsx:37
 msgid "Đã sao chép"
 msgstr "Copied"
@@ -134,10 +104,6 @@ msgstr "Copied"
 #: src/screens/logs/components/logs.list.item.tsx:45
 msgid "Đã xóa"
 msgstr "Deleted"
-
-#: src/components/global/global.modal.update.component.tsx:73
-msgid "Đang bảo trì hệ thống"
-msgstr "System maintenance"
 
 #: src/components/list/list.defaultEmpty.component.tsx:40
 msgid "Danh sách trống"
@@ -152,11 +118,10 @@ msgid "Dogs"
 msgstr "Dogs"
 
 #: src/components/form/form.select.single.tsx:230
-#: src/components/form/form.select.image.tsx:327
 msgid "Đóng"
 msgstr "Close"
 
-#: src/screens/webview/webview.screen.tsx:70
+#: src/screens/webview/webview.screen.tsx:69
 msgid "Đường dẫn không hợp lệ"
 msgstr "The path is invalid"
 
@@ -197,15 +162,8 @@ msgstr "hide"
 msgid "Hôm qua"
 msgstr "Yesterday"
 
-#: src/components/global/global.modal.update.component.tsx:35
 #: src/components/global/global.bottomSheetDialog.component.tsx:167
 msgid "Huỷ"
-msgstr "Cancel"
-
-#: src/helpers/permission.helper.tsx:84
-#: src/helpers/file.helper.tsx:104
-#: src/components/form/form.select.image.tsx:287
-msgid "Hủy"
 msgstr "Cancel"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:171
@@ -215,10 +173,6 @@ msgstr "Icon Button"
 #: src/navigation/tab.navigation.tsx:30
 msgid "Introduce"
 msgstr "Introduce"
-
-#: src/helpers/permission.helper.tsx:94
-msgid "Không được cấp quyền"
-msgstr "Unprecedented"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:52
 msgid "Large success text"
@@ -244,23 +198,21 @@ msgstr "Login to continue"
 msgid "Lỗi khi tải thêm"
 msgstr "Error when downloading more"
 
-#: src/components/global/global.modal.network.component.tsx:57
-msgid "Mất kết nối mạng"
+#: src/components/global/global.modal.network.component.tsx:52
+msgid "Lost network connection"
 msgstr "Lost network connection"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:49
 msgid "Medium primary text"
 msgstr "Medium primary text"
 
-#: src/helpers/permission.helper.tsx:63
-#: src/helpers/file.helper.tsx:107
-#: src/components/form/form.select.image.tsx:290
-msgid "Mở cài đặt"
-msgstr "Open settings"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:60
 msgid "Multi text"
 msgstr "Multi text"
+
+#: src/components/global/global.modal.network.component.tsx:26
+msgid "Network connection restored"
+msgstr "Network connection restored"
 
 #: src/helpers/date.helper.ts:118
 msgid "ngày"
@@ -275,18 +227,9 @@ msgstr "Language"
 msgid "No name"
 msgstr "No name"
 
-#: src/helpers/permission.helper.tsx:85
-msgid "OK"
-msgstr "OK"
-
 #: src/screens/login/login.screen.tsx:41
 msgid "Password should not be empty"
 msgstr "Password should not be empty"
-
-#: src/components/global/global.modal.update.component.tsx:30
-#: src/components/global/global.modal.update.component.tsx:92
-msgid "Phiên bản cập nhật quan trọng"
-msgstr "Important update version"
 
 #: src/api/api.ts:111
 msgid "Phiên đăng nhập đã hết hạn"
@@ -295,6 +238,10 @@ msgstr "The login session has expired"
 #: src/helpers/date.helper.ts:114
 msgid "phút"
 msgstr "minute"
+
+#: src/components/global/global.modal.network.component.tsx:54
+msgid "Please try reconnecting"
+msgstr "Please try reconnecting"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:131
 msgid "Pressable"
@@ -307,10 +254,6 @@ msgstr "Preview URL"
 #: src/screens/dog/components/item.dog.tsx:61
 msgid "Purpose"
 msgstr "Purpose"
-
-#: src/helpers/permission.helper.tsx:80
-msgid "Quyền tải xuống"
-msgstr "Downloading"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:214
 msgid "Radio"
@@ -347,51 +290,13 @@ msgstr "Text input"
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 
-#: src/components/form/form.select.image.tsx:345
-#: src/components/base/system/camera.system.component.tsx:162
-msgid "Tiếp tục"
-msgstr "Continue"
-
 #: src/components/form/form.select.single.tsx:165
 msgid "Tìm kiếm"
 msgstr "Search"
 
-#: src/components/form/form.select.image.tsx:285
-msgid "Truy cập cài đặt để cấp quyền"
-msgstr "Access settings to grant rights"
-
-#: src/helpers/file.helper.tsx:102
-msgid "Truy cập cài đặt để cấp quyền?"
-msgstr "Access settings to grant rights?"
-
-#: src/components/global/global.modal.update.component.tsx:75
-msgid "Truy cập lại sau"
-msgstr "Return later"
-
-#: src/helpers/file.helper.tsx:101
-msgid "Truy cập thư viện bị từ chối"
-msgstr "The library access is rejected"
-
-#: src/components/form/form.select.image.tsx:284
-msgid "Truy cập thư viện hoặc máy ảnh bị từ chối"
-msgstr "Library access or camera is rejected"
-
-#: src/helpers/permission.helper.tsx:58
-msgid "Ứng dụng cần quyền sử dụng máy ảnh. Truy cập vào cài đặt và cấp quyền."
-msgstr "Applications need camera rights. Access to settings and authority."
-
 #: src/helpers/date.helper.ts:112
 msgid "Vừa xong"
 msgstr "Just finished"
-
-#: src/components/global/global.modal.update.component.tsx:32
-#: src/components/global/global.modal.update.component.tsx:96
-msgid "Vui lòng cập nhật phiên bản mới nhất của ứng dụng để có trải nghiệm tốt nhất."
-msgstr "Please update the latest version of the application to have the best experience."
-
-#: src/components/global/global.modal.network.component.tsx:59
-msgid "Vui lòng thử kết nối lại"
-msgstr "Please try again"
 
 #: src/screens/welcome/welcome.screen.tsx:44
 msgid "Welcome to"

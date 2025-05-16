@@ -1,7 +1,5 @@
 import { createRef } from "react";
-import { GlobalLoadingComponentRef } from "components/global/loading.global.component";
-import { GlobalModalMediaComponentRef } from "components/global/modalMedia.global.component";
-import { IImageInfo } from "react-native-image-zoom-viewer/built/image-viewer.type";
+import { GlobalLoadingComponentRef } from "components/global/global.loading.component";
 import {
   showMessage as showFlashMessage,
   hideMessage as hideFlashMessage,
@@ -9,37 +7,22 @@ import {
 } from "react-native-flash-message";
 
 import {
-  IBottomSheetDataDialog,
-  IBottomSheetDialogGlobalComponentRef,
-} from "components/global/bottomSheetDialog.global.component";
-import { IDialogGlobalComponentRef } from "components/global/dialog.global.component";
+  GlobalBottomSheetDialogComponentData,
+  GlobalBottomSheetDialogComponentRef,
+} from "components/global/global.bottomSheetDialog.component";
+import { GlobalDialogComponentRef } from "components/global/global.dialog.component";
 
 /**
  * Refs
  */
 export const LoadingRef = createRef<GlobalLoadingComponentRef>();
 export const BottomSheetDialogRef =
-  createRef<IBottomSheetDialogGlobalComponentRef>();
-export const ModalMediaGlobalComponentRef =
-  createRef<GlobalModalMediaComponentRef>();
-export const DialogRef = createRef<IDialogGlobalComponentRef>();
+  createRef<GlobalBottomSheetDialogComponentRef>();
+export const DialogRef = createRef<GlobalDialogComponentRef>();
 
-/**
- * Functions Modal Media
- */
-export function showMediaModal(
-  media: IImageInfo[],
-  currentIndex?: number,
-  type?: "image" | "wistia" | "video" | "vimeo" | "youtube"
+export function showBottomSheetDialog(
+  dialogParams: GlobalBottomSheetDialogComponentData
 ) {
-  ModalMediaGlobalComponentRef.current?.show(media, currentIndex, type);
-}
-
-export function hideMediaModal() {
-  ModalMediaGlobalComponentRef.current?.hide();
-}
-
-export function showBottomSheetDialog(dialogParams: IBottomSheetDataDialog) {
   BottomSheetDialogRef.current?.showDialog(dialogParams);
 }
 

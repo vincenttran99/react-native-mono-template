@@ -42,7 +42,6 @@ module.exports = function () {
           usesNonExemptEncryption: false,
         },
         infoPlist: {
-          LSApplicationQueriesSchemes: ["itms-apps"],
           NSCameraUsageDescription:
             "Used for profile pictures, posts, and other kinds of content.",
           NSLocationWhenInUseUsageDescription:
@@ -98,13 +97,6 @@ module.exports = function () {
           },
         ],
         [
-          "react-native-vision-camera",
-          {
-            cameraPermissionText:
-              "$(PRODUCT_NAME) needs access to your Camera.",
-          },
-        ],
-        [
           "expo-notifications",
           {
             icon: "./src/assets/images/notification-icon.png",
@@ -122,12 +114,6 @@ module.exports = function () {
               backgroundColor: "#131313",
             },
             imageWidth: 280,
-          },
-        ],
-        [
-          "react-native-permissions",
-          {
-            iosPermissions: ["Camera", "Microphone"],
           },
         ],
         "./plugins/withAppBuildGradlePlugin.js",

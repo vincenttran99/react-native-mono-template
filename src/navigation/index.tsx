@@ -11,8 +11,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import BLazy from "components/base/base.lazy";
 import GlobalLoadingComponent from "components/global/global.loading.component";
 import GlobalModalNetworkComponent from "components/global/global.modal.network.component";
-import GlobalModalMediaComponent from "components/global/global.modal.media.component";
-import GlobalUpdateSystemComponent from "components/global/global.modal.update.component";
 import {
   NAVIGATION_AUTH_NAVIGATION,
   NAVIGATION_MAIN_NAVIGATION,
@@ -33,7 +31,6 @@ import {
   BottomSheetDialogRef,
   DialogRef,
   LoadingRef,
-  ModalMediaGlobalComponentRef,
 } from "helpers/global.helper";
 import {
   getRouteNameNavHelper,
@@ -178,13 +175,11 @@ export default function AppNavigation() {
             <BLazy timeRender={1500} haveIndicator={false}>
               <GlobalBottomSheetDialogComponent ref={BottomSheetDialogRef} />
               <GlobalLoadingComponent ref={LoadingRef} />
-              <GlobalModalMediaComponent ref={ModalMediaGlobalComponentRef} />
               <GlobalDialogComponent ref={DialogRef} />
             </BLazy>
             <FlashMessage position={"top"} />
             <GlobalModalNetworkComponent />
           </BottomSheetModalProvider>
-          <GlobalUpdateSystemComponent />
         </QueryProvider>
       </ThemeProvider>
     </KeyboardProvider>

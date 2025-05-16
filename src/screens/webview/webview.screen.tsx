@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet } from "react-native";
 
 import { useRoute } from "@react-navigation/native";
 import { WebviewScreenRouteProp } from "models/navigation.model";
@@ -7,7 +7,6 @@ import { setStringAsync } from "expo-clipboard";
 
 import WebView from "react-native-webview";
 import { MHS } from "constants/sizes.constant";
-import LottieView from "lottie-react-native";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import {
@@ -76,15 +75,7 @@ export default function WebviewScreen() {
       <Header />
       {isLoading ? (
         <BView style={[s_height100, s_justifyCenter_itemsCenter]}>
-          <LottieView
-            style={{
-              width: MHS._160,
-              height: MHS._160,
-            }}
-            autoPlay
-            loop
-            source={require("assets/lotties/loading.json")}
-          />
+          <ActivityIndicator size="large" />
         </BView>
       ) : null}
       <WebView

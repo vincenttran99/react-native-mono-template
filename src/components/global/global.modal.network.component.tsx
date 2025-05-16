@@ -6,12 +6,12 @@ import { MHS } from "constants/sizes.constant";
 import { useNetInfo } from "@react-native-community/netinfo";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import BText from "components/base/base.text";
-import LottieView from "lottie-react-native";
 
 import { showSuccessMessage } from "helpers/global.helper";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import BView from "components/base/base.view";
+import BIcon from "components/base/base.icon";
 
 const SNAP_POINT = ["100%"];
 
@@ -23,7 +23,7 @@ const GlobalModalNetworkComponent = memo(() => {
 
   useEffect(() => {
     if (netInfo.isConnected === true && refPreState.current === false) {
-      showSuccessMessage(_(msg`Đã khôi phục kết nối mạng`));
+      showSuccessMessage(_(msg`Network connection restored`));
       bottomSheetRef.current?.close();
     }
 
@@ -43,20 +43,15 @@ const GlobalModalNetworkComponent = memo(() => {
       enablePanDownToClose
     >
       <BView style={styles.containerModalBlock}>
-        <LottieView
-          source={require("assets/lotties/disconnected.json")}
-          autoPlay
-          loop
-          style={styles.img}
-        />
+        <BIcon name="wifi-alert" size={Device.width * 0.4} />
         <BText
           variant={"md"}
           fontWeight={"bold"}
           // color={theme.colors.secondary}
         >
-          {_(msg`Mất kết nối mạng`)}
+          {_(msg`Lost network connection`)}
         </BText>
-        <BText variant={"md"}>{_(msg`Vui lòng thử kết nối lại`)}</BText>
+        <BText variant={"md"}>{_(msg`Please try reconnecting`)}</BText>
       </BView>
     </BottomSheetModal>
   );
