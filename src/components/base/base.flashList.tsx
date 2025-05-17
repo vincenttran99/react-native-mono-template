@@ -1,4 +1,9 @@
-import React, { forwardRef, MemoExoticComponent, useCallback } from "react";
+import React, {
+  forwardRef,
+  MemoExoticComponent,
+  useCallback,
+  useMemo,
+} from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { FlashList, FlashListProps } from "@shopify/flash-list";
 import { ScrollView, ScrollViewProps } from "react-native";
@@ -12,19 +17,34 @@ import DefaultLoadingListComponent from "components/list/list.defaultLoading.com
 import DefaultErrorListComponent from "components/list/list.defaultError.component";
 import DefaultEmptyListComponent from "components/list/list.defaultEmpty.component";
 import DefaultErrorItemListComponent from "components/list/list.defaultErrorItem.component";
+import {
+  backgroundColor,
+  BackgroundColorProps,
+  composeRestyleFunctions,
+  spacing,
+  SpacingProps,
+  useRestyle,
+} from "@shopify/restyle";
+import { Theme } from "constants/theme.constant";
 
-export type BFlashListProps<TItem> = FlashListProps<TItem> & {
-  /**
-   * Rendered when the list is loading. Can be a React Component Class, a render function, or
-   * a rendered element.
-   */
-  LoadingComponent?: JSX.ElementType | MemoExoticComponent<() => JSX.Element>;
-  ErrorComponent?: JSX.ElementType | MemoExoticComponent<() => JSX.Element>;
-  LoadMoreErrorComponent?:
-    | JSX.ElementType
-    | MemoExoticComponent<() => JSX.Element>;
-  keyAttribute: string;
-};
+type RestyleProps = SpacingProps<Theme> & BackgroundColorProps<Theme>;
+const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
+  spacing,
+  backgroundColor,
+]);
+export type BFlashListProps<TItem> = FlashListProps<TItem> &
+  RestyleProps & {
+    /**
+     * Rendered when the list is loading. Can be a React Component Class, a render function, or
+     * a rendered element.
+     */
+    LoadingComponent?: JSX.ElementType | MemoExoticComponent<() => JSX.Element>;
+    ErrorComponent?: JSX.ElementType | MemoExoticComponent<() => JSX.Element>;
+    LoadMoreErrorComponent?:
+      | JSX.ElementType
+      | MemoExoticComponent<() => JSX.Element>;
+    keyAttribute: string;
+  };
 
 const RenderScrollComponent = React.forwardRef<ScrollView, ScrollViewProps>(
   (props, ref) => <KeyboardAwareScrollView {...props} ref={ref} />
@@ -43,16 +63,24 @@ const BFlashListComponent = (
     refreshing,
     renderItem,
     horizontal,
+    contentContainerStyle,
+    data,
     estimatedListSize = {
       width: Device.width,
       height: Device.height - Device.heightAppBar,
     },
     drawDistance = Device.height,
     getItemType = getItemTypeDefault,
-    ...props
+    ...rest
   }: BFlashListProps<any>,
   ref: React.Ref<FlashList<any>>
 ) => {
+  const props = useRestyle(restyleFunctions, rest);
+  const contentContainerStyleProps = useMemo(() => {
+    //@ts-ignore
+    return { ...(props.style?.[0] || {}), ...contentContainerStyle };
+  }, [contentContainerStyle, props.style]);
+
   const keyExtractor = useCallback(
     (item: any, index: number) => item?.[keyAttribute] + String(index),
     []
@@ -99,6 +127,7 @@ const BFlashListComponent = (
   return (
     <FlashList
       ref={ref}
+      data={data}
       renderScrollComponent={RenderScrollComponent}
       keyExtractor={keyExtractor}
       renderItem={renderItemHandle}
@@ -112,7 +141,8 @@ const BFlashListComponent = (
       estimatedListSize={estimatedListSize}
       drawDistance={drawDistance}
       horizontal={horizontal}
-      {...props}
+      contentContainerStyle={contentContainerStyleProps}
+      {...rest}
     />
   );
 };

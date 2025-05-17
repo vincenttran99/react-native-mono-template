@@ -43,11 +43,13 @@ const BDivider = memo(
 
     const styleBase = useMemo(() => {
       let propsStyle = StyleSheet.flatten(props.style || {});
+      let backgroundColor = propsStyle?.backgroundColor || theme.colors.ground;
       let height =
         propsStyle?.height || (bold ? MHS._1 : StyleSheet.hairlineWidth);
       let width =
         propsStyle?.width || (bold ? MHS._1 : StyleSheet.hairlineWidth);
       return {
+        backgroundColor,
         height: !vertical ? height : undefined,
         // flexGrow: 1,
         width: vertical ? width : undefined,

@@ -13,8 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/screens/Introduction/introduction.screen.tsx:20
-#: src/navigation/main.navigation.tsx:40
+#: src/screens/Introduction/introduction.screen.tsx:23
+#: src/navigation/main.navigation.tsx:42
 msgid "Base components"
 msgstr "Base components"
 
@@ -80,6 +80,14 @@ msgstr "Close"
 msgid "Coming soon"
 msgstr "Coming soon"
 
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:133
+msgid "Comment"
+msgstr "Comment"
+
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:111
+msgid "Comments"
+msgstr "Comments"
+
 #: src/components/global/global.bottomSheetDialog.component.tsx:192
 msgid "Confirm"
 msgstr "Confirm"
@@ -120,6 +128,14 @@ msgstr "Extra large warning text"
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
+#: src/navigation/main.navigation.tsx:49
+msgid "Flash list"
+msgstr "Flash list"
+
+#: src/screens/Introduction/introduction.screen.tsx:27
+msgid "Flash List basic"
+msgstr "Flash List basic"
+
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
 msgstr "Hello"
@@ -142,7 +158,7 @@ msgid "Introduce"
 msgstr "Introduce"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:53
+#: src/navigation/main.navigation.tsx:62
 msgid "Language"
 msgstr "Language"
 
@@ -153,6 +169,10 @@ msgstr "Large success text"
 #: src/screens/Introduction/introduction.base.screen.tsx:34
 msgid "Lazy view"
 msgstr "Lazy view"
+
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:127
+msgid "Like"
+msgstr "Like"
 
 #: src/components/list/list.defaultErrorItem.component.tsx:29
 msgid "Loadmore failed"
@@ -190,7 +210,7 @@ msgstr "Network connection restored"
 msgid "Network Error"
 msgstr "Network Error"
 
-#: src/screens/dog/components/item.dog.tsx:43
+#: src/screens/dog/components/item.dog.tsx:41
 msgid "No name"
 msgstr "No name"
 
@@ -210,7 +230,7 @@ msgstr "Pressable"
 msgid "Preview URL"
 msgstr "Preview URL"
 
-#: src/screens/dog/components/item.dog.tsx:61
+#: src/screens/dog/components/item.dog.tsx:59
 msgid "Purpose"
 msgstr "Purpose"
 
@@ -229,9 +249,17 @@ msgstr "Search"
 msgid "see more"
 msgstr "see more"
 
-#: src/navigation/main.navigation.tsx:47
+#: src/navigation/main.navigation.tsx:56
 msgid "Setting"
 msgstr "Setting"
+
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:139
+msgid "Share"
+msgstr "Share"
+
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:115
+msgid "Shares"
+msgstr "Shares"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:47
 msgid "Small error text"

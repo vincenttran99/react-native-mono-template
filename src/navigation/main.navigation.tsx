@@ -5,6 +5,7 @@ import {
   NAVIGATION_SETTINGS_LANGUAGE_SCREEN,
   NAVIGATION_TAB_NAVIGATION,
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
+  NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
 } from "constants/navigation.constant";
 import React from "react";
 import SettingsScreen from "screens/settings/settings.screen";
@@ -14,6 +15,7 @@ import { msg } from "@lingui/core/macro";
 import { useMyProfileQuery } from "api/profile/profile.queries";
 import TabNavigation from "./tab.navigation";
 import IntroductionBaseScreen from "screens/Introduction/introduction.base.screen";
+import IntroductionFlashlistScreen from "screens/Introduction/introduction.flashlist.screen";
 
 const StackNavigator = createNativeStackNavigator();
 
@@ -40,6 +42,13 @@ const MainNavigator = () => {
           title: _(msg`Base components`),
         }}
         component={IntroductionBaseScreen}
+      />
+      <StackNavigator.Screen
+        name={NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN}
+        options={{
+          title: _(msg`Flash list`),
+        }}
+        component={IntroductionFlashlistScreen}
       />
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_SCREEN}

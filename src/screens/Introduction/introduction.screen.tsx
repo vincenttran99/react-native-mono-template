@@ -8,7 +8,10 @@ import { useLingui } from "@lingui/react";
 import BFlashList from "components/base/base.flashList";
 import BDivider from "components/base/base.divider";
 import BSafeAreaView from "components/base/base.safeAreaView";
-import { NAVIGATION_INTRODUCTION_BASE_SCREEN } from "constants/navigation.constant";
+import {
+  NAVIGATION_INTRODUCTION_BASE_SCREEN,
+  NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
+} from "constants/navigation.constant";
 import BPressable from "components/base/base.pressable";
 import { navigateNavHelper } from "helpers/navigation.helper";
 
@@ -20,10 +23,10 @@ export default function IntroductionScreen() {
       title: _(msg`Base components`),
       screen: NAVIGATION_INTRODUCTION_BASE_SCREEN,
     },
-    // {
-    //   title: _(msg`Flash List`),
-    //   screen: "",
-    // },
+    {
+      title: _(msg`Flash List basic`),
+      screen: NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
+    },
     // {
     //   title: _(msg`Legend List`),
     //   screen: "",

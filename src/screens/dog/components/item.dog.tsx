@@ -29,9 +29,7 @@ export default function ItemDog({ item }: { item: IDog }) {
     <BSurface variant="md" backgroundColor={"ground"} style={styles.container}>
       <BView style={styles.imageContainer}>
         <BImage
-          source={{
-            uri: `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`,
-          }}
+          source={`https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`}
           style={styles.image}
           contentFit="cover"
         />

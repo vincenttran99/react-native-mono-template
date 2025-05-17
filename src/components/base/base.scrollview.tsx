@@ -45,6 +45,11 @@ const BScrollview = forwardRef(
     ref: React.Ref<FlashList<any>>
   ) => {
     const props = useRestyle(restyleFunctions, rest);
+    const contentContainerStyleProps = useMemo(() => {
+      //@ts-ignore
+      return { ...(props.style?.[0] || {}), ...contentContainerStyle };
+    }, [contentContainerStyle, props.style]);
+
     // Convert children to array or use function to create virtual data
     const data = useMemo(() => {
       return Array.isArray(children) ? children : Children.toArray(children);
@@ -56,11 +61,6 @@ const BScrollview = forwardRef(
       // Disable recycling by assigning unique type to each item
       return index;
     }, []);
-
-    const contentContainerStyleProps = useMemo(() => {
-      //@ts-ignore
-      return { ...(props.style?.[0] || {}), ...contentContainerStyle };
-    }, [contentContainerStyle, props.style]);
 
     if (estimatedItemSize === undefined) {
       console.warn(
