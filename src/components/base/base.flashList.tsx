@@ -81,10 +81,7 @@ const BFlashListComponent = (
     return { ...(props.style?.[0] || {}), ...contentContainerStyle };
   }, [contentContainerStyle, props.style]);
 
-  const keyExtractor = useCallback(
-    (item: any, index: number) => item?.[keyAttribute] + String(index),
-    []
-  );
+  const keyExtractor = useCallback((item: any) => item?.[keyAttribute], []);
 
   const onEndReachedHandle = useCallback(() => {
     onEndReached?.();

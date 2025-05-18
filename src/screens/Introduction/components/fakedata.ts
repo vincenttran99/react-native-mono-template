@@ -28,7 +28,7 @@ export const fakePosts: IPost[] = [
     author: {
       id: "user1",
       name: "Kevin Thompson",
-      avatar: "https://picsum.photos/id/1001/100/100",
+      avatar: "https://picsum.photos/id/1/300/200",
     },
     content:
       "G-Dragon has his Daisy Button\nAnd I have a whole team of models wearing full Daisy outfits...",

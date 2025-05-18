@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import React, { useEffect, useRef, useState } from "react";
+import { StyleSheet } from "react-native";
 import BText from "components/base/base.text";
 import BView from "components/base/base.view";
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
+import BScrollview from "components/base/base.scrollview";
 import { MHS } from "constants/sizes.constant";
 import BIcon from "components/base/base.icon";
 import BSurface from "components/base/base.surface";
@@ -17,12 +18,10 @@ import BTextMulti from "components/base/base.multiText";
 import BTextEllipsis from "components/base/textEllipsis/base.textEllipsis";
 import BTextInput from "components/base/base.textInput";
 import BWebUrlPreviewComponent from "components/web/web.urlPreview.component";
-import { useTheme } from "@shopify/restyle";
 import BImage from "components/base/base.image";
 
-export default function IntroductionBaseScreen() {
+export default function IntroductionOptimizeBaseScreen() {
   const { _ } = useLingui();
-  const theme = useTheme();
   const initTime = useRef<number>(performance.now());
   const [timeRender, setTimeRender] = React.useState<number>(0);
 
@@ -31,12 +30,11 @@ export default function IntroductionBaseScreen() {
   }, []);
 
   return (
-    <ScrollView
-      contentContainerStyle={{
-        backgroundColor: theme.colors.background,
-        paddingBottom: theme.spacing.xxl,
-        paddingHorizontal: theme.spacing.md,
-      }}
+    <BScrollview
+      estimatedItemSize={MHS._30}
+      backgroundColor="background"
+      paddingBottom="xxxl"
+      paddingHorizontal="md"
     >
       <BText variant="xxl" color="warning" fontWeight={"bold"} marginTop="xl">
         {_(msg`We have 200 images at the bottom`)}
@@ -289,9 +287,6 @@ export default function IntroductionBaseScreen() {
       </BText>
 
       {/* Image */}
-      <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
-        {_(msg`Image`)}
-      </BText>
       <BView flexDirection="row" flexWrap="wrap" gap="xs">
         {Array.from({ length: 200 }).map((_, index) => {
           return (
@@ -304,12 +299,11 @@ export default function IntroductionBaseScreen() {
           );
         })}
       </BView>
-    </ScrollView>
+    </BScrollview>
   );
 }
 
 const styles = StyleSheet.create({
-  contentContainerStyle: {},
   text1: {
     fontSize: 26,
     color: "red",

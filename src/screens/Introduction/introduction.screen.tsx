@@ -10,7 +10,9 @@ import BDivider from "components/base/base.divider";
 import BSafeAreaView from "components/base/base.safeAreaView";
 import {
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
+  NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
+  NAVIGATION_INTRODUCTION_OPTIMIZE_BASE_SCREEN,
 } from "constants/navigation.constant";
 import BPressable from "components/base/base.pressable";
 import { navigateNavHelper } from "helpers/navigation.helper";
@@ -24,13 +26,17 @@ export default function IntroductionScreen() {
       screen: NAVIGATION_INTRODUCTION_BASE_SCREEN,
     },
     {
+      title: _(msg`Base components - BScrollview`),
+      screen: NAVIGATION_INTRODUCTION_OPTIMIZE_BASE_SCREEN,
+    },
+    {
       title: _(msg`Flash List basic`),
       screen: NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
     },
-    // {
-    //   title: _(msg`Legend List`),
-    //   screen: "",
-    // },
+    {
+      title: _(msg`Flash List optimize`),
+      screen: NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
+    },
   ];
 
   const renderItem = useCallback(
@@ -42,7 +48,7 @@ export default function IntroductionScreen() {
           paddingHorizontal="xl"
           onPress={() => navigateNavHelper(item.screen)}
         >
-          <BText fontWeight={"bold"} variant="xxl" numberOfLines={1}>
+          <BText fontWeight={"bold"} variant="xl" numberOfLines={1}>
             {item.title}
           </BText>
         </BPressable>

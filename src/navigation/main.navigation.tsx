@@ -6,6 +6,8 @@ import {
   NAVIGATION_TAB_NAVIGATION,
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
+  NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
+  NAVIGATION_INTRODUCTION_OPTIMIZE_BASE_SCREEN,
 } from "constants/navigation.constant";
 import React from "react";
 import SettingsScreen from "screens/settings/settings.screen";
@@ -16,6 +18,8 @@ import { useMyProfileQuery } from "api/profile/profile.queries";
 import TabNavigation from "./tab.navigation";
 import IntroductionBaseScreen from "screens/Introduction/introduction.base.screen";
 import IntroductionFlashlistScreen from "screens/Introduction/introduction.flashlist.screen";
+import IntroductionFlashlistOptimizeScreen from "screens/Introduction/introduction.flashlist.optimize.screen";
+import IntroductionOptimizeBaseScreen from "screens/Introduction/introduction.optimize.base.screen";
 
 const StackNavigator = createNativeStackNavigator();
 
@@ -44,11 +48,25 @@ const MainNavigator = () => {
         component={IntroductionBaseScreen}
       />
       <StackNavigator.Screen
+        name={NAVIGATION_INTRODUCTION_OPTIMIZE_BASE_SCREEN}
+        options={{
+          title: _(msg`Base components - BScrollview`),
+        }}
+        component={IntroductionOptimizeBaseScreen}
+      />
+      <StackNavigator.Screen
         name={NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN}
         options={{
           title: _(msg`Flash list`),
         }}
         component={IntroductionFlashlistScreen}
+      />
+      <StackNavigator.Screen
+        name={NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN}
+        options={{
+          title: _(msg`Flash list optimize`),
+        }}
+        component={IntroductionFlashlistOptimizeScreen}
       />
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_SCREEN}

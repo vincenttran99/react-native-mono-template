@@ -45,10 +45,7 @@ const BLegendListComponent = (
   }: BLegendListProps<any>,
   ref: any
 ) => {
-  const keyExtractor = useCallback(
-    (item: any, index: number) => item?.[keyAttribute] + String(index),
-    []
-  );
+  const keyExtractor = useCallback((item: any) => item?.[keyAttribute], []);
 
   const onEndReachedHandle = useCallback(
     (info: { distanceFromEnd: number }) => {
