@@ -139,7 +139,8 @@ for po in $STAGED_PO_FILES; do
   
   # Initialize translation counter and array
   translations_count=0
-  declare -a translations
+  declare -a source_texts
+  declare -a translated_texts
   
   # Process the file line by line to find msgid entries that need translation
   # This extracts all msgid lines and their following msgstr lines
@@ -155,7 +156,7 @@ for po in $STAGED_PO_FILES; do
       fi
       
       # Find the line number of the current msgid
-      line_num=$(grep -n "msgid \"$current_msgid\"" "$po" | cut -d: -f1)
+      line_num=$(grep -n -F "msgid \"$current_msgid\"" "$po" | cut -d: -f1)
       # The msgstr line is typically the next line after msgid
       next_line_num=$((line_num + 1))
       next_line=$(sed -n "${next_line_num}p" "$po")
@@ -178,7 +179,8 @@ for po in $STAGED_PO_FILES; do
         if [[ -n "$translation" ]]; then
           echo "Translation result: '$translation'"
           # Store as source:target pair
-          translations+=("$current_msgid:$translation")
+          source_texts+=("$current_msgid")
+          translated_texts+=("$translation")
           ((translations_count++))
         else
           echo "Could not translate: '$current_msgid'"
@@ -190,13 +192,14 @@ for po in $STAGED_PO_FILES; do
   echo "Number of strings translated: $translations_count"
   
   # Apply all translations to the file
-  for trans in "${translations[@]}"; do
+  for i in "${!source_texts[@]}"; do
     # Split the source:target pair
-    IFS=':' read -r source target <<< "$trans"
+    source="${source_texts[i]}"
+    target="${translated_texts[i]}"
     echo "Applying translation: '$source' -> '$target'"
     
     # Find the position of the msgid line
-    line_num=$(grep -n "msgid \"$source\"" "$po" | cut -d: -f1)
+    line_num=$(grep -n -F "msgid \"$source\"" "$po" | cut -d: -f1)
     if [ -n "$line_num" ]; then
       # The msgstr line is the next line
       next_line_num=$((line_num + 1))

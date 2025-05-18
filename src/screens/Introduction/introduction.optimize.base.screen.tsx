@@ -40,7 +40,7 @@ export default function IntroductionOptimizeBaseScreen() {
         {_(msg`We have 200 images at the bottom`)}
       </BText>
       <BText variant="xxl" color="error" fontWeight={"bold"} marginTop="xl">
-        {_(msg`Render time`) + `${timeRender.toFixed(2)}ms`}
+        {_(msg`Render time: `) + `${timeRender.toFixed(2)}ms`}
       </BText>
 
       <BDivider bold backgroundColor="error" />

@@ -285,8 +285,8 @@ msgstr "Radio"
 
 #: src/screens/Introduction/introduction.optimize.base.screen.tsx:43
 #: src/screens/Introduction/introduction.base.screen.tsx:45
-msgid "Render time"
-msgstr "Render time"
+msgid "Render time: "
+msgstr "Render time: "
 
 #: src/components/form/form.select.single.tsx:165
 msgid "Search"
