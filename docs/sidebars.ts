@@ -48,14 +48,31 @@ const sidebars: SidebarsConfig = {
     //   ],
     // },
     // {
-    //   type: 'category',
-    //   label: 'Guides',
+    //   type: "category",
+    //   label: "Guides",
     //   collapsible: true,
     //   collapsed: true,
-    //   items: [
-    //     // Thêm các trang hướng dẫn ở đây
-    //   ],
+    //   items: ["guides/performance"],
     // },
+    {
+      type: "category",
+      label: "Performance",
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: "generated-index",
+        description: "Learn how to optimize your app",
+      },
+      items: [
+        "performance/re-rendering-optimization",
+        "performance/component-structure-optimization",
+        "performance/flashlist-optimization",
+        "performance/heavy-task-processing",
+        "performance/animation-optimization",
+        "performance/image-optimization",
+        "performance/data-state-optimization",
+      ],
+    },
     // {
     //   type: 'category',
     //   label: 'Recipes',
