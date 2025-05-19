@@ -1,5 +1,12 @@
-import React, { useCallback } from "react";
-import { StyleSheet, Image, TouchableOpacity } from "react-native";
+import React, {
+  memo,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+} from "react";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import BView from "components/base/base.view";
 import { useLingui } from "@lingui/react";
 import BText from "components/base/base.text";
@@ -10,6 +17,11 @@ import BDivider from "components/base/base.divider";
 import BSurface from "components/base/base.surface";
 import BImage from "components/base/base.image";
 import { msg } from "@lingui/core/macro";
+import BTextEllipsis from "components/base/textEllipsis/base.textEllipsis";
+import isEqual from "react-fast-compare";
+import IntroductionFlashlistItemAction, {
+  IntroductionFlashlistItemActionButton,
+} from "./introduction.flashlist.item.action";
 
 interface IntroductionFlashlistItemProps {
   item: IPost;
@@ -19,6 +31,23 @@ const IntroductionFlashlistItem = ({
   item,
 }: IntroductionFlashlistItemProps) => {
   const { _ } = useLingui();
+  const ButtonLikeref = useRef<any>(null);
+  const ButtonLike = useMemo(() => {
+    return (
+      <IntroductionFlashlistItemActionButton
+        ref={ButtonLikeref}
+        iconTrue="thumb-up"
+        iconFalse="thumb-up-outline"
+        labelTrue={_(msg`Liked`)}
+        labelFalse={_(msg`Like`)}
+        initBooleanValue={item.liked}
+      />
+    );
+  }, []);
+
+  useLayoutEffect(() => {
+    ButtonLikeref.current?.setBooleanValue(item.liked);
+  }, [item.liked]);
 
   const renderImages = useCallback(() => {
     if (!item.images || item.images.length === 0) return null;
@@ -29,25 +58,9 @@ const IntroductionFlashlistItem = ({
 
     return (
       <BView style={styles.imageGrid}>
-        {item.images.slice(0, 4).map((image, index) => (
-          <BImage
-            key={index}
-            source={image}
-            style={[
-              styles.gridImage,
-              item?.images?.length === 3 &&
-                index === 2 &&
-                styles.lastImageInThree,
-            ]}
-          />
+        {item.images.map((image, index) => (
+          <BImage key={index} source={image} style={styles.gridImage} />
         ))}
-        {item.images.length > 4 && (
-          <BView style={styles.moreImagesOverlay}>
-            <BText color="background" variant="lg" fontWeight="bold">
-              +{item.images.length - 4}
-            </BText>
-          </BView>
-        )}
       </BView>
     );
   }, [item.images]);
@@ -91,9 +104,9 @@ const IntroductionFlashlistItem = ({
       </BView>
 
       {/* Content */}
-      <BText variant="md" style={styles.content}>
-        {item.content}
-      </BText>
+      <BTextEllipsis numberOfLines={3} variant="md" style={styles.content}>
+        {item.content + item.content + item.content}
+      </BTextEllipsis>
 
       {/* Images */}
       {renderImages()}
@@ -120,26 +133,7 @@ const IntroductionFlashlistItem = ({
       <BDivider marginVertical="xxxxs" />
 
       {/* Actions */}
-      <BView style={styles.actionsContainer}>
-        <TouchableOpacity style={styles.actionButton}>
-          <BIcon name="thumb-up-outline" size={FontSize.lg} color="text" />
-          <BText variant="sm" style={styles.actionText}>
-            {_(msg`Like`)}
-          </BText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
-          <BIcon name="comment-outline" size={FontSize.lg} color="text" />
-          <BText variant="sm" style={styles.actionText}>
-            {_(msg`Comment`)}
-          </BText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
-          <BIcon name="share-outline" size={FontSize.lg} color="text" />
-          <BText variant="sm" style={styles.actionText}>
-            {_(msg`Share`)}
-          </BText>
-        </TouchableOpacity>
-      </BView>
+      <IntroductionFlashlistItemAction ButtonLike={ButtonLike} />
     </BSurface>
   );
 };
@@ -184,7 +178,7 @@ const styles = StyleSheet.create({
   },
   singleImage: {
     width: "100%",
-    height: MHS._220,
+    aspectRatio: 1,
     borderRadius: MHS._8,
     marginVertical: MHS._5,
   },
@@ -195,7 +189,8 @@ const styles = StyleSheet.create({
   },
   gridImage: {
     width: "48%",
-    height: MHS._100,
+    height: MHS._160,
+    flexGrow: 1,
     margin: "1%",
     borderRadius: MHS._8,
   },
@@ -244,4 +239,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default IntroductionFlashlistItem;
+export default memo(IntroductionFlashlistItem, isEqual);

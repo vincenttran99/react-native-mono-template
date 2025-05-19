@@ -1,4 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  Profiler,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { StyleSheet } from "react-native";
 import BText from "components/base/base.text";
 import BView from "components/base/base.view";
@@ -22,21 +29,65 @@ import BFlashList from "components/base/base.flashList";
 import IntroductionFlashlistItem from "./components/introduction.flashlist.item";
 import { fakePosts, IPost } from "./components/fakedata";
 
+// Hàm tự động cuộn danh sách
+const autoScroll = (ref, scrollDistance, duration) => {
+  let startTime = null;
+
+  const step = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const offset = progress * scrollDistance;
+    ref.current?.scrollToOffset({ offset, animated: false });
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
 export default function IntroductionFlashlistScreen() {
   const { _ } = useLingui();
+  const refInput = React.useRef(null);
+  const totalRenderTime = React.useRef(0);
+  const renderCount = React.useRef(0);
+  const flashListRef = useRef(null);
+  const onRender = (id, phase, actualDuration) => {
+    if (phase === "update") {
+      // Cập nhật tổng thời gian và số lần render
+      totalRenderTime.current += actualDuration;
+      renderCount.current += 1;
+
+      refInput.current?.setNativeProps({
+        text: `Hiệu suất trung bình: ${
+          renderCount.current > 0
+            ? (totalRenderTime.current / renderCount.current).toFixed(2)
+            : 0
+        } ms`,
+      });
+    }
+  };
+  // useEffect(() => {
+  //   autoScroll(flashListRef, 117141, 30000);
+  // }, []);
 
   const renderItem = useCallback(({ item }: { item: IPost }) => {
     return <IntroductionFlashlistItem item={item} />;
   }, []);
 
   return (
-    <BFlashList
-      keyAttribute={"id"}
-      estimatedItemSize={450}
-      data={fakePosts}
-      renderItem={renderItem}
-      backgroundColor="background"
-    />
+    <Profiler id="FlashList" onRender={onRender}>
+      <BTextInput ref={refInput} />
+      <BFlashList
+        ref={flashListRef}
+        keyAttribute={"id"}
+        estimatedItemSize={450}
+        data={fakePosts}
+        renderItem={renderItem}
+        backgroundColor="background"
+      />
+    </Profiler>
   );
 }
 

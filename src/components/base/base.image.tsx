@@ -23,8 +23,6 @@ const BImage = memo(
     transition,
     ...props
   }: BImageProps): React.JSX.Element => {
-    console.log("render image ", props.source);
-
     const styleImage = useMemo(() => {
       let currentWidth = width || StyleSheet.flatten(style || {})?.width;
       let currentHeight =

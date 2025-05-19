@@ -10,7 +10,6 @@ import BDivider from "components/base/base.divider";
 import BSafeAreaView from "components/base/base.safeAreaView";
 import {
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
-  NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
 } from "constants/navigation.constant";
 import BPressable from "components/base/base.pressable";

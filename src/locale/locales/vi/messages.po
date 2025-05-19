@@ -17,7 +17,7 @@ msgstr ""
 msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "Nhanh hơn 3 hoặc 4 lần so với màn hình cuộn bình thường"
 
-#: src/screens/Introduction/introduction.screen.tsx:24
+#: src/screens/Introduction/introduction.screen.tsx:23
 #: src/navigation/main.navigation.tsx:41
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
@@ -84,11 +84,11 @@ msgstr "Đóng"
 msgid "Coming soon"
 msgstr "Sắp ra mắt"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:127
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:89
 msgid "Comment"
 msgstr "Bình luận"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:105
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:124
 msgid "Comments"
 msgstr "Nhận xét"
 
@@ -136,7 +136,7 @@ msgstr "Mẫu nhanh và đơn giản"
 msgid "Flash list"
 msgstr "Danh sách Flash"
 
-#: src/screens/Introduction/introduction.screen.tsx:28
+#: src/screens/Introduction/introduction.screen.tsx:27
 msgid "Flash List"
 msgstr "Danh sách Flash"
 
@@ -174,9 +174,13 @@ msgstr "Văn bản thành công lớn"
 msgid "Lazy view"
 msgstr "Quan điểm lười biếng"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:121
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:42
 msgid "Like"
 msgstr "Giống"
+
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:41
+msgid "Liked"
+msgstr "Thích"
 
 #: src/components/list/list.defaultErrorItem.component.tsx:29
 msgid "Loadmore failed"
@@ -261,11 +265,11 @@ msgstr "Xem thêm"
 msgid "Setting"
 msgstr "Cài đặt"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:133
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:93
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:109
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:128
 msgid "Shares"
 msgstr "Cổ phiếu"
 
