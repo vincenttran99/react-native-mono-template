@@ -18,7 +18,7 @@ msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "3 or 4 times faster than normal scrolling screen"
 
 #: src/screens/Introduction/introduction.screen.tsx:24
-#: src/navigation/main.navigation.tsx:43
+#: src/navigation/main.navigation.tsx:41
 msgid "Base components"
 msgstr "Base components"
 
@@ -85,12 +85,10 @@ msgid "Coming soon"
 msgstr "Coming soon"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:127
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:133
 msgid "Comment"
 msgstr "Comment"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:105
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:111
 msgid "Comments"
 msgstr "Comments"
 
@@ -134,21 +132,13 @@ msgstr "Extra large warning text"
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
-#: src/navigation/main.navigation.tsx:50
+#: src/navigation/main.navigation.tsx:48
 msgid "Flash list"
 msgstr "Flash list"
 
 #: src/screens/Introduction/introduction.screen.tsx:28
-msgid "Flash List basic"
-msgstr "Flash List basic"
-
-#: src/navigation/main.navigation.tsx:57
-msgid "Flash list optimize"
-msgstr "Flash list optimize"
-
-#: src/screens/Introduction/introduction.screen.tsx:32
-msgid "Flash List optimize"
-msgstr "Flash List optimize"
+msgid "Flash List"
+msgstr "Flash List"
 
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
@@ -172,7 +162,7 @@ msgid "Introduce"
 msgstr "Introduce"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:70
+#: src/navigation/main.navigation.tsx:61
 msgid "Language"
 msgstr "Language"
 
@@ -185,7 +175,6 @@ msgid "Lazy view"
 msgstr "Lazy view"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:121
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:127
 msgid "Like"
 msgstr "Like"
 
@@ -268,17 +257,15 @@ msgstr "Search"
 msgid "see more"
 msgstr "see more"
 
-#: src/navigation/main.navigation.tsx:64
+#: src/navigation/main.navigation.tsx:55
 msgid "Setting"
 msgstr "Setting"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:133
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:139
 msgid "Share"
 msgstr "Share"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:109
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:115
 msgid "Shares"
 msgstr "Shares"
 

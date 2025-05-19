@@ -6,7 +6,6 @@ import {
   NAVIGATION_TAB_NAVIGATION,
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
-  NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
 } from "constants/navigation.constant";
 import React from "react";
 import SettingsScreen from "screens/settings/settings.screen";
@@ -16,7 +15,6 @@ import { msg } from "@lingui/core/macro";
 import { useMyProfileQuery } from "api/profile/profile.queries";
 import TabNavigation from "./tab.navigation";
 import IntroductionFlashlistScreen from "screens/Introduction/introduction.flashlist.screen";
-import IntroductionFlashlistOptimizeScreen from "screens/Introduction/introduction.flashlist.optimize.screen";
 import IntroductionBaseScreen from "screens/Introduction/introduction.base.screen";
 
 const StackNavigator = createNativeStackNavigator();
@@ -50,13 +48,6 @@ const MainNavigator = () => {
           title: _(msg`Flash list`),
         }}
         component={IntroductionFlashlistScreen}
-      />
-      <StackNavigator.Screen
-        name={NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN}
-        options={{
-          title: _(msg`Flash list optimize`),
-        }}
-        component={IntroductionFlashlistOptimizeScreen}
       />
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_SCREEN}

@@ -25,12 +25,8 @@ export default function IntroductionScreen() {
       screen: NAVIGATION_INTRODUCTION_BASE_SCREEN,
     },
     {
-      title: _(msg`Flash List basic`),
+      title: _(msg`Flash List`),
       screen: NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
-    },
-    {
-      title: _(msg`Flash List optimize`),
-      screen: NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
     },
   ];
 

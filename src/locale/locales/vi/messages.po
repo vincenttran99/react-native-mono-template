@@ -18,7 +18,7 @@ msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "Nhanh hơn 3 hoặc 4 lần so với màn hình cuộn bình thường"
 
 #: src/screens/Introduction/introduction.screen.tsx:24
-#: src/navigation/main.navigation.tsx:43
+#: src/navigation/main.navigation.tsx:41
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
 
@@ -85,12 +85,10 @@ msgid "Coming soon"
 msgstr "Sắp ra mắt"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:127
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:133
 msgid "Comment"
 msgstr "Bình luận"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:105
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:111
 msgid "Comments"
 msgstr "Nhận xét"
 
@@ -134,21 +132,13 @@ msgstr "Văn bản cảnh báo thêm lớn"
 msgid "Fast and simple template"
 msgstr "Mẫu nhanh và đơn giản"
 
-#: src/navigation/main.navigation.tsx:50
+#: src/navigation/main.navigation.tsx:48
 msgid "Flash list"
 msgstr "Danh sách Flash"
 
 #: src/screens/Introduction/introduction.screen.tsx:28
-msgid "Flash List basic"
-msgstr "Danh sách flash cơ bản"
-
-#: src/navigation/main.navigation.tsx:57
-msgid "Flash list optimize"
-msgstr "Tối ưu hóa danh sách flash"
-
-#: src/screens/Introduction/introduction.screen.tsx:32
-msgid "Flash List optimize"
-msgstr "Tối ưu hóa danh sách flash"
+msgid "Flash List"
+msgstr "Danh sách Flash"
 
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
@@ -172,7 +162,7 @@ msgid "Introduce"
 msgstr "Giới thiệu"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:70
+#: src/navigation/main.navigation.tsx:61
 msgid "Language"
 msgstr "Ngôn ngữ"
 
@@ -185,7 +175,6 @@ msgid "Lazy view"
 msgstr "Quan điểm lười biếng"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:121
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:127
 msgid "Like"
 msgstr "Giống"
 
@@ -268,17 +257,15 @@ msgstr "Tìm kiếm"
 msgid "see more"
 msgstr "Xem thêm"
 
-#: src/navigation/main.navigation.tsx:64
+#: src/navigation/main.navigation.tsx:55
 msgid "Setting"
 msgstr "Cài đặt"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:133
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:139
 msgid "Share"
 msgstr "Chia sẻ"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.tsx:109
-#: src/screens/Introduction/components/introduction.flashlist.item.optimize.tsx:115
 msgid "Shares"
 msgstr "Cổ phiếu"
 
