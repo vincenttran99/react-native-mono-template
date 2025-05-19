@@ -69,7 +69,7 @@ const BFlashListComponent = (
       width: Device.width,
       height: Device.height - Device.heightAppBar,
     },
-    drawDistance = Device.height,
+    drawDistance = Device.height * 2,
     getItemType = getItemTypeDefault,
     ...rest
   }: BFlashListProps<any>,

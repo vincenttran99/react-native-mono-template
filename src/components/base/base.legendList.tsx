@@ -40,7 +40,7 @@ const BLegendListComponent = (
     refreshing,
     renderItem,
     horizontal,
-    drawDistance = Device.height / 2,
+    drawDistance = Device.height * 2,
     ...props
   }: BLegendListProps<any>,
   ref: any

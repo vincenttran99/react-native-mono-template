@@ -12,7 +12,6 @@ import {
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_OPTIMIZE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
-  NAVIGATION_INTRODUCTION_OPTIMIZE_BASE_SCREEN,
 } from "constants/navigation.constant";
 import BPressable from "components/base/base.pressable";
 import { navigateNavHelper } from "helpers/navigation.helper";
@@ -24,10 +23,6 @@ export default function IntroductionScreen() {
     {
       title: _(msg`Base components`),
       screen: NAVIGATION_INTRODUCTION_BASE_SCREEN,
-    },
-    {
-      title: _(msg`Base components - BScrollview`),
-      screen: NAVIGATION_INTRODUCTION_OPTIMIZE_BASE_SCREEN,
     },
     {
       title: _(msg`Flash List basic`),
