@@ -145,7 +145,7 @@ msgid "Hello"
 msgstr "Hello"
 
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:324
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:289
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
 msgid "hide"
 msgstr "hide"
 
@@ -256,8 +256,8 @@ msgstr "Search"
 
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:103
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:325
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:98
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:290
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:103
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:319
 msgid "see more"
 msgstr "see more"
 
