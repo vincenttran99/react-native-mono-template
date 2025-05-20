@@ -144,7 +144,7 @@ msgstr "Flash List"
 msgid "Hello"
 msgstr "Hello"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:296
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:308
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:289
 msgid "hide"
 msgstr "hide"
@@ -254,8 +254,8 @@ msgstr "Render time: "
 msgid "Search"
 msgstr "Search"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:99
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:297
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:103
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:309
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:98
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:290
 msgid "see more"

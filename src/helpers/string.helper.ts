@@ -1,3 +1,5 @@
+import { SHORT_CHARACTERS } from "constants/string.constant";
+
 /**
  * addOpacityToColor
  *
@@ -39,3 +41,18 @@ export const addOpacityToColorHelper = (color: string, opacity: number) => {
   // If the color format is not recognized, return #ffffff
   return "#ffffff";
 };
+
+/**
+ * Counts the number of "short" characters in a given string.
+ * @param input - The string to analyze.
+ * @returns The count of short characters.
+ */
+export function countShortCharactersHelper(input: string): number {
+  let count = 0;
+  for (const char of input) {
+    if (SHORT_CHARACTERS.has(char)) {
+      count++;
+    }
+  }
+  return count;
+}

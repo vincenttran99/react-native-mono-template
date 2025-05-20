@@ -20,6 +20,7 @@ import BText, { BTextProps } from "components/base/base.text";
 
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
+import { countShortCharactersHelper } from "helpers/string.helper";
 
 /**
  * Interface for BTextEllipsis component props
@@ -70,7 +71,7 @@ const BTextEllipsis = memo(
     style,
     readMoreText,
     readLessText,
-    compensationSpaceAndroid = 8,
+    compensationSpaceAndroid = 6,
     ...props
   }: TBTextEllipsisProps): React.JSX.Element => {
     // State to track if text needs truncation with "read more" option
@@ -78,7 +79,7 @@ const BTextEllipsis = memo(
     // State used to trigger re-renders when calculations are complete
     const [renderTrigger, setRenderTrigger] = useState(false);
     // State to track if full text is currently displayed
-    const [isShowingFullText, setIsShowingFullText] = useState(false);
+    const isShowingFullTextRef = useRef(false);
 
     // Refs to store text content in different states
     const fullTextRef = useRef(children);
@@ -89,6 +90,9 @@ const BTextEllipsis = memo(
     const textLinesRef = useRef<TextLayoutLine[]>([]);
     const isCalculationCompleteRef = useRef(false);
     const hasPropsChangedRef = useRef(false);
+    const oldChildren = useRef(children);
+
+    const isNeedTrigger = oldChildren.current !== children;
 
     // Get translation function
     const { _ } = useLingui();
@@ -108,14 +112,14 @@ const BTextEllipsis = memo(
       hasPropsChangedRef.current = true;
       fullTextRef.current = children;
       textLinesRef.current = [];
-      containerWidthRef.current = 0;
+      isShowingFullTextRef.current = false;
+      oldChildren.current = children;
       // Trigger re-render to start new calculation
-      setRenderTrigger((prev) => !prev);
-
+      // setRenderTrigger((prev) => !prev);
       return () => {
         isCalculationCompleteRef.current = false;
       };
-    }, [children, style, readMoreStyle, numberOfLines]);
+    }, [children, style, numberOfLines]);
 
     /**
      * Calculate truncated text based on available space and number of lines
@@ -139,7 +143,7 @@ const BTextEllipsis = memo(
       let characterWidthsByLine: number[] = [];
 
       // Check if text exceeds the specified number of lines
-      if (textLinesRef.current?.length >= numberOfLines) {
+      if (textLinesRef.current?.length > numberOfLines) {
         let visibleText = "";
 
         // Process each visible line
@@ -147,19 +151,19 @@ const BTextEllipsis = memo(
           visibleText = visibleText.concat(textLinesRef.current[i].text);
 
           // Remove trailing newline if present for width calculation
-          const textWithoutNewline = textLinesRef.current[i].text.slice(
+          let textWithoutNewline = textLinesRef.current[i].text.slice(
             0,
             textLinesRef.current[i].text.endsWith("\n") ? -1 : undefined
           );
 
           // Calculate average character width for this line
-          const avgCharWidth =
+          let avgCharWidth =
             textLinesRef.current[i].width / textWithoutNewline.length;
           characterWidthsByLine.push(avgCharWidth);
         }
 
         // Calculate overall average character width
-        let averageCharacterWidth =
+        let avgCharacterWidth =
           characterWidthsByLine.reduce((a, b) => a + b, 0) /
           characterWidthsByLine.length;
 
@@ -168,8 +172,7 @@ const BTextEllipsis = memo(
 
         // Calculate how wide the last line should be to accommodate "see more" text
         let targetLastLineWidth =
-          containerWidthRef.current -
-          averageCharacterWidth * readMoreTextLength;
+          containerWidthRef.current - avgCharacterWidth * readMoreTextLength;
 
         // Remove trailing newline if present
         if (visibleText.endsWith("\n")) {
@@ -179,16 +182,20 @@ const BTextEllipsis = memo(
         // Create truncated text with ellipsis
         // If last line is already short enough, use it as is
         // Otherwise, trim characters to make room for "see more" text
+        let abc =
+          lastLineWidth <= targetLastLineWidth
+            ? undefined
+            : -Math.ceil(
+                (lastLineWidth - targetLastLineWidth) / (avgCharacterWidth || 1)
+              );
+
         truncatedTextRef.current =
           visibleText
             .slice(
               0,
-              lastLineWidth <= targetLastLineWidth
-                ? undefined
-                : -Math.ceil(
-                    (lastLineWidth - targetLastLineWidth) /
-                      averageCharacterWidth
-                  )
+              abc
+                ? abc - countShortCharactersHelper(visibleText.slice(abc))
+                : undefined
             )
             .trim() + "... ";
 
@@ -202,7 +209,7 @@ const BTextEllipsis = memo(
 
       // Trigger re-render with calculated text
       setRenderTrigger((prev) => !prev);
-    }, [readMoreTextLength]);
+    }, [readMoreTextLength, numberOfLines]);
 
     /**
      * Handle text layout event to get line information
@@ -230,35 +237,39 @@ const BTextEllipsis = memo(
      */
     const toggleTextExpansion = useCallback(
       (event: GestureResponderEvent) => {
-        if (isShowingFullText) {
+        if (isShowingFullTextRef.current) {
           // Switch to truncated text
           fullTextRef.current = truncatedTextRef.current;
-          setIsShowingFullText(false);
+          isShowingFullTextRef.current = false;
         } else {
           // Switch to full text
           fullTextRef.current = children;
-          setIsShowingFullText(true);
+          isShowingFullTextRef.current = true;
         }
-
+        setRenderTrigger((prev) => !prev);
         // Call any onPress handler provided in readMoreTextProps
         readMoreTextProps?.onPress?.(event);
       },
-      [isShowingFullText, children, readMoreTextProps?.onPress]
+      [children, readMoreTextProps?.onPress]
     );
 
     /**
      * Handle container layout to get width information
      */
-    const onContainerLayout = useCallback((event: LayoutChangeEvent) => {
-      // Skip if calculation is already complete
-      if (isCalculationCompleteRef.current) {
-        return;
-      }
+    const onContainerLayout = useCallback(
+      (event: LayoutChangeEvent) => {
+        // Skip if calculation is already complete
 
-      // Store container width from layout event
-      containerWidthRef.current = event.nativeEvent?.layout?.width || 0;
-      calculateTruncatedText();
-    }, []);
+        if (isCalculationCompleteRef.current) {
+          return;
+        }
+
+        // Store container width from layout event
+        containerWidthRef.current = event.nativeEvent?.layout?.width || 0;
+        calculateTruncatedText();
+      },
+      [numberOfLines]
+    );
 
     return (
       <BText
@@ -277,22 +288,23 @@ const BTextEllipsis = memo(
           style,
           {
             // Hide text until calculation is complete
-            opacity: isCalculationCompleteRef.current
-              ? StyleSheet.flatten(style || {})?.opacity
-              : 0,
+            opacity:
+              !isNeedTrigger && isCalculationCompleteRef.current
+                ? StyleSheet.flatten(style || {})?.opacity
+                : 0,
           },
         ]}
         {...props}
       >
-        {fullTextRef.current}
-        {isNeedReadMore ? (
+        {isNeedTrigger ? children : fullTextRef.current}
+        {!isNeedTrigger && isNeedReadMore ? (
           <BText
             fontWeight={"bold"}
             style={readMoreStyle}
             {...readMoreTextProps}
             onPress={toggleTextExpansion}
           >
-            {isShowingFullText
+            {isShowingFullTextRef.current
               ? " " + (readLessText || _(msg`hide`))
               : readMoreText || _(msg`see more`)}
           </BText>

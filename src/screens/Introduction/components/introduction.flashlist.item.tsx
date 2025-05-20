@@ -105,7 +105,7 @@ const IntroductionFlashlistItem = ({
 
       {/* Content */}
       <BTextEllipsis numberOfLines={3} variant="md" style={styles.content}>
-        {item.content + item.content + item.content}
+        {item.content + " " + item.content}
       </BTextEllipsis>
 
       {/* Images */}
