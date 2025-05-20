@@ -135,75 +135,91 @@ const BTextEllipsis = memo(
         return;
       }
 
-      // Mark calculation as complete
+      // Mark calculation as complete and props as processed
       isCalculationCompleteRef.current = true;
       hasPropsChangedRef.current = false;
 
-      // Array to store average character width for each line
-      let characterWidthsByLine: number[] = [];
+      // Array to store average character width for each line that has content
+      const characterWidthsByLine: number[] = [];
 
       // Check if text exceeds the specified number of lines
       if (textLinesRef.current?.length > numberOfLines) {
-        let visibleText = "";
+        let visibleText = ""; // Accumulates text from visible lines
 
-        // Process each visible line
+        // Process each line up to the numberOfLines limit
         for (let i = 0; i < numberOfLines; i++) {
-          visibleText = visibleText.concat(textLinesRef.current[i].text);
+          const currentLine = textLinesRef.current[i];
+          visibleText = visibleText.concat(currentLine.text);
 
-          // Remove trailing newline if present for width calculation
-          let textWithoutNewline = textLinesRef.current[i].text.slice(
-            0,
-            textLinesRef.current[i].text.endsWith("\n") ? -1 : undefined
-          );
+          // Prepare text for width calculation (remove trailing newline)
+          const textForWidthCalc = currentLine.text.endsWith("\n")
+            ? currentLine.text.slice(0, -1)
+            : currentLine.text;
 
-          // Calculate average character width for this line
-          let avgCharWidth =
-            textLinesRef.current[i].width / textWithoutNewline.length;
-          characterWidthsByLine.push(avgCharWidth);
+          // Calculate average character width for this line,
+          // only if it has measurable text content and width.
+          if (textForWidthCalc.length > 0 && currentLine.width > 0) {
+            const avgCharWidth = currentLine.width / textForWidthCalc.length;
+            characterWidthsByLine.push(avgCharWidth);
+          }
         }
 
-        // Calculate overall average character width
-        let avgCharacterWidth =
-          characterWidthsByLine.reduce((a, b) => a + b, 0) /
-          characterWidthsByLine.length;
+        // Calculate overall average character width from the collected valid line averages.
+        // If no valid lines were found (e.g., all lines were empty or had no width),
+        // avgCharacterWidth will be 0, and a fallback (|| 1) will be used later to prevent division by zero.
+        const avgCharacterWidth =
+          characterWidthsByLine.length > 0
+            ? characterWidthsByLine.reduce((a, b) => a + b, 0) /
+              characterWidthsByLine.length
+            : 0;
 
-        // Get width of the last visible line
-        let lastLineWidth = textLinesRef.current[numberOfLines - 1].width;
+        // Get width of the last visible line (the line at numberOfLines - 1 index)
+        const lastLineWidth = textLinesRef.current[numberOfLines - 1].width;
 
-        // Calculate how wide the last line should be to accommodate "see more" text
-        let targetLastLineWidth =
-          containerWidthRef.current - avgCharacterWidth * readMoreTextLength;
+        // Calculate the target width for the last line to accommodate the "see more" text.
+        // This is the container width minus the estimated width of "see more" text.
+        const targetLastLineWidth =
+          containerWidthRef.current -
+          (avgCharacterWidth || 1) * readMoreTextLength; // Use fallback 1 for avgCharWidth if it's 0
 
-        // Remove trailing newline if present
+        // Remove trailing newline from the accumulated visibleText if present
         if (visibleText.endsWith("\n")) {
           visibleText = visibleText.slice(0, -1);
         }
 
-        // Create truncated text with ellipsis
-        // If last line is already short enough, use it as is
-        // Otherwise, trim characters to make room for "see more" text
-        let abc =
+        // Determine how many characters to trim from the end of visibleText.
+        // If the last line is already short enough (lastLineWidth <= targetLastLineWidth),
+        // sliceEndOffset will be undefined, meaning no characters are trimmed from visibleText itself before adding "...".
+        // Otherwise, calculate a negative offset (sliceEndOffset) representing the number of characters to remove from the end.
+        // The (avgCharacterWidth || 1) ensures division by a non-zero number.
+        const sliceEndOffset =
           lastLineWidth <= targetLastLineWidth
-            ? undefined
+            ? undefined // Keep all characters if last line fits
             : -Math.ceil(
                 (lastLineWidth - targetLastLineWidth) / (avgCharacterWidth || 1)
               );
 
+        // Construct the truncated text.
+        // If sliceEndOffset is defined (negative), it's used to trim characters from the end of visibleText.
+        // countShortCharactersHelper adjusts the trim count, possibly for multi-byte or variable-width characters.
         truncatedTextRef.current =
           visibleText
             .slice(
               0,
-              abc
-                ? abc - countShortCharactersHelper(visibleText.slice(abc))
+              sliceEndOffset
+                ? sliceEndOffset -
+                    countShortCharactersHelper(
+                      visibleText.slice(sliceEndOffset)
+                    )
                 : undefined
             )
-            .trim() + "... ";
+            .trim() + "... "; // Add ellipsis and a space
 
-        // Set current display text to truncated version
+        // Update refs and state to reflect truncation
         fullTextRef.current = truncatedTextRef.current;
         setIsNeedReadMore(true);
       } else {
-        // Text fits within specified lines, no need for "read more"
+        // Text fits within specified lines, no "see more" needed
         setIsNeedReadMore(false);
       }
 
