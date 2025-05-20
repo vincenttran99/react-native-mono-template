@@ -2,7 +2,7 @@ import React, { forwardRef, useMemo, useCallback, Children } from "react";
 import { FlashList, FlashListProps } from "@shopify/flash-list";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { ScrollView, ScrollViewProps } from "react-native";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import {
   backgroundColor,
   BackgroundColorProps,
@@ -34,10 +34,10 @@ const BScrollview = forwardRef(
     {
       children,
       estimatedItemSize,
-      drawDistance = Device.height * 2,
+      drawDistance = DEVICE.height * 2,
       estimatedListSize = {
-        width: Device.width,
-        height: Device.height - Device.heightAppBar,
+        width: DEVICE.width,
+        height: DEVICE.height - DEVICE.heightAppBar,
       },
       contentContainerStyle,
       ...rest

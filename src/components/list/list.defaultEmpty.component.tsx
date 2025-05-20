@@ -5,7 +5,7 @@ import { MHS } from "constants/sizes.constant";
 import isEqual from "react-fast-compare";
 import { SVGIconEmpty } from "assets/svgIcon";
 import BText from "components/base/base.text";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
@@ -47,7 +47,7 @@ const ListDefaultEmptyComponent = memo(
 const styles = StyleSheet.create({
   container: {
     gap: MHS._12,
-    height: Device.height * 0.88,
+    height: DEVICE.height * 0.88,
     justifyContent: "center",
     alignItems: "center",
   },

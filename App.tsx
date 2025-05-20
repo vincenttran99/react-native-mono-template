@@ -6,7 +6,7 @@ import {
   initialWindowMetrics,
   SafeAreaProvider,
 } from "react-native-safe-area-context";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import { enableFreeze } from "react-native-screens";
 import I18nProvider from "locale/i18n";
 import { enableBatchedStateUpdates } from "helpers/hooks/state.hook";
@@ -53,15 +53,15 @@ const App = () => {
   useEffect(() => {
     // Request notification permissions from the user
     requestUserPermissionHepler();
-    
+
     // Create default notification channels (required for Android)
     createDefaultChannelsHelper();
-    
+
     // Set up notification handlers for foreground/background messages
     setupNotificationHelper();
 
     // Android-specific Firebase bootstrap process
-    if (Device.isAndroid) {
+    if (DEVICE.isAndroid) {
       bootstrapHelper().catch(console.error);
     }
   }, []);

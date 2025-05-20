@@ -1,4 +1,9 @@
-import React, { forwardRef, MemoExoticComponent, useCallback } from "react";
+import React, {
+  forwardRef,
+  MemoExoticComponent,
+  useCallback,
+  useMemo,
+} from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { ScrollViewProps } from "react-native";
 import {
@@ -6,12 +11,12 @@ import {
   LOAD_MORE_ERROR_ITEM,
   LOADING_ITEM,
 } from "helpers/hooks/list.hook";
-import { Device } from "constants/device.constant";
 import DefaultLoadingListComponent from "components/list/list.defaultLoading.component";
 import DefaultErrorListComponent from "components/list/list.defaultError.component";
 import DefaultEmptyListComponent from "components/list/list.defaultEmpty.component";
 import DefaultErrorItemListComponent from "components/list/list.defaultErrorItem.component";
 import { LegendList, LegendListProps } from "@legendapp/list";
+import { getDrawDistance } from "helpers/system.helper";
 
 export type BLegendListProps<ItemT> = LegendListProps<ItemT> & {
   /**
@@ -40,13 +45,14 @@ const BLegendListComponent = (
     refreshing,
     renderItem,
     horizontal,
-    drawDistance = Device.height * 2,
     ...props
   }: BLegendListProps<any>,
   ref: any
 ) => {
   const keyExtractor = useCallback((item: any) => item?.[keyAttribute], []);
-
+  const defaultDrawDistance = useMemo(() => {
+    return getDrawDistance(horizontal ? "horizontal" : "vertical");
+  }, [horizontal]);
   const onEndReachedHandle = useCallback(
     (info: { distanceFromEnd: number }) => {
       onEndReached?.(info);
@@ -99,7 +105,7 @@ const BLegendListComponent = (
       showsHorizontalScrollIndicator={false}
       onEndReachedThreshold={0.5}
       onEndReached={onEndReachedHandle}
-      drawDistance={drawDistance}
+      drawDistance={defaultDrawDistance}
       horizontal={horizontal}
       recycleItems
       {...props}

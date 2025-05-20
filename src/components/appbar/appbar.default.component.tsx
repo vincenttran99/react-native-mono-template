@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { getHeaderTitle } from "@react-navigation/elements";
 import BIconButton from "components/base/base.iconButton";
 import BText from "components/base/base.text";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { memo, useMemo } from "react";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
@@ -18,7 +18,7 @@ const AppbarDefaultComponent = memo(
       let paddingTop = insets.top;
       return {
         paddingTop: paddingTop,
-        height: paddingTop + Device.heightAppBar,
+        height: paddingTop + DEVICE.heightAppBar,
       };
     }, [insets.top]);
 

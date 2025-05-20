@@ -8,9 +8,11 @@ import { NAVIGATION_LOGIN_SCREEN } from "constants/navigation.constant";
 import { MHS } from "constants/sizes.constant";
 import BSafeAreaView from "components/base/base.safeAreaView";
 import BImage from "components/base/base.image";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import BText from "components/base/base.text";
 import BButton from "components/base/base.button";
+import { evaluateDevicePerformanceHelper } from "helpers/system.helper";
+import { setDevicePerformance } from "helpers/storage.helper";
 
 export function WelcomeScreen() {
   const setIsFirtOpen = useSystemStore.getState().setIsFirstOpen;
@@ -21,6 +23,11 @@ export function WelcomeScreen() {
 
   useEffect(() => {
     setIsFirtOpen(false);
+
+    // evaluate device performance
+    evaluateDevicePerformanceHelper().then((res) => {
+      setDevicePerformance(res);
+    });
   }, []);
 
   return (
@@ -31,7 +38,7 @@ export function WelcomeScreen() {
     >
       <BImage
         hasBlur={false}
-        width={Device.width * 2}
+        width={DEVICE.width * 2}
         source={require("assets/images/splash-icon-light.png")}
         // inline style because it short and not re-rendered
         style={{

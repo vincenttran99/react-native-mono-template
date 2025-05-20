@@ -12,7 +12,7 @@ import {
   LOAD_MORE_ERROR_ITEM,
   LOADING_ITEM,
 } from "helpers/hooks/list.hook";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import DefaultLoadingListComponent from "components/list/list.defaultLoading.component";
 import DefaultErrorListComponent from "components/list/list.defaultError.component";
 import DefaultEmptyListComponent from "components/list/list.defaultEmpty.component";
@@ -26,6 +26,7 @@ import {
   useRestyle,
 } from "@shopify/restyle";
 import { Theme } from "constants/theme.constant";
+import { getDrawDistance } from "helpers/system.helper";
 
 type RestyleProps = SpacingProps<Theme> & BackgroundColorProps<Theme>;
 const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
@@ -65,10 +66,9 @@ const BFlashListComponent = (
     contentContainerStyle,
     data,
     estimatedListSize = {
-      width: Device.width,
-      height: Device.height - Device.heightAppBar,
+      width: DEVICE.width,
+      height: DEVICE.height - DEVICE.heightAppBar,
     },
-    drawDistance = Device.height * 2,
     ...rest
   }: BFlashListProps<any>,
   ref: React.Ref<FlashList<any>>
@@ -78,6 +78,10 @@ const BFlashListComponent = (
     //@ts-ignore
     return { ...(props.style?.[0] || {}), ...contentContainerStyle };
   }, [contentContainerStyle, props.style]);
+
+  const defaultDrawDistance = useMemo(() => {
+    return getDrawDistance(horizontal ? "horizontal" : "vertical");
+  }, [horizontal]);
 
   const keyExtractor = useCallback((item: any) => item?.[keyAttribute], []);
 
@@ -141,7 +145,7 @@ const BFlashListComponent = (
       refreshing={refreshing}
       getItemType={getItemTypeDefault}
       estimatedListSize={estimatedListSize}
-      drawDistance={drawDistance}
+      drawDistance={defaultDrawDistance}
       horizontal={horizontal}
       contentContainerStyle={contentContainerStyleProps}
       {...rest}

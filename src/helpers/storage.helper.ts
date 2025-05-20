@@ -1,3 +1,4 @@
+import { EDevicePerfomance } from "constants/system.constant";
 import { MMKV } from "react-native-mmkv";
 
 export const MMKVStorage = new MMKV();
@@ -16,4 +17,15 @@ export function setFcmTokenHelper(token: string) {
 
 export function getFcmTokenHelper() {
   return MMKVStorage.getString("fcm_token");
+}
+
+export function setDevicePerformance(value: EDevicePerfomance) {
+  MMKVStorage.set("device_performance", value);
+}
+
+export function getDevicePerformance(): EDevicePerfomance {
+  return (
+    (MMKVStorage.getString("device_performance") as EDevicePerfomance) ||
+    EDevicePerfomance.Medium
+  );
 }

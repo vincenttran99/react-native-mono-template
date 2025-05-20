@@ -11,7 +11,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 
 import MaskedView from "@react-native-masked-view/masked-view";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import BView from "components/base/base.view";
 
 export type SkeletonContainerComponentProps = {
@@ -65,8 +65,8 @@ export default function SkeletonContainerComponent({
         inputRange: [0, 1],
         outputRange:
           direction === "right"
-            ? [-Device.width, Device.width]
-            : [Device.width, -Device.width],
+            ? [-DEVICE.width, DEVICE.width]
+            : [DEVICE.width, -DEVICE.width],
       }),
     [animatedValue]
   );

@@ -16,7 +16,7 @@ import { MHS } from "constants/sizes.constant";
 import { BottomSheetModal, BottomSheetView } from "@gorhom/bottom-sheet";
 import BottomSheetBackdropComponent from "components/bottomSheet/bottomSheet.backdrop.component";
 import type { BottomSheetBackdropProps } from "@gorhom/bottom-sheet/lib/typescript/components/bottomSheetBackdrop";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import BDivider from "components/base/base.divider";
 import {
   s_itemsCenter,
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
   },
   handleStyle: {
     backgroundColor: "transparent",
-    width: Device.width,
+    width: DEVICE.width,
     borderTopRightRadius: MHS._40,
     borderTopLeftRadius: MHS._40,
   },

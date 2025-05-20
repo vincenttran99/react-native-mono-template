@@ -85,11 +85,11 @@ msgid "Coming soon"
 msgstr "Coming soon"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.header.tsx:92
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:103
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:101
 msgid "Comment"
 msgstr "Comment"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:132
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:134
 msgid "Comments"
 msgstr "Comments"
 
@@ -97,7 +97,7 @@ msgstr "Comments"
 msgid "Confirm"
 msgstr "Confirm"
 
-#: src/screens/welcome/welcome.screen.tsx:51
+#: src/screens/welcome/welcome.screen.tsx:58
 msgid "Continue"
 msgstr "Continue"
 
@@ -129,7 +129,7 @@ msgstr "Empty"
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
 
-#: src/screens/welcome/welcome.screen.tsx:48
+#: src/screens/welcome/welcome.screen.tsx:55
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
@@ -175,11 +175,11 @@ msgstr "Large success text"
 msgid "Lazy view"
 msgstr "Lazy view"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:98
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:96
 msgid "Like"
 msgstr "Like"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:97
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:95
 msgid "Liked"
 msgstr "Liked"
 
@@ -267,11 +267,11 @@ msgid "Setting"
 msgstr "Setting"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.header.tsx:96
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:107
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:105
 msgid "Share"
 msgstr "Share"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:136
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:138
 msgid "Shares"
 msgstr "Shares"
 
@@ -308,7 +308,7 @@ msgstr "This is a long text. This is a long text. This is a long text. This is a
 msgid "We have 200 images at the bottom"
 msgstr "We have 200 images at the bottom"
 
-#: src/screens/welcome/welcome.screen.tsx:44
+#: src/screens/welcome/welcome.screen.tsx:51
 msgid "Welcome to"
 msgstr "Welcome to"
 

@@ -47,8 +47,6 @@ export const IntroductionFlashlistItemActionButton = forwardRef(
       []
     );
 
-    console.log("render");
-
     const toggleBooleanValue = useCallback(() => {
       // we understand iconTrue is "like" button
       if (iconTrue) {

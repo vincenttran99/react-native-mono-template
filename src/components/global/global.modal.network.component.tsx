@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useRef } from "react";
 import { StyleSheet } from "react-native";
 
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import { MHS } from "constants/sizes.constant";
 import { useNetInfo } from "@react-native-community/netinfo";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
@@ -43,7 +43,7 @@ const GlobalModalNetworkComponent = memo(() => {
       enablePanDownToClose
     >
       <BView style={styles.containerModalBlock}>
-        <BIcon name="wifi-alert" size={Device.width * 0.4} />
+        <BIcon name="wifi-alert" size={DEVICE.width * 0.4} />
         <BText
           variant={"md"}
           fontWeight={"bold"}
@@ -59,8 +59,8 @@ const GlobalModalNetworkComponent = memo(() => {
 
 const styles = StyleSheet.create({
   img: {
-    width: Device.width * 0.4,
-    height: Device.width * 0.4,
+    width: DEVICE.width * 0.4,
+    height: DEVICE.width * 0.4,
   },
   containerModalBlock: {
     flex: 1,

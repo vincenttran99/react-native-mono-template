@@ -1,7 +1,7 @@
 import { StyleSheet, ViewProps } from "react-native";
 import { memo, useMemo } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import BSurface from "components/base/base.surface";
 
 interface TAppbarComponentProps extends ViewProps {}
@@ -12,7 +12,7 @@ function AppbarComponent({ style, ...props }: TAppbarComponentProps) {
     let paddingTop = insets.top;
     return {
       paddingTop: paddingTop,
-      height: paddingTop + Device.heightAppBar,
+      height: paddingTop + DEVICE.heightAppBar,
     };
   }, [insets.top]);
 

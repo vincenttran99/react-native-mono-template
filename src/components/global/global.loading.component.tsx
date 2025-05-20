@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import { ActivityIndicator } from "react-native";
-import { Device } from "constants/device.constant";
+import { DEVICE } from "constants/system.constant";
 import BView from "components/base/base.view";
 
 export type GlobalLoadingComponentRef = {
@@ -58,8 +58,8 @@ const GlobalLoading = (
   return (
     <BView
       position="absolute"
-      width={Device.width}
-      height={Device.height}
+      width={DEVICE.width}
+      height={DEVICE.height}
       backgroundColor="backdrop"
       justifyContent="center"
       alignItems="center"
