@@ -15,6 +15,7 @@ import { FontSize, MHS } from "constants/sizes.constant";
 import BIcon from "components/base/base.icon";
 import { msg } from "@lingui/core/macro";
 import BPressable from "components/base/base.pressable";
+import BDivider from "components/base/base.divider";
 
 export const IntroductionFlashlistItemActionButton = forwardRef(
   (
@@ -46,6 +47,8 @@ export const IntroductionFlashlistItemActionButton = forwardRef(
       []
     );
 
+    console.log("render");
+
     const toggleBooleanValue = useCallback(() => {
       // we understand iconTrue is "like" button
       if (iconTrue) {
@@ -75,24 +78,36 @@ export const IntroductionFlashlistItemActionButton = forwardRef(
 );
 
 const IntroductionFlashlistItemAction = ({
-  ButtonLike,
+  liked,
+  ButtonLikeRef,
 }: {
-  ButtonLike: React.ReactElement;
+  liked: boolean;
+  ButtonLikeRef: React.RefObject<any>;
 }) => {
   const { _ } = useLingui();
 
   return (
-    <BView style={styles.actionsContainer}>
-      {ButtonLike}
-      <IntroductionFlashlistItemActionButton
-        iconFalse="comment-outline"
-        labelFalse={_(msg`Comment`)}
-      />
-      <IntroductionFlashlistItemActionButton
-        iconFalse="share-outline"
-        labelFalse={_(msg`Share`)}
-      />
-    </BView>
+    <>
+      <BDivider marginVertical="xxxxs" />
+      <BView style={styles.actionsContainer}>
+        <IntroductionFlashlistItemActionButton
+          ref={ButtonLikeRef}
+          iconTrue="thumb-up"
+          iconFalse="thumb-up-outline"
+          labelTrue={_(msg`Liked`)}
+          labelFalse={_(msg`Like`)}
+          initBooleanValue={liked}
+        />
+        <IntroductionFlashlistItemActionButton
+          iconFalse="comment-outline"
+          labelFalse={_(msg`Comment`)}
+        />
+        <IntroductionFlashlistItemActionButton
+          iconFalse="share-outline"
+          labelFalse={_(msg`Share`)}
+        />
+      </BView>
+    </>
   );
 };
 
@@ -196,7 +211,9 @@ const styles = StyleSheet.create({
     marginLeft: MHS._5,
   },
 });
+
 const compareAlwayTrue = () => {
   return true;
 };
+
 export default memo(IntroductionFlashlistItemAction, compareAlwayTrue);

@@ -32,21 +32,11 @@ const IntroductionFlashlistItem = ({
 }: IntroductionFlashlistItemProps) => {
   const { _ } = useLingui();
   const ButtonLikeref = useRef<any>(null);
-  const ButtonLike = useMemo(() => {
-    return (
-      <IntroductionFlashlistItemActionButton
-        ref={ButtonLikeref}
-        iconTrue="thumb-up"
-        iconFalse="thumb-up-outline"
-        labelTrue={_(msg`Liked`)}
-        labelFalse={_(msg`Like`)}
-        initBooleanValue={item.liked}
-      />
-    );
-  }, []);
 
   useLayoutEffect(() => {
-    ButtonLikeref.current?.setBooleanValue(item.liked);
+    return () => {
+      ButtonLikeref.current?.setBooleanValue(item.liked);
+    };
   }, [item.liked]);
 
   const renderImages = useCallback(() => {
@@ -148,10 +138,11 @@ const IntroductionFlashlistItem = ({
         </BView>
       </BView>
 
-      <BDivider marginVertical="xxxxs" />
-
       {/* Actions */}
-      <IntroductionFlashlistItemAction ButtonLike={ButtonLike} />
+      <IntroductionFlashlistItemAction
+        liked={item.liked}
+        ButtonLikeRef={ButtonLikeref}
+      />
     </BSurface>
   );
 };

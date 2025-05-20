@@ -44,14 +44,12 @@ export type BFlashListProps<TItem> = FlashListProps<TItem> &
       | JSX.ElementType
       | MemoExoticComponent<() => JSX.Element>;
     keyAttribute: string;
+    keyTypeAttribute?: string;
   };
 
 const RenderScrollComponent = React.forwardRef<ScrollView, ScrollViewProps>(
   (props, ref) => <KeyboardAwareScrollView {...props} ref={ref} />
 );
-const getItemTypeDefault = (item: any) => {
-  return item?.type;
-};
 
 const BFlashListComponent = (
   {
@@ -60,6 +58,7 @@ const BFlashListComponent = (
     ErrorComponent,
     LoadMoreErrorComponent,
     keyAttribute,
+    keyTypeAttribute = "type",
     refreshing,
     renderItem,
     horizontal,
@@ -70,7 +69,6 @@ const BFlashListComponent = (
       height: Device.height - Device.heightAppBar,
     },
     drawDistance = Device.height * 2,
-    getItemType = getItemTypeDefault,
     ...rest
   }: BFlashListProps<any>,
   ref: React.Ref<FlashList<any>>
@@ -89,7 +87,7 @@ const BFlashListComponent = (
 
   const renderItemHandle = useCallback(
     (info: any) => {
-      switch (info.item?.[keyAttribute]) {
+      switch (info.item?.[keyTypeAttribute]) {
         case LOADING_ITEM:
           return LoadingComponent ? (
             <LoadingComponent />
@@ -121,6 +119,13 @@ const BFlashListComponent = (
     ]
   );
 
+  const getItemTypeDefault = useCallback(
+    (item: any) => {
+      return item?.[keyTypeAttribute];
+    },
+    [keyTypeAttribute]
+  );
+
   return (
     <FlashList
       ref={ref}
@@ -134,7 +139,7 @@ const BFlashListComponent = (
       onEndReachedThreshold={0.5}
       onEndReached={onEndReachedHandle}
       refreshing={refreshing}
-      getItemType={getItemType}
+      getItemType={getItemTypeDefault}
       estimatedListSize={estimatedListSize}
       drawDistance={drawDistance}
       horizontal={horizontal}
