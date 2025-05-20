@@ -53,13 +53,26 @@ const IntroductionFlashlistItem = ({
     if (!item.images || item.images.length === 0) return null;
 
     if (item.images.length === 1) {
-      return <BImage source={item.images[0]} style={styles.singleImage} />;
+      return (
+        <BImage
+          // cachePolicy={"memory"}
+          source={item.images[0]}
+          // recyclingKey={item.images[0]}
+          style={styles.singleImage}
+        />
+      );
     }
 
     return (
       <BView style={styles.imageGrid}>
         {item.images.map((image, index) => (
-          <BImage key={index} source={image} style={styles.gridImage} />
+          <BImage
+            // cachePolicy={"memory"}
+            key={index}
+            // recyclingKey={image}
+            source={image}
+            style={styles.gridImage}
+          />
         ))}
       </BView>
     );
@@ -69,7 +82,12 @@ const IntroductionFlashlistItem = ({
     <BSurface variant="xs" backgroundColor="white" style={styles.container}>
       {/* Header */}
       <BView style={styles.header}>
-        <BImage source={item.author.avatar} style={styles.avatar} />
+        <BImage
+          // cachePolicy={"memory"}
+          source={item.author.avatar}
+          // recyclingKey={item.author.avatar}
+          style={styles.avatar}
+        />
         <BView style={styles.headerInfo}>
           <BText variant="sm" fontWeight="bold" numberOfLines={1}>
             {item.author.name}

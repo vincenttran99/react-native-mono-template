@@ -88,7 +88,7 @@ msgstr "Coming soon"
 msgid "Comment"
 msgstr "Comment"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:124
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:142
 msgid "Comments"
 msgstr "Comments"
 
@@ -269,7 +269,7 @@ msgstr "Setting"
 msgid "Share"
 msgstr "Share"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:128
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:146
 msgid "Shares"
 msgstr "Shares"
 

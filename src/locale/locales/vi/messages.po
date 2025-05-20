@@ -88,7 +88,7 @@ msgstr "Sắp ra mắt"
 msgid "Comment"
 msgstr "Bình luận"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:124
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:142
 msgid "Comments"
 msgstr "Nhận xét"
 
@@ -269,7 +269,7 @@ msgstr "Cài đặt"
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:128
+#: src/screens/Introduction/components/introduction.flashlist.item.tsx:146
 msgid "Shares"
 msgstr "Cổ phiếu"
 
