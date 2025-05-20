@@ -4,7 +4,11 @@ import { StyleSheet } from "react-native";
 
 // blurhash for background image
 // You can generate in https://blurha.sh/
-const BLUR_HASH = { blurhash: "L9B~;g008w$_.TM_r=xuvKHqg%.m" };
+const BLUR_HASH = {
+  blurhash: "L9B~;g008w$_.TM_r=xuvKHqg%.m",
+  width: 2,
+  height: 2,
+};
 
 export type BImageProps = ImageProps & {
   width?: number;
