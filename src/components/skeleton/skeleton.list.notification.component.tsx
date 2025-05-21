@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import { StyleSheet } from "react-native";
-import SkeletonContainerComponent from "components/skeleton/skeletonContainer.component";
+import SkeletonContainerComponent from "components/skeleton/skeleton.container.component";
 import isEqual from "react-fast-compare";
 
 import { MHS } from "constants/sizes.constant";
@@ -13,7 +13,7 @@ import {
   s_row_justifyBetween_itemsCenter,
 } from "constants/styles.constant";
 import BView from "components/base/base.view";
-import BList from "components/base/list.base";
+import BFlashList from "components/base/base.flashList";
 import { useTheme } from "@shopify/restyle";
 
 const SkeletonListNotificationComponent = memo((): JSX.Element => {
@@ -62,12 +62,32 @@ const SkeletonListNotificationComponent = memo((): JSX.Element => {
   };
 
   return (
-    <BList
+    <BFlashList
       bounces={false}
       showsVerticalScrollIndicator={false}
-      data={[1, 2, 3, 4, 5, 6]}
+      data={[
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+        {
+          id: 4,
+        },
+        {
+          id: 5,
+        },
+        {
+          id: 6,
+        },
+      ]}
       renderItem={renderItem}
       ItemSeparatorComponent={BDivider}
+      keyAttribute={""}
     />
   );
 }, isEqual);
