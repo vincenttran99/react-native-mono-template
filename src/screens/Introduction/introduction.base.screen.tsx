@@ -20,6 +20,7 @@ import BTextInput from "components/base/base.textInput";
 import BWebUrlPreviewComponent from "components/web/web.urlPreview.component";
 import BImage from "components/base/base.image";
 import BCheckBox from "components/base/base.checkbox";
+import BRadioButton from "components/base/base.radioButton";
 
 export default function IntroductionBaseScreen() {
   const { _ } = useLingui();
@@ -281,9 +282,9 @@ export default function IntroductionBaseScreen() {
       </BText>
       <BCheckBox
         isChecked={isChecked}
-        borderColor="success"
-        activeColor="transparent"
+        activeColor="success"
         iconColor="success"
+        outline
         onPress={() => setIsChecked((old) => !old)}
       />
       <BCheckBox
@@ -297,12 +298,13 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Radio`)}
       </BText>
-      <BText variant="md" color="info" marginTop="md">
-        {_(msg`Coming soon`)}
-      </BText>
+      <BRadioButton
+        isSelected={isChecked}
+        onPress={() => setIsChecked((old) => !old)}
+      />
 
       {/* Image */}
-      <BView flexDirection="row" flexWrap="wrap" gap="xs">
+      <BView flexDirection="row" marginTop="md" flexWrap="wrap" gap="xs">
         {Array.from({ length: 200 }).map((_, index) => {
           return (
             <BImage

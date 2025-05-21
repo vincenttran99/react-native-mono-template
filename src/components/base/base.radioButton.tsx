@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import { Insets, StyleProp, ViewStyle } from "react-native";
-import { MHS } from "constants/sizes.constant";
+import { MHS, Space } from "constants/sizes.constant";
 import BView from "./base.view";
-import { BPressable } from "./base.pressable";
-import { useTheme } from "@shopify/restyle";
+import { BPressable, BPressableProps } from "./base.pressable";
+import { ResponsiveValue, useTheme } from "@shopify/restyle";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from "react-native-reanimated";
+import { Theme } from "constants/theme.constant";
 
-export type BRadioButtonProps = {
-  activeColor?: string;
-  inactiveColor?: string;
+export type BRadioButtonProps = BPressableProps & {
+  activeColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
+  inactiveColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
   style?: StyleProp<ViewStyle>;
-  size?: "tiny" | "small" | "medium" | "big" | "large";
+  size?: keyof typeof Space;
   isSelected: boolean;
   onPress?: () => void;
   disabled?: boolean;
@@ -17,56 +24,99 @@ export type BRadioButtonProps = {
 };
 
 const SIZE_RADIO = {
-  tiny: MHS._18,
-  small: MHS._20,
-  medium: MHS._22,
-  big: MHS._24,
-  large: MHS._28,
+  none: MHS._10,
+  xxxxs: MHS._12,
+  xxxs: MHS._14,
+  xxs: MHS._16,
+  xs: MHS._18,
+  sm: MHS._20,
+  md: MHS._24,
+  lg: MHS._28,
+  xl: MHS._32,
+  xxl: MHS._36,
+  xxxl: MHS._40,
+  xxxxl: MHS._44,
 };
 
+const AnimatedBPressable = Animated.createAnimatedComponent(BPressable);
+const AnimatedBView = Animated.createAnimatedComponent(BView);
+
 const BRadioButton = ({
-  activeColor,
-  inactiveColor,
-  size = "medium",
+  activeColor = "primary",
+  inactiveColor = "secondary",
+  size = "md",
   isSelected,
-  onPress,
   style,
-  hitSlop,
   disabled = false,
+  ...props
 }: BRadioButtonProps): React.JSX.Element => {
   const theme = useTheme();
+  const activeColorValue = useMemo(
+    () => theme.colors[activeColor],
+    [activeColor, theme.colors]
+  );
+  const inactiveColorValue = useMemo(
+    () => theme.colors[inactiveColor],
+    [inactiveColor, theme.colors]
+  );
+
+  // Use shared value to track state
+  const selected = useSharedValue(isSelected ? 1 : 0);
+  const opacity = useSharedValue(disabled ? 0.5 : 1);
+
+  // Update values when props change
+  useEffect(() => {
+    selected.value = withTiming(isSelected ? 1 : 0, {
+      duration: 100,
+      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+    });
+  }, [isSelected, selected]);
+
+  useEffect(() => {
+    opacity.value = withTiming(disabled ? 0.5 : 1, {
+      duration: 100,
+    });
+  }, [disabled, opacity]);
+
+  // Animated style for border
+  const borderAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      opacity: opacity.value,
+      borderColor: selected.value === 1 ? activeColorValue : inactiveColorValue,
+      transform: [
+        { scale: withTiming(1 + selected.value * 0.05, { duration: 80 }) },
+      ],
+    };
+  }, [activeColorValue, inactiveColorValue]);
+
+  // Animated style for inner circle
+  const innerCircleAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      opacity: selected.value,
+      transform: [{ scale: selected.value }],
+      backgroundColor: activeColorValue,
+    };
+  }, [activeColorValue]);
+
   return (
-    <BPressable
-      hitSlop={hitSlop}
+    <AnimatedBPressable
       disabled={disabled}
-      onPress={onPress}
-      style={[
-        {
-          justifyContent: "center",
-          alignItems: "center",
-          borderWidth: MHS._2,
-          borderRadius: 1000,
-          opacity: disabled ? 0.5 : 1,
-          width: SIZE_RADIO[size],
-          height: SIZE_RADIO[size],
-          borderColor: isSelected
-            ? activeColor || theme.colors.primary
-            : inactiveColor || theme.colors.outline,
-        },
-        style,
-      ]}
+      justifyContent="center"
+      alignItems="center"
+      borderWidth={MHS._2}
+      borderRadius={"full"}
+      width={SIZE_RADIO[size]}
+      height={SIZE_RADIO[size]}
+      style={[borderAnimatedStyle, style]}
+      {...props}
     >
-      <BView
-        style={{
-          backgroundColor: isSelected
-            ? activeColor || theme.colors.primary
-            : "transparent",
-          width: "70%",
-          height: "70%",
-          borderRadius: 1000,
-        }}
+      <AnimatedBView
+        borderRadius={"full"}
+        width={"70%"}
+        height={"70%"}
+        style={innerCircleAnimatedStyle}
       />
-    </BPressable>
+    </AnimatedBPressable>
   );
 };
 
