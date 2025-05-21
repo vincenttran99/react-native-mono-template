@@ -4,7 +4,6 @@ import { StyleProp, ViewStyle } from "react-native";
 
 import { useBottomSheetInternal } from "@gorhom/bottom-sheet";
 import BView from "components/base/base.view";
-import { s_width100 } from "constants/styles.constant";
 import BText from "components/base/base.text";
 import BTextInput, { BTextInputProps } from "components/base/base.textInput";
 
@@ -94,7 +93,7 @@ const FTextInputBottomSheet = forwardRef(
     );
 
     return (
-      <BView style={[s_width100, containerStyle]}>
+      <BView width={"100%"} style={containerStyle}>
         <BTextInput
           onChangeText={onChangeTextOverride}
           allowFontScaling={false}

@@ -58,7 +58,7 @@ msgstr "Button secondary"
 msgid "BView"
 msgstr "BView"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:167
+#: src/components/global/global.bottomSheetDialog.component.tsx:168
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -75,7 +75,7 @@ msgstr "Checkbox"
 msgid "Chip"
 msgstr "Chip"
 
-#: src/components/form/form.select.single.tsx:230
+#: src/components/form/form.select.single.tsx:237
 msgid "Close"
 msgstr "Close"
 
@@ -87,7 +87,7 @@ msgstr "Comment"
 msgid "Comments"
 msgstr "Comments"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:192
+#: src/components/global/global.bottomSheetDialog.component.tsx:193
 msgid "Confirm"
 msgstr "Confirm"
 
@@ -140,7 +140,7 @@ msgid "Hello"
 msgstr "Hello"
 
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:324
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:317
 msgid "hide"
 msgstr "hide"
 
@@ -148,7 +148,7 @@ msgstr "hide"
 msgid "Icon Button"
 msgstr "Icon Button"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:179
+#: src/components/global/global.bottomSheetDialog.component.tsx:180
 msgid "Ignore"
 msgstr "Ignore"
 
@@ -245,14 +245,14 @@ msgstr "Radio"
 msgid "Render time: "
 msgstr "Render time: "
 
-#: src/components/form/form.select.single.tsx:165
+#: src/components/form/form.select.single.tsx:168
 msgid "Search"
 msgstr "Search"
 
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:103
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:325
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:103
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:319
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:102
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
 msgid "see more"
 msgstr "see more"
 

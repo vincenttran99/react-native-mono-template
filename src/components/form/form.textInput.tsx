@@ -3,7 +3,6 @@ import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, ViewStyle } from "react-native";
 
 import BTextInput, { BTextInputProps } from "components/base/base.textInput";
-import { s_width100 } from "constants/styles.constant";
 import BView from "components/base/base.view";
 import BText from "components/base/base.text";
 
@@ -57,7 +56,7 @@ const FTextInput = ({
   );
 
   return (
-    <BView style={[s_width100, containerStyle]}>
+    <BView width={"100%"} style={containerStyle}>
       <BTextInput
         onChangeText={onChangeTextOverride}
         allowFontScaling={false}

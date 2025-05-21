@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, Switch, SwitchProps, ViewStyle } from "react-native";
-import { s_width100 } from "constants/styles.constant";
 import BView from "components/base/base.view";
 import BText from "components/base/base.text";
 
@@ -55,7 +54,7 @@ const FSwitch = ({
   );
 
   return (
-    <BView style={[s_width100, containerStyle]}>
+    <BView width={"100%"} style={containerStyle}>
       <Switch
         value={field.value}
         onValueChange={onValueChangeSwitch}

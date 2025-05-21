@@ -1,10 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Control, RegisterOptions, useController } from "react-hook-form";
 import { Pressable, StyleSheet } from "react-native";
-import {
-  s_row_justifyBetween_itemsCenter,
-  s_width100,
-} from "constants/styles.constant";
 import { BottomSheetFlatList, BottomSheetModal } from "@gorhom/bottom-sheet";
 import BText from "components/base/base.text";
 import { MHS } from "constants/sizes.constant";
@@ -19,6 +15,7 @@ import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import BView from "components/base/base.view";
 import BTextInput, { BTextInputProps } from "components/base/base.textInput";
+import BPressable from "components/base/base.pressable";
 
 export type FSelectSingleItem = ILabelValue & {
   [key: string]: any;
@@ -100,7 +97,13 @@ const FSelectSingle = ({
       }
 
       return (
-        <Pressable style={styles.viewItem} onPress={() => onPressItem(item)}>
+        <BPressable
+          paddingVertical="md"
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+          onPress={() => onPressItem(item)}
+        >
           <BText
             variant={"md"}
             fontWeight={field?.value?.value === item.value ? "bold" : "normal"}
@@ -116,7 +119,7 @@ const FSelectSingle = ({
           {field?.value?.value === item.value ? (
             <BCheckBox style={{ borderRadius: 1000 }} isChecked />
           ) : null}
-        </Pressable>
+        </BPressable>
       );
     },
     [field?.value, renderItem]
@@ -177,7 +180,7 @@ const FSelectSingle = ({
   );
 
   return (
-    <Pressable disabled={disabled} style={s_width100} onPress={showPicker}>
+    <BPressable disabled={disabled} width="100%" onPress={showPicker}>
       <BTextInput
         {...props}
         style={[style, { textAlign: "auto" }]}
@@ -221,7 +224,11 @@ const FSelectSingle = ({
         onDismiss={() => setData(initData)}
         enableDynamicSizing={false}
       >
-        <BView style={s_row_justifyBetween_itemsCenter}>
+        <BView
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <BText variant={"md"}>{label}</BText>
           <Pressable onPress={() => bottomSheetModalRef.current?.dismiss()}>
             <BText
@@ -241,17 +248,13 @@ const FSelectSingle = ({
           ItemSeparatorComponent={() => <BDivider />}
         />
       </BottomSheetModal>
-    </Pressable>
+    </BPressable>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  viewItem: {
-    paddingVertical: MHS._12,
-    ...s_row_justifyBetween_itemsCenter,
   },
   viewBottomSheet: {
     paddingHorizontal: MHS._16,

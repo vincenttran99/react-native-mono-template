@@ -7,11 +7,6 @@ import isEqual from "react-fast-compare";
 import { MHS } from "constants/sizes.constant";
 
 import BDivider from "components/base/base.divider";
-import {
-  s_flex1_gapXxxs,
-  s_row,
-  s_row_justifyBetween_itemsCenter,
-} from "constants/styles.constant";
 import BView from "components/base/base.view";
 import BFlashList from "components/base/base.flashList";
 import { useTheme } from "@shopify/restyle";
@@ -25,7 +20,7 @@ const SkeletonListNotificationComponent = memo((): JSX.Element => {
         <SkeletonContainerComponent>
           <BView style={styles.viewCategory}>
             <BView style={styles.image} />
-            <BView style={s_flex1_gapXxxs}>
+            <BView gap="xxxs" flex={1}>
               <BView
                 style={{
                   width: MHS._220,
@@ -98,7 +93,9 @@ const styles = StyleSheet.create({
   },
   viewTitle: {
     gap: MHS._12,
-    ...s_row_justifyBetween_itemsCenter,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   contentContainer: {
     gap: MHS._12,
@@ -106,7 +103,7 @@ const styles = StyleSheet.create({
   viewCategory: {
     padding: MHS._12,
     gap: MHS._12,
-    ...s_row,
+    flexDirection: "row",
   },
   image: {
     width: MHS._52,

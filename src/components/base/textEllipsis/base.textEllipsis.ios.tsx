@@ -18,7 +18,6 @@ import {
 } from "react-native";
 import BText, { BTextProps } from "components/base/base.text";
 
-import { s_width100 } from "constants/styles.constant";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import BView from "../base.view";
@@ -284,7 +283,7 @@ const BTextEllipsis = memo(
     );
 
     return (
-      <BView style={s_width100}>
+      <BView width={"100%"}>
         {/* Visible text component */}
         <BText
           numberOfLines={

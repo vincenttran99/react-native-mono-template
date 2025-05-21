@@ -18,10 +18,6 @@ import BottomSheetBackdropComponent from "components/bottomSheet/bottomSheet.bac
 import type { BottomSheetBackdropProps } from "@gorhom/bottom-sheet/lib/typescript/components/bottomSheetBackdrop";
 import { DEVICE } from "constants/system.constant";
 import BDivider from "components/base/base.divider";
-import {
-  s_itemsCenter,
-  s_row_justifyBetween_itemsCenter_gapMd,
-} from "constants/styles.constant";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import BView from "components/base/base.view";
@@ -146,7 +142,7 @@ const GlobalBottomSheetDialog = (
             </>
           ) : null}
           {dataDialog?.icon ? (
-            <BView style={s_itemsCenter}>
+            <BView alignItems="center">
               <BIcon {...dataDialog?.iconProps} name={dataDialog?.icon} />
             </BView>
           ) : null}
@@ -154,7 +150,12 @@ const GlobalBottomSheetDialog = (
             <BText variant={"md"}>{dataDialog?.content}</BText>
           ) : null}
 
-          <BView style={s_row_justifyBetween_itemsCenter_gapMd}>
+          <BView
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+            gap="md"
+          >
             <BButton
               size={"md"}
               outline

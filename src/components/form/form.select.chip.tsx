@@ -3,10 +3,6 @@ import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, ViewStyle } from "react-native";
 import { ILabelValue } from "models/system.model";
 import BChip, { BChipProps } from "components/base/base.chip";
-import {
-  s_row_itemsCenter_gapXxs,
-  s_width100,
-} from "constants/styles.constant";
 import BView from "components/base/base.view";
 import BText from "components/base/base.text";
 
@@ -106,8 +102,13 @@ const FSelectChip = ({
   };
 
   return (
-    <BView style={[s_width100, style]}>
-      <BView style={[s_row_itemsCenter_gapXxs, containerStyle]}>
+    <BView width={"100%"} style={style}>
+      <BView
+        flexDirection="row"
+        alignItems="center"
+        gap="xxs"
+        style={containerStyle}
+      >
         {initData.map(renderChip)}
       </BView>
 

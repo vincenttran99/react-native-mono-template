@@ -58,7 +58,7 @@ msgstr "Nút thứ cấp"
 msgid "BView"
 msgstr "Bview"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:167
+#: src/components/global/global.bottomSheetDialog.component.tsx:168
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -75,7 +75,7 @@ msgstr "Hộp kiểm"
 msgid "Chip"
 msgstr "Chip"
 
-#: src/components/form/form.select.single.tsx:230
+#: src/components/form/form.select.single.tsx:237
 msgid "Close"
 msgstr "Đóng"
 
@@ -87,7 +87,7 @@ msgstr "Bình luận"
 msgid "Comments"
 msgstr "Nhận xét"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:192
+#: src/components/global/global.bottomSheetDialog.component.tsx:193
 msgid "Confirm"
 msgstr "Xác nhận"
 
@@ -140,7 +140,7 @@ msgid "Hello"
 msgstr "Xin chào"
 
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:324
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:317
 msgid "hide"
 msgstr "trốn"
 
@@ -148,7 +148,7 @@ msgstr "trốn"
 msgid "Icon Button"
 msgstr "Nút biểu tượng"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:179
+#: src/components/global/global.bottomSheetDialog.component.tsx:180
 msgid "Ignore"
 msgstr "Phớt lờ"
 
@@ -245,14 +245,14 @@ msgstr "Radio"
 msgid "Render time: "
 msgstr "Thời gian kết xuất:"
 
-#: src/components/form/form.select.single.tsx:165
+#: src/components/form/form.select.single.tsx:168
 msgid "Search"
 msgstr "Tìm kiếm"
 
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:103
 #: src/components/base/textEllipsis/base.textEllipsis.tsx:325
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:103
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:319
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:102
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
 msgid "see more"
 msgstr "Xem thêm"
 
