@@ -84,12 +84,11 @@ msgstr "Close"
 msgid "Coming soon"
 msgstr "Coming soon"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.header.tsx:92
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:101
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:99
 msgid "Comment"
 msgstr "Comment"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:134
+#: src/screens/Introduction/components/introduction.flashlist.item.stats.tsx:37
 msgid "Comments"
 msgstr "Comments"
 
@@ -175,11 +174,11 @@ msgstr "Large success text"
 msgid "Lazy view"
 msgstr "Lazy view"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:96
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:94
 msgid "Like"
 msgstr "Like"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:95
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:93
 msgid "Liked"
 msgstr "Liked"
 
@@ -266,12 +265,11 @@ msgstr "see more"
 msgid "Setting"
 msgstr "Setting"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.header.tsx:96
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:105
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:103
 msgid "Share"
 msgstr "Share"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:138
+#: src/screens/Introduction/components/introduction.flashlist.item.stats.tsx:41
 msgid "Shares"
 msgstr "Shares"
 

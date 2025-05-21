@@ -2,12 +2,10 @@ import React, {
   forwardRef,
   memo,
   useCallback,
-  useEffect,
   useImperativeHandle,
-  useMemo,
   useState,
 } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import BView from "components/base/base.view";
 import { useLingui } from "@lingui/react";
 import BText from "components/base/base.text";
@@ -79,7 +77,7 @@ const IntroductionFlashlistItemAction = ({
   liked,
   ButtonLikeRef,
 }: {
-  liked: boolean;
+  liked?: boolean;
   ButtonLikeRef: React.RefObject<any>;
 }) => {
   const { _ } = useLingui();
@@ -210,8 +208,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const compareAlwayTrue = () => {
-  return true;
-};
-
-export default memo(IntroductionFlashlistItemAction, compareAlwayTrue);
+export default memo(IntroductionFlashlistItemAction, () => true);

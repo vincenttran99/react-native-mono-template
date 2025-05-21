@@ -84,12 +84,11 @@ msgstr "Đóng"
 msgid "Coming soon"
 msgstr "Sắp ra mắt"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.header.tsx:92
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:101
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:99
 msgid "Comment"
 msgstr "Bình luận"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:134
+#: src/screens/Introduction/components/introduction.flashlist.item.stats.tsx:37
 msgid "Comments"
 msgstr "Nhận xét"
 
@@ -175,11 +174,11 @@ msgstr "Văn bản thành công lớn"
 msgid "Lazy view"
 msgstr "Quan điểm lười biếng"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:96
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:94
 msgid "Like"
 msgstr "Giống"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:95
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:93
 msgid "Liked"
 msgstr "Thích"
 
@@ -266,12 +265,11 @@ msgstr "Xem thêm"
 msgid "Setting"
 msgstr "Cài đặt"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.header.tsx:96
-#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:105
+#: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:103
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/screens/Introduction/components/introduction.flashlist.item.tsx:138
+#: src/screens/Introduction/components/introduction.flashlist.item.stats.tsx:41
 msgid "Shares"
 msgstr "Cổ phiếu"
 

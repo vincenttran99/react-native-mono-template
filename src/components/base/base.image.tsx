@@ -1,6 +1,7 @@
 import React, { memo, useMemo } from "react";
 import { Image, ImageProps } from "expo-image";
 import { StyleSheet } from "react-native";
+import isEqual from "react-fast-compare";
 
 // blurhash for background image
 // You can generate in https://blurha.sh/
@@ -50,7 +51,8 @@ const BImage = memo(
         style={[style, styleImage]}
       />
     );
-  }
+  },
+  isEqual
 );
 
 export default BImage;
