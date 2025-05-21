@@ -272,9 +272,26 @@ export default function IntroductionBaseScreen() {
       <BDivider backgroundColor="error" marginTop="md" />
       <BDivider bold backgroundColor="success" marginTop="md" />
       <BView height={MHS._12} />
-      <BDivider bold type={"dashed"} height={MHS._4} backgroundColor="info" />
+      <BDivider type={"dashed"} height={MHS._4} backgroundColor="info" />
       <BView height={MHS._12} />
-      <BDivider bold type={"dotted"} height={MHS._6} backgroundColor="error" />
+      <BDivider type={"dotted"} height={MHS._6} backgroundColor="error" />
+
+      <BView width={"100%"} flexDirection="row" gap="md" marginTop="md">
+        <BDivider backgroundColor="error" vertical height={MHS._220} />
+        <BDivider bold backgroundColor="success" vertical />
+        <BDivider
+          type={"dashed"}
+          width={MHS._2}
+          backgroundColor="info"
+          vertical
+        />
+        <BDivider
+          type={"dotted"}
+          width={MHS._4}
+          backgroundColor="error"
+          vertical
+        />
+      </BView>
 
       {/* Checkbox */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">

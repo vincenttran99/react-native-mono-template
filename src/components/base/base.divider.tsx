@@ -41,7 +41,7 @@ const BDivider = memo(
     const theme = useTheme();
     const props = useRestyle(restyleFunctions, rest);
 
-    const styleBase = useMemo(() => {
+    const solidStyle = useMemo(() => {
       let propsStyle = StyleSheet.flatten(props.style || {});
       let backgroundColor = propsStyle?.backgroundColor || theme.colors.ground;
       let height =
@@ -50,13 +50,12 @@ const BDivider = memo(
         propsStyle?.width || (bold ? MHS._1 : StyleSheet.hairlineWidth);
       return {
         backgroundColor,
-        height: !vertical ? height : undefined,
-        // flexGrow: 1,
-        width: vertical ? width : undefined,
+        height: !vertical ? height : propsStyle?.height || "100%",
+        width: vertical ? width : propsStyle?.width || "100%",
       };
     }, [props.style, type, bold, vertical]);
 
-    const styleDashOrDot = useMemo(() => {
+    const dashOrDotStyle = useMemo(() => {
       let propsStyle = StyleSheet.flatten(props.style || {});
       let backgroundColor = propsStyle?.backgroundColor || theme.colors.ground;
       let width =
@@ -79,7 +78,7 @@ const BDivider = memo(
               borderWidth: width,
               marginHorizontal: -width * 1.51,
               marginLeft: 0,
-              // flexGrow: 1,
+              height: propsStyle?.height || "100%",
               width: 0,
               backgroundColor: "#00000000",
             }
@@ -88,17 +87,19 @@ const BDivider = memo(
               marginVertical: -height * 1.51,
               marginTop: 0,
               height: 0,
+              width: propsStyle?.width || "100%",
               backgroundColor: "#00000000",
             }),
       };
     }, [props.style, type, bold, vertical]);
 
+    if (type === "solid") {
+      return <BView {...rest} style={solidStyle} />;
+    }
+
     return (
       <BView style={styles.container}>
-        <BView
-          {...rest}
-          style={[props.style, type === "solid" ? styleBase : styleDashOrDot]}
-        />
+        <BView {...rest} style={[props.style, dashOrDotStyle]} />
       </BView>
     );
   },

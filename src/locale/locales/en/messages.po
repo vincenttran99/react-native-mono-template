@@ -66,7 +66,7 @@ msgstr "Cancel"
 msgid "Cat"
 msgstr "Cat"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:281
+#: src/screens/Introduction/introduction.base.screen.tsx:298
 msgid "Checkbox"
 msgstr "Checkbox"
 
@@ -237,7 +237,7 @@ msgstr "Preview URL"
 msgid "Purpose"
 msgstr "Purpose"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:299
+#: src/screens/Introduction/introduction.base.screen.tsx:316
 msgid "Radio"
 msgstr "Radio"
 
