@@ -20,7 +20,7 @@ import BTextInput from "components/base/base.textInput";
 import BWebUrlPreviewComponent from "components/web/web.urlPreview.component";
 import BImage from "components/base/base.image";
 import BCheckBox from "components/base/base.checkbox";
-import BRadioButton from "components/base/base.radioButton";
+import BRadio from "components/base/base.radio";
 
 export default function IntroductionBaseScreen() {
   const { _ } = useLingui();
@@ -315,7 +315,7 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Radio`)}
       </BText>
-      <BRadioButton
+      <BRadio
         isSelected={isChecked}
         onPress={() => setIsChecked((old) => !old)}
       />

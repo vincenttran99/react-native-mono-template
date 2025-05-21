@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { memo, useEffect, useMemo } from "react";
 import { Insets, StyleProp, StyleSheet, ViewStyle } from "react-native";
 import { FontSize, MHS, Space } from "constants/sizes.constant";
 import BIcon from "./base.icon";
@@ -12,6 +12,7 @@ import Animated, {
   Easing,
 } from "react-native-reanimated";
 import { Theme } from "constants/theme.constant";
+import isEqual from "react-fast-compare";
 
 type BCheckBoxProps = BPressableProps & {
   activeColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
@@ -57,98 +58,101 @@ const SIZE_CHECKBOX_ICON = {
 
 const AnimatedBPressable = Animated.createAnimatedComponent(BPressable);
 
-const BCheckBox = ({
-  activeColor = "primary",
-  inactiveColor = "secondary",
-  size = "md",
-  isChecked,
-  onPress,
-  style,
-  outline,
-  iconColor = "background",
-  disabled = false,
-  ...props
-}: BCheckBoxProps): React.JSX.Element => {
-  const theme = useTheme();
-  const activeColorValue = useMemo(
-    () => theme.colors[activeColor],
-    [activeColor, theme]
-  );
-  const inactiveColorValue = useMemo(
-    () => theme.colors[inactiveColor],
-    [inactiveColor, theme]
-  );
+const BCheckBox = memo(
+  ({
+    activeColor = "primary",
+    inactiveColor = "secondary",
+    size = "md",
+    isChecked,
+    onPress,
+    style,
+    outline,
+    iconColor = "background",
+    disabled = false,
+    ...props
+  }: BCheckBoxProps): React.JSX.Element => {
+    const theme = useTheme();
+    const activeColorValue = useMemo(
+      () => theme.colors[activeColor],
+      [activeColor, theme]
+    );
+    const inactiveColorValue = useMemo(
+      () => theme.colors[inactiveColor],
+      [inactiveColor, theme]
+    );
 
-  // Use shared value to track state
-  const checked = useSharedValue(isChecked ? 1 : 0);
-  const opacity = useSharedValue(disabled ? 0.5 : 1);
+    // Use shared value to track state
+    const checked = useSharedValue(isChecked ? 1 : 0);
+    const opacity = useSharedValue(disabled ? 0.5 : 1);
 
-  // Update value when props change
-  useEffect(() => {
-    checked.value = withTiming(isChecked ? 1 : 0, {
-      duration: 100,
-      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
-    });
-  }, [isChecked, checked]);
+    // Update value when props change
+    useEffect(() => {
+      checked.value = withTiming(isChecked ? 1 : 0, {
+        duration: 100,
+        easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+      });
+    }, [isChecked, checked]);
 
-  useEffect(() => {
-    opacity.value = withTiming(disabled ? 0.5 : 1, {
-      duration: 100,
-    });
-  }, [disabled, opacity]);
+    useEffect(() => {
+      opacity.value = withTiming(disabled ? 0.5 : 1, {
+        duration: 100,
+      });
+    }, [disabled, opacity]);
 
-  // Tạo animated styles
-  const animatedStyle = useAnimatedStyle(() => {
-    return {
-      opacity: opacity.value,
-      backgroundColor: interpolateColor(
-        checked.value,
-        [0, 1],
-        ["transparent", outline ? "transparent" : activeColorValue]
-      ),
-      borderColor: interpolateColor(
-        checked.value,
-        [0, 1],
-        [inactiveColorValue, activeColorValue]
-      ),
-      transform: [
-        {
-          scale: withTiming(checked.value === 1 ? 1 : 0.95, { duration: 80 }),
-        },
-      ],
-    };
-  }, [outline, activeColorValue, inactiveColorValue]);
+    // Tạo animated styles
+    const animatedStyle = useAnimatedStyle(() => {
+      return {
+        opacity: opacity.value,
+        backgroundColor: interpolateColor(
+          checked.value,
+          [0, 1],
+          ["transparent", outline ? "transparent" : activeColorValue]
+        ),
+        borderColor: interpolateColor(
+          checked.value,
+          [0, 1],
+          [inactiveColorValue, activeColorValue]
+        ),
+        transform: [
+          {
+            scale: withTiming(checked.value === 1 ? 1 : 0.95, { duration: 80 }),
+          },
+        ],
+      };
+    }, [outline, activeColorValue, inactiveColorValue]);
 
-  // Animated style for icon
-  const iconAnimatedStyle = useAnimatedStyle(() => {
-    return {
-      opacity: checked.value,
-      transform: [{ scale: withTiming(checked.value, { duration: 100 }) }],
-    };
-  }, []);
+    // Animated style for icon
+    const iconAnimatedStyle = useAnimatedStyle(() => {
+      return {
+        opacity: checked.value,
+        transform: [{ scale: withTiming(checked.value, { duration: 100 }) }],
+      };
+    }, []);
 
-  return (
-    <AnimatedBPressable
-      disabled={disabled}
-      onPress={onPress}
-      width={SIZE_CHECKBOX[size]}
-      height={SIZE_CHECKBOX[size]}
-      borderRadius={"xxxs"}
-      borderWidth={1}
-      justifyContent="center"
-      alignItems="center"
-      style={[animatedStyle, style]}
-      {...props}
-    >
-      <Animated.View style={iconAnimatedStyle}>
-        <BIcon
-          size={SIZE_CHECKBOX_ICON[size]}
-          name={"check"}
-          color={iconColor}
-        />
-      </Animated.View>
-    </AnimatedBPressable>
-  );
-};
+    return (
+      <AnimatedBPressable
+        disabled={disabled}
+        onPress={onPress}
+        width={SIZE_CHECKBOX[size]}
+        height={SIZE_CHECKBOX[size]}
+        borderRadius={"xxxs"}
+        borderWidth={1}
+        justifyContent="center"
+        alignItems="center"
+        style={[animatedStyle, style]}
+        {...props}
+      >
+        <Animated.View style={iconAnimatedStyle}>
+          <BIcon
+            size={SIZE_CHECKBOX_ICON[size]}
+            name={"check"}
+            color={iconColor}
+          />
+        </Animated.View>
+      </AnimatedBPressable>
+    );
+  },
+  isEqual
+);
 
 export default BCheckBox;
