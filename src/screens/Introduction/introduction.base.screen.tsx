@@ -19,11 +19,13 @@ import BTextEllipsis from "components/base/textEllipsis/base.textEllipsis";
 import BTextInput from "components/base/base.textInput";
 import BWebUrlPreviewComponent from "components/web/web.urlPreview.component";
 import BImage from "components/base/base.image";
+import BCheckBox from "components/base/base.checkbox";
 
 export default function IntroductionBaseScreen() {
   const { _ } = useLingui();
   const initTime = useRef<number>(performance.now());
   const [timeRender, setTimeRender] = React.useState<number>(0);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeRender(performance.now() - initTime.current);
@@ -277,9 +279,19 @@ export default function IntroductionBaseScreen() {
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">
         {_(msg`Checkbox`)}
       </BText>
-      <BText variant="md" color="info" marginTop="md">
-        {_(msg`Coming soon`)}
-      </BText>
+      <BCheckBox
+        isChecked={isChecked}
+        borderColor="success"
+        activeColor="transparent"
+        iconColor="success"
+        onPress={() => setIsChecked((old) => !old)}
+      />
+      <BCheckBox
+        marginTop="md"
+        size="xl"
+        isChecked={isChecked}
+        onPress={() => setIsChecked((old) => !old)}
+      />
 
       {/* Radio */}
       <BText variant="xxl" fontWeight={"bold"} marginTop="xl">

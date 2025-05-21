@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:46
+#: src/screens/Introduction/introduction.base.screen.tsx:48
 msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "3 or 4 times faster than normal scrolling screen"
 
@@ -22,39 +22,39 @@ msgstr "3 or 4 times faster than normal scrolling screen"
 msgid "Base components"
 msgstr "Base components"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:174
+#: src/screens/Introduction/introduction.base.screen.tsx:176
 msgid "BIcon"
 msgstr "BIcon"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:182
+#: src/screens/Introduction/introduction.base.screen.tsx:184
 msgid "BPressable"
 msgstr "BPressable"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:196
+#: src/screens/Introduction/introduction.base.screen.tsx:198
 msgid "BSurface"
 msgstr "BSurface"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:63
+#: src/screens/Introduction/introduction.base.screen.tsx:65
 msgid "BText"
 msgstr "BText"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:209
+#: src/screens/Introduction/introduction.base.screen.tsx:211
 msgid "Button"
 msgstr "Button"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:234
+#: src/screens/Introduction/introduction.base.screen.tsx:236
 msgid "Button outline"
 msgstr "Button outline"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:217
+#: src/screens/Introduction/introduction.base.screen.tsx:219
 msgid "Button primary"
 msgstr "Button primary"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:226
+#: src/screens/Introduction/introduction.base.screen.tsx:228
 msgid "Button secondary"
 msgstr "Button secondary"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:145
+#: src/screens/Introduction/introduction.base.screen.tsx:147
 msgid "BView"
 msgstr "BView"
 
@@ -62,16 +62,16 @@ msgstr "BView"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:259
+#: src/screens/Introduction/introduction.base.screen.tsx:261
 msgid "Cat"
 msgstr "Cat"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:278
+#: src/screens/Introduction/introduction.base.screen.tsx:280
 msgid "Checkbox"
 msgstr "Checkbox"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:251
 #: src/screens/Introduction/introduction.base.screen.tsx:253
+#: src/screens/Introduction/introduction.base.screen.tsx:255
 msgid "Chip"
 msgstr "Chip"
 
@@ -79,8 +79,7 @@ msgstr "Chip"
 msgid "Close"
 msgstr "Close"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:281
-#: src/screens/Introduction/introduction.base.screen.tsx:289
+#: src/screens/Introduction/introduction.base.screen.tsx:301
 msgid "Coming soon"
 msgstr "Coming soon"
 
@@ -104,7 +103,7 @@ msgstr "Continue"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:266
+#: src/screens/Introduction/introduction.base.screen.tsx:268
 msgid "Divider"
 msgstr "Divider"
 
@@ -124,7 +123,7 @@ msgstr "Email should not be empty"
 msgid "Empty"
 msgstr "Empty"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:75
+#: src/screens/Introduction/introduction.base.screen.tsx:77
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
 
@@ -149,7 +148,7 @@ msgstr "Hello"
 msgid "hide"
 msgstr "hide"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:239
+#: src/screens/Introduction/introduction.base.screen.tsx:241
 msgid "Icon Button"
 msgstr "Icon Button"
 
@@ -166,11 +165,11 @@ msgstr "Introduce"
 msgid "Language"
 msgstr "Language"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:72
+#: src/screens/Introduction/introduction.base.screen.tsx:74
 msgid "Large success text"
 msgstr "Large success text"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:53
+#: src/screens/Introduction/introduction.base.screen.tsx:55
 msgid "Lazy view"
 msgstr "Lazy view"
 
@@ -202,11 +201,11 @@ msgstr "Login to continue"
 msgid "Lost network connection"
 msgstr "Lost network connection"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:69
+#: src/screens/Introduction/introduction.base.screen.tsx:71
 msgid "Medium primary text"
 msgstr "Medium primary text"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:80
+#: src/screens/Introduction/introduction.base.screen.tsx:82
 msgid "Multi text"
 msgstr "Multi text"
 
@@ -230,11 +229,11 @@ msgstr "Password should not be empty"
 msgid "Please try reconnecting"
 msgstr "Please try reconnecting"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:191
+#: src/screens/Introduction/introduction.base.screen.tsx:193
 msgid "Pressable"
 msgstr "Pressable"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:131
+#: src/screens/Introduction/introduction.base.screen.tsx:133
 msgid "Preview URL"
 msgstr "Preview URL"
 
@@ -242,11 +241,11 @@ msgstr "Preview URL"
 msgid "Purpose"
 msgstr "Purpose"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:286
+#: src/screens/Introduction/introduction.base.screen.tsx:298
 msgid "Radio"
 msgstr "Radio"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:43
+#: src/screens/Introduction/introduction.base.screen.tsx:45
 msgid "Render time: "
 msgstr "Render time: "
 
@@ -273,7 +272,7 @@ msgstr "Share"
 msgid "Shares"
 msgstr "Shares"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:66
+#: src/screens/Introduction/introduction.base.screen.tsx:68
 msgid "Small error text"
 msgstr "Small error text"
 
@@ -282,27 +281,27 @@ msgstr "Small error text"
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:57
+#: src/screens/Introduction/introduction.base.screen.tsx:59
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Suprise! You are seeing this text after 2 seconds"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:204
+#: src/screens/Introduction/introduction.base.screen.tsx:206
 msgid "Surface"
 msgstr "Surface"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:94
+#: src/screens/Introduction/introduction.base.screen.tsx:96
 msgid "Text Ellipsis"
 msgstr "Text Ellipsis"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:104
+#: src/screens/Introduction/introduction.base.screen.tsx:106
 msgid "Text input"
 msgstr "Text input"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:98
+#: src/screens/Introduction/introduction.base.screen.tsx:100
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 
-#: src/screens/Introduction/introduction.base.screen.tsx:40
+#: src/screens/Introduction/introduction.base.screen.tsx:42
 msgid "We have 200 images at the bottom"
 msgstr "We have 200 images at the bottom"
 

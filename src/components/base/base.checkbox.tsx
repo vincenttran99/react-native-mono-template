@@ -1,85 +1,111 @@
-import React from "react";
-import { Insets, StyleProp, StyleSheet, ViewStyle } from "react-native";
-import { FontSize, MHS } from "constants/sizes.constant";
+import React, { useEffect, useMemo } from "react";
+import { Insets, StyleProp, ViewStyle } from "react-native";
+import { FontSize, MHS, Space } from "constants/sizes.constant";
 import BIcon from "./base.icon";
-import { BPressable } from "./base.pressable";
-import { useTheme } from "@shopify/restyle";
+import { BPressable, BPressableProps } from "./base.pressable";
+import { ResponsiveValue, useTheme } from "@shopify/restyle";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+} from "react-native-reanimated";
+import { Theme } from "constants/theme.constant";
 
-type BCheckBoxProps = {
-  activeColor?: string;
-  inactiveColor?: string;
+type BCheckBoxProps = BPressableProps & {
+  activeColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
   style?: StyleProp<ViewStyle>;
-  size?: "tiny" | "small" | "medium" | "big" | "large";
+  size?: keyof typeof Space;
   isChecked: boolean;
+  iconColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
   onPress?: () => void;
   disabled?: boolean;
   hitSlop?: number | Insets | null;
 };
 
 const SIZE_CHECKBOX = {
-  tiny: MHS._18,
-  small: MHS._20,
-  medium: MHS._22,
-  big: MHS._24,
-  large: MHS._28,
+  none: MHS._10,
+  xxxxs: MHS._12,
+  xxxs: MHS._14,
+  xxs: MHS._16,
+  xs: MHS._18,
+  sm: MHS._20,
+  md: MHS._24,
+  lg: MHS._28,
+  xl: MHS._32,
+  xxl: MHS._36,
+  xxxl: MHS._40,
+  xxxxl: MHS._44,
 };
 
 const SIZE_CHECKBOX_ICON = {
-  tiny: FontSize._16,
-  small: FontSize._17,
-  medium: FontSize._18,
-  big: FontSize._19,
-  large: FontSize._20,
+  none: FontSize._8,
+  xxxxs: FontSize._10,
+  xxxs: FontSize._12,
+  xxs: FontSize._14,
+  xs: FontSize._16,
+  sm: FontSize._18,
+  md: FontSize._20,
+  lg: FontSize._22,
+  xl: FontSize._26,
+  xxl: FontSize._30,
+  xxxl: FontSize._34,
+  xxxxl: FontSize._38,
 };
+
+const AnimatedBPressable = Animated.createAnimatedComponent(BPressable);
 
 const BCheckBox = ({
-  activeColor,
-  inactiveColor,
-  size = "medium",
+  activeColor = "primary",
+  size = "md",
   isChecked,
-  onPress,
-  style,
-  hitSlop,
   disabled = false,
+  iconColor = "background",
+  ...props
 }: BCheckBoxProps): React.JSX.Element => {
   const theme = useTheme();
+  const activeColorValue = useMemo(
+    () => theme.colors[activeColor],
+    [activeColor]
+  );
+
+  // Use shared value to track state
+  const checked = useSharedValue(isChecked ? 1 : 0);
+
+  // Update value when props change
+  useEffect(() => {
+    checked.value = disabled ? 0.5 : isChecked ? 1 : 0;
+  }, [isChecked, disabled]);
+
+  // Animated style for icon
+  const iconAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      opacity: checked.value,
+      backgroundColor: activeColorValue,
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    };
+  }, []);
+
   return (
-    <BPressable
-      hitSlop={hitSlop}
+    <AnimatedBPressable
       disabled={disabled}
-      onPress={onPress}
-      style={[
-        styles.container,
-        {
-          opacity: disabled ? 0.5 : 1,
-          width: SIZE_CHECKBOX[size],
-          height: SIZE_CHECKBOX[size],
-          borderColor: isChecked
-            ? activeColor || theme.colors.primary
-            : inactiveColor || theme.colors.primary,
-          backgroundColor: isChecked
-            ? activeColor || theme.colors.primary
-            : "transparent",
-        },
-        style,
-      ]}
+      width={SIZE_CHECKBOX[size]}
+      height={SIZE_CHECKBOX[size]}
+      borderRadius={"xxxs"}
+      borderWidth={1}
+      overflow={"hidden"}
+      borderColor={activeColor}
+      {...props}
     >
-      <BIcon
-        size={SIZE_CHECKBOX_ICON[size]}
-        name={"check"}
-        color={isChecked ? "reverse" : "transparent"}
-      />
-    </BPressable>
+      <Animated.View style={iconAnimatedStyle}>
+        <BIcon
+          size={SIZE_CHECKBOX_ICON[size]}
+          name={"check"}
+          color={iconColor}
+        />
+      </Animated.View>
+    </AnimatedBPressable>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: MHS._4,
-    borderWidth: 1,
-  },
-});
 
 export default BCheckBox;

@@ -29,7 +29,7 @@ export default function DogScreen() {
   return (
     <BView backgroundColor="background" flex={1} paddingTop="xxxl">
       <BLegendList
-        keyAttribute={"notification_id"}
+        keyAttribute={"id"}
         estimatedItemSize={450}
         data={listItems}
         renderItem={renderItem}
