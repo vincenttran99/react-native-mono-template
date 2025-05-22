@@ -3,17 +3,17 @@ import { StyleSheet, Linking } from "react-native";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
-import BScrollview from "components/base/base.scrollview";
-import BImage from "components/base/base.image";
-import BButton from "components/base/base.button";
-import BDivider from "components/base/base.divider";
-import BSurface from "components/base/base.surface";
-import BIcon from "components/base/base.icon";
-import { MHS } from "constants/sizes.constant";
-import { DEVICE } from "constants/system.constant";
-import { useSystemStore } from "store/system.store";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
+import BScrollview from "@/components/base/base.scrollview";
+import BImage from "@/components/base/base.image";
+import BButton from "@/components/base/base.button";
+import BDivider from "@/components/base/base.divider";
+import BSurface from "@/components/base/base.surface";
+import BIcon from "@/components/base/base.icon";
+import { MHS } from "@/constants/sizes.constant";
+import { DEVICE } from "@/constants/system.constant";
+import { useSystemStore } from "@/store/system.store";
 
 export default function AboutUsScreen() {
   const { _ } = useLingui();
@@ -42,8 +42,8 @@ export default function AboutUsScreen() {
         <BImage
           source={
             theme === "light"
-              ? require("assets/images/splash-icon-light.png")
-              : require("assets/images/splash-icon-dark.png")
+              ? require("@/assets/images/splash-icon-light.png")
+              : require("@/assets/images/splash-icon-dark.png")
           }
           style={styles.logo}
         />

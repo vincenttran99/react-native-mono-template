@@ -5,18 +5,18 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { NavigationRoute, ParamListBase } from "@react-navigation/native";
-import BIcon from "components/base/base.icon";
-import BPressable from "components/base/base.pressable";
-import BSurface from "components/base/base.surface";
-import BText from "components/base/base.text";
+import BIcon from "@/components/base/base.icon";
+import BPressable from "@/components/base/base.pressable";
+import BSurface from "@/components/base/base.surface";
+import BText from "@/components/base/base.text";
 import {
   NAVIGATION_INTRODUCTION_SCREEN,
   NAVIGATION_ABOUT_US_SCREEN,
-} from "constants/navigation.constant";
-import { MHS } from "constants/sizes.constant";
+} from "@/constants/navigation.constant";
+import { MHS } from "@/constants/sizes.constant";
 import React, { useCallback, useMemo } from "react";
-import AboutUsScreen from "screens/about-us/aboutUs.screen";
-import IntroductionScreen from "screens/Introduction/introduction.screen";
+import AboutUsScreen from "@/screens/about-us/aboutUs.screen";
+import IntroductionScreen from "@/screens/Introduction/introduction.screen";
 
 const Tab = createBottomTabNavigator();
 

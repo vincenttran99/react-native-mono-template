@@ -2,7 +2,7 @@ import React from "react";
 import { ViewStyle } from "react-native";
 
 import { SvgXml } from "react-native-svg";
-import { MHS } from "constants/sizes.constant";
+import { MHS } from "@/constants/sizes.constant";
 
 interface ISVGProps {
   size?: number;

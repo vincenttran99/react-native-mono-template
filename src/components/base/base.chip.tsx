@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import BText, { BTextProps } from "./base.text";
 import BPressable, { BPressableProps } from "./base.pressable";
-import { FontSize, MHS } from "constants/sizes.constant";
+import { FontSize, MHS } from "@/constants/sizes.constant";
 import BIcon, { BIconProps } from "./base.icon";
 import isEqual from "react-fast-compare";
 

@@ -7,8 +7,8 @@ import React, {
   useState,
 } from "react";
 import { ActivityIndicator } from "react-native";
-import { DEVICE } from "constants/system.constant";
-import BView from "components/base/base.view";
+import { DEVICE } from "@/constants/system.constant";
+import BView from "@/components/base/base.view";
 
 export type GlobalLoadingComponentRef = {
   showLoading: (autoHide: boolean, duration?: number) => void;

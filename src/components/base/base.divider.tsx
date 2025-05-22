@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from "react";
 import { StyleSheet } from "react-native";
-import { MHS } from "constants/sizes.constant";
+import { MHS } from "@/constants/sizes.constant";
 import BView, { BViewProps } from "./base.view";
 import {
   backgroundColor,
@@ -13,7 +13,7 @@ import {
   useRestyle,
   useTheme,
 } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 import isEqual from "react-fast-compare";
 
 const restyleFunctions = composeRestyleFunctions<Theme, BViewProps>([

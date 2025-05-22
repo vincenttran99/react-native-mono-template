@@ -2,20 +2,20 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Control, RegisterOptions, useController } from "react-hook-form";
 import { Pressable, StyleSheet } from "react-native";
 import { BottomSheetFlatList, BottomSheetModal } from "@gorhom/bottom-sheet";
-import BText from "components/base/base.text";
-import { MHS } from "constants/sizes.constant";
+import BText from "@/components/base/base.text";
+import { MHS } from "@/constants/sizes.constant";
 
-import BDivider from "components/base/base.divider";
-import BCheckBox from "components/base/base.checkbox";
+import BDivider from "@/components/base/base.divider";
+import BCheckBox from "@/components/base/base.checkbox";
 
-import { ILabelValue } from "models/system.model";
-import BottomSheetBackdropComponent from "components/bottomSheet/bottomSheet.backdrop.component";
+import { ILabelValue } from "@/models/system.model";
+import BottomSheetBackdropComponent from "@/components/bottomSheet/bottomSheet.backdrop.component";
 import debounce from "lodash.debounce";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "components/base/base.view";
-import BTextInput, { BTextInputProps } from "components/base/base.textInput";
-import BPressable from "components/base/base.pressable";
+import BView from "@/components/base/base.view";
+import BTextInput, { BTextInputProps } from "@/components/base/base.textInput";
+import BPressable from "@/components/base/base.pressable";
 
 export type FSelectSingleItem = ILabelValue & {
   [key: string]: any;

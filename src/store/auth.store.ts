@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { zustandStorage } from "store";
+import { zustandStorage } from "@/store";
 import { useProfileStore } from "./profile.store";
-import { setTokenHelper } from "helpers/storage.helper";
+import { setTokenHelper } from "@/helpers/storage.helper";
 
 /**
  * Interface defining the authentication store state and actions
@@ -13,7 +13,7 @@ interface IAuthStore {
    * Flag indicating whether the user is currently authenticated
    */
   isAuthenticated: boolean;
-  
+
   /**
    * Action to update the authentication status
    * @param isAuthenticated - The new authentication status
@@ -25,7 +25,7 @@ interface IAuthStore {
    * Used for authorizing API requests
    */
   token?: string;
-  
+
   /**
    * Action to set the authentication token
    * @param token - The authentication token to store
@@ -43,7 +43,7 @@ interface IAuthStore {
    * @param value - Object containing properties to update
    */
   updateState: (value: object) => void;
-  
+
   /**
    * Action to reset the store to its initial state
    * Used during logout or for testing purposes
@@ -62,7 +62,7 @@ const initState = {
 
 /**
  * Authentication store using Zustand with persistence
- * 
+ *
  * This store:
  * 1. Manages user authentication state
  * 2. Persists data between app sessions using MMKV storage
@@ -73,7 +73,7 @@ export const useAuthStore = create<IAuthStore>()(
   persist(
     (set, get) => ({
       ...initState,
-      
+
       /**
        * Updates the authentication status
        * @param isAuthenticated - Whether the user is authenticated
@@ -81,7 +81,7 @@ export const useAuthStore = create<IAuthStore>()(
       setIsAuthenticated: (isAuthenticated: boolean) => {
         set({ isAuthenticated });
       },
-      
+
       /**
        * Stores the authentication token
        * @param token - The JWT or other authentication token

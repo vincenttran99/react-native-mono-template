@@ -5,9 +5,9 @@ import {
 } from "@tanstack/react-query";
 
 import { AxiosError } from "axios";
-import { INSTANCE_KEY, PERSIST_KEY } from "api/reactQuery";
+import { INSTANCE_KEY, PERSIST_KEY } from "@/api/reactQuery";
 import { dogApi, GetDogsParams } from "./dog.api";
-import { IDog } from "models/dog.model";
+import { IDog } from "@/models/dog.model";
 
 // use PERSIST_KEY if you want to keep data in local storage
 // use INSTANCE_KEY if you want to clear cache and local storage (ex: clear when user logout)

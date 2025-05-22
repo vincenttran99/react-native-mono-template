@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, Switch, SwitchProps, ViewStyle } from "react-native";
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
 
 export type FSwitchProps = SwitchProps & {
   control: Control<any>;

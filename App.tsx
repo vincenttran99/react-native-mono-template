@@ -6,17 +6,17 @@ import {
   initialWindowMetrics,
   SafeAreaProvider,
 } from "react-native-safe-area-context";
-import { DEVICE } from "constants/system.constant";
+import { DEVICE } from "@/constants/system.constant";
 import { enableFreeze } from "react-native-screens";
-import I18nProvider from "locale/i18n";
-import { enableBatchedStateUpdates } from "helpers/hooks/state.hook";
+import I18nProvider from "@/locale/i18n";
+import { enableBatchedStateUpdates } from "@/helpers/hooks/state.hook";
 import {
   bootstrapHelper,
   createDefaultChannelsHelper,
   requestUserPermissionHepler,
   setupNotificationHelper,
-} from "helpers/firebase.helper";
-import AppNavigation from "navigation";
+} from "@/helpers/firebase.helper";
+import AppNavigation from "@/navigation";
 
 /**
  * Enable batched state updates for performance optimization

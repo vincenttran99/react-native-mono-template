@@ -1,15 +1,15 @@
 import React, { memo } from "react";
 import { StyleProp, StyleSheet, ViewStyle } from "react-native";
 
-import { MHS } from "constants/sizes.constant";
+import { MHS } from "@/constants/sizes.constant";
 import isEqual from "react-fast-compare";
-import { SVGIconEmpty } from "assets/svgIcon";
-import BText from "components/base/base.text";
-import { DEVICE } from "constants/system.constant";
+import { SVGIconEmpty } from "@/assets/svgIcon";
+import BText from "@/components/base/base.text";
+import { DEVICE } from "@/constants/system.constant";
 
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "components/base/base.view";
+import BView from "@/components/base/base.view";
 
 export type ListDefaultEmptyComponentProps = {
   sizeIcon?: number;

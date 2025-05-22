@@ -1,10 +1,10 @@
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
-import BIcon from "components/base/base.icon";
-import BText from "components/base/base.text";
-import BView from "components/base/base.view";
-import { DEVICE } from "constants/system.constant";
-import { MHS } from "constants/sizes.constant";
+import BIcon from "@/components/base/base.icon";
+import BText from "@/components/base/base.text";
+import BView from "@/components/base/base.view";
+import { DEVICE } from "@/constants/system.constant";
+import { MHS } from "@/constants/sizes.constant";
 import { memo } from "react";
 import isEqual from "react-fast-compare";
 

@@ -6,23 +6,23 @@ import React, {
   useRef,
   useState,
 } from "react";
-import BButton, { BButtonProps } from "components/base/base.button";
+import BButton, { BButtonProps } from "@/components/base/base.button";
 
 import { StyleSheet } from "react-native";
 
-import BText from "components/base/base.text";
+import BText from "@/components/base/base.text";
 
-import { MHS } from "constants/sizes.constant";
+import { MHS } from "@/constants/sizes.constant";
 import { BottomSheetModal, BottomSheetView } from "@gorhom/bottom-sheet";
-import BottomSheetBackdropComponent from "components/bottomSheet/bottomSheet.backdrop.component";
+import BottomSheetBackdropComponent from "@/components/bottomSheet/bottomSheet.backdrop.component";
 import type { BottomSheetBackdropProps } from "@gorhom/bottom-sheet/lib/typescript/components/bottomSheetBackdrop";
-import { DEVICE } from "constants/system.constant";
-import BDivider from "components/base/base.divider";
+import { DEVICE } from "@/constants/system.constant";
+import BDivider from "@/components/base/base.divider";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "components/base/base.view";
-import BIcon, { BIconProps } from "components/base/base.icon";
-import BIconButton from "components/base/base.iconButton";
+import BView from "@/components/base/base.view";
+import BIcon, { BIconProps } from "@/components/base/base.icon";
+import BIconButton from "@/components/base/base.iconButton";
 
 export type GlobalBottomSheetDialogComponentData = {
   title?: string;

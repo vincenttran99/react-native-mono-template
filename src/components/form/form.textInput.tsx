@@ -2,9 +2,9 @@ import React, { useCallback } from "react";
 import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, ViewStyle } from "react-native";
 
-import BTextInput, { BTextInputProps } from "components/base/base.textInput";
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
+import BTextInput, { BTextInputProps } from "@/components/base/base.textInput";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
 
 export type FTextInputProps = BTextInputProps & {
   control: Control<any>;

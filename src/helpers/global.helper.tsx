@@ -1,5 +1,5 @@
 import { createRef } from "react";
-import { GlobalLoadingComponentRef } from "components/global/global.loading.component";
+import { GlobalLoadingComponentRef } from "@/components/global/global.loading.component";
 import {
   showMessage as showFlashMessage,
   hideMessage as hideFlashMessage,
@@ -9,8 +9,8 @@ import {
 import {
   GlobalBottomSheetDialogComponentData,
   GlobalBottomSheetDialogComponentRef,
-} from "components/global/global.bottomSheetDialog.component";
-import { GlobalDialogComponentRef } from "components/global/global.dialog.component";
+} from "@/components/global/global.bottomSheetDialog.component";
+import { GlobalDialogComponentRef } from "@/components/global/global.dialog.component";
 
 /**
  * Refs

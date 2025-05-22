@@ -2,10 +2,10 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { AxiosError } from "axios";
 import { profileApi } from "./profile.api";
-import { IProfile } from "models/user.model";
-import { useAuthStore } from "store/auth.store";
-import { useProfileStore } from "store/profile.store";
-import { INSTANCE_KEY, PERSIST_KEY } from "api/reactQuery";
+import { IProfile } from "@/models/user.model";
+import { useAuthStore } from "@/store/auth.store";
+import { useProfileStore } from "@/store/profile.store";
+import { INSTANCE_KEY, PERSIST_KEY } from "@/api/reactQuery";
 
 // use PERSIST_KEY if you want to keep data in local storage
 // use INSTANCE_KEY if you want to clear cache and local storage (ex: clear when user logout)

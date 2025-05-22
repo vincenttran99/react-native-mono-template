@@ -11,8 +11,8 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 
 import MaskedView from "@react-native-masked-view/masked-view";
-import { DEVICE } from "constants/system.constant";
-import BView from "components/base/base.view";
+import { DEVICE } from "@/constants/system.constant";
+import BView from "@/components/base/base.view";
 
 export type SkeletonContainerComponentProps = {
   /**

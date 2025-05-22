@@ -1,12 +1,12 @@
 import React, { memo, useEffect, useMemo, useRef } from "react";
 import { StyleSheet } from "react-native";
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
-import { FontSize, MHS } from "constants/sizes.constant";
-import BIcon from "components/base/base.icon";
-import BImage from "components/base/base.image";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
+import { FontSize, MHS } from "@/constants/sizes.constant";
+import BIcon from "@/components/base/base.icon";
+import BImage from "@/components/base/base.image";
 import isEqual from "react-fast-compare";
-import BPressable from "components/base/base.pressable";
+import BPressable from "@/components/base/base.pressable";
 
 const IconPrivacyName = {
   public: "earth",

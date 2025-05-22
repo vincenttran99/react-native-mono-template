@@ -1,5 +1,5 @@
 import { BoxProps, createBox } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 import {
   KeyboardAvoidingView,
   KeyboardAvoidingViewProps,

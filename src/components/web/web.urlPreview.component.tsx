@@ -2,10 +2,10 @@ import { memo, useEffect, useState } from "react";
 import { useMemo } from "react";
 import { GestureResponderEvent, Linking } from "react-native";
 
-import { getPreviewDataHelper, PreviewData } from "helpers/web.helper";
-import BText, { BTextProps } from "components/base/base.text";
-import BImage, { BImageProps } from "components/base/base.image";
-import { renderSpecialElementHelper } from "helpers/system.helper";
+import { getPreviewDataHelper, PreviewData } from "@/helpers/web.helper";
+import BText, { BTextProps } from "@/components/base/base.text";
+import BImage, { BImageProps } from "@/components/base/base.image";
+import { renderSpecialElementHelper } from "@/helpers/system.helper";
 import BPressable, { BPressableProps } from "../base/base.pressable";
 
 enum EUrlBPreview {

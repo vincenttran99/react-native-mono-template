@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleProp, TextStyle } from "react-native";
-import BText, { BTextProps } from "components/base/base.text";
+import BText, { BTextProps } from "@/components/base/base.text";
 
 export type BTextMultiProps = Omit<BTextProps, "children" | "style"> & {
   children: string;

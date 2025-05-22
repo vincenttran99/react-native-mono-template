@@ -6,7 +6,7 @@ import {
   PersistQueryClientProvider,
   PersistQueryClientProviderProps,
 } from "@tanstack/react-query-persist-client";
-import { useProfileStore } from "store/profile.store";
+import { useProfileStore } from "@/store/profile.store";
 import axios from "axios";
 
 /**
@@ -26,7 +26,7 @@ export const INSTANCE_KEY = "instance-key";
 /**
  * Utility function to check if an error is an unauthorized error (401 or 403)
  * Used to determine if a query should be retried or if the user should be logged out
- * 
+ *
  * @param error - The error object to check
  * @returns Boolean indicating if the error is an unauthorized error
  */
@@ -53,7 +53,7 @@ type PersistedClient = {
 /**
  * Creates and configures a new QueryClient instance with default options
  * This function centralizes the configuration for consistent query behavior
- * 
+ *
  * @returns A configured QueryClient instance
  */
 const createQueryClient = () =>
@@ -109,7 +109,7 @@ const globalQueryClient = createQueryClient();
 /**
  * Component that tracks user authentication state changes
  * Clears specific queries and AsyncStorage data when user logs out
- * 
+ *
  * @returns null - This is a utility component with no UI
  */
 function UserIdTracker() {
@@ -132,7 +132,7 @@ function UserIdTracker() {
 /**
  * Main React Query provider component
  * Sets up the query client with persistence capabilities
- * 
+ *
  * @param children - React components to be wrapped by the provider
  * @returns Provider component with configured persistence
  */

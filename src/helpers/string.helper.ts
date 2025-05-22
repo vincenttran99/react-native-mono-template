@@ -1,4 +1,4 @@
-import { SHORT_CHARACTERS } from "constants/string.constant";
+import { SHORT_CHARACTERS } from "@/constants/string.constant";
 
 /**
  * addOpacityToColor

@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from "react";
-import BFlashList from "components/base/base.flashList";
+import BFlashList from "@/components/base/base.flashList";
 import IntroductionFlashlistItem from "./components/introduction.flashlist.item";
 import { fakePosts, IPost } from "./components/fakedata";
 

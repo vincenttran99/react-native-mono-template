@@ -17,7 +17,7 @@ import {
 import { isDevice } from "expo-device";
 import messaging from "@react-native-firebase/messaging";
 import { AppState, Platform } from "react-native";
-import { CONFIG } from "constants/config.constant";
+import { CONFIG } from "@/constants/config.constant";
 import {
   getFcmTokenHelper,
   getTokenHelper,

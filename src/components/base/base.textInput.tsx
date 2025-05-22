@@ -24,8 +24,8 @@ import {
   TypographyProps,
   useTheme,
 } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
-import { FontSize } from "constants/sizes.constant";
+import { Theme } from "@/constants/theme.constant";
+import { FontSize } from "@/constants/sizes.constant";
 import { StyleSheet } from "react-native";
 import BView, { BViewProps } from "./base.view";
 import BIcon, { BIconProps } from "./base.icon";

@@ -1,5 +1,5 @@
 import { createRestyleComponent, color, ColorProps } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 //Well, I like MaterialCommunityIcons :D
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 

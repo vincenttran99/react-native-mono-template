@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from "react";
 import { StyleSheet } from "react-native";
-import BView from "components/base/base.view";
+import BView from "@/components/base/base.view";
 import { useLingui } from "@lingui/react";
-import BText from "components/base/base.text";
-import { FontSize, MHS } from "constants/sizes.constant";
-import BIcon from "components/base/base.icon";
+import BText from "@/components/base/base.text";
+import { FontSize, MHS } from "@/constants/sizes.constant";
+import BIcon from "@/components/base/base.icon";
 import { msg } from "@lingui/core/macro";
 import isEqual from "react-fast-compare";
 

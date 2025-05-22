@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { AxiosError } from "axios";
-import { ISystemSettings } from "models/system.model";
+import { ISystemSettings } from "@/models/system.model";
 import { systemApi } from "./system.api";
-import { PERSIST_KEY } from "api/reactQuery";
-import { useSystemStore } from "store/system.store";
+import { PERSIST_KEY } from "@/api/reactQuery";
+import { useSystemStore } from "@/store/system.store";
 
 // use PERSIST_KEY if you want to keep data in local storage
 // use INSTANCE_KEY if you want to clear cache and local storage (ex: clear when user logout)

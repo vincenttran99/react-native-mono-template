@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from "react";
 import { StyleSheet } from "react-native";
-import BView from "components/base/base.view";
-import { MHS } from "constants/sizes.constant";
-import BImage from "components/base/base.image";
+import BView from "@/components/base/base.view";
+import { MHS } from "@/constants/sizes.constant";
+import BImage from "@/components/base/base.image";
 import isEqual from "react-fast-compare";
 
 const IMAGE_GRID = [

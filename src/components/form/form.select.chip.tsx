@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, ViewStyle } from "react-native";
-import { ILabelValue } from "models/system.model";
-import BChip, { BChipProps } from "components/base/base.chip";
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
+import { ILabelValue } from "@/models/system.model";
+import BChip, { BChipProps } from "@/components/base/base.chip";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
 
 export type FChipItem = ILabelValue & {
   icon?: string;

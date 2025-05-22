@@ -2,11 +2,11 @@
 // import { Menu } from "react-native-paper";
 // import { Control, RegisterOptions, useController } from "react-hook-form";
 // import { StyleSheet } from "react-native";
-// import { MHS } from "constants/sizes.constant";
-// import { useSystemTheme } from "helpers/hooks/system.hook";
+// import { MHS } from "@/constants/sizes.constant";
+// import { useSystemTheme } from "@/helpers/hooks/system.hook";
 //
-// import { ILabelValue } from "models/system.model";
-// import BButton from "components/base/base.button";
+// import { ILabelValue } from "@/models/system.model";
+// import BButton from "@/components/base/base.button";
 
 // interface IFMenuSelectProps {
 //   control: Control<any>;

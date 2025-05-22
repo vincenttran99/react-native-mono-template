@@ -3,9 +3,9 @@ import { Control, RegisterOptions, useController } from "react-hook-form";
 import { StyleProp, ViewStyle } from "react-native";
 
 import { useBottomSheetInternal } from "@gorhom/bottom-sheet";
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
-import BTextInput, { BTextInputProps } from "components/base/base.textInput";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
+import BTextInput, { BTextInputProps } from "@/components/base/base.textInput";
 
 export type FTextInputBottomSheetProps = BTextInputProps & {
   control: Control<any>;

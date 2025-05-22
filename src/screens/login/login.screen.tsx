@@ -1,16 +1,16 @@
 import React, { useCallback, useMemo } from "react";
-import BButton from "components/base/base.button";
+import BButton from "@/components/base/base.button";
 import { SubmitHandler, useForm } from "react-hook-form";
-import FTextInput from "components/form/form.textInput";
-import BText from "components/base/base.text";
+import FTextInput from "@/components/form/form.textInput";
+import BText from "@/components/base/base.text";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "components/base/base.view";
-import { useLoginMutation } from "api/auth/auth.queries";
-import { LoginPayload } from "api/auth/auth.api";
-import { showErrorMessage } from "helpers/global.helper";
-import BKeyboardAvoidingView from "components/base/base.keyboardAvoidingView";
-import { handleApiRequestHelper } from "helpers/api.helper";
+import BView from "@/components/base/base.view";
+import { useLoginMutation } from "@/api/auth/auth.queries";
+import { LoginPayload } from "@/api/auth/auth.api";
+import { showErrorMessage } from "@/helpers/global.helper";
+import BKeyboardAvoidingView from "@/components/base/base.keyboardAvoidingView";
+import { handleApiRequestHelper } from "@/helpers/api.helper";
 
 export default function LoginScreen() {
   // define the form

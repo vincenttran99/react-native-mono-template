@@ -1,16 +1,16 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { CONFIG } from "constants/config.constant";
-import { removeEmptyFieldsHelper } from "helpers/object.helper";
+import { CONFIG } from "@/constants/config.constant";
+import { removeEmptyFieldsHelper } from "@/helpers/object.helper";
 
 /**
  * Console color codes for formatting log output
  * These ANSI escape codes are used to add colors to console logs in development mode
  */
-let Reset = "\x1b[0m";      // Resets all formatting
-let Bright = "\x1b[1m";     // Makes text bold/bright
-let FgGreen = "\x1b[32m";   // Sets text color to green
-let BgGreen = "\x1b[42m";   // Sets background color to green
-let BgBlue = "\x1b[44m";    // Sets background color to blue
+let Reset = "\x1b[0m"; // Resets all formatting
+let Bright = "\x1b[1m"; // Makes text bold/bright
+let FgGreen = "\x1b[32m"; // Sets text color to green
+let BgGreen = "\x1b[42m"; // Sets background color to green
+let BgBlue = "\x1b[44m"; // Sets background color to blue
 let BgMagenta = "\x1b[45m"; // Sets background color to magenta
 
 /**
@@ -24,18 +24,18 @@ const TIMEOUT = Number(CONFIG.REQUEST_TIMEOUT);
  * This instance will be used for all API requests in the application
  */
 const api = axios.create({
-  baseURL: CONFIG.API_URL,  // Base URL for all requests
-  timeout: TIMEOUT,         // Request timeout in milliseconds
+  baseURL: CONFIG.API_URL, // Base URL for all requests
+  timeout: TIMEOUT, // Request timeout in milliseconds
   headers: {
     "Content-Type": "application/json", // Default content type for requests
-    Accept: "application/json",         // Default accepted response format
+    Accept: "application/json", // Default accepted response format
   },
 });
 
 /**
  * Request interceptor success handler
  * Modifies the request configuration before it is sent
- * 
+ *
  * @param axiosConfig - The Axios request configuration object
  * @returns The modified request configuration
  */
@@ -88,7 +88,7 @@ const onRequestSuccess = async (axiosConfig: any) => {
 /**
  * Response interceptor success handler
  * Processes successful responses before they are passed to the calling code
- * 
+ *
  * @param response - The Axios response object
  * @returns The processed response
  */
@@ -112,7 +112,7 @@ const onResponseSuccess = async (response: AxiosResponse<any, any>) => {
 /**
  * Response interceptor error handler
  * Processes error responses before they are passed to the calling code
- * 
+ *
  * @param err - The error object from Axios
  * @returns A rejected promise with the error
  */
@@ -149,7 +149,7 @@ api.interceptors.response.use(onResponseSuccess, onResponseError);
 export const apiService = {
   /**
    * Perform a GET request
-   * 
+   *
    * @param url - The endpoint URL (will be appended to baseURL)
    * @param config - Optional Axios request configuration
    * @returns Promise resolving to the response data
@@ -162,7 +162,7 @@ export const apiService = {
   /**
    * Perform a POST request
    * Automatically removes empty fields from the request data
-   * 
+   *
    * @param url - The endpoint URL (will be appended to baseURL)
    * @param data - The request body data
    * @param config - Optional Axios request configuration
@@ -184,7 +184,7 @@ export const apiService = {
   /**
    * Perform a PUT request
    * Automatically removes empty fields from the request data
-   * 
+   *
    * @param url - The endpoint URL (will be appended to baseURL)
    * @param data - The request body data
    * @param config - Optional Axios request configuration
@@ -206,7 +206,7 @@ export const apiService = {
   /**
    * Perform a PATCH request
    * Automatically removes empty fields from the request data
-   * 
+   *
    * @param url - The endpoint URL (will be appended to baseURL)
    * @param data - The request body data
    * @param config - Optional Axios request configuration
@@ -227,7 +227,7 @@ export const apiService = {
 
   /**
    * Perform a DELETE request
-   * 
+   *
    * @param url - The endpoint URL (will be appended to baseURL)
    * @param config - Optional Axios request configuration
    * @returns Promise resolving to the response data

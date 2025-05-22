@@ -25,7 +25,7 @@ import {
   spacing,
   SpacingProps,
 } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 export const PressableAni = Animated.createAnimatedComponent(Pressable);
 
 export type BPressableProps = SpacingProps<Theme> &

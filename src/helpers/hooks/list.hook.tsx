@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import { AxiosError, AxiosResponse } from "axios";
 import { RefreshControl } from "react-native";
-import { VS } from "constants/sizes.constant";
+import { VS } from "@/constants/sizes.constant";
 import debounce from "lodash.debounce";
 import {
   FetchNextPageOptions,

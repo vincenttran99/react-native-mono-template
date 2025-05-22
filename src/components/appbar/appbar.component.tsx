@@ -1,8 +1,8 @@
 import { StyleSheet, ViewProps } from "react-native";
 import { memo, useMemo } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { DEVICE } from "constants/system.constant";
-import BSurface from "components/base/base.surface";
+import { DEVICE } from "@/constants/system.constant";
+import BSurface from "@/components/base/base.surface";
 
 interface TAppbarComponentProps extends ViewProps {}
 

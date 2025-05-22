@@ -1,14 +1,14 @@
 import { memo } from "react";
 
 import { StyleSheet } from "react-native";
-import SkeletonContainerComponent from "components/skeleton/skeleton.container.component";
+import SkeletonContainerComponent from "@/components/skeleton/skeleton.container.component";
 import isEqual from "react-fast-compare";
 
-import { MHS } from "constants/sizes.constant";
+import { MHS } from "@/constants/sizes.constant";
 
-import BDivider from "components/base/base.divider";
-import BView from "components/base/base.view";
-import BFlashList from "components/base/base.flashList";
+import BDivider from "@/components/base/base.divider";
+import BView from "@/components/base/base.view";
+import BFlashList from "@/components/base/base.flashList";
 import { useTheme } from "@shopify/restyle";
 
 const SkeletonListNotificationComponent = memo((): JSX.Element => {

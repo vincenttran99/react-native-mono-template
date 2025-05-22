@@ -13,7 +13,7 @@ import {
   OpacityProps,
   LayoutProps,
 } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 import { Pressable, PressableProps } from "react-native";
 
 export type BSurfaceProps = SpacingProps<Theme> &

@@ -1,4 +1,4 @@
-import { EDevicePerfomance } from "constants/system.constant";
+import { EDevicePerfomance } from "@/constants/system.constant";
 import { MMKV } from "react-native-mmkv";
 
 export const MMKVStorage = new MMKV();

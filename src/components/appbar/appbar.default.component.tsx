@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 import { getHeaderTitle } from "@react-navigation/elements";
-import BIconButton from "components/base/base.iconButton";
-import BText from "components/base/base.text";
-import { DEVICE } from "constants/system.constant";
+import BIconButton from "@/components/base/base.iconButton";
+import BText from "@/components/base/base.text";
+import { DEVICE } from "@/constants/system.constant";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { memo, useMemo } from "react";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
-import BSurface from "components/base/base.surface";
+import BSurface from "@/components/base/base.surface";
 
 const AppbarDefaultComponent = memo(
   ({ navigation, route, options, back }: NativeStackHeaderProps) => {

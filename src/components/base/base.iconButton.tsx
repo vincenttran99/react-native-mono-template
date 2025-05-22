@@ -2,8 +2,8 @@ import React from "react";
 import BPressable, { BPressableProps } from "./base.pressable";
 
 import BIcon from "./base.icon";
-import { ColorKey, Theme } from "constants/theme.constant";
-import { Space } from "constants/sizes.constant";
+import { ColorKey, Theme } from "@/constants/theme.constant";
+import { Space } from "@/constants/sizes.constant";
 import { ResponsiveValue } from "@shopify/restyle";
 
 type BIconButtonProps = BPressableProps & {

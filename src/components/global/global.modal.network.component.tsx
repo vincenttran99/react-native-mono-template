@@ -1,17 +1,17 @@
 import React, { memo, useEffect, useRef } from "react";
 import { StyleSheet } from "react-native";
 
-import { DEVICE } from "constants/system.constant";
-import { MHS } from "constants/sizes.constant";
+import { DEVICE } from "@/constants/system.constant";
+import { MHS } from "@/constants/sizes.constant";
 import { useNetInfo } from "@react-native-community/netinfo";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
-import BText from "components/base/base.text";
+import BText from "@/components/base/base.text";
 
-import { showSuccessMessage } from "helpers/global.helper";
+import { showSuccessMessage } from "@/helpers/global.helper";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import BView from "components/base/base.view";
-import BIcon from "components/base/base.icon";
+import BView from "@/components/base/base.view";
+import BIcon from "@/components/base/base.icon";
 
 const SNAP_POINT = ["100%"];
 

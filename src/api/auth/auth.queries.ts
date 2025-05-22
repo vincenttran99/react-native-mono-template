@@ -2,8 +2,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { AxiosError } from "axios";
 import { authApi, LoginResponse, LoginPayload } from "./auth.api";
-import { useAuthStore } from "store/auth.store";
-import { setTokenHelper } from "helpers/storage.helper";
+import { useAuthStore } from "@/store/auth.store";
+import { setTokenHelper } from "@/helpers/storage.helper";
 
 /**
  * Constants for React Query key management
@@ -16,7 +16,7 @@ export const loginAuthQueryKeys = {};
 /**
  * A mock function that simulates the login process
  * Used for development and testing purposes when the real API is not available
- * 
+ *
  * @param payload - The login credentials (email and password)
  * @returns A Promise that resolves to a LoginResponse with mock tokens
  */
@@ -35,7 +35,7 @@ const fakeLoginProcess = (payload: LoginPayload) => {
 /**
  * Custom hook for handling login authentication
  * Uses React Query's useMutation to manage the login API call and its states
- * 
+ *
  * @returns A mutation object with methods and states for the login process
  */
 export const useLoginMutation = () => {
@@ -77,7 +77,7 @@ export const useLoginMutation = () => {
 /**
  * Custom hook for handling user logout
  * Uses React Query's useMutation to manage the logout API call and its states
- * 
+ *
  * @returns A mutation object with methods and states for the logout process
  */
 export const useLogoutMutation = () => {

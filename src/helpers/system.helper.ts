@@ -8,7 +8,7 @@ import {
   DRAW_DISTANCE_HORIZONTAL,
   DRAW_DISTANCE_VERTICAL,
   EDevicePerfomance,
-} from "constants/system.constant";
+} from "@/constants/system.constant";
 
 dayjs.extend(isBetween);
 const { width, height } = Dimensions.get("window");

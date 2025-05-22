@@ -1,5 +1,5 @@
 import { apiService } from "../api";
-import { IProfile } from "models/user.model";
+import { IProfile } from "@/models/user.model";
 
 export const profileApi = {
   getMyProfile: async () => {

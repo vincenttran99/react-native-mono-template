@@ -1,5 +1,5 @@
-import BView from "components/base/base.view";
-import { DEVICE } from "constants/system.constant";
+import BView from "@/components/base/base.view";
+import { DEVICE } from "@/constants/system.constant";
 import { memo } from "react";
 import isEqual from "react-fast-compare";
 import { ActivityIndicator } from "react-native";

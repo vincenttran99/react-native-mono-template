@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useMemo } from "react";
 import { Insets, StyleProp, StyleSheet, ViewStyle } from "react-native";
-import { FontSize, MHS, Space } from "constants/sizes.constant";
+import { FontSize, MHS, Space } from "@/constants/sizes.constant";
 import BIcon from "./base.icon";
 import { BPressable, BPressableProps } from "./base.pressable";
 import { ResponsiveValue, useTheme } from "@shopify/restyle";
@@ -11,7 +11,7 @@ import Animated, {
   interpolateColor,
   Easing,
 } from "react-native-reanimated";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 import isEqual from "react-fast-compare";
 
 type BCheckBoxProps = BPressableProps & {

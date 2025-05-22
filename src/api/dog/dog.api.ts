@@ -1,4 +1,4 @@
-import { IDog } from "models/dog.model";
+import { IDog } from "@/models/dog.model";
 import { apiService } from "../api";
 export type GetDogsParams = {
   page?: number;

@@ -1,11 +1,11 @@
-import BButton, { BButtonProps } from "components/base/base.button";
-import BIcon, { BIconProps } from "components/base/base.icon";
-import BIconButton from "components/base/base.iconButton";
-import { BPressable } from "components/base/base.pressable";
-import BSurface from "components/base/base.surface";
-import BText, { BTextProps } from "components/base/base.text";
-import BView from "components/base/base.view";
-import { MHS } from "constants/sizes.constant";
+import BButton, { BButtonProps } from "@/components/base/base.button";
+import BIcon, { BIconProps } from "@/components/base/base.icon";
+import BIconButton from "@/components/base/base.iconButton";
+import { BPressable } from "@/components/base/base.pressable";
+import BSurface from "@/components/base/base.surface";
+import BText, { BTextProps } from "@/components/base/base.text";
+import BView from "@/components/base/base.view";
+import { MHS } from "@/constants/sizes.constant";
 import React, {
   forwardRef,
   useCallback,

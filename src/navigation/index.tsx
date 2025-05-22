@@ -7,31 +7,31 @@ import { KeyboardProvider } from "react-native-keyboard-controller";
 import Constants from "expo-constants";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { NavigationContainer } from "@react-navigation/native";
-import BLazy from "components/base/base.lazy";
-import GlobalLoadingComponent from "components/global/global.loading.component";
-import GlobalModalNetworkComponent from "components/global/global.modal.network.component";
+import BLazy from "@/components/base/base.lazy";
+import GlobalLoadingComponent from "@/components/global/global.loading.component";
+import GlobalModalNetworkComponent from "@/components/global/global.modal.network.component";
 import {
   NAVIGATION_AUTH_NAVIGATION,
   NAVIGATION_MAIN_NAVIGATION,
   NAVIGATION_TAB_NAVIGATION,
-} from "constants/navigation.constant";
-import { DARK_THEME, LIGHT_THEME } from "constants/theme.constant";
+} from "@/constants/navigation.constant";
+import { DARK_THEME, LIGHT_THEME } from "@/constants/theme.constant";
 
-import MainNavigator from "navigation/main.navigation";
-import AuthNavigation from "navigation/auth.navigation";
-import GlobalBottomSheetDialogComponent from "components/global/global.bottomSheetDialog.component";
-import { useSystemStore } from "store/system.store";
+import MainNavigator from "@/navigation/main.navigation";
+import AuthNavigation from "@/navigation/auth.navigation";
+import GlobalBottomSheetDialogComponent from "@/components/global/global.bottomSheetDialog.component";
+import { useSystemStore } from "@/store/system.store";
 import { ThemeProvider } from "@shopify/restyle";
-import { QueryProvider } from "api/reactQuery";
-import { useAuthStore } from "store/auth.store";
-import GlobalDialogComponent from "components/global/global.dialog.component";
+import { QueryProvider } from "@/api/reactQuery";
+import { useAuthStore } from "@/store/auth.store";
+import GlobalDialogComponent from "@/components/global/global.dialog.component";
 import FlashMessage from "react-native-flash-message";
 import {
   BottomSheetDialogRef,
   DialogRef,
   LoadingRef,
-} from "helpers/global.helper";
-import { navigationRef } from "helpers/navigation.helper";
+} from "@/helpers/global.helper";
+import { navigationRef } from "@/helpers/navigation.helper";
 
 import * as SplashScreen from "expo-splash-screen";
 

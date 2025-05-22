@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AppbarDefaultComponent from "components/appbar/appbar.default.component";
+import AppbarDefaultComponent from "@/components/appbar/appbar.default.component";
 import {
   NAVIGATION_SETTINGS_SCREEN,
   NAVIGATION_SETTINGS_LANGUAGE_SCREEN,
@@ -7,17 +7,17 @@ import {
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
   NAVIGATION_DOG_SCREEN,
-} from "constants/navigation.constant";
+} from "@/constants/navigation.constant";
 import React from "react";
-import SettingsScreen from "screens/settings/settings.screen";
-import SettingsLanguageScreen from "screens/settings/settings.language.screen";
+import SettingsScreen from "@/screens/settings/settings.screen";
+import SettingsLanguageScreen from "@/screens/settings/settings.language.screen";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import { useMyProfileQuery } from "api/profile/profile.queries";
+import { useMyProfileQuery } from "@/api/profile/profile.queries";
 import TabNavigation from "./tab.navigation";
-import IntroductionFlashlistScreen from "screens/Introduction/introduction.flashlist.screen";
-import IntroductionBaseScreen from "screens/Introduction/introduction.base.screen";
-import DogScreen from "screens/dog/dog.screen";
+import IntroductionFlashlistScreen from "@/screens/Introduction/introduction.flashlist.screen";
+import IntroductionBaseScreen from "@/screens/Introduction/introduction.base.screen";
+import DogScreen from "@/screens/dog/dog.screen";
 
 const StackNavigator = createNativeStackNavigator();
 

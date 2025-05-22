@@ -1,7 +1,7 @@
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
-import BText from "components/base/base.text";
-import BView from "components/base/base.view";
+import BText from "@/components/base/base.text";
+import BView from "@/components/base/base.view";
 import { memo } from "react";
 import isEqual from "react-fast-compare";
 

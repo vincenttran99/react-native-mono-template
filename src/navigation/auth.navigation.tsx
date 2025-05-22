@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AppbarDefaultComponent from "components/appbar/appbar.default.component";
+import AppbarDefaultComponent from "@/components/appbar/appbar.default.component";
 import {
   NAVIGATION_LOGIN_SCREEN,
   NAVIGATION_WELCOME_SCREEN,
-} from "constants/navigation.constant";
+} from "@/constants/navigation.constant";
 import React from "react";
-import LoginScreen from "screens/login/login.screen";
-import { WelcomeScreen } from "screens/welcome/welcome.screen";
-import { useSystemStore } from "store/system.store";
+import LoginScreen from "@/screens/login/login.screen";
+import { WelcomeScreen } from "@/screens/welcome/welcome.screen";
+import { useSystemStore } from "@/store/system.store";
 
 const StackNavigator = createNativeStackNavigator();
 

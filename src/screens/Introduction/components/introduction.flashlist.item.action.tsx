@@ -6,14 +6,14 @@ import React, {
   useState,
 } from "react";
 import { StyleSheet } from "react-native";
-import BView from "components/base/base.view";
+import BView from "@/components/base/base.view";
 import { useLingui } from "@lingui/react";
-import BText from "components/base/base.text";
-import { FontSize, MHS } from "constants/sizes.constant";
-import BIcon from "components/base/base.icon";
+import BText from "@/components/base/base.text";
+import { FontSize, MHS } from "@/constants/sizes.constant";
+import BIcon from "@/components/base/base.icon";
 import { msg } from "@lingui/core/macro";
-import BPressable from "components/base/base.pressable";
-import BDivider from "components/base/base.divider";
+import BPressable from "@/components/base/base.pressable";
+import BDivider from "@/components/base/base.divider";
 
 export const IntroductionFlashlistItemActionButton = forwardRef(
   (

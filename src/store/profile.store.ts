@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { zustandStorage } from "store";
-import { IProfile } from "models/user.model";
+import { zustandStorage } from "@/store";
+import { IProfile } from "@/models/user.model";
 
 interface IAuthStore {
   profile?: IProfile;

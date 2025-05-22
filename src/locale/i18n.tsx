@@ -9,58 +9,58 @@ import "@formatjs/intl-numberformat/locale-data/en";
 import { useEffect } from "react";
 import { i18n } from "@lingui/core";
 
-// import { messages as messagesAn } from "locale/locales/an/messages";
-// import { messages as messagesAst } from "locale/locales/ast/messages";
-// import { messages as messagesCa } from "locale/locales/ca/messages";
-// import { messages as messagesCy } from "locale/locales/cy/messages";
-// import { messages as messagesDa } from "locale/locales/da/messages";
-// import { messages as messagesDe } from "locale/locales/de/messages";
-// import { messages as messagesEl } from "locale/locales/el/messages";
-import { messages as messagesEn } from "locale/locales/en/messages";
-// import { messages as messagesEn_GB } from "locale/locales/en-GB/messages";
-// import { messages as messagesEo } from "locale/locales/eo/messages";
-// import { messages as messagesEs } from "locale/locales/es/messages";
-// import { messages as messagesEu } from "locale/locales/eu/messages";
-// import { messages as messagesFi } from "locale/locales/fi/messages";
-// import { messages as messagesFr } from "locale/locales/fr/messages";
-// import { messages as messagesGa } from "locale/locales/ga/messages";
-// import { messages as messagesGd } from "locale/locales/gd/messages";
-// import { messages as messagesGl } from "locale/locales/gl/messages";
-// import { messages as messagesHi } from "locale/locales/hi/messages";
-// import { messages as messagesHu } from "locale/locales/hu/messages";
-// import { messages as messagesIa } from "locale/locales/ia/messages";
-// import { messages as messagesId } from "locale/locales/id/messages";
-// import { messages as messagesIt } from "locale/locales/it/messages";
-// import { messages as messagesJa } from "locale/locales/ja/messages";
-// import { messages as messagesKm } from "locale/locales/km/messages";
-// import { messages as messagesKo } from "locale/locales/ko/messages";
-// import { messages as messagesNe } from "locale/locales/ne/messages";
-// import { messages as messagesNl } from "locale/locales/nl/messages";
-// import { messages as messagesPl } from "locale/locales/pl/messages";
-// import { messages as messagesPt_BR } from "locale/locales/pt-BR/messages";
-// import { messages as messagesRo } from "locale/locales/ro/messages";
-// import { messages as messagesRu } from "locale/locales/ru/messages";
-// import { messages as messagesSv } from "locale/locales/sv/messages";
-// import { messages as messagesTh } from "locale/locales/th/messages";
-// import { messages as messagesTr } from "locale/locales/tr/messages";
-// import { messages as messagesUk } from "locale/locales/uk/messages";
-import { messages as messagesVi } from "locale/locales/vi/messages";
-// import { messages as messagesZh_CN } from "locale/locales/zh-CN/messages";
-// import { messages as messagesZh_HK } from "locale/locales/zh-HK/messages";
-// import { messages as messagesZh_TW } from "locale/locales/zh-TW/messages";
+// import { messages as messagesAn } from "@/locale/locales/an/messages";
+// import { messages as messagesAst } from "@/locale/locales/ast/messages";
+// import { messages as messagesCa } from "@/locale/locales/ca/messages";
+// import { messages as messagesCy } from "@/locale/locales/cy/messages";
+// import { messages as messagesDa } from "@/locale/locales/da/messages";
+// import { messages as messagesDe } from "@/locale/locales/de/messages";
+// import { messages as messagesEl } from "@/locale/locales/el/messages";
+import { messages as messagesEn } from "@/locale/locales/en/messages";
+// import { messages as messagesEn_GB } from "@/locale/locales/en-GB/messages";
+// import { messages as messagesEo } from "@/locale/locales/eo/messages";
+// import { messages as messagesEs } from "@/locale/locales/es/messages";
+// import { messages as messagesEu } from "@/locale/locales/eu/messages";
+// import { messages as messagesFi } from "@/locale/locales/fi/messages";
+// import { messages as messagesFr } from "@/locale/locales/fr/messages";
+// import { messages as messagesGa } from "@/locale/locales/ga/messages";
+// import { messages as messagesGd } from "@/locale/locales/gd/messages";
+// import { messages as messagesGl } from "@/locale/locales/gl/messages";
+// import { messages as messagesHi } from "@/locale/locales/hi/messages";
+// import { messages as messagesHu } from "@/locale/locales/hu/messages";
+// import { messages as messagesIa } from "@/locale/locales/ia/messages";
+// import { messages as messagesId } from "@/locale/locales/id/messages";
+// import { messages as messagesIt } from "@/locale/locales/it/messages";
+// import { messages as messagesJa } from "@/locale/locales/ja/messages";
+// import { messages as messagesKm } from "@/locale/locales/km/messages";
+// import { messages as messagesKo } from "@/locale/locales/ko/messages";
+// import { messages as messagesNe } from "@/locale/locales/ne/messages";
+// import { messages as messagesNl } from "@/locale/locales/nl/messages";
+// import { messages as messagesPl } from "@/locale/locales/pl/messages";
+// import { messages as messagesPt_BR } from "@/locale/locales/pt-BR/messages";
+// import { messages as messagesRo } from "@/locale/locales/ro/messages";
+// import { messages as messagesRu } from "@/locale/locales/ru/messages";
+// import { messages as messagesSv } from "@/locale/locales/sv/messages";
+// import { messages as messagesTh } from "@/locale/locales/th/messages";
+// import { messages as messagesTr } from "@/locale/locales/tr/messages";
+// import { messages as messagesUk } from "@/locale/locales/uk/messages";
+import { messages as messagesVi } from "@/locale/locales/vi/messages";
+// import { messages as messagesZh_CN } from "@/locale/locales/zh-CN/messages";
+// import { messages as messagesZh_HK } from "@/locale/locales/zh-HK/messages";
+// import { messages as messagesZh_TW } from "@/locale/locales/zh-TW/messages";
 import { I18nProvider as DefaultI18nProvider } from "@lingui/react";
-import { useSystemStore } from "store/system.store";
-import { AppLanguage } from "constants/languages.constant";
-import { sanitizeAppLanguageSettingHelper } from "helpers/language.helper";
+import { useSystemStore } from "@/store/system.store";
+import { AppLanguage } from "@/constants/languages.constant";
+import { sanitizeAppLanguageSettingHelper } from "@/helpers/language.helper";
 
 /**
  * Dynamically activates a specific language locale
- * 
+ *
  * This function loads and activates the appropriate translation messages
  * and imports the necessary locale-specific data for formatting numbers
  * and handling pluralization rules. This approach optimizes bundle size
  * by only loading the required language resources when needed.
- * 
+ *
  * @param locale - The language locale to activate from AppLanguage enum
  * @returns Promise that resolves when locale activation is complete
  */
@@ -375,18 +375,18 @@ export async function activateLocale(locale: AppLanguage) {
 
 /**
  * Custom hook that manages the application's current locale
- * 
+ *
  * This hook subscribes to the application language setting from the system store
  * and activates the appropriate locale whenever the language setting changes.
  * It ensures that the correct translations are loaded and applied throughout
  * the application.
- * 
+ *
  * The hook sanitizes the language setting to ensure it's a valid AppLanguage value
  * before activating it.
  */
 export function useApplicationLocale() {
   const appLanguage = useSystemStore((state) => state.appLanguage);
-  
+
   useEffect(() => {
     // Sanitize the language setting and activate the appropriate locale
     activateLocale(sanitizeAppLanguageSettingHelper(appLanguage));
@@ -395,12 +395,12 @@ export function useApplicationLocale() {
 
 /**
  * Main I18n provider component for the application
- * 
+ *
  * This component sets up the internationalization context for the entire
  * application. It uses the useApplicationLocale hook to ensure the correct
  * locale is activated and provides the i18n instance to all child components
  * through the Lingui I18nProvider.
- * 
+ *
  * @param props - Component props
  * @param props.children - Child components that will have access to i18n context
  * @returns I18nProvider component with activated locale
@@ -412,7 +412,7 @@ export default function I18nProvider({
 }) {
   // Initialize and manage the application locale
   useApplicationLocale();
-  
+
   // Provide the i18n instance to all child components
   return <DefaultI18nProvider i18n={i18n}>{children}</DefaultI18nProvider>;
 }

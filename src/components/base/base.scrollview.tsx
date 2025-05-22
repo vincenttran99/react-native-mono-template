@@ -2,7 +2,7 @@ import React, { forwardRef, useMemo, useCallback, Children } from "react";
 import { FlashList, FlashListProps } from "@shopify/flash-list";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { ScrollView, ScrollViewProps } from "react-native";
-import { DEVICE } from "constants/system.constant";
+import { DEVICE } from "@/constants/system.constant";
 import {
   backgroundColor,
   BackgroundColorProps,
@@ -11,7 +11,7 @@ import {
   SpacingProps,
   useRestyle,
 } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 
 type RestyleProps = SpacingProps<Theme> & BackgroundColorProps<Theme>;
 const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([

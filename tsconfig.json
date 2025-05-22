@@ -4,12 +4,7 @@
     "strict": true,
     "module": "esnext",
     "paths": {
-      "*": ["./src/*"]
-      // "lib/*": ["./src/lib/*"],
-      // "platform/*": ["./src/platform/*"],
-      // "state/*": ["./src/state/*"],
-      // "view/*": ["./src/view/*"],
-      // "crypto": ["./src/platform/crypto.ts"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

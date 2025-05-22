@@ -1,11 +1,11 @@
 import React, { useCallback } from "react";
 import { StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useSystemStore } from "store/system.store";
+import { useSystemStore } from "@/store/system.store";
 import { useLingui } from "@lingui/react";
-import BView from "components/base/base.view";
-import BText from "components/base/base.text";
-import { APP_LANGUAGES, AppLanguage } from "constants/languages.constant";
+import BView from "@/components/base/base.view";
+import BText from "@/components/base/base.text";
+import { APP_LANGUAGES, AppLanguage } from "@/constants/languages.constant";
 
 const SettingsLanguageScreen = () => {
   const navigation = useNavigation();

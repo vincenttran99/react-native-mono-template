@@ -1,11 +1,11 @@
 import React, { memo } from "react";
-import { FontSize, MHS, Space } from "constants/sizes.constant";
+import { FontSize, MHS, Space } from "@/constants/sizes.constant";
 import BPressable, { BPressableProps } from "./base.pressable";
 import BText, { BTextProps } from "./base.text";
 import BIcon, { BIconProps } from "./base.icon";
 import { StyleSheet } from "react-native";
 import { ResponsiveValue } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 
 type ButtonStyle = {
   [key in ResponsiveValue<keyof Theme["spacing"], Theme["breakpoints"]>]: {

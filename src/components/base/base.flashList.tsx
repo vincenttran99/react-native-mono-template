@@ -11,12 +11,12 @@ import {
   ERROR_ITEM,
   LOAD_MORE_ERROR_ITEM,
   LOADING_ITEM,
-} from "helpers/hooks/list.hook";
-import { DEVICE } from "constants/system.constant";
-import DefaultLoadingListComponent from "components/list/list.defaultLoading.component";
-import DefaultErrorListComponent from "components/list/list.defaultError.component";
-import DefaultEmptyListComponent from "components/list/list.defaultEmpty.component";
-import DefaultErrorItemListComponent from "components/list/list.defaultErrorItem.component";
+} from "@/helpers/hooks/list.hook";
+import { DEVICE } from "@/constants/system.constant";
+import DefaultLoadingListComponent from "@/components/list/list.defaultLoading.component";
+import DefaultErrorListComponent from "@/components/list/list.defaultError.component";
+import DefaultEmptyListComponent from "@/components/list/list.defaultEmpty.component";
+import DefaultErrorItemListComponent from "@/components/list/list.defaultErrorItem.component";
 import {
   backgroundColor,
   BackgroundColorProps,
@@ -25,8 +25,8 @@ import {
   SpacingProps,
   useRestyle,
 } from "@shopify/restyle";
-import { Theme } from "constants/theme.constant";
-import { getDrawDistance } from "helpers/system.helper";
+import { Theme } from "@/constants/theme.constant";
+import { getDrawDistance } from "@/helpers/system.helper";
 
 type RestyleProps = SpacingProps<Theme> & BackgroundColorProps<Theme>;
 const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([

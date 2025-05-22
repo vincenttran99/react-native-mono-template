@@ -16,12 +16,12 @@ import {
   TextLayoutLine,
   TextStyle,
 } from "react-native";
-import BText, { BTextProps } from "components/base/base.text";
+import BText, { BTextProps } from "@/components/base/base.text";
 
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import BView from "../base.view";
-import { countShortCharactersHelper } from "helpers/string.helper";
+import { countShortCharactersHelper } from "@/helpers/string.helper";
 
 /**
  * Interface for BTextEllipsis component props

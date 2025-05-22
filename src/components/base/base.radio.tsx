@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useMemo } from "react";
 import { Insets, StyleProp, ViewStyle } from "react-native";
-import { MHS, Space } from "constants/sizes.constant";
+import { MHS, Space } from "@/constants/sizes.constant";
 import BView from "./base.view";
 import { BPressable, BPressableProps } from "./base.pressable";
 import { ResponsiveValue, useTheme } from "@shopify/restyle";
@@ -10,7 +10,7 @@ import Animated, {
   withTiming,
   Easing,
 } from "react-native-reanimated";
-import { Theme } from "constants/theme.constant";
+import { Theme } from "@/constants/theme.constant";
 import isEqual from "react-fast-compare";
 
 export type BRadioButtonProps = BPressableProps & {

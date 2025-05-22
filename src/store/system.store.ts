@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { zustandStorage } from "store";
+import { zustandStorage } from "@/store";
 
 interface ISystemStore {
   isFirstOpen: boolean;
