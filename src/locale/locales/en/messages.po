@@ -256,9 +256,10 @@ msgstr "Search"
 msgid "see more"
 msgstr "see more"
 
+#: src/screens/Introduction/introduction.screen.tsx:31
 #: src/navigation/main.navigation.tsx:55
-msgid "Setting"
-msgstr "Setting"
+msgid "Settings"
+msgstr "Settings"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:103
 msgid "Share"

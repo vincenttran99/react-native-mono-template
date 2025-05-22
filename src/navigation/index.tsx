@@ -114,7 +114,7 @@ export default function AppNavigation() {
    * Converts theme string to the actual theme object
    */
   const themeValue = useMemo(
-    () => (theme !== "light" ? LIGHT_THEME : DARK_THEME),
+    () => (theme === "light" ? LIGHT_THEME : DARK_THEME),
     [theme]
   );
 

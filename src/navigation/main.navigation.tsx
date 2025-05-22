@@ -52,7 +52,7 @@ const MainNavigator = () => {
       <StackNavigator.Screen
         name={NAVIGATION_SETTINGS_SCREEN}
         options={{
-          title: _(msg`Setting`),
+          title: _(msg`Settings`),
         }}
         component={SettingsScreen}
       />

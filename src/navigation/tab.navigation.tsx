@@ -34,7 +34,7 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
         label: _(msg`Dogs`),
       },
     };
-  }, []);
+  }, [_]);
 
   const renderButton = useCallback(
     (route: NavigationRoute<ParamListBase, string>, index: number) => {
@@ -86,7 +86,7 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
         </BPressable>
       );
     },
-    [state.routes]
+    [state.routes, _]
   );
 
   return (

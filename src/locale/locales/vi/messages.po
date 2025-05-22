@@ -256,8 +256,9 @@ msgstr "Tìm kiếm"
 msgid "see more"
 msgstr "Xem thêm"
 
+#: src/screens/Introduction/introduction.screen.tsx:31
 #: src/navigation/main.navigation.tsx:55
-msgid "Setting"
+msgid "Settings"
 msgstr "Cài đặt"
 
 #: src/screens/Introduction/components/introduction.flashlist.item.action.tsx:103
