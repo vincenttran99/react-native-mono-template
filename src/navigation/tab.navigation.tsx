@@ -11,11 +11,11 @@ import BSurface from "components/base/base.surface";
 import BText from "components/base/base.text";
 import {
   NAVIGATION_INTRODUCTION_SCREEN,
-  NAVIGATION_DOG_SCREEN,
+  NAVIGATION_ABOUT_US_SCREEN,
 } from "constants/navigation.constant";
 import { MHS } from "constants/sizes.constant";
 import React, { useCallback, useMemo } from "react";
-import DogScreen from "screens/dog/dog.screen";
+import AboutUsScreen from "screens/about-us/aboutUs.screen";
 import IntroductionScreen from "screens/Introduction/introduction.screen";
 
 const Tab = createBottomTabNavigator();
@@ -29,9 +29,9 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
         icon: "menu",
         label: _(msg`Introduce`),
       },
-      [NAVIGATION_DOG_SCREEN]: {
-        icon: "dog",
-        label: _(msg`Dogs`),
+      [NAVIGATION_ABOUT_US_SCREEN]: {
+        icon: "account",
+        label: _(msg`About us`),
       },
     };
   }, [_]);
@@ -120,7 +120,7 @@ const TabNavigation = () => {
         name={NAVIGATION_INTRODUCTION_SCREEN}
         component={IntroductionScreen}
       />
-      <Tab.Screen name={NAVIGATION_DOG_SCREEN} component={DogScreen} />
+      <Tab.Screen name={NAVIGATION_ABOUT_US_SCREEN} component={AboutUsScreen} />
     </Tab.Navigator>
   );
 };
