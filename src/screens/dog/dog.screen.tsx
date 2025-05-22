@@ -14,12 +14,13 @@ import { useInfiniteList } from "helpers/hooks/list.hook";
 import { MHS } from "constants/sizes.constant";
 import ItemDog from "./components/item.dog";
 import BLegendList from "components/base/base.legendList";
+import BFlashList from "components/base/base.flashList";
 
 export default function DogScreen() {
   const { listItems, onRefresh, isRefetching, onEndReached } =
     useInfiniteList<IDog>({
       query: useDogListQuery,
-      keyAttribute: "notification_id",
+      keyAttribute: "id",
     });
 
   const renderItem = useCallback(({ item }: { item: IDog }) => {
@@ -27,10 +28,10 @@ export default function DogScreen() {
   }, []);
 
   return (
-    <BView backgroundColor="background" flex={1} paddingTop="xxxl">
-      <BLegendList
+    <BView backgroundColor="background" flex={1}>
+      <BFlashList
         keyAttribute={"id"}
-        estimatedItemSize={450}
+        estimatedItemSize={250}
         data={listItems}
         renderItem={renderItem}
         onEndReached={onEndReached}

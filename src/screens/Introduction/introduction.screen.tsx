@@ -8,6 +8,7 @@ import BFlashList from "components/base/base.flashList";
 import BDivider from "components/base/base.divider";
 import BSafeAreaView from "components/base/base.safeAreaView";
 import {
+  NAVIGATION_DOG_SCREEN,
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
   NAVIGATION_SETTINGS_SCREEN,
@@ -26,6 +27,10 @@ export default function IntroductionScreen() {
     {
       title: _(msg`Flash List`),
       screen: NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
+    },
+    {
+      title: _(msg`Demo list query`),
+      screen: NAVIGATION_DOG_SCREEN,
     },
     {
       title: _(msg`Settings`),

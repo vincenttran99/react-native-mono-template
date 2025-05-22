@@ -40,7 +40,7 @@ export const useDogListQuery = () => {
           }
         : undefined;
     },
-    staleTime: 1000 * 30,
+    staleTime: 1000 * 60 * 60 * 24 * 365,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
