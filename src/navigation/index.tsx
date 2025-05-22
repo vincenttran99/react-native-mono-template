@@ -148,7 +148,7 @@ export default function AppNavigation() {
             >
               {/* Status bar configuration */}
               <StatusBar
-                barStyle={theme === "light" ? "light-content" : "dark-content"}
+                barStyle={theme === "light" ? "dark-content" : "light-content"}
                 translucent={true}
                 backgroundColor={"transparent"}
               />
