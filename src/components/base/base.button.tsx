@@ -108,9 +108,11 @@ export type BButtonProps = BPressableProps & {
   labelProps?: BTextProps;
   outline?: boolean;
   leftIcon?: string;
-  leftIconProps?: Omit<BIconProps, "name">;
+  leftIconColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
+  leftIconSize?: number;
   rightIcon?: string;
-  rightIconProps?: Omit<BIconProps, "name">;
+  rightIconColor?: ResponsiveValue<keyof Theme["colors"], Theme["breakpoints"]>;
+  rightIconSize?: number;
 };
 
 const BButtonComponent = ({
@@ -122,9 +124,11 @@ const BButtonComponent = ({
   outline,
   leftIcon,
   rightIcon,
-  leftIconProps,
-  rightIconProps,
-  labelColor,
+  leftIconSize,
+  rightIconSize,
+  labelColor = "reverse",
+  leftIconColor = "reverse",
+  rightIconColor = "reverse",
   ...props
 }: BButtonProps): React.JSX.Element => {
   return (
@@ -144,7 +148,11 @@ const BButtonComponent = ({
       {...props}
     >
       {leftIcon && (
-        <BIcon name={leftIcon} size={FontSize[size]} {...leftIconProps} />
+        <BIcon
+          name={leftIcon}
+          size={leftIconSize || FontSize[size]}
+          color={leftIconColor}
+        />
       )}
       <BText
         fontWeight={"600"}
@@ -155,7 +163,11 @@ const BButtonComponent = ({
         {label || ""}
       </BText>
       {rightIcon && (
-        <BIcon name={rightIcon} size={FontSize[size]} {...rightIconProps} />
+        <BIcon
+          name={rightIcon}
+          size={rightIconSize || FontSize[size]}
+          color={rightIconColor}
+        />
       )}
     </BPressable>
   );

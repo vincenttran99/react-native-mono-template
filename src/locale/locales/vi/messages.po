@@ -17,8 +17,16 @@ msgstr ""
 msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "Nhanh hơn 3 hoặc 4 lần so với màn hình cuộn bình thường"
 
-#: src/screens/Introduction/introduction.screen.tsx:23
-#: src/navigation/main.navigation.tsx:41
+#: src/navigation/tab.navigation.tsx:34
+msgid "About us"
+msgstr "Về chúng tôi"
+
+#: src/screens/about-us/aboutUs.screen.tsx:103
+msgid "Bảo trì và Phát triển"
+msgstr "Bảo trì và phát"
+
+#: src/screens/Introduction/introduction.screen.tsx:24
+#: src/navigation/main.navigation.tsx:43
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
 
@@ -58,6 +66,10 @@ msgstr "Nút thứ cấp"
 msgid "BView"
 msgstr "Bview"
 
+#: src/screens/about-us/aboutUs.screen.tsx:144
+msgid "Các component thú vị như văn bản đa định dạng, văn bản có thể thu gọn/mở rộng"
+msgstr "Thành phần c đánh thú vị như vét"
+
 #: src/components/global/global.bottomSheetDialog.component.tsx:168
 msgid "Cancel"
 msgstr "Hủy bỏ"
@@ -65,6 +77,10 @@ msgstr "Hủy bỏ"
 #: src/screens/Introduction/introduction.base.screen.tsx:262
 msgid "Cat"
 msgstr "Con mèo"
+
+#: src/screens/about-us/aboutUs.screen.tsx:149
+msgid "Cấu trúc dự án rõ ràng với Absolute Imports"
+msgstr "Cấu trúc dự án rõ ràng với nhập khẩu tuyệt đối"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:298
 msgid "Checkbox"
@@ -99,13 +115,18 @@ msgstr "Tiếp tục"
 msgid "Dark Mode"
 msgstr "Chế độ tối"
 
+#: src/screens/Introduction/introduction.screen.tsx:32
+#: src/navigation/main.navigation.tsx:68
+msgid "Demo list query"
+msgstr "Truy vấn danh sách demo"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:269
 msgid "Divider"
 msgstr "Vách ngăn"
 
-#: src/navigation/tab.navigation.tsx:34
-msgid "Dogs"
-msgstr "Chó"
+#: src/screens/about-us/aboutUs.screen.tsx:130
+msgid "Dự án này được cấp phép MIT."
+msgstr "Dự án nào được cấp Phép mit."
 
 #: src/screens/login/login.screen.tsx:35
 msgid "Email is not valid"
@@ -127,13 +148,17 @@ msgstr "Văn bản cảnh báo thêm lớn"
 msgid "Fast and simple template"
 msgstr "Mẫu nhanh và đơn giản"
 
-#: src/navigation/main.navigation.tsx:48
+#: src/navigation/main.navigation.tsx:50
 msgid "Flash list"
 msgstr "Danh sách Flash"
 
-#: src/screens/Introduction/introduction.screen.tsx:27
+#: src/screens/Introduction/introduction.screen.tsx:28
 msgid "Flash List"
 msgstr "Danh sách Flash"
+
+#: src/screens/about-us/aboutUs.screen.tsx:73
+msgid "Giới thiệu"
+msgstr "GIớI THIệU"
 
 #: src/screens/login/login.screen.tsx:86
 msgid "Hello"
@@ -143,6 +168,14 @@ msgstr "Xin chào"
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:317
 msgid "hide"
 msgstr "trốn"
+
+#: src/screens/about-us/aboutUs.screen.tsx:147
+msgid "Hỗ trợ xây dựng đa môi trường (Production, Staging, Development)"
+msgstr "Hỗ trợ xây dựng Đa Môm trường (sản xuất, dàn dựng, phát triển)"
+
+#: src/screens/about-us/aboutUs.screen.tsx:148
+msgid "Husky cho Git Hooks: Tự động hóa git hooks và thực thi tiêu chuẩn mã"
+msgstr "Husky Cho Git Hook: Tự Động Hót"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:242
 msgid "Icon Button"
@@ -157,7 +190,7 @@ msgid "Introduce"
 msgstr "Giới thiệu"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:61
+#: src/navigation/main.navigation.tsx:63
 msgid "Language"
 msgstr "Ngôn ngữ"
 
@@ -201,6 +234,10 @@ msgstr "Mất kết nối mạng"
 msgid "Medium primary text"
 msgstr "Văn bản chính trung bình"
 
+#: src/screens/about-us/aboutUs.screen.tsx:77
+msgid "Một template cho dự án React Native tiếp theo của bạn, tập trung vào tối ưu hóa hiệu suất ứng dụng: Expo, TypeScript, ReStyle, Flashlist, Legend list, Husky, Lint-Staged, react-navigation, react-query, react-hook-form, Lingui, I18n, v.v..."
+msgstr "Mẫu Một Cho dự án React bản địa tiếp Theo của bạn, tập còng vào"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:83
 msgid "Multi text"
 msgstr "Nhiều văn bản"
@@ -241,9 +278,17 @@ msgstr "Mục đích"
 msgid "Radio"
 msgstr "Radio"
 
+#: src/screens/about-us/aboutUs.screen.tsx:151
+msgid "React Query và axios để tìm nạp dữ liệu hiệu quả"
+msgstr "React Truy vấn Và Axios Để TÌM NạP Dữ LIệU HIệU QUả"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:46
 msgid "Render time: "
 msgstr "Thời gian kết xuất:"
+
+#: src/screens/about-us/aboutUs.screen.tsx:142
+msgid "SDK Expo mới nhất: Tận dụng tối đa hệ sinh thái Expo"
+msgstr "SDK Expo mới NHất: tận dụng tối ĐA"
 
 #: src/components/form/form.select.single.tsx:168
 msgid "Search"
@@ -256,8 +301,8 @@ msgstr "Tìm kiếm"
 msgid "see more"
 msgstr "Xem thêm"
 
-#: src/screens/Introduction/introduction.screen.tsx:31
-#: src/navigation/main.navigation.tsx:55
+#: src/screens/Introduction/introduction.screen.tsx:36
+#: src/navigation/main.navigation.tsx:57
 msgid "Settings"
 msgstr "Cài đặt"
 
@@ -298,6 +343,34 @@ msgstr "Đầu vào văn bản"
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài. Đây là một văn bản dài."
 
+#: src/screens/about-us/aboutUs.screen.tsx:143
+msgid "Tích hợp đa ngôn ngữ dễ dàng trong vòng 30 giây với Lingui"
+msgstr "Tích hợp Đa ngôn ngữ dễ dà"
+
+#: src/screens/about-us/aboutUs.screen.tsx:85
+msgid "Tính năng chính"
+msgstr "Tính n Đaug Chính"
+
+#: src/screens/about-us/aboutUs.screen.tsx:107
+msgid "Tôi cam kết liên tục cải thiện template này để xây dựng ứng dụng React Native nhanh hơn. Để đạt được mục tiêu này, tôi thường xuyên thêm tính năng mới và sửa lỗi đã phát hiện."
+msgstr "Tôma cam Để ĐạT ĐượC"
+
+#: src/screens/about-us/aboutUs.screen.tsx:141
+msgid "Tối ưu hóa hiệu suất với nhiều kỹ thuật biên dịch"
+msgstr "Tối ưu hùa"
+
+#: src/screens/about-us/aboutUs.screen.tsx:150
+msgid "Triển khai luồng xác thực sử dụng Zustand và react-native-mmkv"
+msgstr "Triển Khai luồng Xácc thực sử dụng zustand và react-yatial-mmkv"
+
+#: src/screens/about-us/aboutUs.screen.tsx:145
+msgid "TypeScript để nâng cao chất lượng mã và ngăn ngừa lỗi"
+msgstr "TypeScript Để Nâng Cao Chất Lượng MÃ Và ngăn ngừa Lỗi"
+
+#: src/screens/about-us/aboutUs.screen.tsx:146
+msgid "UI có thể tùy chỉnh được xây dựng với Shopify/restyle"
+msgstr "UI Có Thể Tùy ChỉNH ĐA"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:43
 msgid "We have 200 images at the bottom"
 msgstr "Chúng tôi có 200 hình ảnh ở phía dưới"
@@ -305,6 +378,18 @@ msgstr "Chúng tôi có 200 hình ảnh ở phía dưới"
 #: src/screens/welcome/welcome.screen.tsx:51
 msgid "Welcome to"
 msgstr "Chào mừng bạn đến"
+
+#: src/screens/about-us/aboutUs.screen.tsx:120
+msgid "Xem tài liệu"
+msgstr "Xem tài liệu"
+
+#: src/screens/about-us/aboutUs.screen.tsx:115
+msgid "Xem trên GitHub"
+msgstr "Xem trên Github"
+
+#: src/screens/about-us/aboutUs.screen.tsx:152
+msgid "Xử lý biểu mẫu mạnh mẽ với react-hook-form"
+msgstr "Xử Lý Biểu Mẫu MạNH Mẽ VớI phản ứng-hook-form"
 
 #: src/screens/login/login.screen.tsx:97
 msgid "Your email"
