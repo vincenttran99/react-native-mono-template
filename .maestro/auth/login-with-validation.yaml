@@ -1,0 +1,29 @@
+appId: ${APP_ID}
+env:
+  EMAIL: "test@gmail.com"
+  PASSWORD: "password"
+---
+- launchApp
+- runFlow:
+    when:
+      visible: "Welcome to"
+    file: ../utils/onboarding.yaml
+- assertVisible: "Login"
+- assertVisible:
+    id: "login-button"
+- tapOn:
+    id: "login-button"
+- assertVisible: "Email should not be empty"
+- tapOn:
+    id: "email-input"
+- inputText: "email"
+- assertVisible: "Email is not valid"
+- inputText: ${EMAIL}
+- runFlow: ../utils/hide-keyboard.yaml
+- tapOn:
+    id: "password-input"
+- inputText: ${PASSWORD}
+- runFlow: ../utils/hide-keyboard.yaml
+- tapOn:
+    id: "login-button"
+- assertVisible: "Base components"

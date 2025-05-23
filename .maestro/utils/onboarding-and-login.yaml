@@ -1,0 +1,12 @@
+appId: ${APP_ID}
+tags:
+  - util
+---
+- runFlow:
+    when:
+      visible: "Welcome to"
+    file: onboarding.yaml
+- runFlow:
+    when:
+      visible: "Login"
+    file: login.yaml

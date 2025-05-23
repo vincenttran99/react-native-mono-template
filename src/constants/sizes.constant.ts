@@ -1,4 +1,4 @@
-import { hs, mhs, mvs, vs } from "@/helpers/system.helper";
+import { hs, mhs, mvs, vs } from "@/helpers/theme.helper";
 
 export const HIT_SLOP_EXPAND_20 = { top: 20, left: 20, right: 20, bottom: 20 };
 export const HIT_SLOP_EXPAND_10 = { top: 10, left: 10, right: 10, bottom: 10 };

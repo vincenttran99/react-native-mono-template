@@ -1,0 +1,7 @@
+appId: ${APP_ID}
+tags:
+  - util
+---
+- assertVisible: "Welcome to"
+- tapOn: "Continue"
+- assertVisible: "Login"

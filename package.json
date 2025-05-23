@@ -30,7 +30,9 @@
     "compile": "lingui compile --typescript",
     "prepare": "husky",
     "generate-colors": "node scripts/generate-colors.js",
-    "translate": "lingui extract --clean && ./scripts/auto-translate.sh && lingui compile --typescript"
+    "translate": "lingui extract --clean && ./scripts/auto-translate.sh && lingui compile --typescript",
+    "install-maestro": "curl -Ls 'https://get.maestro.mobile.dev' | bash",
+    "e2e-test": "maestro test .maestro/ -e APP_ID=com.reactnative.mono.template"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",

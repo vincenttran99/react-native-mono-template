@@ -1,9 +1,11 @@
 import "react-native-gesture-handler";
-
+import { LogBox } from "react-native";
 import { registerRootComponent } from "expo";
 import messaging from "@react-native-firebase/messaging";
 
 import App from "./App";
+
+LogBox.ignoreLogs(["Open debugger to view warnings."]);
 
 // Register background handler
 messaging().setBackgroundMessageHandler(async (remoteMessage) => {

@@ -230,7 +230,7 @@ msgstr "Liked"
 msgid "Loadmore failed"
 msgstr "Loadmore failed"
 
-#: src/screens/login/login.screen.tsx:116
+#: src/screens/login/login.screen.tsx:119
 msgid "Login"
 msgstr "Login"
 
@@ -391,10 +391,10 @@ msgstr "We have 200 images at the bottom"
 msgid "Welcome to"
 msgstr "Welcome to"
 
-#: src/screens/login/login.screen.tsx:97
+#: src/screens/login/login.screen.tsx:98
 msgid "Your email"
 msgstr "Your email"
 
-#: src/screens/login/login.screen.tsx:105
+#: src/screens/login/login.screen.tsx:107
 msgid "Your password"
 msgstr "Your password"

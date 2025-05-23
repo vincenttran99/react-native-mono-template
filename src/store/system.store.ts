@@ -18,7 +18,7 @@ interface ISystemStore {
 }
 
 const initialState = {
-  theme: "dark" as const,
+  theme: "light" as const,
   appLanguage: "en",
   maintenanceMode: false,
   isFirstOpen: true,

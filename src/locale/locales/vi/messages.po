@@ -230,7 +230,7 @@ msgstr "Thích"
 msgid "Loadmore failed"
 msgstr "Loadmore không thành công"
 
-#: src/screens/login/login.screen.tsx:116
+#: src/screens/login/login.screen.tsx:119
 msgid "Login"
 msgstr "Đăng nhập"
 
@@ -391,10 +391,10 @@ msgstr "Chúng tôi có 200 hình ảnh ở phía dưới"
 msgid "Welcome to"
 msgstr "Chào mừng bạn đến"
 
-#: src/screens/login/login.screen.tsx:97
+#: src/screens/login/login.screen.tsx:98
 msgid "Your email"
 msgstr "Email của bạn"
 
-#: src/screens/login/login.screen.tsx:105
+#: src/screens/login/login.screen.tsx:107
 msgid "Your password"
 msgstr "Mật khẩu của bạn"

@@ -92,6 +92,7 @@ export default function LoginScreen() {
       <BView width={"100%"}>
         <BView gap="xxs">
           <FTextInput
+            testID="email-input"
             name={"email"}
             control={control}
             placeholder={_(msg`Your email`)}
@@ -100,6 +101,7 @@ export default function LoginScreen() {
             keyboardType={"email-address"}
           />
           <FTextInput
+            testID="password-input"
             name={"password"}
             control={control}
             placeholder={_(msg`Your password`)}
@@ -110,6 +112,7 @@ export default function LoginScreen() {
         </BView>
 
         <BButton
+          testID="login-button"
           onPress={handleSubmit(login)}
           size={"md"}
           marginTop="lg"

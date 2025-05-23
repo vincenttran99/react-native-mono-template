@@ -1,6 +1,6 @@
 import { createTheme } from "@shopify/restyle";
 import { FontSize, Radius, Space } from "./sizes.constant";
-import { mhs, mvs } from "@/helpers/system.helper";
+import { mhs, mvs } from "@/helpers/theme.helper";
 
 export const COLORS = {
   light: {
