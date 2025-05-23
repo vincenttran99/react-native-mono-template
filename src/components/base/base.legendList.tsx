@@ -1,5 +1,6 @@
 import React, {
   forwardRef,
+  JSX,
   MemoExoticComponent,
   useCallback,
   useMemo,

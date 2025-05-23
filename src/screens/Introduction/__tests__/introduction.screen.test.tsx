@@ -1,71 +1,14 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react-native";
+import { fireEvent } from "@testing-library/react-native";
 import IntroductionScreen from "../introduction.screen";
-import { navigateNavHelper } from "@/helpers/navigation.helper";
 import {
   NAVIGATION_DOG_SCREEN,
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
   NAVIGATION_SETTINGS_SCREEN,
 } from "@/constants/navigation.constant";
-jest.mock("@/constants/sizes.constant", () => ({
-  MHS: jest.fn((value) => value),
-}));
-
-// Mock dependencies
-jest.mock("@lingui/react", () => ({
-  useLingui: () => ({
-    _: (text: any) => text.message || text,
-  }),
-}));
-
-jest.mock("@/helpers/navigation.helper", () => ({
-  navigateNavHelper: jest.fn(),
-}));
-
-jest.mock("@/components/base/base.flashList", () => {
-  const { View } = require("react-native");
-  return {
-    __esModule: true,
-    default: ({ data, renderItem }: any) => {
-      return (
-        <View testID="flash-list">
-          {data.map((item: any, index: number) => (
-            <View key={index} testID={`list-item-${index}`}>
-              {renderItem({ item, index })}
-            </View>
-          ))}
-        </View>
-      );
-    },
-  };
-});
-
-// Mock other base components
-jest.mock("@/components/base/base.divider", () => "BDivider");
-jest.mock("@/components/base/base.safeAreaView", () => {
-  const { View } = require("react-native");
-  return {
-    __esModule: true,
-    default: (props: any) => <View {...props} testID="safe-area-view" />,
-  };
-});
-
-jest.mock("@/components/base/base.pressable", () => {
-  const { Pressable } = require("react-native");
-  return {
-    __esModule: true,
-    default: (props: any) => <Pressable {...props} testID="pressable" />,
-  };
-});
-
-jest.mock("@/components/base/base.text", () => {
-  const { Text } = require("react-native");
-  return {
-    __esModule: true,
-    default: (props: any) => <Text {...props} testID="base-text" />,
-  };
-});
+import { navigateNavHelper } from "@/helpers/navigation.helper";
+import { render } from "../../../../__mocks__/restyle";
 
 describe("IntroductionScreen", () => {
   beforeEach(() => {
@@ -90,7 +33,7 @@ describe("IntroductionScreen", () => {
     const { getAllByTestId } = render(<IntroductionScreen />);
 
     // Get all pressable buttons
-    const pressables = getAllByTestId("pressable");
+    const pressables = getAllByTestId(/list-item-/);
 
     // Check navigation when pressing the first item (Base components)
     fireEvent.press(pressables[0]);

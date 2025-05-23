@@ -39,15 +39,27 @@ export default function IntroductionScreen() {
   ];
 
   const renderItem = useCallback(
-    ({ item }: { item: { title: string; screen: string } }) => {
+    ({
+      item,
+      index,
+    }: {
+      item: { title: string; screen: string };
+      index: number;
+    }) => {
       return (
         <BPressable
+          testID={`list-item-${index}`}
           height={MHS._60}
           justifyContent="center"
           paddingHorizontal="xl"
           onPress={() => navigateNavHelper(item.screen)}
         >
-          <BText fontWeight={"bold"} variant="xl" numberOfLines={1}>
+          <BText
+            testID="base-text"
+            fontWeight={"bold"}
+            variant="xl"
+            numberOfLines={1}
+          >
             {item.title}
           </BText>
         </BPressable>
@@ -57,8 +69,13 @@ export default function IntroductionScreen() {
   );
 
   return (
-    <BSafeAreaView backgroundColor="background" flex={1}>
+    <BSafeAreaView
+      testID="safe-area-view"
+      backgroundColor="background"
+      flex={1}
+    >
       <BFlashList
+        testID="flash-list"
         keyAttribute={"screen"}
         estimatedItemSize={MHS._60}
         data={DATA}
