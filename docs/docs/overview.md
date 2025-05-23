@@ -34,6 +34,8 @@ With accumulated experience and knowledge, this Mono Template will serve as a so
 - 💫 Auth flow implementation using Zustand for state management and react-native-mmkv for secure data storage
 - 🔥 React Query and axios for efficient data fetching and state management
 - 🧵 Robust form handling with react-hook-form for validation, plus keyboard handling
+- 🧪 Unit testing setup with Jest and React Testing Library.
+- 🔍 E2E testing capabilities with Maestro for comprehensive app testing.
 
 ## Maintenance and Development
 

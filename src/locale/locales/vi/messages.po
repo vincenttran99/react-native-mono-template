@@ -128,6 +128,10 @@ msgstr "Truy vấn danh sách demo"
 msgid "Divider"
 msgstr "Vách ngăn"
 
+#: src/screens/about-us/aboutUs.screen.tsx:155
+msgid "E2E testing capabilities with Maestro for comprehensive app testing"
+msgstr "Khả năng kiểm tra E2E với MAESTRO để kiểm tra ứng dụng toàn diện"
+
 #: src/screens/about-us/aboutUs.screen.tsx:143
 msgid "Easy multilingual integration within 30 seconds with Lingui"
 msgstr "Tích hợp đa ngôn ngữ dễ dàng trong vòng 30 giây với ngôn ngữ"
@@ -307,6 +311,7 @@ msgid "Render time: "
 msgstr "Thời gian kết xuất:"
 
 #: src/screens/about-us/aboutUs.screen.tsx:152
+#: src/screens/about-us/aboutUs.screen.tsx:153
 msgid "Robust form handling with react-hook-form"
 msgstr "Xử lý hình thức mạnh mẽ với hình thức phản ứng"
 
@@ -374,6 +379,10 @@ msgstr "Dự án này được cấp phép theo MIT."
 #: src/screens/about-us/aboutUs.screen.tsx:145
 msgid "TypeScript to enhance code quality and prevent errors"
 msgstr "TypeScript để nâng cao chất lượng mã và ngăn ngừa lỗi"
+
+#: src/screens/about-us/aboutUs.screen.tsx:154
+msgid "Unit testing setup with Jest and React Testing Library"
+msgstr "Thiết lập kiểm tra đơn vị với thư viện kiểm tra Jest và React"
 
 #: src/screens/about-us/aboutUs.screen.tsx:120
 msgid "View Documentation"

@@ -128,6 +128,10 @@ msgstr "Demo list query"
 msgid "Divider"
 msgstr "Divider"
 
+#: src/screens/about-us/aboutUs.screen.tsx:155
+msgid "E2E testing capabilities with Maestro for comprehensive app testing"
+msgstr "E2E testing capabilities with Maestro for comprehensive app testing"
+
 #: src/screens/about-us/aboutUs.screen.tsx:143
 msgid "Easy multilingual integration within 30 seconds with Lingui"
 msgstr "Easy multilingual integration within 30 seconds with Lingui"
@@ -307,6 +311,7 @@ msgid "Render time: "
 msgstr "Render time: "
 
 #: src/screens/about-us/aboutUs.screen.tsx:152
+#: src/screens/about-us/aboutUs.screen.tsx:153
 msgid "Robust form handling with react-hook-form"
 msgstr "Robust form handling with react-hook-form"
 
@@ -374,6 +379,10 @@ msgstr "This project is licensed under MIT."
 #: src/screens/about-us/aboutUs.screen.tsx:145
 msgid "TypeScript to enhance code quality and prevent errors"
 msgstr "TypeScript to enhance code quality and prevent errors"
+
+#: src/screens/about-us/aboutUs.screen.tsx:154
+msgid "Unit testing setup with Jest and React Testing Library"
+msgstr "Unit testing setup with Jest and React Testing Library"
 
 #: src/screens/about-us/aboutUs.screen.tsx:120
 msgid "View Documentation"

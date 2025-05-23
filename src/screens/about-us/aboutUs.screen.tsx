@@ -150,6 +150,9 @@ const keyFeatures = [
   msg`Authentication flow implementation using Zustand and react-native-mmkv`,
   msg`React Query and axios for efficient data fetching`,
   msg`Robust form handling with react-hook-form`,
+  msg`Robust form handling with react-hook-form`,
+  msg`Unit testing setup with Jest and React Testing Library`,
+  msg`E2E testing capabilities with Maestro for comprehensive app testing`,
 ];
 
 const styles = StyleSheet.create({
