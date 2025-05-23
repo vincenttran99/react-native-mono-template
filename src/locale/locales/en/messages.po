@@ -107,7 +107,7 @@ msgstr "Comments"
 msgid "Confirm"
 msgstr "Confirm"
 
-#: src/screens/welcome/welcome.screen.tsx:58
+#: src/screens/onboarding/onboarding.screen.tsx:58
 msgid "Continue"
 msgstr "Continue"
 
@@ -148,7 +148,7 @@ msgstr "Empty"
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
 
-#: src/screens/welcome/welcome.screen.tsx:55
+#: src/screens/onboarding/onboarding.screen.tsx:55
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
@@ -387,7 +387,7 @@ msgstr "View on GitHub"
 msgid "We have 200 images at the bottom"
 msgstr "We have 200 images at the bottom"
 
-#: src/screens/welcome/welcome.screen.tsx:51
+#: src/screens/onboarding/onboarding.screen.tsx:51
 msgid "Welcome to"
 msgstr "Welcome to"
 

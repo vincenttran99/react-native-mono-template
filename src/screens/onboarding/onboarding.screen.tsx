@@ -14,7 +14,7 @@ import BButton from "@/components/base/base.button";
 import { evaluateDevicePerformanceHelper } from "@/helpers/system.helper";
 import { setDevicePerformance } from "@/helpers/storage.helper";
 
-export function WelcomeScreen() {
+export function OnboardingScreen() {
   const setIsFirtOpen = useSystemStore.getState().setIsFirstOpen;
   const { _ } = useLingui();
   const handleNextPress = () => {
