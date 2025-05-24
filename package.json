@@ -1,6 +1,6 @@
 {
   "name": "com.reactnative.mono.template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "buildNumber": "1",
   "scripts": {
     "web": "cross-env EXPO_NO_DOTENV=1 expo start --web",
