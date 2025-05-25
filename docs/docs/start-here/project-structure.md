@@ -15,7 +15,7 @@ If you open the new project you will see the following structure:
  ┃ ┣ 📄 reactQuery.ts   ## React Query Configuration.
  ┃ ┗ 📁 auth
  ┃   ┣ 📄 auth.api.ts   ## Managing the API for the auth module.
- ┃   ┗ 📄 auth.login.queries.ts   ## Managing query hooks related to login in the auth module.
+ ┃   ┗ 📄 auth.queries.ts   ## Managing query hooks in the auth module.
  ┃
  ┣ 📁 assets     ## Contains static assets.
  ┃ ┣ 📁 fonts
@@ -41,7 +41,6 @@ If you open the new project you will see the following structure:
  ┃ ┣ 📄 config.constant.ts   ## Configuration values for the entire application retrieved from .env
  ┃ ┣ 📄 size.constant.ts   ## Pre-calculated size values for responsive layout.
  ┃ ┣ 📄 theme.constant.ts   ## Define the theme, colors, default styles, and variants for styling.
- ┃ ┣ 📄 date.constant.ts   ## Predefined values for date handling.
  ┃ ┗ ...
  ┃
  ┣ 📁 helpers   ## Utility functions.
