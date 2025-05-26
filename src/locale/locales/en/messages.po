@@ -29,8 +29,8 @@ msgstr "About us"
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Authentication flow implementation using Zustand and react-native-mmkv"
 
-#: src/screens/Introduction/introduction.screen.tsx:24
-#: src/navigation/main.navigation.tsx:43
+#: src/screens/Introduction/introduction.screen.tsx:26
+#: src/navigation/main.navigation.tsx:47
 msgid "Base components"
 msgstr "Base components"
 
@@ -115,12 +115,12 @@ msgstr "Continue"
 msgid "Customizable UI built with Shopify/restyle"
 msgstr "Customizable UI built with Shopify/restyle"
 
-#: src/screens/settings/settings.screen.tsx:24
+#: src/screens/settings/settings.screen.tsx:22
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/screens/Introduction/introduction.screen.tsx:32
-#: src/navigation/main.navigation.tsx:68
+#: src/screens/Introduction/introduction.screen.tsx:34
+#: src/navigation/main.navigation.tsx:72
 msgid "Demo list query"
 msgstr "Demo list query"
 
@@ -156,11 +156,11 @@ msgstr "Extra large warning text"
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
-#: src/navigation/main.navigation.tsx:50
+#: src/navigation/main.navigation.tsx:54
 msgid "Flash list"
 msgstr "Flash list"
 
-#: src/screens/Introduction/introduction.screen.tsx:28
+#: src/screens/Introduction/introduction.screen.tsx:30
 msgid "Flash List"
 msgstr "Flash List"
 
@@ -205,8 +205,8 @@ msgstr "Introduction"
 msgid "Key Features"
 msgstr "Key Features"
 
-#: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:63
+#: src/screens/settings/settings.screen.tsx:38
+#: src/navigation/main.navigation.tsx:67
 msgid "Language"
 msgstr "Language"
 
@@ -282,6 +282,11 @@ msgstr "Password should not be empty"
 msgid "Performance optimization with multiple compilation techniques"
 msgstr "Performance optimization with multiple compilation techniques"
 
+#: src/screens/style/style.restyle.tsx:39
+#: src/screens/style/style.native.tsx:58
+msgid "Performance Test"
+msgstr "Performance Test"
+
 #: src/components/global/global.modal.network.component.tsx:54
 msgid "Please try reconnecting"
 msgstr "Please try reconnecting"
@@ -326,8 +331,8 @@ msgstr "Search"
 msgid "see more"
 msgstr "see more"
 
-#: src/screens/Introduction/introduction.screen.tsx:36
-#: src/navigation/main.navigation.tsx:57
+#: src/screens/Introduction/introduction.screen.tsx:46
+#: src/navigation/main.navigation.tsx:61
 msgid "Settings"
 msgstr "Settings"
 
@@ -339,6 +344,10 @@ msgstr "Share"
 msgid "Shares"
 msgstr "Shares"
 
+#: src/screens/style/style.restyle.tsx:33
+msgid "Shopify/Restyle"
+msgstr "Shopify/Restyle"
+
 #: src/screens/Introduction/introduction.base.screen.tsx:69
 msgid "Small error text"
 msgstr "Small error text"
@@ -347,6 +356,20 @@ msgstr "Small error text"
 #: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Something went wrong"
+
+#: src/screens/Introduction/introduction.screen.tsx:38
+#: src/navigation/main.navigation.tsx:77
+msgid "Style native"
+msgstr "Style native"
+
+#: src/screens/Introduction/introduction.screen.tsx:42
+#: src/navigation/main.navigation.tsx:82
+msgid "Style restyle"
+msgstr "Style restyle"
+
+#: src/screens/style/style.native.tsx:54
+msgid "StyleSheet"
+msgstr "StyleSheet"
 
 #: src/screens/about-us/aboutUs.screen.tsx:147
 msgid "Support for multi-environment builds (Production, Staging, Development)"

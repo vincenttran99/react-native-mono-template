@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, Switch } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import React from "react";
+import { StyleSheet, Switch } from "react-native";
 import { useSystemStore } from "@/store/system.store";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";

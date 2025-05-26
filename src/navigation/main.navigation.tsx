@@ -7,6 +7,8 @@ import {
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
   NAVIGATION_DOG_SCREEN,
+  NAVIGATION_STYLE_NATIVE_SCREEN,
+  NAVIGATION_STYLE_RESTYLE_SCREEN,
 } from "@/constants/navigation.constant";
 import React from "react";
 import SettingsScreen from "@/screens/settings/settings.screen";
@@ -18,6 +20,8 @@ import TabNavigation from "./tab.navigation";
 import IntroductionFlashlistScreen from "@/screens/Introduction/introduction.flashlist.screen";
 import IntroductionBaseScreen from "@/screens/Introduction/introduction.base.screen";
 import DogScreen from "@/screens/dog/dog.screen";
+import StyleNativeScreen from "@/screens/style/style.native";
+import StyleRestyleScreen from "@/screens/style/style.restyle";
 
 const StackNavigator = createNativeStackNavigator();
 
@@ -67,6 +71,16 @@ const MainNavigator = () => {
         name={NAVIGATION_DOG_SCREEN}
         options={{ title: _(msg`Demo list query`) }}
         component={DogScreen}
+      />
+      <StackNavigator.Screen
+        name={NAVIGATION_STYLE_NATIVE_SCREEN}
+        options={{ title: _(msg`Style native`) }}
+        component={StyleNativeScreen}
+      />
+      <StackNavigator.Screen
+        name={NAVIGATION_STYLE_RESTYLE_SCREEN}
+        options={{ title: _(msg`Style restyle`) }}
+        component={StyleRestyleScreen}
       />
     </StackNavigator.Navigator>
   );
