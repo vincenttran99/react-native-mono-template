@@ -131,7 +131,7 @@ export const useAuthStore = create<IAuthStore>()(
        * Storage configuration for persistence
        * Uses MMKV storage for high-performance persistence
        */
-      name: "default-storage",
+      name: "auth-storage",
       storage: createJSONStorage(() => zustandStorage),
     }
   )

@@ -46,7 +46,7 @@ export const useSystemStore = create<ISystemStore>()(
       },
     }),
     {
-      name: "default-storage",
+      name: "system-storage",
       storage: createJSONStorage(() => zustandStorage),
       partialize: (state) => {
         // Exclude 'maintenanceMode' from persisted state

@@ -34,7 +34,7 @@ export const useProfileStore = create<IAuthStore>()(
       },
     }),
     {
-      name: "default-storage",
+      name: "profile-storage",
       storage: createJSONStorage(() => zustandStorage),
     }
   )
