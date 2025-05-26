@@ -275,8 +275,8 @@ export async function createTriggerNotificationHelper({
 
       // Đăng ký kênh thông báo cho Android
       if (Platform.OS === "android") {
-        await setNotificationChannelAsync("mono-template", {
-          name: "mono-template",
+        await setNotificationChannelAsync(CONFIG.FIREBASE_DEFAULT_CHANNEL_ID, {
+          name: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
           importance: AndroidImportance.HIGH,
           vibrationPattern: [0, 250, 250, 250],
           lightColor: CONFIG.PRIMARY_COLOR,
