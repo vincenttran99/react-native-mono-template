@@ -28,7 +28,13 @@ The command will create an expo app named MyApp and install all the dependencies
 
 ## Running the app
 
-If the installation was successful, the created app should be ready to use, and because we are using the expo custom dev client, you may launch the app on your simulator or device by running the following command:
+Add **_google-services.json_** (for Android) and **_GoogleService-Info.plist_** (for iOS) to the root folder and run the command::
+
+```bash
+yarn prebuild
+```
+
+If everything is fine, android and ios folders will be created. The created app should be ready to use. You may launch the app on your simulator or device:
 
 ```bash
 # Run the app on iOS simulator
