@@ -1,19 +1,5 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import {
-  addNotificationReceivedListener,
-  addNotificationResponseReceivedListener,
-  AndroidImportance,
-  cancelScheduledNotificationAsync,
-  getLastNotificationResponseAsync,
-  getPermissionsAsync,
-  removeNotificationSubscription,
-  requestPermissionsAsync,
-  SchedulableTriggerInputTypes,
-  scheduleNotificationAsync,
-  setNotificationChannelAsync,
-  setNotificationHandler,
-} from "expo-notifications";
 import { isDevice } from "expo-device";
 import messaging from "@react-native-firebase/messaging";
 import { AppState, Platform } from "react-native";
@@ -23,6 +9,13 @@ import {
   getTokenHelper,
   setFcmTokenHelper,
 } from "./storage.helper";
+import notifee, {
+  AndroidImportance,
+  AndroidNotificationSetting,
+  EventType,
+  TimestampTrigger,
+  TriggerType,
+} from "@notifee/react-native";
 
 dayjs.extend(utc);
 
@@ -31,30 +24,25 @@ dayjs.extend(utc);
  */
 export async function requestUserPermissionHepler() {
   if (isDevice) {
-    const { status: existingStatus } = await getPermissionsAsync();
-    let finalStatus = existingStatus;
-
-    if (existingStatus !== "granted") {
-      const { status } = await requestPermissionsAsync();
-      finalStatus = status;
-    }
-
-    console.log("Authorization status:", finalStatus);
-
-    if (finalStatus !== "granted") {
-      console.log("Failed to get push token for push notification!");
-      return;
-    }
+    let authStatus = await notifee.requestPermission();
+    // const enabled =
+    //     authStatus === messaging.AuthorizationStatus.AUTHORIZED || authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+    console.log("Authorization status:", authStatus.authorizationStatus);
+    // if (authStatus.authorizationStatus === AuthorizationStatus.AUTHORIZED || authStatus.authorizationStatus === AuthorizationStatus.PROVISIONAL) {
+    //     console.log("Authorization status:", authStatus);
+    // }
   } else {
     console.log("Must use physical device for Push Notifications");
   }
 }
 
 export async function createDefaultChannelsHelper() {
-  await setNotificationChannelAsync("default", {
-    name: "Default Channel",
-    importance: AndroidImportance.HIGH,
+  await notifee.createChannel({
+    id: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
+    name: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
     vibrationPattern: [0, 250, 250, 250],
+    importance: AndroidImportance.HIGH,
+    // sound: "notification.wav"
   });
 }
 
@@ -67,6 +55,8 @@ export async function getFCMTokenHelper() {
       }
 
       const token = await messaging().getToken();
+      console.log(token, "token");
+
       if (token) {
         setFcmTokenHelper(token);
         return token;
@@ -81,43 +71,53 @@ export async function getFCMTokenHelper() {
 }
 
 export function setupNotificationHelper() {
-  // Cấu hình xử lý thông báo khi ứng dụng đang chạy
-  setNotificationHandler({
-    handleNotification: async (notification) => ({
-      shouldShowAlert: true,
-      shouldPlaySound: true,
-      shouldSetBadge: true,
-    }),
-  });
-
   // Xử lý thông báo từ Firebase khi ứng dụng đang chạy
   messaging().onMessage(async (remoteMessage) => {
+    if (!remoteMessage.notification) {
+      return;
+    }
     console.log(
       "notification from foreground state....",
       remoteMessage,
       AppState.currentState
     );
 
-    await scheduleNotificationAsync({
-      content: {
-        title: remoteMessage.notification?.title || "",
-        body: remoteMessage.notification?.body || "",
-        data: remoteMessage.data || {},
-        // sound: remoteMessage.notification?.sound || "notification",
-        badge: 1,
+    await notifee.displayNotification({
+      title: remoteMessage.notification?.title,
+      body: remoteMessage.notification?.body || "",
+      data: remoteMessage.data,
+      android: {
+        channelId: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
+        pressAction: {
+          id: "default",
+        },
+        ...(remoteMessage?.data?.fcm_options?.image
+          ? { largeIcon: remoteMessage?.data?.fcm_options?.image }
+          : {}),
+        // sound: remoteMessage.notification?.sound || 'notification',
+        smallIcon: "ic_notification",
+        // color: Config.LOGO_NOTIFICATION_COLOR_ANDROID,
+        importance: AndroidImportance.HIGH,
+      },
+      ios: {
+        // sound: remoteMessage.notification?.sound || 'notification.MP3',
+        foregroundPresentationOptions: {
+          badge: true,
+          sound: true,
+          banner: true,
+          list: true,
+        },
         ...(remoteMessage?.data?.fcm_options?.image
           ? {
               attachments: [
                 {
+                  // Remote image
                   url: remoteMessage?.data?.fcm_options?.image || "",
-                  identifier: remoteMessage?.data?.fcm_options?.image || "",
-                  type: "image",
                 },
               ],
             }
           : {}),
       },
-      trigger: null, // Hiển thị ngay lập tức
     });
   });
 
@@ -144,21 +144,15 @@ export function setupNotificationHelper() {
     // Handle logic
   });
 
-  // Xử lý sự kiện khi người dùng nhấn vào thông báo
-  const notificationListener = addNotificationReceivedListener(
-    (notification) => {
-      console.log("Notification received in foreground!", notification);
-    }
-  );
+  notifee.onBackgroundEvent(async ({ type, detail }) => {
+    console.log("onBackgroundEvent");
 
-  // Xử lý sự kiện khi người dùng nhấn vào thông báo để mở ứng dụng
-  const responseListener = addNotificationResponseReceivedListener(
-    (response) => {
-      console.log("Notification response received!", response);
-      const data: any = response.notification.request.content.data;
-      // Handle logic
+    if (type !== EventType.PRESS) {
+      return;
     }
-  );
+
+    // Handle logic
+  });
 
   messaging()
     .subscribeToTopic("all")
@@ -173,158 +167,32 @@ export function setupNotificationHelper() {
     }
   });
 
-  // Trả về hàm dọn dẹp để hủy đăng ký các listener khi không cần thiết
-  return () => {
-    removeNotificationSubscription(notificationListener);
-    removeNotificationSubscription(responseListener);
-  };
+  notifee.onForegroundEvent(({ type, detail }) => {
+    console.log("onForeground event", type, detail);
+    switch (type) {
+      case EventType.DISMISSED:
+        console.log("User dismissed notification", detail);
+        break;
+      case EventType.PRESS:
+        // Handle logic
+
+        console.log("User pressed notification", detail);
+        break;
+    }
+  });
 }
 
 export async function bootstrapHelper() {
   // Kiểm tra xem ứng dụng có được mở từ thông báo không
-  const lastNotificationResponse = await getLastNotificationResponseAsync();
-  console.log(lastNotificationResponse, "lastNotificationResponse");
+  const initialNotification = await notifee.getInitialNotification();
+  console.log(initialNotification, "lastNotificationResponse");
 
-  if (lastNotificationResponse) {
+  if (initialNotification) {
     console.log(
       "Notification caused application to open",
-      lastNotificationResponse.notification
+      initialNotification.notification
     );
-    const data: any =
-      lastNotificationResponse.notification.request.content.data;
+
     // Handle logic
   }
-}
-
-/**
- * File
- */
-//   export async function updateFile(
-//     filePath: string,
-//     folderName: string,
-//     fileName?: string
-//   ): Promise<{
-//     ref?: string;
-//     downloadUrl?: string;
-//   }> {
-//     let ref = `/${folderName}/${
-//       fileName ||
-//       dayjs.utc().format(`img_HH_mm_SSS_DD_MM_YY`) +
-//         (FileHelper.getFileExtension(filePath) &&
-//           "." + FileHelper.getFileExtension(filePath))
-//     }`;
-//     let reference = storage().ref(ref);
-//     return await reference
-//       .putFile(filePath)
-//       .then(async (result) => {
-//         if (result.state === "success") {
-//           let downloadUrl = await reference.getDownloadURL();
-//           return {
-//             downloadUrl,
-//             ref,
-//           };
-//         }
-//         return {};
-//       })
-//       .catch(() => {
-//         return {};
-//       });
-//   }
-
-//   export async function deleteFile(ref: string): Promise<boolean> {
-//     let reference = storage().ref(ref);
-//     return await reference
-//       .delete()
-//       .then(async (result) => {
-//         return true;
-//       })
-//       .catch((error) => {
-//         console.log(error, "doirnfworungpi");
-//         return false;
-//       });
-//   }
-
-export async function createTriggerNotificationHelper({
-  title = "",
-  data,
-  notificationId = "default",
-  image,
-  oldNotificationId,
-  time = new Date(),
-  body = "",
-}: {
-  title: string;
-  body?: string;
-  image?: string | number;
-  notificationId: string;
-  time: Date;
-  data?: { screen: string; param?: any };
-  oldNotificationId?: string;
-}) {
-  try {
-    // Kiểm tra quyền thông báo
-    const { status } = await getPermissionsAsync();
-
-    if (status === "granted") {
-      // Hủy thông báo cũ nếu có
-      if (oldNotificationId) {
-        await cancelScheduledNotificationAsync(oldNotificationId).catch(
-          (error) => console.log(error, "oodood")
-        );
-      }
-
-      // Đăng ký kênh thông báo cho Android
-      if (Platform.OS === "android") {
-        await setNotificationChannelAsync(CONFIG.FIREBASE_DEFAULT_CHANNEL_ID, {
-          name: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
-          importance: AndroidImportance.HIGH,
-          vibrationPattern: [0, 250, 250, 250],
-          lightColor: CONFIG.PRIMARY_COLOR,
-          // sound: "notification",
-        });
-      }
-
-      // Lên lịch thông báo
-      await scheduleNotificationAsync({
-        content: {
-          title: title,
-          body: body,
-          data: data || {},
-          // sound: "notification",
-          badge: 1,
-          ...(image
-            ? {
-                attachments: [
-                  {
-                    url: typeof image === "string" ? image : "",
-                    identifier: typeof image === "string" ? image : "",
-                    type: "image",
-                  },
-                ],
-              }
-            : {}),
-        },
-        trigger: {
-          date: time,
-          type: SchedulableTriggerInputTypes.DATE,
-        },
-        identifier: notificationId,
-      });
-
-      return true;
-    } else {
-      // Mở cài đặt quyền thông báo
-      await requestPermissionsAsync();
-      return false;
-    }
-  } catch (error) {
-    console.log(error);
-    return false;
-  }
-}
-
-export async function deleteTriggerNotificationByIdHelper(id: string) {
-  await cancelScheduledNotificationAsync(id).catch((error) =>
-    console.log(error, "oofffdood")
-  );
 }

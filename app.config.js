@@ -194,7 +194,7 @@ module.exports = function () {
            * Push notification environment
            * "development" for testing, "production" for App Store
            */
-          "aps-environment": "development",
+          "aps-environment": "production",
         },
       },
 
@@ -270,6 +270,8 @@ module.exports = function () {
          */
         "@react-native-firebase/messaging",
 
+        "@notifee/react-native",
+
         /**
          * Localization support for multiple languages
          */
@@ -300,25 +302,25 @@ module.exports = function () {
         /**
          * Push notifications configuration
          */
-        [
-          "expo-notifications",
-          {
-            /**
-             * Icon displayed in notification tray
-             */
-            icon: "./src/assets/images/notification-icon.png",
+        // [
+        //   "expo-notifications",
+        //   {
+        //     /**
+        //      * Icon displayed in notification tray
+        //      */
+        //     icon: "./src/assets/images/notification-icon.png",
 
-            /**
-             * Color for notification icon background
-             */
-            color: configVars.PRIMARY_COLOR,
+        //     /**
+        //      * Color for notification icon background
+        //      */
+        //     color: configVars.PRIMARY_COLOR,
 
-            /**
-             * Enable receiving notifications when app is in background
-             */
-            enableBackgroundRemoteNotifications: true,
-          },
-        ],
+        //     /**
+        //      * Enable receiving notifications when app is in background
+        //      */
+        //     enableBackgroundRemoteNotifications: true,
+        //   },
+        // ],
 
         /**
          * Splash screen configuration

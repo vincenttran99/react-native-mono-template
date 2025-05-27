@@ -13,6 +13,7 @@ import { enableBatchedStateUpdates } from "@/helpers/hooks/state.hook";
 import {
   bootstrapHelper,
   createDefaultChannelsHelper,
+  getFCMTokenHelper,
   requestUserPermissionHepler,
   setupNotificationHelper,
 } from "@/helpers/firebase.helper";
@@ -59,6 +60,8 @@ const App = () => {
 
     // Set up notification handlers for foreground/background messages
     setupNotificationHelper();
+
+    getFCMTokenHelper();
 
     // Android-specific Firebase bootstrap process
     if (DEVICE.isAndroid) {
