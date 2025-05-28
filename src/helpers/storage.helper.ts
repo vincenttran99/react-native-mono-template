@@ -15,7 +15,7 @@ export function setFcmTokenHelper(token: string) {
   MMKVStorage.set("fcm_token", token);
 }
 
-export function getFcmTokenHelper() {
+export function getFcmTokenFromStorageHelper() {
   return MMKVStorage.getString("fcm_token");
 }
 

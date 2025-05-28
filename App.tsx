@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -11,11 +11,11 @@ import { enableFreeze } from "react-native-screens";
 import I18nProvider from "@/locale/i18n";
 import { enableBatchedStateUpdates } from "@/helpers/hooks/state.hook";
 import {
-  bootstrapHelper,
-  createDefaultChannelsHelper,
-  getFCMTokenHelper,
-  requestUserPermissionHepler,
-  setupNotificationHelper,
+  initializeNotificationsHelper,
+  createDefaultNotificationChannelsHelper,
+  getFcmTokenHelper,
+  requestNotificationPermissionHelper,
+  setupNotificationHandlersHelper,
 } from "@/helpers/firebase.helper";
 import AppNavigation from "@/navigation";
 
@@ -53,19 +53,19 @@ const App = () => {
    */
   useEffect(() => {
     // Request notification permissions from the user
-    requestUserPermissionHepler();
+    requestNotificationPermissionHelper();
 
     // Create default notification channels (required for Android)
-    createDefaultChannelsHelper();
+    createDefaultNotificationChannelsHelper();
 
     // Set up notification handlers for foreground/background messages
-    setupNotificationHelper();
+    setupNotificationHandlersHelper();
 
-    getFCMTokenHelper();
+    getFcmTokenHelper();
 
     // Android-specific Firebase bootstrap process
     if (DEVICE.isAndroid) {
-      bootstrapHelper().catch(console.error);
+      initializeNotificationsHelper().catch(console.error);
     }
   }, []);
 
