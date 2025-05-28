@@ -17,7 +17,7 @@ msgstr ""
 msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "3 or 4 times faster than normal scrolling screen"
 
-#: src/screens/about-us/aboutUs.screen.tsx:77
+#: src/screens/about-us/aboutUs.screen.tsx:78
 msgid "A template for your next React Native project, focusing on application performance optimization: Expo, TypeScript, ReStyle, Flashlist, Legend list, Husky, Lint-Staged, react-navigation, react-query, react-hook-form, Lingui, I18n, etc..."
 msgstr "A template for your next React Native project, focusing on application performance optimization: Expo, TypeScript, ReStyle, Flashlist, Legend list, Husky, Lint-Staged, react-navigation, react-query, react-hook-form, Lingui, I18n, etc..."
 
@@ -25,7 +25,7 @@ msgstr "A template for your next React Native project, focusing on application p
 msgid "About us"
 msgstr "About us"
 
-#: src/screens/about-us/aboutUs.screen.tsx:150
+#: src/screens/about-us/aboutUs.screen.tsx:151
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Authentication flow implementation using Zustand and react-native-mmkv"
 
@@ -87,7 +87,7 @@ msgstr "Checkbox"
 msgid "Chip"
 msgstr "Chip"
 
-#: src/screens/about-us/aboutUs.screen.tsx:149
+#: src/screens/about-us/aboutUs.screen.tsx:150
 msgid "Clear project structure with Absolute Imports"
 msgstr "Clear project structure with Absolute Imports"
 
@@ -111,7 +111,7 @@ msgstr "Confirm"
 msgid "Continue"
 msgstr "Continue"
 
-#: src/screens/about-us/aboutUs.screen.tsx:146
+#: src/screens/about-us/aboutUs.screen.tsx:147
 msgid "Customizable UI built with Shopify/restyle"
 msgstr "Customizable UI built with Shopify/restyle"
 
@@ -128,11 +128,11 @@ msgstr "Demo list query"
 msgid "Divider"
 msgstr "Divider"
 
-#: src/screens/about-us/aboutUs.screen.tsx:155
+#: src/screens/about-us/aboutUs.screen.tsx:156
 msgid "E2E testing capabilities with Maestro for comprehensive app testing"
 msgstr "E2E testing capabilities with Maestro for comprehensive app testing"
 
-#: src/screens/about-us/aboutUs.screen.tsx:143
+#: src/screens/about-us/aboutUs.screen.tsx:144
 msgid "Easy multilingual integration within 30 seconds with Lingui"
 msgstr "Easy multilingual integration within 30 seconds with Lingui"
 
@@ -173,11 +173,11 @@ msgstr "Hello"
 msgid "hide"
 msgstr "hide"
 
-#: src/screens/about-us/aboutUs.screen.tsx:148
+#: src/screens/about-us/aboutUs.screen.tsx:149
 msgid "Husky for Git Hooks: Automate git hooks and enforce code standards"
 msgstr "Husky for Git Hooks: Automate git hooks and enforce code standards"
 
-#: src/screens/about-us/aboutUs.screen.tsx:107
+#: src/screens/about-us/aboutUs.screen.tsx:108
 msgid "I am committed to continuously improving this template to build React Native applications faster. To achieve this goal, I regularly add new features and fix discovered bugs."
 msgstr "I am committed to continuously improving this template to build React Native applications faster. To achieve this goal, I regularly add new features and fix discovered bugs."
 
@@ -189,7 +189,7 @@ msgstr "Icon Button"
 msgid "Ignore"
 msgstr "Ignore"
 
-#: src/screens/about-us/aboutUs.screen.tsx:144
+#: src/screens/about-us/aboutUs.screen.tsx:145
 msgid "Interesting components like multi-format text, collapsible/expandable text"
 msgstr "Interesting components like multi-format text, collapsible/expandable text"
 
@@ -197,11 +197,11 @@ msgstr "Interesting components like multi-format text, collapsible/expandable te
 msgid "Introduce"
 msgstr "Introduce"
 
-#: src/screens/about-us/aboutUs.screen.tsx:73
+#: src/screens/about-us/aboutUs.screen.tsx:74
 msgid "Introduction"
 msgstr "Introduction"
 
-#: src/screens/about-us/aboutUs.screen.tsx:85
+#: src/screens/about-us/aboutUs.screen.tsx:86
 msgid "Key Features"
 msgstr "Key Features"
 
@@ -214,7 +214,7 @@ msgstr "Language"
 msgid "Large success text"
 msgstr "Large success text"
 
-#: src/screens/about-us/aboutUs.screen.tsx:142
+#: src/screens/about-us/aboutUs.screen.tsx:143
 msgid "Latest Expo SDK: Leverage the Expo ecosystem to the fullest"
 msgstr "Latest Expo SDK: Leverage the Expo ecosystem to the fullest"
 
@@ -250,7 +250,7 @@ msgstr "Login to continue"
 msgid "Lost network connection"
 msgstr "Lost network connection"
 
-#: src/screens/about-us/aboutUs.screen.tsx:103
+#: src/screens/about-us/aboutUs.screen.tsx:104
 msgid "Maintenance and Development"
 msgstr "Maintenance and Development"
 
@@ -278,7 +278,7 @@ msgstr "No name"
 msgid "Password should not be empty"
 msgstr "Password should not be empty"
 
-#: src/screens/about-us/aboutUs.screen.tsx:141
+#: src/screens/about-us/aboutUs.screen.tsx:142
 msgid "Performance optimization with multiple compilation techniques"
 msgstr "Performance optimization with multiple compilation techniques"
 
@@ -307,7 +307,7 @@ msgstr "Purpose"
 msgid "Radio"
 msgstr "Radio"
 
-#: src/screens/about-us/aboutUs.screen.tsx:151
+#: src/screens/about-us/aboutUs.screen.tsx:152
 msgid "React Query and axios for efficient data fetching"
 msgstr "React Query and axios for efficient data fetching"
 
@@ -315,8 +315,8 @@ msgstr "React Query and axios for efficient data fetching"
 msgid "Render time: "
 msgstr "Render time: "
 
-#: src/screens/about-us/aboutUs.screen.tsx:152
 #: src/screens/about-us/aboutUs.screen.tsx:153
+#: src/screens/about-us/aboutUs.screen.tsx:154
 msgid "Robust form handling with react-hook-form"
 msgstr "Robust form handling with react-hook-form"
 
@@ -371,7 +371,7 @@ msgstr "Style restyle"
 msgid "StyleSheet"
 msgstr "StyleSheet"
 
-#: src/screens/about-us/aboutUs.screen.tsx:147
+#: src/screens/about-us/aboutUs.screen.tsx:148
 msgid "Support for multi-environment builds (Production, Staging, Development)"
 msgstr "Support for multi-environment builds (Production, Staging, Development)"
 
@@ -395,23 +395,23 @@ msgstr "Text input"
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 
-#: src/screens/about-us/aboutUs.screen.tsx:130
+#: src/screens/about-us/aboutUs.screen.tsx:131
 msgid "This project is licensed under MIT."
 msgstr "This project is licensed under MIT."
 
-#: src/screens/about-us/aboutUs.screen.tsx:145
+#: src/screens/about-us/aboutUs.screen.tsx:146
 msgid "TypeScript to enhance code quality and prevent errors"
 msgstr "TypeScript to enhance code quality and prevent errors"
 
-#: src/screens/about-us/aboutUs.screen.tsx:154
+#: src/screens/about-us/aboutUs.screen.tsx:155
 msgid "Unit testing setup with Jest and React Testing Library"
 msgstr "Unit testing setup with Jest and React Testing Library"
 
-#: src/screens/about-us/aboutUs.screen.tsx:120
+#: src/screens/about-us/aboutUs.screen.tsx:121
 msgid "View Documentation"
 msgstr "View Documentation"
 
-#: src/screens/about-us/aboutUs.screen.tsx:115
+#: src/screens/about-us/aboutUs.screen.tsx:116
 msgid "View on GitHub"
 msgstr "View on GitHub"
 

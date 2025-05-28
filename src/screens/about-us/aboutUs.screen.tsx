@@ -46,6 +46,7 @@ export default function AboutUsScreen() {
               : require("@/assets/images/splash-icon-dark.png")
           }
           style={styles.logo}
+          contentFit="contain"
         />
         <BText variant="xxxl" fontWeight="bold" marginTop="md">
           React Native Mono Template
@@ -169,7 +170,6 @@ const styles = StyleSheet.create({
   logo: {
     width: DEVICE.width * 0.4,
     height: DEVICE.width * 0.4,
-    resizeMode: "contain",
   },
   badgesContainer: {
     flexDirection: "row",

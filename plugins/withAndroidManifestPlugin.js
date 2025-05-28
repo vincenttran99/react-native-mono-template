@@ -2,11 +2,11 @@ const { withAndroidManifest } = require("@expo/config-plugins");
 
 /**
  * Custom Expo config plugin to modify the Android manifest
- * 
+ *
  * This plugin resolves conflicts between Firebase messaging configuration
  * and Expo's default configuration by adding tools:replace attributes
  * to specific meta-data elements in the AndroidManifest.xml file.
- * 
+ *
  * Without these modifications, the build process might fail with duplicate
  * declaration errors when both Expo and Firebase try to define the same
  * notification properties.
@@ -52,6 +52,30 @@ const withAndroidManifestPlugin = (config) => {
     }
 
     /**
+     * Find the Firebase notification icon meta-data element
+     * This element defines the default icon for Firebase notifications
+     */
+    const firebaseNotificationIconMetaData = application["meta-data"].find(
+      (metaData) =>
+        metaData?.$?.["android:name"] ===
+        "com.google.firebase.messaging.default_notification_icon"
+    );
+
+    /**
+     * If the notification icon meta-data element doesn't exist, add it
+     * This sets the default notification icon to ic_notification in mipmap folder
+     */
+    if (!firebaseNotificationIconMetaData) {
+      application["meta-data"].push({
+        $: {
+          "android:name":
+            "com.google.firebase.messaging.default_notification_icon",
+          "android:resource": "@mipmap/ic_notification",
+        },
+      });
+    }
+
+    /**
      * Find the Firebase notification color meta-data element
      * This element defines the default color for Firebase notifications
      * We need to add tools:replace to prevent conflicts with Expo's configuration
@@ -70,6 +94,19 @@ const withAndroidManifestPlugin = (config) => {
     if (firebaseNotificationColorMetaData) {
       // Add tools:replace attribute to override any conflicting declarations
       firebaseNotificationColorMetaData.$["tools:replace"] = "android:resource";
+    } else {
+      /**
+       * If the notification color meta-data doesn't exist, add it with tools:replace
+       * This sets the default notification color to the notification color in colors.xml
+       */
+      application["meta-data"].push({
+        $: {
+          "android:name":
+            "com.google.firebase.messaging.default_notification_color",
+          "android:resource": "@color/notification_color",
+          "tools:replace": "android:resource",
+        },
+      });
     }
 
     /**

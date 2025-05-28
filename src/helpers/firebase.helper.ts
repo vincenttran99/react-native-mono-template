@@ -55,7 +55,6 @@ export async function getFCMTokenHelper() {
       }
 
       const token = await messaging().getToken();
-      console.log(token, "token");
 
       if (token) {
         setFcmTokenHelper(token);

@@ -240,6 +240,22 @@ module.exports = function () {
           "android.permission.READ_MEDIA_IMAGES",
           "android.permission.READ_EXTERNAL_STORAGE",
           "android.permission.CAMERA",
+          "android.permission.RECEIVE_BOOT_COMPLETED",
+        ],
+
+        /**
+         * Background modes for Android
+         * Enables receiving push notifications when app is in background
+         */
+        intentFilters: [
+          {
+            action: "android.intent.action.MAIN",
+            category: ["android.intent.category.LAUNCHER"],
+          },
+          {
+            action: "android.intent.action.BOOT_COMPLETED",
+            category: ["android.intent.category.DEFAULT"],
+          },
         ],
       },
 
@@ -270,8 +286,6 @@ module.exports = function () {
          */
         "@react-native-firebase/messaging",
 
-        "@notifee/react-native",
-
         /**
          * Localization support for multiple languages
          */
@@ -296,31 +310,13 @@ module.exports = function () {
                */
               useFrameworks: "static",
             },
+            android: {
+              extraMavenRepos: [
+                "../../node_modules/@notifee/react-native/android/libs",
+              ],
+            },
           },
         ],
-
-        /**
-         * Push notifications configuration
-         */
-        // [
-        //   "expo-notifications",
-        //   {
-        //     /**
-        //      * Icon displayed in notification tray
-        //      */
-        //     icon: "./src/assets/images/notification-icon.png",
-
-        //     /**
-        //      * Color for notification icon background
-        //      */
-        //     color: configVars.PRIMARY_COLOR,
-
-        //     /**
-        //      * Enable receiving notifications when app is in background
-        //      */
-        //     enableBackgroundRemoteNotifications: true,
-        //   },
-        // ],
 
         /**
          * Splash screen configuration
