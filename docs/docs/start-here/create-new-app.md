@@ -34,6 +34,13 @@ Add **_google-services.json_** (for Android) and **_GoogleService-Info.plist_** 
 yarn prebuild
 ```
 
+Next, make sure the image file `src/assets/images/notification-icon.png` exists and run the following command to generate notification icons for Android (This is necessary after you first run `prebuild` to create the `android` directory or after running `prebuild --clean`)
+
+```bash
+# Create notification icons for android
+yarn generate-images
+```
+
 If everything is fine, android and ios folders will be created. The created app should be ready to use. You may launch the app on your simulator or device:
 
 ```bash
