@@ -37,16 +37,13 @@ const sidebars: SidebarsConfig = {
         "start-here/environment-variables",
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'UI Components & Theming',
-    //   collapsible: true,
-    //   collapsed: true,
-    //   items: [
-    //     'ui-components/introduction',
-    //     // Thêm các trang UI Components khác ở đây
-    //   ],
-    // },
+    {
+      type: "category",
+      label: "UI Components & Theming",
+      collapsible: true,
+      collapsed: true,
+      items: ["ui-components/ui-and-theming"],
+    },
     // {
     //   type: "category",
     //   label: "Guides",
