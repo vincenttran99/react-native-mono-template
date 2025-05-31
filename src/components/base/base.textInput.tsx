@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import { TextInput, TextInputProps } from "react-native";
+import { GestureResponderEvent, TextInput, TextInputProps } from "react-native";
 import {
   backgroundColor,
   BackgroundColorProps,
@@ -28,7 +28,7 @@ import { Theme } from "@/constants/theme.constant";
 import { FontSize } from "@/constants/sizes.constant";
 import { StyleSheet } from "react-native";
 import BView, { BViewProps } from "./base.view";
-import BIcon, { BIconProps } from "./base.icon";
+import BIconButton, { BIconButtonProps } from "./base.iconButton";
 
 export type BTextInputProps = SpacingProps<Theme> &
   BorderProps<Theme> &
@@ -43,9 +43,11 @@ export type BTextInputProps = SpacingProps<Theme> &
   TextInputProps & {
     error?: boolean;
     leftIcon?: string;
-    leftIconProps?: Omit<BIconProps, "name">;
+    onLeftIconPress?: (event: GestureResponderEvent) => void;
+    leftIconProps?: Omit<BIconButtonProps, "icon">;
     rightIcon?: string;
-    rightIconProps?: Omit<BIconProps, "name">;
+    onRightIconPress?: (event: GestureResponderEvent) => void;
+    rightIconProps?: Omit<BIconButtonProps, "icon">;
     containerProps?: BViewProps;
     containerBackgroundColor?: ResponsiveValue<
       keyof Theme["colors"],
@@ -90,8 +92,10 @@ const BTextInput = forwardRef(
       style,
       error,
       leftIcon,
+      onLeftIconPress,
       leftIconProps,
       rightIcon,
+      onRightIconPress,
       rightIconProps,
       containerProps,
       containerBackgroundColor,
@@ -120,10 +124,11 @@ const BTextInput = forwardRef(
         {...containerProps}
       >
         {leftIcon && (
-          <BIcon
-            name={leftIcon}
-            size={FontSize.md}
-            color={error ? "error" : props?.color || "reverse"}
+          <BIconButton
+            icon={leftIcon}
+            padding="none"
+            iconColor={error ? "error" : props?.color || "reverse"}
+            onPress={onLeftIconPress}
             {...leftIconProps}
           />
         )}
@@ -138,10 +143,10 @@ const BTextInput = forwardRef(
           {...props}
         />
         {rightIcon && (
-          <BIcon
-            name={rightIcon}
-            size={FontSize.md}
-            color={error ? "error" : props?.color || "reverse"}
+          <BIconButton
+            icon={rightIcon}
+            padding="none"
+            onPress={onRightIconPress}
             {...rightIconProps}
           />
         )}

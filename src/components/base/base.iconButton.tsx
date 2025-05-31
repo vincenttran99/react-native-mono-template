@@ -6,7 +6,7 @@ import { ColorKey, Theme } from "@/constants/theme.constant";
 import { Space } from "@/constants/sizes.constant";
 import { ResponsiveValue } from "@shopify/restyle";
 
-type BIconButtonProps = BPressableProps & {
+export type BIconButtonProps = BPressableProps & {
   size?: ResponsiveValue<keyof Theme["spacing"], Theme["breakpoints"]>;
   iconColor?: ColorKey;
   icon: string;
