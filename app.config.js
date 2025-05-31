@@ -384,6 +384,7 @@ module.exports = function () {
          * Provides TypeScript type checking for navigation
          */
         typedRoutes: true,
+        reactCompiler: true,
       },
     },
   };
