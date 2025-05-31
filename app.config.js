@@ -294,7 +294,12 @@ module.exports = function () {
         /**
          * Custom font support
          */
-        "expo-font",
+        [
+          "expo-font",
+          {
+            fonts: ["./src/assets/fonts/SpaceMono-Regular.ttf"],
+          },
+        ],
 
         /**
          * Configure build properties
