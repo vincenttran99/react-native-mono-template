@@ -44,9 +44,9 @@ if ! command -v trans &> /dev/null; then
 fi
 
 # Set the default source language for translations
-# Uses DEFAULT_LANGUAGE_CODE from .env or falls back to "vi"
+# Uses DEFAULT_LANGUAGE_CODE from .env or falls back to "en"
 if [ -z "${DEFAULT_LANGUAGE_CODE:-}" ]; then
-  DEFAULT_LANG="vi"
+  DEFAULT_LANG="en"
   echo "⚠️ DEFAULT_LANGUAGE_CODE is not defined, using default: $DEFAULT_LANG"
 else
   DEFAULT_LANG="$DEFAULT_LANGUAGE_CODE"
@@ -89,7 +89,7 @@ for po in $STAGED_PO_FILES; do
   fi
   
   # Extract locale from directory name
-  # Example: src/locale/locales/vi/messages.po -> locale is "vi"
+  # Example: src/locale/locales/en/messages.po -> locale is "en"
   locale=$(basename "$(dirname "$po")")
   
   # Skip source language files that already exist in git
