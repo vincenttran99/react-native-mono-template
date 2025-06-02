@@ -32,7 +32,7 @@ With accumulated experience and knowledge, this Mono Template will serve as a so
 
 ## ⭐ Key Features
 
-- 🚀 Performance optimization with numerous compiled techniques
+- 🚀 Performance optimization with numerous compiled techniques, optimize with React Compiler
 - ✅ Latest Expo SDK: Leverage the best of the Expo ecosystem while maintaining full control over your app
 - 🌐 Easy multilingual integration in under 30 seconds with Lingui, automatic translation of installed languages, no need to remember keys for strings as in some traditional methods
 - 🧩 Interesting components like multi-format text, collapsible/expandable text, URL preview, simple dividers, etc.
