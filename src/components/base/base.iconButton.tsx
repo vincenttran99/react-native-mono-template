@@ -9,7 +9,7 @@ import { ResponsiveValue } from "@shopify/restyle";
 export type BIconButtonProps = BPressableProps & {
   size?: ResponsiveValue<keyof Theme["spacing"], Theme["breakpoints"]>;
   iconColor?: ColorKey;
-  icon: string;
+  icon: string | React.ReactNode;
 };
 
 const BIconButton = ({
@@ -20,11 +20,15 @@ const BIconButton = ({
 }: BIconButtonProps) => {
   return (
     <BPressable padding={size} borderRadius={size} {...props}>
-      <BIcon
-        name={icon}
-        color={iconColor || "reverse"}
-        size={Space[size] * 2}
-      />
+      {typeof icon === "string" ? (
+        <BIcon
+          name={icon}
+          color={iconColor || "reverse"}
+          size={Space[size] * 2}
+        />
+      ) : (
+        icon
+      )}
     </BPressable>
   );
 };
