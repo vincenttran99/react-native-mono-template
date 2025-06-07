@@ -56,3 +56,30 @@ export function countShortCharactersHelper(input: string): number {
   }
   return count;
 }
+
+/**
+ * replaceSvgColorsHelper
+ *
+ * This function updates all color-related attributes in an SVG string
+ * (e.g., `fill`, `stroke`, `stop-color`, etc.) to a new specified color.
+ * It supports HEX color formats and identifies the attributes using a regex pattern.
+ *
+ * @param {string} svgString - The SVG content as a string.
+ * @param {string} newColor - The new color to apply, typically in HEX format.
+ * @return {string} The updated SVG string with replaced color attributes.
+ */
+export function replaceSvgColorsHelper(
+  svgString: string,
+  newColor: string
+): string {
+  // Regular expression to find color attributes in the SVG string
+  const pattern =
+    /(fill|stroke|stop-color|color|flood-color|lighting-color)="#[a-fA-F0-9]{3,6}"/g;
+
+  // Replace all matched color attributes with the new color
+  const updatedSvg = svgString.replace(pattern, (match, attr) => {
+    return `${attr}="${newColor}"`;
+  });
+
+  return updatedSvg;
+}
