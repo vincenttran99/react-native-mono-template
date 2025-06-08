@@ -121,7 +121,7 @@ export default function IntroductionBaseScreen() {
       />
       <BTextInput
         leftIcon="email"
-        leftIconProps={{ color: "error" }}
+        leftIconProps={{ iconColor: "error" }}
         rightIcon="close"
         placeholder={_("Enter your email")}
         containerProps={{

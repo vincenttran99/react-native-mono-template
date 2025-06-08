@@ -42,10 +42,10 @@ export type BTextInputProps = SpacingProps<Theme> &
   TypographyProps<Theme> &
   TextInputProps & {
     error?: boolean;
-    leftIcon?: string;
+    leftIcon?: string | React.ReactNode;
     onLeftIconPress?: (event: GestureResponderEvent) => void;
     leftIconProps?: Omit<BIconButtonProps, "icon">;
-    rightIcon?: string;
+    rightIcon?: string | React.ReactNode;
     onRightIconPress?: (event: GestureResponderEvent) => void;
     rightIconProps?: Omit<BIconButtonProps, "icon">;
     containerProps?: BViewProps;
