@@ -43,6 +43,7 @@ export const LIGHT_THEME = createTheme({
     ground: "#D8D8D8",
     white: "#ffffff",
     black: "#000000",
+    absolute: "#ffffff",
 
     //shadow
     shadowLight: "rgba(0, 0, 0)",
@@ -208,6 +209,7 @@ export const DARK_THEME = createTheme({
     ground: "#202225",
     white: "#ffffff",
     black: "#000000",
+    absolute: "#000000",
 
     //shadow
     shadowLight: "rgba(0, 0, 0)",

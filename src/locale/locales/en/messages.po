@@ -103,7 +103,7 @@ msgstr "Comment"
 msgid "Comments"
 msgstr "Comments"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:193
+#: src/components/global/global.bottomSheetDialog.component.tsx:199
 msgid "Confirm"
 msgstr "Confirm"
 
@@ -185,7 +185,7 @@ msgstr "I am committed to continuously improving this template to build React Na
 msgid "Icon Button"
 msgstr "Icon Button"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:180
+#: src/components/global/global.bottomSheetDialog.component.tsx:183
 msgid "Ignore"
 msgstr "Ignore"
 

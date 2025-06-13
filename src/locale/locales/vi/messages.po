@@ -103,7 +103,7 @@ msgstr "Bình luận"
 msgid "Comments"
 msgstr "Nhận xét"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:193
+#: src/components/global/global.bottomSheetDialog.component.tsx:199
 msgid "Confirm"
 msgstr "Xác nhận"
 
@@ -185,7 +185,7 @@ msgstr "Tôi cam kết liên tục cải thiện mẫu này để xây dựng c�
 msgid "Icon Button"
 msgstr "Nút biểu tượng"
 
-#: src/components/global/global.bottomSheetDialog.component.tsx:180
+#: src/components/global/global.bottomSheetDialog.component.tsx:183
 msgid "Ignore"
 msgstr "Phớt lờ"
 

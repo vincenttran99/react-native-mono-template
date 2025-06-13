@@ -111,27 +111,20 @@ const GlobalBottomSheetDialog = (
     >
       <BottomSheetView style={{ flex: 1, justifyContent: "flex-end" }}>
         <BView
-          backgroundColor="background"
+          backgroundColor="absolute"
           style={{
             paddingHorizontal: MHS._24,
-            paddingTop: MHS._8,
+            paddingTop: MHS._16,
             paddingBottom: MHS._48,
             borderTopLeftRadius: MHS._40,
             borderTopRightRadius: MHS._40,
             gap: MHS._24,
           }}
         >
-          {/*<BView style={{*/}
-          {/*    backgroundColor: theme.colors.outline,*/}
-          {/*    width: MHS._36,*/}
-          {/*    height: MHS._3,*/}
-          {/*    alignSelf:'center'*/}
-          {/*}} />*/}
-
           {dataDialog?.title ? (
             <>
               <BText
-                variant={"md"}
+                variant={"xl"}
                 alignSelf={"center"}
                 numberOfLines={1}
                 fontWeight={"bold"}
@@ -147,18 +140,25 @@ const GlobalBottomSheetDialog = (
             </BView>
           ) : null}
           {dataDialog?.content ? (
-            <BText variant={"md"}>{dataDialog?.content}</BText>
+            <BText variant={"lg"} fontWeight={"600"} textAlign="center">
+              {dataDialog?.content}
+            </BText>
           ) : null}
 
           <BView
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
-            gap="md"
+            gap="lg"
           >
             <BButton
               size={"md"}
+              flex={1}
               outline
+              backgroundColor="errorLightest"
+              labelColor="error"
+              round
+              paddingVertical="sm"
               {...dataDialog?.negativeButton?.props}
               style={[
                 { flexGrow: 1, flex: 1 },
@@ -171,6 +171,9 @@ const GlobalBottomSheetDialog = (
             {dataDialog?.neutralButton ? (
               <BButton
                 size={"md"}
+                flex={1}
+                round
+                paddingVertical="sm"
                 {...dataDialog?.neutralButton?.props}
                 style={[
                   { flexGrow: 1, flex: 1 },
@@ -184,6 +187,9 @@ const GlobalBottomSheetDialog = (
             {dataDialog?.positiveButton ? (
               <BButton
                 size={"md"}
+                flex={1}
+                round
+                paddingVertical="sm"
                 {...dataDialog?.positiveButton?.props}
                 style={[
                   { flexGrow: 1, flex: 1 },
