@@ -1,40 +1,19 @@
 import { FontSize, Radius, Space } from "@/constants/sizes.constant";
+import { useSystemTheme } from "@/helpers/hooks/system.hook";
 import { msg } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
-import { useTheme } from "@shopify/restyle";
-import React, { useEffect, useMemo } from "react";
+import { BaseTheme } from "@shopify/restyle";
+import React, { useEffect, useRef, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 // StyleNativeScreen: Screen to test performance and demonstrate StyleSheet usage
 const StyleNativeScreen = () => {
+  // Get the styles from theme
+  const { styles } = useSystemTheme(createStyles);
   // Track render start time
-  const renderStartRef = React.useRef(performance.now());
+  const renderStartRef = useRef(performance.now());
   // State to store render duration message
-  const [renderDurationMsg, setRenderDurationMsg] = React.useState("");
-  // Get theme from Restyle
-  const theme = useTheme();
-  // Memoize styles to avoid unnecessary recalculations
-  const styles = useMemo(() => {
-    console.log("goi lai");
-    return StyleSheet.create({
-      container: {
-        flex: 1,
-        backgroundColor: theme.colors.background,
-        gap: Space.md,
-        padding: Space.md,
-      },
-      title: {
-        color: theme.colors.reverse,
-        fontSize: FontSize.md,
-        fontWeight: "bold",
-      },
-      childView: {
-        backgroundColor: theme.colors.primary,
-        borderRadius: Radius.md,
-        padding: Space.md,
-      },
-    });
-  }, [theme]);
+  const [renderDurationMsg, setRenderDurationMsg] = useState("");
   // Lingui translation hook
   const { _ } = useLingui();
 
@@ -60,6 +39,27 @@ const StyleNativeScreen = () => {
       ))}
     </View>
   );
+};
+
+const createStyles = (theme: BaseTheme) => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      gap: Space.md,
+      backgroundColor: theme.colors.background,
+      padding: Space.md,
+    },
+    title: {
+      fontSize: FontSize.md,
+      fontWeight: "bold",
+      color: theme.colors.reverse,
+    },
+    childView: {
+      backgroundColor: theme.colors.primary,
+      borderRadius: Radius.md,
+      padding: Space.md,
+    },
+  });
 };
 
 export default StyleNativeScreen;
