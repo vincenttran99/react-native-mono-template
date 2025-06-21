@@ -283,7 +283,7 @@ msgid "Performance optimization with multiple compilation techniques"
 msgstr "Performance optimization with multiple compilation techniques"
 
 #: src/screens/style/style.restyle.tsx:39
-#: src/screens/style/style.native.tsx:58
+#: src/screens/style/style.native.tsx:37
 msgid "Performance Test"
 msgstr "Performance Test"
 
@@ -367,7 +367,7 @@ msgstr "Style native"
 msgid "Style restyle"
 msgstr "Style restyle"
 
-#: src/screens/style/style.native.tsx:54
+#: src/screens/style/style.native.tsx:33
 msgid "StyleSheet"
 msgstr "StyleSheet"
 

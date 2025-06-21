@@ -283,7 +283,7 @@ msgid "Performance optimization with multiple compilation techniques"
 msgstr "Tối ưu hóa hiệu suất với nhiều kỹ thuật biên dịch"
 
 #: src/screens/style/style.restyle.tsx:39
-#: src/screens/style/style.native.tsx:58
+#: src/screens/style/style.native.tsx:37
 msgid "Performance Test"
 msgstr "Kiểm tra hiệu suất"
 
@@ -367,7 +367,7 @@ msgstr "Phong cách bản địa"
 msgid "Style restyle"
 msgstr "Phong cách restyle"
 
-#: src/screens/style/style.native.tsx:54
+#: src/screens/style/style.native.tsx:33
 msgid "StyleSheet"
 msgstr "Biểu đồ kiểu"
 
