@@ -59,7 +59,7 @@ const GlobalLoading = (
     <BView
       position="absolute"
       width={DEVICE.width}
-      height={DEVICE.height}
+      height={DEVICE.heightScreen}
       backgroundColor="backdrop"
       justifyContent="center"
       alignItems="center"

@@ -3,9 +3,11 @@ import { initialWindowMetrics } from "react-native-safe-area-context";
 import { FontSize } from "./sizes.constant";
 
 const { width, height } = Dimensions.get("window");
+const { height: heightScreen } = Dimensions.get("screen");
 
 export const DEVICE = {
   width,
+  heightScreen,
   height,
   insets: initialWindowMetrics?.insets,
   isWeb: Platform.OS === "web",
