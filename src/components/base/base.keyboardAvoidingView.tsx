@@ -4,7 +4,9 @@ import {
   KeyboardAvoidingView,
   KeyboardAvoidingViewProps,
 } from "react-native-keyboard-controller";
-const BKeyboardAvoidingView = createBox<Theme>(KeyboardAvoidingView);
+const BKeyboardAvoidingView = createBox<Theme, KeyboardAvoidingViewProps>(
+  KeyboardAvoidingView
+);
 export type BKeyboardAvoidingViewProps = BoxProps<Theme> &
   KeyboardAvoidingViewProps;
 

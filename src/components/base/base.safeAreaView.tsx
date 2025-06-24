@@ -4,7 +4,7 @@ import {
   SafeAreaView,
   SafeAreaViewProps,
 } from "react-native-safe-area-context";
-const BSafeAreaView = createBox<Theme>(SafeAreaView);
+const BSafeAreaView = createBox<Theme, SafeAreaViewProps>(SafeAreaView);
 export type BSafeAreaViewProps = BoxProps<Theme> & SafeAreaViewProps;
 
 export default BSafeAreaView;
