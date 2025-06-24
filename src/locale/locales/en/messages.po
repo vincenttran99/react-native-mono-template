@@ -29,8 +29,8 @@ msgstr "About us"
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Authentication flow implementation using Zustand and react-native-mmkv"
 
-#: src/screens/Introduction/introduction.screen.tsx:26
-#: src/navigation/main.navigation.tsx:47
+#: src/screens/Introduction/introduction.screen.tsx:27
+#: src/navigation/main.navigation.tsx:48
 msgid "Base components"
 msgstr "Base components"
 
@@ -119,8 +119,8 @@ msgstr "Customizable UI built with Shopify/restyle"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/screens/Introduction/introduction.screen.tsx:34
-#: src/navigation/main.navigation.tsx:72
+#: src/screens/Introduction/introduction.screen.tsx:35
+#: src/navigation/main.navigation.tsx:73
 msgid "Demo list query"
 msgstr "Demo list query"
 
@@ -156,11 +156,11 @@ msgstr "Extra large warning text"
 msgid "Fast and simple template"
 msgstr "Fast and simple template"
 
-#: src/navigation/main.navigation.tsx:54
+#: src/navigation/main.navigation.tsx:55
 msgid "Flash list"
 msgstr "Flash list"
 
-#: src/screens/Introduction/introduction.screen.tsx:30
+#: src/screens/Introduction/introduction.screen.tsx:31
 msgid "Flash List"
 msgstr "Flash List"
 
@@ -205,8 +205,8 @@ msgstr "Introduction"
 msgid "Key Features"
 msgstr "Key Features"
 
-#: src/screens/settings/settings.screen.tsx:38
-#: src/navigation/main.navigation.tsx:67
+#: src/screens/settings/settings.screen.tsx:40
+#: src/navigation/main.navigation.tsx:68
 msgid "Language"
 msgstr "Language"
 
@@ -331,8 +331,8 @@ msgstr "Search"
 msgid "see more"
 msgstr "see more"
 
-#: src/screens/Introduction/introduction.screen.tsx:46
-#: src/navigation/main.navigation.tsx:61
+#: src/screens/Introduction/introduction.screen.tsx:47
+#: src/navigation/main.navigation.tsx:62
 msgid "Settings"
 msgstr "Settings"
 
@@ -357,13 +357,13 @@ msgstr "Small error text"
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
-#: src/screens/Introduction/introduction.screen.tsx:38
-#: src/navigation/main.navigation.tsx:77
+#: src/screens/Introduction/introduction.screen.tsx:39
+#: src/navigation/main.navigation.tsx:78
 msgid "Style native"
 msgstr "Style native"
 
-#: src/screens/Introduction/introduction.screen.tsx:42
-#: src/navigation/main.navigation.tsx:82
+#: src/screens/Introduction/introduction.screen.tsx:43
+#: src/navigation/main.navigation.tsx:83
 msgid "Style restyle"
 msgstr "Style restyle"
 

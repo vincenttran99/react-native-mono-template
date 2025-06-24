@@ -8,8 +8,9 @@ import React from "react";
 import LoginScreen from "@/screens/login/login.screen";
 import { OnboardingScreen } from "@/screens/onboarding/onboarding.screen";
 import { useSystemStore } from "@/store/system.store";
+import { AuthStackParamList } from "@/models/navigation.model";
 
-const StackNavigator = createNativeStackNavigator();
+const StackNavigator = createNativeStackNavigator<AuthStackParamList>();
 
 const AuthNavigator = () => {
   // For onboarding screen

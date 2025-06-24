@@ -22,8 +22,9 @@ import IntroductionBaseScreen from "@/screens/Introduction/introduction.base.scr
 import DogScreen from "@/screens/dog/dog.screen";
 import StyleNativeScreen from "@/screens/style/style.native";
 import StyleRestyleScreen from "@/screens/style/style.restyle";
+import { MainStackParamList } from "@/models/navigation.model";
 
-const StackNavigator = createNativeStackNavigator();
+const StackNavigator = createNativeStackNavigator<MainStackParamList>();
 
 const MainNavigator = () => {
   useMyProfileQuery();

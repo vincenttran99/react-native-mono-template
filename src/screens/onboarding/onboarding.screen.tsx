@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { navigateNavHelper } from "@/helpers/navigation.helper";
+import { navigateToScreenHelper } from "@/helpers/navigation.helper";
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
 import { useSystemStore } from "@/store/system.store";
@@ -18,7 +18,7 @@ export function OnboardingScreen() {
   const setIsFirtOpen = useSystemStore.getState().setIsFirstOpen;
   const { _ } = useLingui();
   const handleNextPress = () => {
-    navigateNavHelper(NAVIGATION_LOGIN_SCREEN);
+    navigateToScreenHelper(NAVIGATION_LOGIN_SCREEN);
   };
 
   useEffect(() => {

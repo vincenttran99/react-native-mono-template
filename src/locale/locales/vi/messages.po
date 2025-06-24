@@ -29,8 +29,8 @@ msgstr "Về chúng tôi"
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Việc thực hiện luồng xác thực bằng cách sử dụng Zustand và React-Bản địa-MMKV"
 
-#: src/screens/Introduction/introduction.screen.tsx:26
-#: src/navigation/main.navigation.tsx:47
+#: src/screens/Introduction/introduction.screen.tsx:27
+#: src/navigation/main.navigation.tsx:48
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
 
@@ -119,8 +119,8 @@ msgstr "UI có thể tùy chỉnh được xây dựng với Shopify/Restyle"
 msgid "Dark Mode"
 msgstr "Chế độ tối"
 
-#: src/screens/Introduction/introduction.screen.tsx:34
-#: src/navigation/main.navigation.tsx:72
+#: src/screens/Introduction/introduction.screen.tsx:35
+#: src/navigation/main.navigation.tsx:73
 msgid "Demo list query"
 msgstr "Truy vấn danh sách demo"
 
@@ -156,11 +156,11 @@ msgstr "Văn bản cảnh báo thêm lớn"
 msgid "Fast and simple template"
 msgstr "Mẫu nhanh và đơn giản"
 
-#: src/navigation/main.navigation.tsx:54
+#: src/navigation/main.navigation.tsx:55
 msgid "Flash list"
 msgstr "Danh sách Flash"
 
-#: src/screens/Introduction/introduction.screen.tsx:30
+#: src/screens/Introduction/introduction.screen.tsx:31
 msgid "Flash List"
 msgstr "Danh sách Flash"
 
@@ -205,8 +205,8 @@ msgstr "Giới thiệu"
 msgid "Key Features"
 msgstr "Các tính năng chính"
 
-#: src/screens/settings/settings.screen.tsx:38
-#: src/navigation/main.navigation.tsx:67
+#: src/screens/settings/settings.screen.tsx:40
+#: src/navigation/main.navigation.tsx:68
 msgid "Language"
 msgstr "Ngôn ngữ"
 
@@ -331,8 +331,8 @@ msgstr "Tìm kiếm"
 msgid "see more"
 msgstr "Xem thêm"
 
-#: src/screens/Introduction/introduction.screen.tsx:46
-#: src/navigation/main.navigation.tsx:61
+#: src/screens/Introduction/introduction.screen.tsx:47
+#: src/navigation/main.navigation.tsx:62
 msgid "Settings"
 msgstr "Cài đặt"
 
@@ -357,13 +357,13 @@ msgstr "Văn bản lỗi nhỏ"
 msgid "Something went wrong"
 msgstr "Có gì đó đã sai"
 
-#: src/screens/Introduction/introduction.screen.tsx:38
-#: src/navigation/main.navigation.tsx:77
+#: src/screens/Introduction/introduction.screen.tsx:39
+#: src/navigation/main.navigation.tsx:78
 msgid "Style native"
 msgstr "Phong cách bản địa"
 
-#: src/screens/Introduction/introduction.screen.tsx:42
-#: src/navigation/main.navigation.tsx:82
+#: src/screens/Introduction/introduction.screen.tsx:43
+#: src/navigation/main.navigation.tsx:83
 msgid "Style restyle"
 msgstr "Phong cách restyle"
 

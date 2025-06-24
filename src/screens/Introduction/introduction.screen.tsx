@@ -16,7 +16,8 @@ import {
   NAVIGATION_STYLE_RESTYLE_SCREEN,
 } from "@/constants/navigation.constant";
 import BPressable from "@/components/base/base.pressable";
-import { navigateNavHelper } from "@/helpers/navigation.helper";
+import { navigateToScreenHelper } from "@/helpers/navigation.helper";
+import { AppStackParamList } from "@/models/navigation.model";
 
 export default function IntroductionScreen() {
   const { _ } = useLingui();
@@ -53,7 +54,7 @@ export default function IntroductionScreen() {
       item,
       index,
     }: {
-      item: { title: string; screen: string };
+      item: { title: string; screen: keyof AppStackParamList };
       index: number;
     }) => {
       return (
@@ -62,7 +63,7 @@ export default function IntroductionScreen() {
           height={MHS._60}
           justifyContent="center"
           paddingHorizontal="xl"
-          onPress={() => navigateNavHelper(item.screen)}
+          onPress={() => navigateToScreenHelper(item.screen, undefined)}
         >
           <BText
             testID="base-text"

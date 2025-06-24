@@ -7,7 +7,7 @@ import {
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
   NAVIGATION_SETTINGS_SCREEN,
 } from "@/constants/navigation.constant";
-import { navigateNavHelper } from "@/helpers/navigation.helper";
+import { navigateToScreenHelper } from "@/helpers/navigation.helper";
 import { render } from "../../../../__mocks__/restyle";
 
 describe("IntroductionScreen", () => {
@@ -37,23 +37,25 @@ describe("IntroductionScreen", () => {
 
     // Check navigation when pressing the first item (Base components)
     fireEvent.press(pressables[0]);
-    expect(navigateNavHelper).toHaveBeenCalledWith(
+    expect(navigateToScreenHelper).toHaveBeenCalledWith(
       NAVIGATION_INTRODUCTION_BASE_SCREEN
     );
 
     // Check navigation when pressing the second item (Flash List)
     fireEvent.press(pressables[1]);
-    expect(navigateNavHelper).toHaveBeenCalledWith(
+    expect(navigateToScreenHelper).toHaveBeenCalledWith(
       NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN
     );
 
     // Check navigation when pressing the third item (Demo list query)
     fireEvent.press(pressables[2]);
-    expect(navigateNavHelper).toHaveBeenCalledWith(NAVIGATION_DOG_SCREEN);
+    expect(navigateToScreenHelper).toHaveBeenCalledWith(NAVIGATION_DOG_SCREEN);
 
     // Check navigation when pressing the fourth item (Settings)
     fireEvent.press(pressables[3]);
-    expect(navigateNavHelper).toHaveBeenCalledWith(NAVIGATION_SETTINGS_SCREEN);
+    expect(navigateToScreenHelper).toHaveBeenCalledWith(
+      NAVIGATION_SETTINGS_SCREEN
+    );
   });
 
   it("displays correct titles for each item", () => {

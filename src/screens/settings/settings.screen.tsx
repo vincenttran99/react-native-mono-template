@@ -8,7 +8,7 @@ import BText from "@/components/base/base.text";
 import { LANGUAGES_MAP_CODE2 } from "@/constants/languages.constant";
 import { Pressable } from "react-native-gesture-handler";
 import { NAVIGATION_SETTINGS_LANGUAGE_SCREEN } from "@/constants/navigation.constant";
-import { navigateNavHelper } from "@/helpers/navigation.helper";
+import { navigateToScreenHelper } from "@/helpers/navigation.helper";
 
 const SettingsScreen = () => {
   const { theme, appLanguage, updateState } = useSystemStore();
@@ -32,7 +32,9 @@ const SettingsScreen = () => {
 
         {/* Face ID */}
         <Pressable
-          onPress={() => navigateNavHelper(NAVIGATION_SETTINGS_LANGUAGE_SCREEN)}
+          onPress={() =>
+            navigateToScreenHelper(NAVIGATION_SETTINGS_LANGUAGE_SCREEN)
+          }
         >
           <BView style={styles.optionRow}>
             <BText style={styles.optionText}>{_(msg`Language`)}</BText>
