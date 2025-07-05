@@ -1,4 +1,3 @@
-import { AxiosResponse } from "axios";
 import { i18n } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
 import {
@@ -8,17 +7,32 @@ import {
   showSuccessMessage,
 } from "./global.helper";
 
+// Utility types to extract types from functions (generic for all async functions)
+type ExtractParams<T> = T extends (params: infer P) => any ? P : never;
+type ExtractReturnType<T> = T extends (...args: any[]) => Promise<infer R>
+  ? R
+  : never;
+
 /**
  * Interface defining the configuration options for API request handling
- * Provides a standardized way to handle common API request patterns
+ * Works with any async function, not just Axios
  *
- * @template T - The expected response data type
+ * @template TRequestFn - The type of the async request function
  */
-export type ApiRequestOptions<T> = {
+export type ApiRequestOptions<
+  TRequestFn extends (...args: any[]) => Promise<any>
+> = {
+  /**
+   * The async request function to execute
+   * Can be any function that returns a Promise
+   */
+  request: TRequestFn;
+
   /**
    * Parameters to pass to the request function
+   * Type is automatically inferred from the request function
    */
-  params?: any;
+  params?: ExtractParams<TRequestFn>;
 
   /**
    * Message to display on successful request completion
@@ -33,9 +47,9 @@ export type ApiRequestOptions<T> = {
 
   /**
    * Callback function to execute on successful request completion
-   * Receives the full Axios response object
+   * Receives the response with correct type
    */
-  onSuccess?: (response: AxiosResponse<T, any>) => void;
+  onSuccess?: (response: ExtractReturnType<TRequestFn>) => void;
 
   /**
    * Whether to show a loading indicator during the request
@@ -44,10 +58,10 @@ export type ApiRequestOptions<T> = {
   showLoading?: boolean;
 
   /**
-   * Whether to automatically hide the loading indicator after request completion
+   * Whether to automatically hide the loading indicator after request success
    * Default: true
    */
-  autoHideLoading?: boolean;
+  autoHideLoadingOnSuccess?: boolean;
 
   /**
    * Custom error message to display on request failure
@@ -60,12 +74,6 @@ export type ApiRequestOptions<T> = {
    * Receives the error object
    */
   onFailed?: (error: any) => void;
-
-  /**
-   * The API request function to execute
-   * Should return a Promise resolving to an Axios response
-   */
-  request?: Function;
 };
 
 /**
@@ -90,17 +98,19 @@ export type ApiRequestOptions<T> = {
  *   onSuccess: (response) => setUserData(response.data)
  * });
  */
-export async function handleApiRequestHelper<T>({
+export async function handleApiRequestHelper<
+  TRequestFn extends (...args: any[]) => Promise<any>
+>({
   request: apiRequestFunction,
   params,
   successedMessage = "",
   showMessageFailed = true,
   onSuccess = undefined,
   showLoading = true,
-  autoHideLoading = true,
+  autoHideLoadingOnSuccess = true,
   onFailed,
   failedMessage = "",
-}: ApiRequestOptions<T>) {
+}: ApiRequestOptions<TRequestFn>) {
   try {
     // Show loading indicator if requested
     if (showLoading) {
@@ -109,11 +119,6 @@ export async function handleApiRequestHelper<T>({
 
     // Execute the API request with provided parameters
     const response = await apiRequestFunction?.(params);
-
-    // Hide loading indicator if auto-hide is enabled
-    if (autoHideLoading) {
-      hideGlobalLoading();
-    }
 
     // Handle successful response
     if (response) {
@@ -126,6 +131,11 @@ export async function handleApiRequestHelper<T>({
       if (successedMessage) {
         showSuccessMessage(successedMessage);
       }
+
+      // Hide loading indicator if auto-hide is enabled
+      if (autoHideLoadingOnSuccess) {
+        hideGlobalLoading();
+      }
       return;
     }
 
@@ -136,14 +146,24 @@ export async function handleApiRequestHelper<T>({
     // Always hide loading indicator on error
     hideGlobalLoading();
 
-    // Extract error message from response
-    const errorMessages = error?.response?.data?.message;
+    // Extract error message from response (flexible for different response formats)
+    let errorMessage;
 
-    // Handle array of error messages or single message
-    // Fall back to generic error message if none provided
-    const errorMessage = Array.isArray(errorMessages)
-      ? errorMessages?.[0]
-      : errorMessages || i18n._(msg`Something went wrong`);
+    // Try to extract error from Axios-style response
+    if (error?.response?.data?.message) {
+      const errorMessages = error.response.data.message;
+      errorMessage = Array.isArray(errorMessages)
+        ? errorMessages[0]
+        : errorMessages;
+    }
+    // Try to extract from direct error message
+    else if (error?.message) {
+      errorMessage = error.message;
+    }
+    // Fallback to generic error
+    else {
+      errorMessage = i18n._(msg`Something went wrong`);
+    }
 
     // Show error message if enabled
     if (showMessageFailed) {

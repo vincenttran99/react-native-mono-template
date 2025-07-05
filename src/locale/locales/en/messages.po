@@ -266,7 +266,7 @@ msgstr "Multi text"
 msgid "Network connection restored"
 msgstr "Network connection restored"
 
-#: src/helpers/api.helper.ts:134
+#: src/helpers/api.helper.ts:144
 msgid "Network Error"
 msgstr "Network Error"
 
@@ -352,7 +352,7 @@ msgstr "Shopify/Restyle"
 msgid "Small error text"
 msgstr "Small error text"
 
-#: src/helpers/api.helper.ts:146
+#: src/helpers/api.helper.ts:165
 #: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Something went wrong"
