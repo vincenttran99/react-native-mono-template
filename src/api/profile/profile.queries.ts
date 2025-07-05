@@ -46,10 +46,10 @@ export const useUpdateProfileMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation<IProfile, AxiosError, IProfile>({
-    mutationFn: profileApi.getMyProfile,
+    mutationFn: profileApi.updateProfile,
     onSuccess: (data) => {
       setProfile(data);
-      queryClient.setQueryData<IProfile>(["my-profile"], data);
+      queryClient.setQueryData<IProfile>(profileQueryKeys.myProfile, data);
     },
   });
 };

@@ -6,7 +6,7 @@ export const profileApi = {
     return await apiService.get<IProfile>("/user");
   },
 
-  getUpdateProfile: async (payload: IProfile) => {
+  updateProfile: async (payload: IProfile) => {
     return await apiService.patch<IProfile>("/user", payload);
   },
 };
