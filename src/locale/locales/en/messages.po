@@ -246,10 +246,6 @@ msgstr "Login failed"
 msgid "Login to continue"
 msgstr "Login to continue"
 
-#: src/components/global/global.modal.network.component.tsx:52
-msgid "Lost network connection"
-msgstr "Lost network connection"
-
 #: src/screens/about-us/aboutUs.screen.tsx:104
 msgid "Maintenance and Development"
 msgstr "Maintenance and Development"
@@ -261,10 +257,6 @@ msgstr "Medium primary text"
 #: src/screens/Introduction/introduction.base.screen.tsx:83
 msgid "Multi text"
 msgstr "Multi text"
-
-#: src/components/global/global.modal.network.component.tsx:26
-msgid "Network connection restored"
-msgstr "Network connection restored"
 
 #: src/helpers/api.helper.ts:144
 msgid "Network Error"
@@ -286,10 +278,6 @@ msgstr "Performance optimization with multiple compilation techniques"
 #: src/screens/style/style.native.tsx:37
 msgid "Performance Test"
 msgstr "Performance Test"
-
-#: src/components/global/global.modal.network.component.tsx:54
-msgid "Please try reconnecting"
-msgstr "Please try reconnecting"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:194
 msgid "Pressable"

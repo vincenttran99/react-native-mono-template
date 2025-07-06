@@ -42,7 +42,13 @@ const sidebars: SidebarsConfig = {
       label: "UI Components & Theming",
       collapsible: true,
       collapsed: true,
-      items: ["ui-components/ui-and-theming"],
+      items: [
+        "ui-components/ui-and-theming",
+        "ui-components/fonts",
+        "ui-components/base-components",
+        "ui-components/global-components",
+        "ui-components/forms",
+      ],
     },
     // {
     //   type: "category",

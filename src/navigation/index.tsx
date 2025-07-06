@@ -9,7 +9,6 @@ import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { NavigationContainer } from "@react-navigation/native";
 import BLazy from "@/components/base/base.lazy";
 import GlobalLoadingComponent from "@/components/global/global.loading.component";
-import GlobalModalNetworkComponent from "@/components/global/global.modal.network.component";
 import {
   NAVIGATION_AUTH_NAVIGATION,
   NAVIGATION_MAIN_NAVIGATION,
@@ -181,7 +180,6 @@ export default function AppNavigation() {
             {/* Flash message component for toast notifications */}
             <FlashMessage position={"top"} />
             {/* Modal for network status notifications */}
-            <GlobalModalNetworkComponent />
           </BottomSheetModalProvider>
         </QueryProvider>
       </ThemeProvider>

@@ -246,10 +246,6 @@ msgstr "Đăng nhập không thành công"
 msgid "Login to continue"
 msgstr "Đăng nhập để tiếp tục"
 
-#: src/components/global/global.modal.network.component.tsx:52
-msgid "Lost network connection"
-msgstr "Mất kết nối mạng"
-
 #: src/screens/about-us/aboutUs.screen.tsx:104
 msgid "Maintenance and Development"
 msgstr "Bảo trì và phát triển"
@@ -261,10 +257,6 @@ msgstr "Văn bản chính trung bình"
 #: src/screens/Introduction/introduction.base.screen.tsx:83
 msgid "Multi text"
 msgstr "Nhiều văn bản"
-
-#: src/components/global/global.modal.network.component.tsx:26
-msgid "Network connection restored"
-msgstr "Kết nối mạng được khôi phục"
 
 #: src/helpers/api.helper.ts:144
 msgid "Network Error"
@@ -286,10 +278,6 @@ msgstr "Tối ưu hóa hiệu suất với nhiều kỹ thuật biên dịch"
 #: src/screens/style/style.native.tsx:37
 msgid "Performance Test"
 msgstr "Kiểm tra hiệu suất"
-
-#: src/components/global/global.modal.network.component.tsx:54
-msgid "Please try reconnecting"
-msgstr "Vui lòng thử kết nối lại"
 
 #: src/screens/Introduction/introduction.base.screen.tsx:194
 msgid "Pressable"

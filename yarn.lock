@@ -2395,11 +2395,6 @@
   dependencies:
     merge-options "^3.0.4"
 
-"@react-native-community/netinfo@11.4.1":
-  version "11.4.1"
-  resolved "https://registry.npmjs.org/@react-native-community/netinfo/-/netinfo-11.4.1.tgz"
-  integrity sha512-B0BYAkghz3Q2V09BF88RA601XursIEA111tnc2JOaN7axJWmNefmfjZqw/KdSxKZp7CZUuPpjBmz/WCR9uaHYg==
-
 "@react-native-firebase/app@^22.2.0":
   version "22.2.0"
   resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-22.2.0.tgz"
