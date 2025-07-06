@@ -29,8 +29,8 @@ msgstr "Về chúng tôi"
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Việc thực hiện luồng xác thực bằng cách sử dụng Zustand và React-Bản địa-MMKV"
 
-#: src/screens/Introduction/introduction.screen.tsx:27
-#: src/navigation/main.navigation.tsx:48
+#: src/screens/Introduction/introduction.screen.tsx:25
+#: src/navigation/main.navigation.tsx:44
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
 
@@ -119,8 +119,8 @@ msgstr "UI có thể tùy chỉnh được xây dựng với Shopify/Restyle"
 msgid "Dark Mode"
 msgstr "Chế độ tối"
 
-#: src/screens/Introduction/introduction.screen.tsx:35
-#: src/navigation/main.navigation.tsx:73
+#: src/screens/Introduction/introduction.screen.tsx:33
+#: src/navigation/main.navigation.tsx:69
 msgid "Demo list query"
 msgstr "Truy vấn danh sách demo"
 
@@ -156,11 +156,11 @@ msgstr "Văn bản cảnh báo thêm lớn"
 msgid "Fast and simple template"
 msgstr "Mẫu nhanh và đơn giản"
 
-#: src/navigation/main.navigation.tsx:55
+#: src/navigation/main.navigation.tsx:51
 msgid "Flash list"
 msgstr "Danh sách Flash"
 
-#: src/screens/Introduction/introduction.screen.tsx:31
+#: src/screens/Introduction/introduction.screen.tsx:29
 msgid "Flash List"
 msgstr "Danh sách Flash"
 
@@ -206,7 +206,7 @@ msgid "Key Features"
 msgstr "Các tính năng chính"
 
 #: src/screens/settings/settings.screen.tsx:40
-#: src/navigation/main.navigation.tsx:68
+#: src/navigation/main.navigation.tsx:64
 msgid "Language"
 msgstr "Ngôn ngữ"
 
@@ -274,11 +274,6 @@ msgstr "Mật khẩu không nên trống"
 msgid "Performance optimization with multiple compilation techniques"
 msgstr "Tối ưu hóa hiệu suất với nhiều kỹ thuật biên dịch"
 
-#: src/screens/style/style.restyle.tsx:39
-#: src/screens/style/style.native.tsx:37
-msgid "Performance Test"
-msgstr "Kiểm tra hiệu suất"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:194
 msgid "Pressable"
 msgstr "Có thể ép"
@@ -319,8 +314,8 @@ msgstr "Tìm kiếm"
 msgid "see more"
 msgstr "Xem thêm"
 
-#: src/screens/Introduction/introduction.screen.tsx:47
-#: src/navigation/main.navigation.tsx:62
+#: src/screens/Introduction/introduction.screen.tsx:37
+#: src/navigation/main.navigation.tsx:58
 msgid "Settings"
 msgstr "Cài đặt"
 
@@ -332,10 +327,6 @@ msgstr "Chia sẻ"
 msgid "Shares"
 msgstr "Cổ phiếu"
 
-#: src/screens/style/style.restyle.tsx:33
-msgid "Shopify/Restyle"
-msgstr "Shopify/Restyle"
-
 #: src/screens/Introduction/introduction.base.screen.tsx:69
 msgid "Small error text"
 msgstr "Văn bản lỗi nhỏ"
@@ -344,20 +335,6 @@ msgstr "Văn bản lỗi nhỏ"
 #: src/components/list/list.defaultError.component.tsx:30
 msgid "Something went wrong"
 msgstr "Có gì đó đã sai"
-
-#: src/screens/Introduction/introduction.screen.tsx:39
-#: src/navigation/main.navigation.tsx:78
-msgid "Style native"
-msgstr "Phong cách bản địa"
-
-#: src/screens/Introduction/introduction.screen.tsx:43
-#: src/navigation/main.navigation.tsx:83
-msgid "Style restyle"
-msgstr "Phong cách restyle"
-
-#: src/screens/style/style.native.tsx:33
-msgid "StyleSheet"
-msgstr "Biểu đồ kiểu"
 
 #: src/screens/about-us/aboutUs.screen.tsx:148
 msgid "Support for multi-environment builds (Production, Staging, Development)"

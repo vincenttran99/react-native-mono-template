@@ -49,3 +49,5 @@ src/locale/locales/_build/
 # Google
 google-services.json
 GoogleService-Info.plist
+
+.trae

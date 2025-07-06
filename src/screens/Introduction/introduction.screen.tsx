@@ -12,8 +12,6 @@ import {
   NAVIGATION_INTRODUCTION_BASE_SCREEN,
   NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN,
   NAVIGATION_SETTINGS_SCREEN,
-  NAVIGATION_STYLE_NATIVE_SCREEN,
-  NAVIGATION_STYLE_RESTYLE_SCREEN,
 } from "@/constants/navigation.constant";
 import BPressable from "@/components/base/base.pressable";
 import { navigateToScreenHelper } from "@/helpers/navigation.helper";
@@ -34,14 +32,6 @@ export default function IntroductionScreen() {
     {
       title: _(msg`Demo list query`),
       screen: NAVIGATION_DOG_SCREEN,
-    },
-    {
-      title: _(msg`Style native`),
-      screen: NAVIGATION_STYLE_NATIVE_SCREEN,
-    },
-    {
-      title: _(msg`Style restyle`),
-      screen: NAVIGATION_STYLE_RESTYLE_SCREEN,
     },
     {
       title: _(msg`Settings`),

@@ -6,8 +6,6 @@ import {
   NAVIGATION_ONBOARDING_SCREEN,
   NAVIGATION_SETTINGS_LANGUAGE_SCREEN,
   NAVIGATION_SETTINGS_SCREEN,
-  NAVIGATION_STYLE_NATIVE_SCREEN,
-  NAVIGATION_STYLE_RESTYLE_SCREEN,
   NAVIGATION_TAB_NAVIGATION,
 } from "@/constants/navigation.constant";
 import { RouteProp } from "@react-navigation/native";
@@ -64,8 +62,6 @@ export type MainStackParamList = {
   [NAVIGATION_SETTINGS_SCREEN]: undefined;
   [NAVIGATION_SETTINGS_LANGUAGE_SCREEN]: undefined;
   [NAVIGATION_DOG_SCREEN]: undefined;
-  [NAVIGATION_STYLE_NATIVE_SCREEN]: undefined;
-  [NAVIGATION_STYLE_RESTYLE_SCREEN]: undefined;
 };
 
 /**
