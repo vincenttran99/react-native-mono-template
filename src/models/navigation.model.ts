@@ -108,5 +108,5 @@ export type AppStackParamList = AuthStackParamList & MainStackParamList;
  */
 export type SettingsScreenRouteProp = RouteProp<
   AppStackParamList,
-  "NAVIGATION_SETTINGS_SCREEN"
+  typeof NAVIGATION_SETTINGS_SCREEN
 >;
