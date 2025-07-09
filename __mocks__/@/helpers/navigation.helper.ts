@@ -1,3 +1,3 @@
 module.exports = {
-  navigateNavHelper: jest.fn(),
+  navigateToScreenHelper: jest.fn(),
 };
