@@ -20,7 +20,12 @@ import BText, { BTextProps } from "@/components/base/base.text";
 
 import { useLingui } from "@lingui/react";
 import { msg } from "@lingui/core/macro";
-import { countShortCharactersHelper } from "@/helpers/string.helper";
+import {
+  getVisualLengthHelper,
+  visualSliceHelper,
+  calculateSlicePositionHelper,
+  calculateStringWidthHelper,
+} from "@/helpers/string.helper";
 
 /**
  * Interface for BTextEllipsis component props
@@ -39,10 +44,24 @@ type TBTextEllipsisProps = BTextProps & {
   compensationSpaceAndroid?: number;
   /** Additional props for the "see more"/"hide" text component */
   readMoreTextProps?: BTextProps;
+  /** Whether the font being used is monospaced (all characters have equal width) */
+  isMonospaced?: boolean;
+  /** Array of characters that have short width (0.5x normal character width) */
+  shortWidthCharacters?: string[];
+  /** Array of characters that have long width (1.5x normal character width) */
+  longWidthCharacters?: string[];
 
   readMoreText?: string;
   readLessText?: string;
 };
+
+function balanceDiff(
+  numOfEmojis: number = 0,
+  numOfShortCharacters: number = 0,
+  numOfLongCharacters: number = 0
+) {
+  return numOfEmojis + 0.5 * numOfLongCharacters - 0.5 * numOfShortCharacters;
+}
 
 /**
  * Text component with ellipsis and "see more"/"hide" functionality
@@ -71,7 +90,10 @@ const BTextEllipsis = memo(
     style,
     readMoreText,
     readLessText,
-    compensationSpaceAndroid = 6,
+    compensationSpaceAndroid = 0,
+    isMonospaced = false,
+    shortWidthCharacters = [],
+    longWidthCharacters = [],
     ...props
   }: TBTextEllipsisProps): React.JSX.Element => {
     // State to track if text needs truncation with "read more" option
@@ -98,10 +120,9 @@ const BTextEllipsis = memo(
     const { _ } = useLingui();
 
     // Calculate the length of "see more" text plus compensation space
-    const readMoreTextLength = useMemo(
-      () =>
-        (readMoreText || _(msg`see more`)).length + compensationSpaceAndroid,
-      [_, compensationSpaceAndroid, readMoreText]
+    const readMoreTextContent = useMemo(
+      () => `... ${(readMoreText || _(msg`see more`)).trim()}`,
+      [_, readMoreText]
     );
 
     /**
@@ -139,9 +160,6 @@ const BTextEllipsis = memo(
       isCalculationCompleteRef.current = true;
       hasPropsChangedRef.current = false;
 
-      // Array to store average character width for each line that has content
-      const characterWidthsByLine: number[] = [];
-
       // Check if text exceeds the specified number of lines
       if (textLinesRef.current?.length > numberOfLines) {
         let visibleText = ""; // Accumulates text from visible lines
@@ -150,37 +168,65 @@ const BTextEllipsis = memo(
         for (let i = 0; i < numberOfLines; i++) {
           const currentLine = textLinesRef.current[i];
           visibleText = visibleText.concat(currentLine.text);
-
-          // Prepare text for width calculation (remove trailing newline)
-          const textForWidthCalc = currentLine.text.endsWith("\n")
-            ? currentLine.text.slice(0, -1)
-            : currentLine.text;
-
-          // Calculate average character width for this line,
-          // only if it has measurable text content and width.
-          if (textForWidthCalc.length > 0 && currentLine.width > 0) {
-            const avgCharWidth = currentLine.width / textForWidthCalc.length;
-            characterWidthsByLine.push(avgCharWidth);
-          }
         }
 
-        // Calculate overall average character width from the collected valid line averages.
-        // If no valid lines were found (e.g., all lines were empty or had no width),
-        // avgCharacterWidth will be 0, and a fallback (|| 1) will be used later to prevent division by zero.
-        const avgCharacterWidth =
-          characterWidthsByLine.length > 0
-            ? characterWidthsByLine.reduce((a, b) => a + b, 0) /
-              characterWidthsByLine.length
-            : 0;
+        let avgCharWidth = 0;
+
+        // Prepare text for width calculation (remove trailing newline)
+        const lastRow =
+          textLinesRef.current.length >= numberOfLines
+            ? textLinesRef.current[numberOfLines - 1]
+            : undefined;
+
+        const lastRowForWidthCalc = lastRow
+          ? lastRow.text.endsWith("\n")
+            ? lastRow.text.slice(0, -1)
+            : lastRow.text
+          : "";
+
+        const lastRowVisualLength = getVisualLengthHelper(
+          lastRowForWidthCalc,
+          shortWidthCharacters,
+          longWidthCharacters
+        );
+
+        // Calculate average character width for this line,
+        // only if it has measurable text content and width.
+        if (lastRowVisualLength.visualLength > 0) {
+          avgCharWidth =
+            (lastRow?.width || 0) / lastRowVisualLength.visualLength;
+        }
 
         // Get width of the last visible line (the line at numberOfLines - 1 index)
         const lastLineWidth = textLinesRef.current[numberOfLines - 1].width;
+        // Calculate the balance between the number of emojis and the number of short characters in the last line.
+        const balance = balanceDiff(
+          lastRowVisualLength.emojiCount,
+          lastRowVisualLength.shortCharCount,
+          lastRowVisualLength.longCharCount
+        );
+
+        // If the balance is not zero, adjust the average character width.
+        avgCharWidth =
+          balance === 0
+            ? avgCharWidth
+            : avgCharWidth *
+              (balance < 0
+                ? 1 + Math.abs(balance) / lastRowVisualLength.visualLength
+                : 1 - Math.abs(balance) / lastRowVisualLength.visualLength);
 
         // Calculate the target width for the last line to accommodate the "see more" text.
         // This is the container width minus the estimated width of "see more" text.
+        const readMoreTextLength = calculateStringWidthHelper(
+          readMoreTextContent,
+          avgCharWidth || 1,
+          isMonospaced,
+          shortWidthCharacters,
+          longWidthCharacters
+        );
+
         const targetLastLineWidth =
-          containerWidthRef.current -
-          (avgCharacterWidth || 1) * readMoreTextLength; // Use fallback 1 for avgCharWidth if it's 0
+          containerWidthRef.current - readMoreTextLength; // Use fallback 1 for avgCharWidth if it's 0
 
         // Remove trailing newline from the accumulated visibleText if present
         if (visibleText.endsWith("\n")) {
@@ -194,26 +240,24 @@ const BTextEllipsis = memo(
         // The (avgCharacterWidth || 1) ensures division by a non-zero number.
         const sliceEndOffset =
           lastLineWidth <= targetLastLineWidth
-            ? undefined // Keep all characters if last line fits
-            : -Math.ceil(
-                (lastLineWidth - targetLastLineWidth) / (avgCharacterWidth || 1)
+            ? undefined
+            : calculateSlicePositionHelper(
+                lastRowForWidthCalc,
+                avgCharWidth,
+                readMoreTextLength + compensationSpaceAndroid * avgCharWidth,
+                isMonospaced,
+                shortWidthCharacters,
+                longWidthCharacters
               );
 
         // Construct the truncated text.
         // If sliceEndOffset is defined (negative), it's used to trim characters from the end of visibleText.
         // countShortCharactersHelper adjusts the trim count, possibly for multi-byte or variable-width characters.
-        truncatedTextRef.current =
-          visibleText
-            .slice(
-              0,
-              sliceEndOffset
-                ? sliceEndOffset -
-                    countShortCharactersHelper(
-                      visibleText.slice(sliceEndOffset)
-                    )
-                : undefined
-            )
-            .trim() + "... "; // Add ellipsis and a space
+        truncatedTextRef.current = visualSliceHelper(
+          visibleText,
+          0,
+          sliceEndOffset ? sliceEndOffset : undefined
+        ).trim();
 
         // Update refs and state to reflect truncation
         fullTextRef.current = truncatedTextRef.current;
@@ -225,7 +269,14 @@ const BTextEllipsis = memo(
 
       // Trigger re-render with calculated text
       setRenderTrigger((prev) => !prev);
-    }, [readMoreTextLength, numberOfLines]);
+    }, [
+      readMoreTextContent,
+      numberOfLines,
+      compensationSpaceAndroid,
+      isMonospaced,
+      shortWidthCharacters,
+      longWidthCharacters,
+    ]);
 
     /**
      * Handle text layout event to get line information
@@ -245,7 +296,12 @@ const BTextEllipsis = memo(
         textLinesRef.current = event.nativeEvent?.lines || [];
         calculateTruncatedText();
       },
-      [onTextLayout, numberOfLines, readMoreTextLength]
+      [
+        onTextLayout,
+        numberOfLines,
+        readMoreTextContent,
+        compensationSpaceAndroid,
+      ]
     );
 
     /**
@@ -322,7 +378,7 @@ const BTextEllipsis = memo(
           >
             {isShowingFullTextRef.current
               ? " " + (readLessText || _(msg`hide`))
-              : readMoreText || _(msg`see more`)}
+              : readMoreTextContent}
           </BText>
         ) : null}
       </BText>
