@@ -168,8 +168,8 @@ msgstr "Flash List"
 msgid "Hello"
 msgstr "Hello"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:324
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:317
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:380
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:369
 msgid "hide"
 msgstr "hide"
 
@@ -307,10 +307,8 @@ msgstr "Robust form handling with react-hook-form"
 msgid "Search"
 msgstr "Search"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:103
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:325
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:102
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:124
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:124
 msgid "see more"
 msgstr "see more"
 

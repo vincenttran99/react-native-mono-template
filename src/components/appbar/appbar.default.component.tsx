@@ -15,7 +15,7 @@ const AppbarDefaultComponent = memo(
     const headerNavigationIcons = route.params?.headerNavigationIcons || [];
     const insets = useSafeAreaInsets();
     const paddingTop = useMemo(() => {
-      let paddingTop = insets.top;
+      let paddingTop = insets.top * (DEVICE.isIos || DEVICE.isTablet ? 1 : 1.3);
       return {
         paddingTop: paddingTop,
         height: paddingTop + DEVICE.heightAppBar,
@@ -28,7 +28,7 @@ const AppbarDefaultComponent = memo(
         backgroundColor="background"
         gap="xxxs"
         paddingHorizontal="xxs"
-        paddingVertical="xxs"
+        alignItems={"center"}
         style={[paddingTop, styles.container]}
       >
         {back ? (

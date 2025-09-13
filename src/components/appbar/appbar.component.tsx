@@ -9,7 +9,7 @@ interface TAppbarComponentProps extends ViewProps {}
 function AppbarComponent({ style, ...props }: TAppbarComponentProps) {
   const insets = useSafeAreaInsets();
   const paddingTop = useMemo(() => {
-    let paddingTop = insets.top;
+    let paddingTop = insets.top * (DEVICE.isIos || DEVICE.isTablet ? 1 : 1.3);
     return {
       paddingTop: paddingTop,
       height: paddingTop + DEVICE.heightAppBar,
@@ -22,7 +22,7 @@ function AppbarComponent({ style, ...props }: TAppbarComponentProps) {
       backgroundColor="background"
       gap="xxxs"
       paddingHorizontal="xxs"
-      paddingBottom="xxs"
+      alignItems={"center"}
       style={[paddingTop, styles.container, style]}
       {...props}
     />

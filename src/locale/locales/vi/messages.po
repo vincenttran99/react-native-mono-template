@@ -168,8 +168,8 @@ msgstr "Danh sách Flash"
 msgid "Hello"
 msgstr "Xin chào"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:324
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:317
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:380
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:369
 msgid "hide"
 msgstr "trốn"
 
@@ -307,10 +307,8 @@ msgstr "Xử lý hình thức mạnh mẽ với hình thức phản ứng"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:103
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:325
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:102
-#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:318
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:124
+#: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:124
 msgid "see more"
 msgstr "Xem thêm"
 
