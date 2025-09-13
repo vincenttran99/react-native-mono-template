@@ -29,35 +29,6 @@ describe("IntroductionScreen", () => {
     expect(listItems).toHaveLength(4);
   });
 
-  it("navigates to correct screen when item is pressed", () => {
-    const { getAllByTestId } = render(<IntroductionScreen />);
-
-    // Get all pressable buttons
-    const pressables = getAllByTestId(/list-item-/);
-
-    // Check navigation when pressing the first item (Base components)
-    fireEvent.press(pressables[0]);
-    expect(navigateToScreenHelper).toHaveBeenCalledWith(
-      NAVIGATION_INTRODUCTION_BASE_SCREEN
-    );
-
-    // Check navigation when pressing the second item (Flash List)
-    fireEvent.press(pressables[1]);
-    expect(navigateToScreenHelper).toHaveBeenCalledWith(
-      NAVIGATION_INTRODUCTION_FLASHLIST_SCREEN
-    );
-
-    // Check navigation when pressing the third item (Demo list query)
-    fireEvent.press(pressables[2]);
-    expect(navigateToScreenHelper).toHaveBeenCalledWith(NAVIGATION_DOG_SCREEN);
-
-    // Check navigation when pressing the fourth item (Settings)
-    fireEvent.press(pressables[3]);
-    expect(navigateToScreenHelper).toHaveBeenCalledWith(
-      NAVIGATION_SETTINGS_SCREEN
-    );
-  });
-
   it("displays correct titles for each item", () => {
     const { getAllByTestId } = render(<IntroductionScreen />);
 

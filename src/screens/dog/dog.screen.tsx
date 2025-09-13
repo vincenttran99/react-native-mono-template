@@ -13,7 +13,6 @@ import { IDog } from "@/models/dog.model";
 import { useInfiniteList } from "@/helpers/hooks/list.hook";
 import { MHS } from "@/constants/sizes.constant";
 import ItemDog from "./components/item.dog";
-import BLegendList from "@/components/base/base.legendList";
 import BFlashList from "@/components/base/base.flashList";
 
 export default function DogScreen() {

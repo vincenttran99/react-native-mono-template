@@ -1,6 +1,7 @@
 import { Dimensions, Platform } from "react-native";
 import { initialWindowMetrics } from "react-native-safe-area-context";
 import { FontSize } from "./sizes.constant";
+import * as Device from "expo-device";
 
 const { width, height } = Dimensions.get("window");
 const { height: heightScreen } = Dimensions.get("screen");
@@ -14,6 +15,7 @@ export const DEVICE = {
   isIos: Platform.OS === "ios",
   isAndroid: Platform.OS === "android",
   heightAppBar: FontSize._48,
+  isTablet: Device.deviceType === Device.DeviceType.TABLET,
 };
 
 export enum EDevicePerfomance {
