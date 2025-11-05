@@ -314,6 +314,7 @@ module.exports = function () {
                * Improves compatibility with certain libraries
                */
               useFrameworks: "static",
+              forceStaticLinking: ["RNFBApp", "RNFBMessaging"],
             },
             android: {
               extraMavenRepos: [
