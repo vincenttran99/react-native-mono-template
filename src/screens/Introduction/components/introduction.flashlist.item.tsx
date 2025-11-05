@@ -28,7 +28,11 @@ const IntroductionFlashlistItem = ({
   }, [item.liked]);
 
   return (
-    <BSurface variant="xs" backgroundColor="white" style={styles.container}>
+    <BSurface
+      variant="xs"
+      backgroundColor="background"
+      style={styles.container}
+    >
       {/* Header */}
       <IntroductionFlashlistItemHeader
         id={item.id}

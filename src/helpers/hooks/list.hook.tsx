@@ -128,7 +128,8 @@ export function useInfiniteList<T>({
     isFetchingNextPage,
     isRefetching,
   } = query(paramRequest);
-  console.log("dataadasd", JSON.stringify(data));
+
+  console.log(JSON.stringify(data));
 
   // Track if a refresh operation is in progress to prevent multiple simultaneous refreshes
   const isRefreshing = useRef<boolean>(false);

@@ -1,4 +1,11 @@
-import { Children, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  Children,
+  JSX,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 import {
   Animated,

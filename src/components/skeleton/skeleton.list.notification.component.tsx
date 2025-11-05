@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { JSX, memo } from "react";
 
 import { StyleSheet } from "react-native";
 import SkeletonContainerComponent from "@/components/skeleton/skeleton.container.component";
