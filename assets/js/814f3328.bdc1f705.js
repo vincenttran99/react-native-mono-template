@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocs=globalThis.webpackChunkdocs||[]).push([[7472],{5513:t=>{t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"First Blog Post","permalink":"/react-native-mono-template/blog/first-blog-post","unlisted":false,"date":"2025-05-11T00:00:00.000Z"}]}')}}]);

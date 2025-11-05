@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocs=globalThis.webpackChunkdocs||[]).push([[9531],{6708:a=>{a.exports=JSON.parse('{"tags":[{"label":"Update","permalink":"/react-native-mono-template/blog/tags/update","description":"Update template tag","count":1}]}')}}]);
