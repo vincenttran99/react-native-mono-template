@@ -1,7 +1,7 @@
 import { EDevicePerfomance } from "@/constants/system.constant";
-import { MMKV } from "react-native-mmkv";
+import { createMMKV } from "react-native-mmkv";
 
-export const MMKVStorage = new MMKV();
+export const MMKVStorage = createMMKV();
 
 export function setTokenHelper(token: string) {
   MMKVStorage.set("token", token);

@@ -2,11 +2,12 @@ import React, {
   forwardRef,
   JSX,
   MemoExoticComponent,
+  Ref,
   useCallback,
   useMemo,
 } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-import { FlashList, FlashListProps } from "@shopify/flash-list";
+import { FlashList, FlashListProps, FlashListRef } from "@shopify/flash-list";
 import { ScrollView, ScrollViewProps } from "react-native";
 import {
   ERROR_ITEM,
@@ -66,13 +67,9 @@ const BFlashListComponent = (
     horizontal,
     contentContainerStyle,
     data,
-    estimatedListSize = {
-      width: DEVICE.width,
-      height: DEVICE.height - DEVICE.heightAppBar,
-    },
     ...rest
   }: BFlashListProps<any>,
-  ref: React.Ref<FlashList<any>>
+  ref: Ref<FlashListRef<any>> | undefined
 ) => {
   const props = useRestyle(restyleFunctions, rest);
   const contentContainerStyleProps = useMemo(() => {
@@ -112,7 +109,7 @@ const BFlashListComponent = (
             <DefaultErrorItemListComponent horizontal={horizontal} />
           );
         default:
-          return renderItem(info);
+          return renderItem?.(info) || null;
       }
     },
     [
@@ -145,7 +142,6 @@ const BFlashListComponent = (
       onEndReached={onEndReachedHandle}
       refreshing={refreshing}
       getItemType={getItemTypeDefault}
-      estimatedListSize={estimatedListSize}
       drawDistance={defaultDrawDistance}
       horizontal={horizontal}
       contentContainerStyle={contentContainerStyleProps}

@@ -380,14 +380,13 @@ An optimized scrollable container using FlashList with keyboard awareness.
 ```typescript
 import BScrollview from "@/components/base/base.scrollview";
 
-<BScrollview estimatedItemSize={100} padding="md" backgroundColor="background">
+<BScrollview padding="md" backgroundColor="background">
   {children}
 </BScrollview>;
 ```
 
 **Props:**
 
-- `estimatedItemSize`: Required for FlashList optimization
 - All FlashList props and Restyle spacing/background props
 
 #### BFlashList
@@ -411,7 +410,6 @@ const data = [
       <BText>{item.name}</BText>
     </BView>
   )}
-  estimatedItemSize={60}
   LoadingComponent={CustomLoadingComponent}
   ErrorComponent={CustomErrorComponent}
   padding="md"
@@ -552,7 +550,6 @@ For optimal list performance, use BFlashList with proper configuration:
 <BFlashList
   data={items}
   keyAttribute="id"
-  estimatedItemSize={80}
   renderItem={({ item }) => <ItemComponent item={item} />}
   onEndReached={loadMore}
   refreshing={isRefreshing}

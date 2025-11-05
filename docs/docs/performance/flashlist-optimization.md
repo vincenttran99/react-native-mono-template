@@ -19,31 +19,7 @@ FlashList addresses many of these concerns, but requires proper configuration to
 
 ## Key Optimization Techniques
 
-### 1. Configuring Accurate Item Size Estimation
-
-The `estimatedItemSize` and `overrideItemLayout` properties are critical for FlashList performance:
-
-```jsx
-<FlashList
-  data={data}
-  renderItem={renderItem}
-  estimatedItemSize={100} // Accurate size estimation
-  overrideItemLayout={(layout, item) => {
-    // Precise size calculation based on item type
-    layout.size =
-      item.type === "large" ? 150 : item.type === "medium" ? 100 : 80;
-  }}
-/>
-```
-
-Best practices:
-
-- Measure your actual item sizes and use the average as `estimatedItemSize`
-- For variable-sized items, implement `overrideItemLayout` to provide precise measurements
-- Group similar-sized items together when possible
-- Consider using fixed heights for list items when design allows
-
-### 2. Optimizing Cell Reuse with getItemType
+### 1. Optimizing Cell Reuse with getItemType
 
 The `getItemType` property helps FlashList reuse cells more efficiently:
 
@@ -62,7 +38,6 @@ The `getItemType` property helps FlashList reuse cells more efficiently:
         return <StandardItem item={item} />;
     }
   }}
-  estimatedItemSize={100}
   getItemType={(item) => {
     // Categorize items by type for better cell reuse
     return item.type; // e.g., 'header', 'product', 'ad', 'standard'
@@ -112,7 +87,6 @@ const MyCellRenderer = React.memo(
 <FlashList
   data={data}
   renderItem={renderItem}
-  estimatedItemSize={100}
   CellRendererComponent={MyCellRenderer}
 />;
 ```
@@ -132,7 +106,6 @@ The `viewabilityConfig` and `maintainVisibleContentPosition` properties help con
 <FlashList
   data={data}
   renderItem={renderItem}
-  estimatedItemSize={100}
   viewabilityConfig={{
     // Only consider items "viewable" when at least 50% visible
     minimumViewTime: 300, // ms before considering item as "viewed"
@@ -163,7 +136,6 @@ For very large lists, optimize memory usage with these properties:
 <FlashList
   data={largeDataset}
   renderItem={renderItem}
-  estimatedItemSize={100}
   removeClippedSubviews={true} // Detach off-screen views from the view hierarchy
   windowSize={5} // Render items within 5 screen lengths (above and below)
   maxToRenderPerBatch={10} // Limit items rendered in each batch
@@ -186,7 +158,6 @@ For lists with fixed-size items, `getItemLayout` provides significant performanc
 <FlashList
   data={data}
   renderItem={renderItem}
-  estimatedItemSize={120}
   getItemLayout={(data, index) => ({
     length: 120, // Fixed height for each item
     offset: 120 * index, // Position calculation
@@ -319,7 +290,6 @@ const SpatialOptimizedList = ({ data }) => {
       ref={listRef}
       data={visibleItems}
       renderItem={({ item }) => <ListItem item={item} />}
-      estimatedItemSize={100}
       onScroll={handleScroll}
       scrollEventThrottle={16}
     />
@@ -342,129 +312,7 @@ When to use spatial hashmaps:
 - Virtual canvases with many elements
 - Any list where items have 2D positions rather than just a linear arrangement
 
-### 8. Memory-mapped Lists with VirtualizedList Internals
-
-For extremely large datasets, memory mapping techniques can significantly improve performance:
-
-```jsx
-// Memory-mapped list implementation for extremely large datasets
-class VirtualMemoryList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // Pre-allocate memory for item size calculations
-    this.itemSizeCache = new Array(props.data.length);
-    this.listRef = React.createRef();
-
-    // Only load a small number of items into memory
-    this.windowSize = 50;
-    this.state = {
-      visibleStartIndex: 0,
-      visibleEndIndex: this.windowSize,
-    };
-  }
-
-  getItemLayout = (data, index) => {
-    // Use cache if available
-    if (this.itemSizeCache[index] != null) {
-      return {
-        length: this.itemSizeCache[index],
-        offset: this.itemSizeCache
-          .slice(0, index)
-          .reduce((sum, size) => sum + (size || 0), 0),
-        index,
-      };
-    }
-
-    // Fallback to estimatedItemSize
-    const estimatedSize = this.props.estimatedItemSize || 100;
-    return {
-      length: estimatedSize,
-      offset: estimatedSize * index,
-      index,
-    };
-  };
-
-  onViewableItemsChanged = ({ viewableItems }) => {
-    if (viewableItems.length > 0) {
-      const firstVisible = viewableItems[0].index;
-      const lastVisible = viewableItems[viewableItems.length - 1].index;
-
-      // Update window with buffer
-      const buffer = Math.floor(this.windowSize / 3);
-      this.setState({
-        visibleStartIndex: Math.max(0, firstVisible - buffer),
-        visibleEndIndex: Math.min(
-          this.props.data.length - 1,
-          lastVisible + buffer
-        ),
-      });
-    }
-  };
-
-  render() {
-    const { data, renderItem, ...restProps } = this.props;
-    const { visibleStartIndex, visibleEndIndex } = this.state;
-
-    // Only render items in the current window
-    const visibleData = data.slice(visibleStartIndex, visibleEndIndex + 1);
-
-    return (
-      <VirtualizedList
-        ref={this.listRef}
-        data={visibleData}
-        renderItem={({ item, index }) =>
-          renderItem({
-            item,
-            index: index + visibleStartIndex,
-          })
-        }
-        getItemCount={() => visibleData.length}
-        getItem={(data, index) => data[index]}
-        getItemLayout={this.getItemLayout}
-        onViewableItemsChanged={this.onViewableItemsChanged}
-        windowSize={5} // VirtualizedList's own window size
-        updateCellsBatchingPeriod={50} // Batch updates
-        maxToRenderPerBatch={10} // Limit batch size
-        removeClippedSubviews={true}
-        maintainVisibleContentPosition={{
-          minIndexForVisible: 0,
-          autoscrollToTopThreshold: 10,
-        }}
-        {...restProps}
-      />
-    );
-  }
-}
-
-// Usage
-const MemoryEfficientList = ({ data }) => (
-  <VirtualMemoryList
-    data={data}
-    renderItem={({ item, index }) => <ListItem item={item} index={index} />}
-    estimatedItemSize={100}
-    keyExtractor={(item) => item.id}
-  />
-);
-```
-
-Benefits of memory-mapped lists:
-
-- **Extreme memory efficiency**: Only keeps a small window of items in memory
-- **Handles massive datasets**: Can work with millions of items
-- **Reduced initialization time**: Only processes visible items
-- **Smooth scrolling**: Maintains performance even with very large datasets
-- **Dynamic window sizing**: Adjusts based on scroll behavior
-
-When to use memory mapping:
-
-- Lists with thousands or millions of items
-- Applications with memory constraints
-- Data visualization of large datasets
-- Infinite scrolling implementations
-- When users need to navigate quickly through large datasets
-
-### 9. Quantum VirtualizedList (Progressive Loading)
+### 8. Quantum VirtualizedList (Progressive Loading)
 
 This advanced technique renders list items with different quality levels based on their visibility:
 
@@ -590,15 +438,14 @@ To identify list performance issues:
 
 ## Best Practices Summary
 
-1. **Configure accurate item sizes** with `estimatedItemSize` and `overrideItemLayout`
-2. **Optimize cell reuse** with `getItemType` for different item templates
-3. **Control cell lifecycle** with a custom `CellRendererComponent`
-4. **Configure viewability** to optimize when items are processed
-5. **Manage memory** with `removeClippedSubviews` and `windowSize` for large lists
-6. **Eliminate layout calculations** with `getItemLayout` for fixed-size items
-7. **Use spatial hashmaps** for complex 2D layouts and precise visibility detection
-8. **Implement memory mapping** for extremely large datasets
-9. **Apply quantum rendering** for progressive loading based on visibility
+1. **Optimize cell reuse** with `getItemType` for different item templates
+2. **Control cell lifecycle** with a custom `CellRendererComponent`
+3. **Configure viewability** to optimize when items are processed
+4. **Manage memory** with `removeClippedSubviews` and `windowSize` for large lists
+5. **Eliminate layout calculations** with `getItemLayout` for fixed-size items
+6. **Use spatial hashmaps** for complex 2D layouts and precise visibility detection
+7. **Implement memory mapping** for extremely large datasets
+8. **Apply quantum rendering** for progressive loading based on visibility
 
 ## Advanced Techniques
 

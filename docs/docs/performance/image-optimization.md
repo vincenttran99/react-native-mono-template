@@ -441,7 +441,6 @@ const ImageList = ({ images }) => {
     <FlashList
       data={images}
       renderItem={renderItem}
-      estimatedItemSize={200}
       onViewableItemsChanged={handleViewableItemsChanged}
       viewabilityConfig={{
         itemVisiblePercentThreshold: 20,

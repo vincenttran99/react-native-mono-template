@@ -34,7 +34,6 @@ export default function IntroductionBaseScreen() {
 
   return (
     <BScrollview
-      estimatedItemSize={MHS._30}
       backgroundColor="background"
       paddingBottom="xxxl"
       paddingHorizontal="md"

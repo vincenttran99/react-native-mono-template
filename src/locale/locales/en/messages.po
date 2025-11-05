@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:49
+#: src/screens/Introduction/introduction.base.screen.tsx:48
 msgid "3 or 4 times faster than normal scrolling screen"
 msgstr "3 or 4 times faster than normal scrolling screen"
 
-#: src/screens/about-us/aboutUs.screen.tsx:78
+#: src/screens/about-us/aboutUs.screen.tsx:77
 msgid "A template for your next React Native project, focusing on application performance optimization: Expo, TypeScript, ReStyle, Flashlist, Legend list, Husky, Lint-Staged, react-navigation, react-query, react-hook-form, Lingui, I18n, etc..."
 msgstr "A template for your next React Native project, focusing on application performance optimization: Expo, TypeScript, ReStyle, Flashlist, Legend list, Husky, Lint-Staged, react-navigation, react-query, react-hook-form, Lingui, I18n, etc..."
 
@@ -25,7 +25,7 @@ msgstr "A template for your next React Native project, focusing on application p
 msgid "About us"
 msgstr "About us"
 
-#: src/screens/about-us/aboutUs.screen.tsx:151
+#: src/screens/about-us/aboutUs.screen.tsx:150
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Authentication flow implementation using Zustand and react-native-mmkv"
 
@@ -34,39 +34,39 @@ msgstr "Authentication flow implementation using Zustand and react-native-mmkv"
 msgid "Base components"
 msgstr "Base components"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:177
+#: src/screens/Introduction/introduction.base.screen.tsx:176
 msgid "BIcon"
 msgstr "BIcon"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:185
+#: src/screens/Introduction/introduction.base.screen.tsx:184
 msgid "BPressable"
 msgstr "BPressable"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:199
+#: src/screens/Introduction/introduction.base.screen.tsx:198
 msgid "BSurface"
 msgstr "BSurface"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:66
+#: src/screens/Introduction/introduction.base.screen.tsx:65
 msgid "BText"
 msgstr "BText"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:212
+#: src/screens/Introduction/introduction.base.screen.tsx:211
 msgid "Button"
 msgstr "Button"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:237
+#: src/screens/Introduction/introduction.base.screen.tsx:236
 msgid "Button outline"
 msgstr "Button outline"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:220
+#: src/screens/Introduction/introduction.base.screen.tsx:219
 msgid "Button primary"
 msgstr "Button primary"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:229
+#: src/screens/Introduction/introduction.base.screen.tsx:228
 msgid "Button secondary"
 msgstr "Button secondary"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:148
+#: src/screens/Introduction/introduction.base.screen.tsx:147
 msgid "BView"
 msgstr "BView"
 
@@ -74,20 +74,20 @@ msgstr "BView"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:262
+#: src/screens/Introduction/introduction.base.screen.tsx:261
 msgid "Cat"
 msgstr "Cat"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:298
+#: src/screens/Introduction/introduction.base.screen.tsx:297
 msgid "Checkbox"
 msgstr "Checkbox"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:254
-#: src/screens/Introduction/introduction.base.screen.tsx:256
+#: src/screens/Introduction/introduction.base.screen.tsx:253
+#: src/screens/Introduction/introduction.base.screen.tsx:255
 msgid "Chip"
 msgstr "Chip"
 
-#: src/screens/about-us/aboutUs.screen.tsx:150
+#: src/screens/about-us/aboutUs.screen.tsx:149
 msgid "Clear project structure with Absolute Imports"
 msgstr "Clear project structure with Absolute Imports"
 
@@ -111,7 +111,7 @@ msgstr "Confirm"
 msgid "Continue"
 msgstr "Continue"
 
-#: src/screens/about-us/aboutUs.screen.tsx:147
+#: src/screens/about-us/aboutUs.screen.tsx:146
 msgid "Customizable UI built with Shopify/restyle"
 msgstr "Customizable UI built with Shopify/restyle"
 
@@ -124,15 +124,15 @@ msgstr "Dark Mode"
 msgid "Demo list query"
 msgstr "Demo list query"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:269
+#: src/screens/Introduction/introduction.base.screen.tsx:268
 msgid "Divider"
 msgstr "Divider"
 
-#: src/screens/about-us/aboutUs.screen.tsx:156
+#: src/screens/about-us/aboutUs.screen.tsx:155
 msgid "E2E testing capabilities with Maestro for comprehensive app testing"
 msgstr "E2E testing capabilities with Maestro for comprehensive app testing"
 
-#: src/screens/about-us/aboutUs.screen.tsx:144
+#: src/screens/about-us/aboutUs.screen.tsx:143
 msgid "Easy multilingual integration within 30 seconds with Lingui"
 msgstr "Easy multilingual integration within 30 seconds with Lingui"
 
@@ -148,7 +148,7 @@ msgstr "Email should not be empty"
 msgid "Empty"
 msgstr "Empty"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:78
+#: src/screens/Introduction/introduction.base.screen.tsx:77
 msgid "Extra large warning text"
 msgstr "Extra large warning text"
 
@@ -173,15 +173,15 @@ msgstr "Hello"
 msgid "hide"
 msgstr "hide"
 
-#: src/screens/about-us/aboutUs.screen.tsx:149
+#: src/screens/about-us/aboutUs.screen.tsx:148
 msgid "Husky for Git Hooks: Automate git hooks and enforce code standards"
 msgstr "Husky for Git Hooks: Automate git hooks and enforce code standards"
 
-#: src/screens/about-us/aboutUs.screen.tsx:108
+#: src/screens/about-us/aboutUs.screen.tsx:107
 msgid "I am committed to continuously improving this template to build React Native applications faster. To achieve this goal, I regularly add new features and fix discovered bugs."
 msgstr "I am committed to continuously improving this template to build React Native applications faster. To achieve this goal, I regularly add new features and fix discovered bugs."
 
-#: src/screens/Introduction/introduction.base.screen.tsx:242
+#: src/screens/Introduction/introduction.base.screen.tsx:241
 msgid "Icon Button"
 msgstr "Icon Button"
 
@@ -189,7 +189,7 @@ msgstr "Icon Button"
 msgid "Ignore"
 msgstr "Ignore"
 
-#: src/screens/about-us/aboutUs.screen.tsx:145
+#: src/screens/about-us/aboutUs.screen.tsx:144
 msgid "Interesting components like multi-format text, collapsible/expandable text"
 msgstr "Interesting components like multi-format text, collapsible/expandable text"
 
@@ -197,11 +197,11 @@ msgstr "Interesting components like multi-format text, collapsible/expandable te
 msgid "Introduce"
 msgstr "Introduce"
 
-#: src/screens/about-us/aboutUs.screen.tsx:74
+#: src/screens/about-us/aboutUs.screen.tsx:73
 msgid "Introduction"
 msgstr "Introduction"
 
-#: src/screens/about-us/aboutUs.screen.tsx:86
+#: src/screens/about-us/aboutUs.screen.tsx:85
 msgid "Key Features"
 msgstr "Key Features"
 
@@ -210,15 +210,15 @@ msgstr "Key Features"
 msgid "Language"
 msgstr "Language"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:75
+#: src/screens/Introduction/introduction.base.screen.tsx:74
 msgid "Large success text"
 msgstr "Large success text"
 
-#: src/screens/about-us/aboutUs.screen.tsx:143
+#: src/screens/about-us/aboutUs.screen.tsx:142
 msgid "Latest Expo SDK: Leverage the Expo ecosystem to the fullest"
 msgstr "Latest Expo SDK: Leverage the Expo ecosystem to the fullest"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:56
+#: src/screens/Introduction/introduction.base.screen.tsx:55
 msgid "Lazy view"
 msgstr "Lazy view"
 
@@ -246,15 +246,15 @@ msgstr "Login failed"
 msgid "Login to continue"
 msgstr "Login to continue"
 
-#: src/screens/about-us/aboutUs.screen.tsx:104
+#: src/screens/about-us/aboutUs.screen.tsx:103
 msgid "Maintenance and Development"
 msgstr "Maintenance and Development"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:72
+#: src/screens/Introduction/introduction.base.screen.tsx:71
 msgid "Medium primary text"
 msgstr "Medium primary text"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:83
+#: src/screens/Introduction/introduction.base.screen.tsx:82
 msgid "Multi text"
 msgstr "Multi text"
 
@@ -270,15 +270,15 @@ msgstr "No name"
 msgid "Password should not be empty"
 msgstr "Password should not be empty"
 
-#: src/screens/about-us/aboutUs.screen.tsx:142
+#: src/screens/about-us/aboutUs.screen.tsx:141
 msgid "Performance optimization with multiple compilation techniques"
 msgstr "Performance optimization with multiple compilation techniques"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:194
+#: src/screens/Introduction/introduction.base.screen.tsx:193
 msgid "Pressable"
 msgstr "Pressable"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:134
+#: src/screens/Introduction/introduction.base.screen.tsx:133
 msgid "Preview URL"
 msgstr "Preview URL"
 
@@ -286,20 +286,20 @@ msgstr "Preview URL"
 msgid "Purpose"
 msgstr "Purpose"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:316
+#: src/screens/Introduction/introduction.base.screen.tsx:315
 msgid "Radio"
 msgstr "Radio"
 
-#: src/screens/about-us/aboutUs.screen.tsx:152
+#: src/screens/about-us/aboutUs.screen.tsx:151
 msgid "React Query and axios for efficient data fetching"
 msgstr "React Query and axios for efficient data fetching"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:46
+#: src/screens/Introduction/introduction.base.screen.tsx:45
 msgid "Render time: "
 msgstr "Render time: "
 
+#: src/screens/about-us/aboutUs.screen.tsx:152
 #: src/screens/about-us/aboutUs.screen.tsx:153
-#: src/screens/about-us/aboutUs.screen.tsx:154
 msgid "Robust form handling with react-hook-form"
 msgstr "Robust form handling with react-hook-form"
 
@@ -325,7 +325,7 @@ msgstr "Share"
 msgid "Shares"
 msgstr "Shares"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:69
+#: src/screens/Introduction/introduction.base.screen.tsx:68
 msgid "Small error text"
 msgstr "Small error text"
 
@@ -334,51 +334,51 @@ msgstr "Small error text"
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
-#: src/screens/about-us/aboutUs.screen.tsx:148
+#: src/screens/about-us/aboutUs.screen.tsx:147
 msgid "Support for multi-environment builds (Production, Staging, Development)"
 msgstr "Support for multi-environment builds (Production, Staging, Development)"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:60
+#: src/screens/Introduction/introduction.base.screen.tsx:59
 msgid "Suprise! You are seeing this text after 2 seconds"
 msgstr "Suprise! You are seeing this text after 2 seconds"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:207
+#: src/screens/Introduction/introduction.base.screen.tsx:206
 msgid "Surface"
 msgstr "Surface"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:97
+#: src/screens/Introduction/introduction.base.screen.tsx:96
 msgid "Text Ellipsis"
 msgstr "Text Ellipsis"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:107
+#: src/screens/Introduction/introduction.base.screen.tsx:106
 msgid "Text input"
 msgstr "Text input"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:101
+#: src/screens/Introduction/introduction.base.screen.tsx:100
 msgid "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 msgstr "This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. This is a long text. "
 
-#: src/screens/about-us/aboutUs.screen.tsx:131
+#: src/screens/about-us/aboutUs.screen.tsx:130
 msgid "This project is licensed under MIT."
 msgstr "This project is licensed under MIT."
 
-#: src/screens/about-us/aboutUs.screen.tsx:146
+#: src/screens/about-us/aboutUs.screen.tsx:145
 msgid "TypeScript to enhance code quality and prevent errors"
 msgstr "TypeScript to enhance code quality and prevent errors"
 
-#: src/screens/about-us/aboutUs.screen.tsx:155
+#: src/screens/about-us/aboutUs.screen.tsx:154
 msgid "Unit testing setup with Jest and React Testing Library"
 msgstr "Unit testing setup with Jest and React Testing Library"
 
-#: src/screens/about-us/aboutUs.screen.tsx:121
+#: src/screens/about-us/aboutUs.screen.tsx:120
 msgid "View Documentation"
 msgstr "View Documentation"
 
-#: src/screens/about-us/aboutUs.screen.tsx:116
+#: src/screens/about-us/aboutUs.screen.tsx:115
 msgid "View on GitHub"
 msgstr "View on GitHub"
 
-#: src/screens/Introduction/introduction.base.screen.tsx:43
+#: src/screens/Introduction/introduction.base.screen.tsx:42
 msgid "We have 200 images at the bottom"
 msgstr "We have 200 images at the bottom"
 

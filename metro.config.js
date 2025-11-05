@@ -8,8 +8,8 @@ const config = {
     ...defaultConfig.resolver,
     assetExts: [...defaultConfig.resolver.assetExts, "lottie"],
   },
-  transform: {
-    ...defaultConfig.transform,
+  transformer: {
+    ...defaultConfig.transformer,
     experimentalImportSupport: true,
     inlineRequires: true,
   },

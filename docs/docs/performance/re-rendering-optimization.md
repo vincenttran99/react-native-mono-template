@@ -142,7 +142,6 @@ const MyListComponent = () => {
           onSelect={setSelectedId}
         />
       )}
-      estimatedItemSize={100}
       extraData={selectedId} // Only re-render when selectedId changes
     />
   );

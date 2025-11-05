@@ -35,7 +35,7 @@ const IntroductionFlashlistItemMedia = ({
 }: {
   images?: string[];
 }) => {
-  const indexGrid = Math.min(images.length, 2);
+  const indexGrid = Math.min(images?.length || 2, 2);
   const ImageUI = useMemo(() => IMAGE_GRID[indexGrid], [indexGrid]);
 
   return <ImageUI images={images} />;

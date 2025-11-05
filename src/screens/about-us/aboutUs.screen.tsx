@@ -33,7 +33,6 @@ export default function AboutUsScreen() {
 
   return (
     <BScrollview
-      estimatedItemSize={MHS._60}
       backgroundColor="background"
       contentContainerStyle={styles.contentContainerStyle}
     >

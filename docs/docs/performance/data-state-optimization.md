@@ -81,7 +81,6 @@ const MyListScreen = () => {
       )}
       refreshing={refreshing}
       onRefresh={handleRefresh}
-      estimatedItemSize={100}
     />
   );
 };
@@ -159,14 +158,7 @@ const MyList = ({ sourceData, onItemSelect }) => {
     []
   );
 
-  return (
-    <FlashList
-      data={data}
-      renderItem={renderItem}
-      estimatedItemSize={100}
-      {...listProps}
-    />
-  );
+  return <FlashList data={data} renderItem={renderItem} {...listProps} />;
 };
 ```
 
@@ -275,13 +267,7 @@ const ItemList = ({ items, filter, sortBy, sortOrder }) => {
     [filteredItems, sortBy, sortOrder]
   );
 
-  return (
-    <FlashList
-      data={sortedAndFilteredItems}
-      renderItem={renderItem}
-      estimatedItemSize={100}
-    />
-  );
+  return <FlashList data={sortedAndFilteredItems} renderItem={renderItem} />;
 };
 ```
 

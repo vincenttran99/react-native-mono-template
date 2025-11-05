@@ -78,7 +78,6 @@ export default function IntroductionScreen() {
       <BFlashList
         testID="flash-list"
         keyAttribute={"screen"}
-        estimatedItemSize={MHS._60}
         data={DATA}
         renderItem={renderItem}
         ItemSeparatorComponent={BDivider}

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { JSX, useCallback, useMemo, useRef, useState } from "react";
 import { AxiosError, AxiosResponse } from "axios";
 import { RefreshControl } from "react-native";
 import { VS } from "@/constants/sizes.constant";
@@ -128,13 +128,14 @@ export function useInfiniteList<T>({
     isFetchingNextPage,
     isRefetching,
   } = query(paramRequest);
+  console.log("dataadasd", JSON.stringify(data));
 
   // Track if a refresh operation is in progress to prevent multiple simultaneous refreshes
   const isRefreshing = useRef<boolean>(false);
 
   // Determine if the list is empty (not loading and no data)
   const isEmpty = useMemo(
-    () => !isFetching && !data?.pages[0].length,
+    () => !isFetching && !data?.pages?.[0]?.length,
     [data, isFetching]
   );
 

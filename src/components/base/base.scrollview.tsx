@@ -1,5 +1,5 @@
-import React, { forwardRef, useMemo, useCallback, Children } from "react";
-import { FlashList, FlashListProps } from "@shopify/flash-list";
+import React, { forwardRef, useMemo, useCallback, Children, Ref } from "react";
+import { FlashList, FlashListProps, FlashListRef } from "@shopify/flash-list";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { ScrollView, ScrollViewProps } from "react-native";
 import { DEVICE } from "@/constants/system.constant";
@@ -33,16 +33,11 @@ const BScrollview = forwardRef(
   (
     {
       children,
-      estimatedItemSize,
       drawDistance = DEVICE.height * 2,
-      estimatedListSize = {
-        width: DEVICE.width,
-        height: DEVICE.height - DEVICE.heightAppBar,
-      },
       contentContainerStyle,
       ...rest
     }: BScrollviewProps,
-    ref: React.Ref<FlashList<any>>
+    ref: Ref<FlashListRef<any>> | undefined
   ) => {
     const props = useRestyle(restyleFunctions, rest);
     const contentContainerStyleProps = useMemo(() => {
@@ -62,12 +57,6 @@ const BScrollview = forwardRef(
       return index;
     }, []);
 
-    if (estimatedItemSize === undefined) {
-      console.warn(
-        "BScrollview: 'estimatedItemSize' is missing, check FlashList warnings for suggested value."
-      );
-    }
-
     return (
       <FlashList
         ref={ref}
@@ -77,8 +66,6 @@ const BScrollview = forwardRef(
         contentContainerStyle={contentContainerStyleProps}
         data={data}
         renderItem={renderItem}
-        estimatedItemSize={estimatedItemSize}
-        estimatedListSize={estimatedListSize}
         getItemType={getItemType}
         drawDistance={drawDistance}
         renderScrollComponent={RenderScrollComponent}

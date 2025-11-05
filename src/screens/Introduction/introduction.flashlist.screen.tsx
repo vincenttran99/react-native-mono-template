@@ -14,7 +14,6 @@ export default function IntroductionFlashlistScreen() {
     <BFlashList
       ref={flashListRef}
       keyAttribute={"id"}
-      estimatedItemSize={450}
       data={fakePosts}
       renderItem={renderItem}
       backgroundColor="background"

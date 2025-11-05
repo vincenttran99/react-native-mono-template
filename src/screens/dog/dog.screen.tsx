@@ -30,7 +30,6 @@ export default function DogScreen() {
     <BView backgroundColor="background" flex={1}>
       <BFlashList
         keyAttribute={"id"}
-        estimatedItemSize={250}
         data={listItems}
         renderItem={renderItem}
         onEndReached={onEndReached}
