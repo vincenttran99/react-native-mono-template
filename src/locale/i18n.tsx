@@ -9,15 +9,12 @@ import "@formatjs/intl-numberformat/locale-data/en";
 import { useEffect } from "react";
 import { i18n } from "@lingui/core";
 
-// import { messages as messagesAn } from "@/locale/locales/an/messages";
-// import { messages as messagesAst } from "@/locale/locales/ast/messages";
 // import { messages as messagesCa } from "@/locale/locales/ca/messages";
 // import { messages as messagesCy } from "@/locale/locales/cy/messages";
 // import { messages as messagesDa } from "@/locale/locales/da/messages";
 // import { messages as messagesDe } from "@/locale/locales/de/messages";
 // import { messages as messagesEl } from "@/locale/locales/el/messages";
 import { messages as messagesEn } from "@/locale/locales/en/messages";
-// import { messages as messagesEn_GB } from "@/locale/locales/en-GB/messages";
 // import { messages as messagesEo } from "@/locale/locales/eo/messages";
 // import { messages as messagesEs } from "@/locale/locales/es/messages";
 // import { messages as messagesEu } from "@/locale/locales/eu/messages";
@@ -28,7 +25,6 @@ import { messages as messagesEn } from "@/locale/locales/en/messages";
 // import { messages as messagesGl } from "@/locale/locales/gl/messages";
 // import { messages as messagesHi } from "@/locale/locales/hi/messages";
 // import { messages as messagesHu } from "@/locale/locales/hu/messages";
-// import { messages as messagesIa } from "@/locale/locales/ia/messages";
 // import { messages as messagesId } from "@/locale/locales/id/messages";
 // import { messages as messagesIt } from "@/locale/locales/it/messages";
 // import { messages as messagesJa } from "@/locale/locales/ja/messages";
@@ -46,7 +42,6 @@ import { messages as messagesEn } from "@/locale/locales/en/messages";
 // import { messages as messagesUk } from "@/locale/locales/uk/messages";
 import { messages as messagesVi } from "@/locale/locales/vi/messages";
 // import { messages as messagesZh_CN } from "@/locale/locales/zh-CN/messages";
-// import { messages as messagesZh_HK } from "@/locale/locales/zh-HK/messages";
 // import { messages as messagesZh_TW } from "@/locale/locales/zh-TW/messages";
 import { I18nProvider as DefaultI18nProvider } from "@lingui/react";
 import { useSystemStore } from "@/store/system.store";
@@ -66,22 +61,6 @@ import { sanitizeAppLanguageSettingHelper } from "@/helpers/language.helper";
  */
 export async function activateLocale(locale: AppLanguage) {
   switch (locale) {
-    // case AppLanguage.an: {
-    //   i18n.loadAndActivate({ locale, messages: messagesAn });
-    //   await Promise.all([
-    //     import("@formatjs/intl-pluralrules/locale-data/an"),
-    //     import("@formatjs/intl-numberformat/locale-data/es"),
-    //   ]);
-    //   break;
-    // }
-    // case AppLanguage.ast: {
-    //   i18n.loadAndActivate({ locale, messages: messagesAst });
-    //   await Promise.all([
-    //     import("@formatjs/intl-pluralrules/locale-data/ast"),
-    //     import("@formatjs/intl-numberformat/locale-data/ast"),
-    //   ]);
-    //   break;
-    // }
     // case AppLanguage.ca: {
     //   i18n.loadAndActivate({ locale, messages: messagesCa });
     //   await Promise.all([
@@ -119,14 +98,6 @@ export async function activateLocale(locale: AppLanguage) {
     //   await Promise.all([
     //     import("@formatjs/intl-pluralrules/locale-data/el"),
     //     import("@formatjs/intl-numberformat/locale-data/el"),
-    //   ]);
-    //   break;
-    // }
-    // case AppLanguage.en_GB: {
-    //   i18n.loadAndActivate({ locale, messages: messagesEn_GB });
-    //   await Promise.all([
-    //     import("@formatjs/intl-pluralrules/locale-data/en"),
-    //     import("@formatjs/intl-numberformat/locale-data/en-GB"),
     //   ]);
     //   break;
     // }
@@ -207,14 +178,6 @@ export async function activateLocale(locale: AppLanguage) {
     //   await Promise.all([
     //     import("@formatjs/intl-pluralrules/locale-data/hu"),
     //     import("@formatjs/intl-numberformat/locale-data/hu"),
-    //   ]);
-    //   break;
-    // }
-    // case AppLanguage.ia: {
-    //   i18n.loadAndActivate({ locale, messages: messagesIa });
-    //   await Promise.all([
-    //     import("@formatjs/intl-pluralrules/locale-data/ia"),
-    //     import("@formatjs/intl-numberformat/locale-data/ia"),
     //   ]);
     //   break;
     // }
@@ -344,14 +307,6 @@ export async function activateLocale(locale: AppLanguage) {
     }
     // case AppLanguage.zh_CN: {
     //   i18n.loadAndActivate({ locale, messages: messagesZh_CN });
-    //   await Promise.all([
-    //     import("@formatjs/intl-pluralrules/locale-data/zh"),
-    //     import("@formatjs/intl-numberformat/locale-data/zh"),
-    //   ]);
-    //   break;
-    // }
-    // case AppLanguage.zh_HK: {
-    //   i18n.loadAndActivate({ locale, messages: messagesZh_HK });
     //   await Promise.all([
     //     import("@formatjs/intl-pluralrules/locale-data/zh"),
     //     import("@formatjs/intl-numberformat/locale-data/zh"),
