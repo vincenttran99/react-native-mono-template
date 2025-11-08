@@ -7,14 +7,11 @@ export interface Language {
 
 export enum AppLanguage {
   en = "en",
-  an = "an",
-  ast = "ast",
   ca = "ca",
   cy = "cy",
   da = "da",
   de = "de",
   el = "el",
-  en_GB = "en-GB",
   eo = "eo",
   es = "es",
   eu = "eu",
@@ -25,7 +22,6 @@ export enum AppLanguage {
   gl = "gl",
   hi = "hi",
   hu = "hu",
-  ia = "ia",
   id = "id",
   it = "it",
   ja = "ja",
@@ -43,7 +39,6 @@ export enum AppLanguage {
   uk = "uk",
   vi = "vi",
   zh_CN = "zh-Hans-CN",
-  zh_HK = "zh-Hant-HK",
   zh_TW = "zh-Hant-TW",
 }
 
@@ -54,8 +49,6 @@ interface AppLanguageConfig {
 
 export const APP_LANGUAGES: AppLanguageConfig[] = [
   { code2: AppLanguage.en, name: "English" },
-  // { code2: AppLanguage.an, name: "Aragonés – Aragonese" },
-  // { code2: AppLanguage.ast, name: "Asturianu – Asturian" },
   // { code2: AppLanguage.ca, name: "Català – Catalan" },
   // { code2: AppLanguage.cy, name: "Cymraeg – Welsh" },
   // { code2: AppLanguage.da, name: "Dansk – Danish" },
@@ -72,7 +65,6 @@ export const APP_LANGUAGES: AppLanguageConfig[] = [
   // { code2: AppLanguage.gl, name: "Galego – Galician" },
   // { code2: AppLanguage.hi, name: "हिंदी – Hindi" },
   // { code2: AppLanguage.hu, name: "magyar – Hungarian" },
-  // { code2: AppLanguage.ia, name: "Interlingua" },
   // { code2: AppLanguage.id, name: "Bahasa Indonesia – Indonesian" },
   // { code2: AppLanguage.it, name: "Italiano – Italian" },
   // { code2: AppLanguage.ja, name: "日本語 – Japanese" },
@@ -91,7 +83,6 @@ export const APP_LANGUAGES: AppLanguageConfig[] = [
   { code2: AppLanguage.vi, name: "Tiếng Việt – Vietnamese" },
   // { code2: AppLanguage.zh_CN, name: "简体中文 – Simplified Chinese" },
   // { code2: AppLanguage.zh_TW, name: "繁體中文 – Traditional Chinese" },
-  // { code2: AppLanguage.zh_HK, name: "粵文 – Cantonese" },
 ];
 
 export const LANGUAGES: Language[] = [

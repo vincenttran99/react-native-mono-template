@@ -139,8 +139,8 @@ for po in $STAGED_PO_FILES; do
   
   # Initialize translation counter and array
   translations_count=0
-  declare -a source_texts
-  declare -a translated_texts
+  source_texts=()
+  translated_texts=()
   
   # Process the file line by line to find msgid entries that need translation
   # This extracts all msgid lines and their following msgstr lines
