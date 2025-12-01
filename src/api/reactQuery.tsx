@@ -90,13 +90,16 @@ const createQueryClient = () =>
  * Configuration for query dehydration/rehydration
  * Controls which queries should be persisted to storage
  * - Mutations are never persisted
- * - Only queries with INSTANCE_KEY in their queryKey are persisted
+ * - Only queries with PERSIST_KEY or INSTANCE_KEY in their queryKey are persisted
  */
 const dehydrateOptions: PersistQueryClientProviderProps["persistOptions"]["dehydrateOptions"] =
   {
     shouldDehydrateMutation: (_: any) => false,
     shouldDehydrateQuery: (query) => {
-      return query.queryKey.includes(INSTANCE_KEY);
+      return (
+        query.queryKey.includes(INSTANCE_KEY) ||
+        query.queryKey.includes(PERSIST_KEY)
+      );
     },
   };
 
