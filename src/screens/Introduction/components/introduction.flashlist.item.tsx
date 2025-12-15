@@ -19,11 +19,11 @@ const IntroductionFlashlistItem = ({
   item,
 }: IntroductionFlashlistItemProps) => {
   const { _ } = useLingui();
-  const ButtonLikeref = useRef<any>(null);
+  const ButtonLikeRef = useRef<any>(null);
 
   useLayoutEffect(() => {
     return () => {
-      ButtonLikeref.current?.setBooleanValue(item.liked);
+      ButtonLikeRef.current?.setBooleanValue(item.liked);
     };
   }, [item.liked]);
 
@@ -61,7 +61,7 @@ const IntroductionFlashlistItem = ({
       {/* Actions */}
       <IntroductionFlashlistItemAction
         liked={item.liked}
-        ButtonLikeRef={ButtonLikeref}
+        ButtonLikeRef={ButtonLikeRef}
       />
     </BSurface>
   );

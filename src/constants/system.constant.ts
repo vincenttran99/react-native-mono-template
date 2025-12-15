@@ -18,20 +18,20 @@ export const DEVICE = {
   isTablet: Device.deviceType === Device.DeviceType.TABLET,
 };
 
-export enum EDevicePerfomance {
+export enum EDevicePerformance {
   Low = "low",
   Medium = "medium",
   High = "high",
 }
 
 export const DRAW_DISTANCE_VERTICAL = {
-  [EDevicePerfomance.Low]: height * 0.7,
-  [EDevicePerfomance.Medium]: height * 1.5,
-  [EDevicePerfomance.High]: height * 2.5,
+  [EDevicePerformance.Low]: height * 0.7,
+  [EDevicePerformance.Medium]: height * 1.5,
+  [EDevicePerformance.High]: height * 2.5,
 };
 
 export const DRAW_DISTANCE_HORIZONTAL = {
-  [EDevicePerfomance.Low]: height,
-  [EDevicePerfomance.Medium]: height * 2,
-  [EDevicePerfomance.High]: height * 3,
+  [EDevicePerformance.Low]: height,
+  [EDevicePerformance.Medium]: height * 2,
+  [EDevicePerformance.High]: height * 3,
 };

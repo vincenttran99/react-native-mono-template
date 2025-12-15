@@ -114,6 +114,9 @@ export const pickHelper = function (
 export function removeEmptyFieldsHelper(
   entity: Record<string, any>
 ): Record<string, any> {
+  if (!entity) {
+    return {};
+  }
   // Get keys of the entity that are not objects or have non-empty 'id' fields
   const keysToKeep = Object.keys(entity).filter(
     (key) =>

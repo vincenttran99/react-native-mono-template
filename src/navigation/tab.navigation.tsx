@@ -23,7 +23,7 @@ const Tab = createBottomTabNavigator();
 function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { _ } = useLingui();
 
-  const IconAndlabelScreen: any = useMemo(() => {
+  const IconAndLabelScreen: any = useMemo(() => {
     return {
       [NAVIGATION_INTRODUCTION_SCREEN]: {
         icon: "menu",
@@ -73,7 +73,7 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
         >
           <BIcon
             size={MHS._24}
-            name={IconAndlabelScreen[route.name].icon}
+            name={IconAndLabelScreen[route.name].icon}
             color={isFocused ? "primary" : "secondary"}
           />
           <BText
@@ -81,7 +81,7 @@ function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
             variant="md"
             color={isFocused ? "primary" : "secondary"}
           >
-            {IconAndlabelScreen[route.name].label}
+            {IconAndLabelScreen[route.name].label}
           </BText>
         </BPressable>
       );

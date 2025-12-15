@@ -15,14 +15,14 @@ import { evaluateDevicePerformanceHelper } from "@/helpers/system.helper";
 import { setDevicePerformance } from "@/helpers/storage.helper";
 
 export function OnboardingScreen() {
-  const setIsFirtOpen = useSystemStore.getState().setIsFirstOpen;
+  const setIsFirstOpen = useSystemStore.getState().setIsFirstOpen;
   const { _ } = useLingui();
   const handleNextPress = () => {
     navigateToScreenHelper(NAVIGATION_LOGIN_SCREEN);
   };
 
   useEffect(() => {
-    setIsFirtOpen(false);
+    setIsFirstOpen(false);
 
     // evaluate device performance
     evaluateDevicePerformanceHelper().then((res) => {

@@ -6,7 +6,7 @@ import { getDevicePerformance } from "./storage.helper";
 import {
   DRAW_DISTANCE_HORIZONTAL,
   DRAW_DISTANCE_VERTICAL,
-  EDevicePerfomance,
+  EDevicePerformance,
 } from "@/constants/system.constant";
 
 dayjs.extend(isBetween);
@@ -86,7 +86,7 @@ export function renderSpecialElementHelper({
  * Evaluates device performance based on hardware specifications
  * @returns {Promise<string>} 'low', 'medium', or 'high'
  */
-export async function evaluateDevicePerformanceHelper(): Promise<EDevicePerfomance> {
+export async function evaluateDevicePerformanceHelper(): Promise<EDevicePerformance> {
   try {
     // Collect device information
     const systemVersion = DeviceInfo.getSystemVersion();
@@ -175,15 +175,15 @@ export async function evaluateDevicePerformanceHelper(): Promise<EDevicePerfoman
 
     // Classify device
     if (totalScore >= 2.5) {
-      return EDevicePerfomance.High;
+      return EDevicePerformance.High;
     } else if (totalScore >= 1.7) {
-      return EDevicePerfomance.Medium;
+      return EDevicePerformance.Medium;
     } else {
-      return EDevicePerfomance.Low;
+      return EDevicePerformance.Low;
     }
   } catch (error) {
     console.error("Error evaluating device:", error);
-    return EDevicePerfomance.Medium; // Return default value if there's an error
+    return EDevicePerformance.Medium; // Return default value if there's an error
   }
 }
 

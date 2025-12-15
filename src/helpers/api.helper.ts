@@ -37,7 +37,7 @@ export type ApiRequestOptions<
   /**
    * Message to display on successful request completion
    */
-  successedMessage?: string;
+  succeededMessage?: string;
 
   /**
    * Whether to show error messages automatically
@@ -103,7 +103,7 @@ export async function handleApiRequestHelper<
 >({
   request: apiRequestFunction,
   params,
-  successedMessage = "",
+  succeededMessage = "",
   showMessageFailed = true,
   onSuccess = undefined,
   showLoading = true,
@@ -128,8 +128,8 @@ export async function handleApiRequestHelper<
       }
 
       // Show success message if provided
-      if (successedMessage) {
-        showSuccessMessage(successedMessage);
+      if (succeededMessage) {
+        showSuccessMessage(succeededMessage);
       }
 
       // Hide loading indicator if auto-hide is enabled
