@@ -9,7 +9,7 @@ export default function BottomSheetBackdropComponent(
   return (
     <BottomSheetBackdrop
       style={styles.container}
-      disappearsOnIndex={-1}
+      disappearsOnIndex={-0.9}
       appearsOnIndex={0}
       {...props}
     />

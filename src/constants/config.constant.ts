@@ -3,6 +3,7 @@ import Constants from "expo-constants";
 export const CONFIG = {
   REQUEST_TIMEOUT: 15000,
   API_URL: Constants.expoConfig?.extra?.API_URL,
+  DOG_API_KEY: Constants.expoConfig?.extra?.DOG_API_KEY,
   FIREBASE_DEFAULT_CHANNEL_ID:
     Constants.expoConfig?.extra?.FIREBASE_DEFAULT_CHANNEL_ID,
   DEEP_LINK: Constants.expoConfig?.extra?.DEEP_LINK,

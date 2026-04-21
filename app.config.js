@@ -1,7 +1,7 @@
 const pkg = require("./package.json");
-import getEnvVars from "./scripts/env-object";
-import dotenv from "dotenv";
-import path from "path";
+const path = require("path");
+const dotenv = require("dotenv");
+const getEnvVars = require("./scripts/env-object.js").default;
 
 module.exports = function () {
   /**
@@ -300,6 +300,7 @@ module.exports = function () {
             fonts: ["./src/assets/fonts/SpaceMono-Regular.ttf"],
           },
         ],
+        "expo-image",
 
         /**
          * Configure build properties
@@ -380,11 +381,6 @@ module.exports = function () {
        * New capabilities that may not be fully stable
        */
       experiments: {
-        /**
-         * Enable typed routes for navigation
-         * Provides TypeScript type checking for navigation
-         */
-        typedRoutes: true,
         reactCompiler: true,
       },
     },

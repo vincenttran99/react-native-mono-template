@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "react-native";
 import ErrorBoundary from "react-native-error-boundary";
 import { KeyboardProvider } from "react-native-keyboard-controller";
-import Constants from "expo-constants";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { NavigationContainer } from "@react-navigation/native";
 import BLazy from "@/components/base/base.lazy";
@@ -31,6 +30,7 @@ import {
   LoadingRef,
 } from "@/helpers/global.helper";
 import { navigationRef } from "@/helpers/navigation.helper";
+import { CONFIG } from "@/constants/config.constant";
 
 import * as SplashScreen from "expo-splash-screen";
 
@@ -57,8 +57,8 @@ const NativeStack = createNativeStackNavigator();
  */
 const LINKING = {
   prefixes: [
-    `${Constants.expoConfig?.extra?.deeplink}://`,
-    Constants.expoConfig?.extra?.universalUrl,
+    ...(CONFIG.DEEP_LINK ? [`${CONFIG.DEEP_LINK}://`] : []),
+    ...(CONFIG.UNIVERSAL_URL ? [CONFIG.UNIVERSAL_URL] : []),
   ],
   config: {
     initialRouteName: NAVIGATION_MAIN_NAVIGATION,

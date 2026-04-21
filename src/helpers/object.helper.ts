@@ -14,7 +14,7 @@ export function getValueFromPathHelper(obj: any, path: string): any {
   // Split the path string into an array of keys
   const keys: { key: string; index?: number }[] = path.split(".").map((key) => {
     // If the key contains brackets [], extract the key and index
-    const matches = key.match(/(.+?)\[(\d+)\]/);
+    const matches = key?.match(/(.+?)\[(\d+)\]/);
     if (matches) {
       return {
         key: matches[1],

@@ -116,7 +116,7 @@ export const getPreviewDataHelper = async (
     if (!textWithoutEmails) return previewData;
 
     // Extract URL from text
-    const link = textWithoutEmails.match(REGEX_LINK)?.[0];
+    const link = textWithoutEmails?.match(REGEX_LINK)?.[0];
 
     if (!link) return previewData;
 

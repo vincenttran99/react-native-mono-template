@@ -29,8 +29,8 @@ msgstr "Về chúng tôi"
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Việc thực hiện luồng xác thực bằng cách sử dụng Zustand và React-Bản địa-MMKV"
 
-#: src/screens/Introduction/introduction.screen.tsx:25
 #: src/navigation/main.navigation.tsx:44
+#: src/screens/Introduction/introduction.screen.tsx:25
 msgid "Base components"
 msgstr "Các thành phần cơ sở"
 
@@ -119,8 +119,8 @@ msgstr "UI có thể tùy chỉnh được xây dựng với Shopify/Restyle"
 msgid "Dark Mode"
 msgstr "Chế độ tối"
 
-#: src/screens/Introduction/introduction.screen.tsx:33
 #: src/navigation/main.navigation.tsx:69
+#: src/screens/Introduction/introduction.screen.tsx:33
 msgid "Demo list query"
 msgstr "Truy vấn danh sách demo"
 
@@ -168,8 +168,8 @@ msgstr "Danh sách Flash"
 msgid "Hello"
 msgstr "Xin chào"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:380
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:369
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:380
 msgid "hide"
 msgstr "trốn"
 
@@ -205,8 +205,8 @@ msgstr "Giới thiệu"
 msgid "Key Features"
 msgstr "Các tính năng chính"
 
-#: src/screens/settings/settings.screen.tsx:40
 #: src/navigation/main.navigation.tsx:64
+#: src/screens/settings/settings.screen.tsx:40
 msgid "Language"
 msgstr "Ngôn ngữ"
 
@@ -262,7 +262,7 @@ msgstr "Nhiều văn bản"
 msgid "Network Error"
 msgstr "Lỗi mạng"
 
-#: src/screens/dog/components/item.dog.tsx:41
+#: src/screens/dog/components/item.dog.tsx:47
 msgid "No name"
 msgstr "Không có tên"
 
@@ -282,7 +282,7 @@ msgstr "Có thể ép"
 msgid "Preview URL"
 msgstr "Xem trước URL"
 
-#: src/screens/dog/components/item.dog.tsx:59
+#: src/screens/dog/components/item.dog.tsx:65
 msgid "Purpose"
 msgstr "Mục đích"
 
@@ -307,13 +307,13 @@ msgstr "Xử lý hình thức mạnh mẽ với hình thức phản ứng"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:124
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:124
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:124
 msgid "see more"
 msgstr "Xem thêm"
 
-#: src/screens/Introduction/introduction.screen.tsx:37
 #: src/navigation/main.navigation.tsx:58
+#: src/screens/Introduction/introduction.screen.tsx:37
 msgid "Settings"
 msgstr "Cài đặt"
 
@@ -329,8 +329,8 @@ msgstr "Cổ phiếu"
 msgid "Small error text"
 msgstr "Văn bản lỗi nhỏ"
 
-#: src/helpers/api.helper.ts:165
 #: src/components/list/list.defaultError.component.tsx:30
+#: src/helpers/api.helper.ts:165
 msgid "Something went wrong"
 msgstr "Có gì đó đã sai"
 

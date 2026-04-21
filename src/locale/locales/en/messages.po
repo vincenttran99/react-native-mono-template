@@ -29,8 +29,8 @@ msgstr "About us"
 msgid "Authentication flow implementation using Zustand and react-native-mmkv"
 msgstr "Authentication flow implementation using Zustand and react-native-mmkv"
 
-#: src/screens/Introduction/introduction.screen.tsx:25
 #: src/navigation/main.navigation.tsx:44
+#: src/screens/Introduction/introduction.screen.tsx:25
 msgid "Base components"
 msgstr "Base components"
 
@@ -119,8 +119,8 @@ msgstr "Customizable UI built with Shopify/restyle"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/screens/Introduction/introduction.screen.tsx:33
 #: src/navigation/main.navigation.tsx:69
+#: src/screens/Introduction/introduction.screen.tsx:33
 msgid "Demo list query"
 msgstr "Demo list query"
 
@@ -168,8 +168,8 @@ msgstr "Flash List"
 msgid "Hello"
 msgstr "Hello"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:380
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:369
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:380
 msgid "hide"
 msgstr "hide"
 
@@ -205,8 +205,8 @@ msgstr "Introduction"
 msgid "Key Features"
 msgstr "Key Features"
 
-#: src/screens/settings/settings.screen.tsx:40
 #: src/navigation/main.navigation.tsx:64
+#: src/screens/settings/settings.screen.tsx:40
 msgid "Language"
 msgstr "Language"
 
@@ -262,7 +262,7 @@ msgstr "Multi text"
 msgid "Network Error"
 msgstr "Network Error"
 
-#: src/screens/dog/components/item.dog.tsx:41
+#: src/screens/dog/components/item.dog.tsx:47
 msgid "No name"
 msgstr "No name"
 
@@ -282,7 +282,7 @@ msgstr "Pressable"
 msgid "Preview URL"
 msgstr "Preview URL"
 
-#: src/screens/dog/components/item.dog.tsx:59
+#: src/screens/dog/components/item.dog.tsx:65
 msgid "Purpose"
 msgstr "Purpose"
 
@@ -307,13 +307,13 @@ msgstr "Robust form handling with react-hook-form"
 msgid "Search"
 msgstr "Search"
 
-#: src/components/base/textEllipsis/base.textEllipsis.tsx:124
 #: src/components/base/textEllipsis/base.textEllipsis.ios.tsx:124
+#: src/components/base/textEllipsis/base.textEllipsis.tsx:124
 msgid "see more"
 msgstr "see more"
 
-#: src/screens/Introduction/introduction.screen.tsx:37
 #: src/navigation/main.navigation.tsx:58
+#: src/screens/Introduction/introduction.screen.tsx:37
 msgid "Settings"
 msgstr "Settings"
 
@@ -329,8 +329,8 @@ msgstr "Shares"
 msgid "Small error text"
 msgstr "Small error text"
 
-#: src/helpers/api.helper.ts:165
 #: src/components/list/list.defaultError.component.tsx:30
+#: src/helpers/api.helper.ts:165
 msgid "Something went wrong"
 msgstr "Something went wrong"
 

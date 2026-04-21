@@ -53,7 +53,7 @@ export async function createDefaultNotificationChannelsHelper() {
   await notifee.createChannel({
     id: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
     name: CONFIG.FIREBASE_DEFAULT_CHANNEL_ID,
-    vibrationPattern: [0, 250, 250, 250],
+    vibrationPattern: [1, 250, 250, 250],
     importance: AndroidImportance.HIGH,
   });
 }

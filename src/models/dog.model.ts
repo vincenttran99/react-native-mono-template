@@ -15,4 +15,7 @@ export interface IDog {
   temperament: string;
   origin: string;
   reference_image_id: string;
+  image: {
+    url: string;
+  };
 }

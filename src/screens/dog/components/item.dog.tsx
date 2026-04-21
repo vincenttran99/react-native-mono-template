@@ -22,14 +22,20 @@ export default function ItemDog({ item }: { item: IDog }) {
     temperament,
     origin,
     reference_image_id,
+    image,
   } = item || {};
   const { _ } = useLingui();
+
+  console.log(item);
 
   return (
     <BSurface variant="md" backgroundColor={"ground"} style={styles.container}>
       <BView style={styles.imageContainer}>
         <BImage
-          source={`https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`}
+          source={
+            image?.url ||
+            `https://cdn4.thedogapi.com/images/${reference_image_id}.jpg`
+          }
           style={styles.image}
           contentFit="cover"
         />
@@ -92,14 +98,18 @@ export default function ItemDog({ item }: { item: IDog }) {
           {weight?.metric && (
             <BView style={styles.measurementItem}>
               <BIcon name="weight" size={MHS._16} color="secondary" />
-              <BText variant={"xs"}>{weight.metric} kg</BText>
+              <BText numberOfLines={1} flex={1} variant={"xs"}>
+                {weight.metric} kg
+              </BText>
             </BView>
           )}
 
           {height?.metric && (
             <BView style={styles.measurementItem}>
               <BIcon name="ruler" size={MHS._16} color="secondary" />
-              <BText variant={"xs"}>{height.metric} cm</BText>
+              <BText flex={1} numberOfLines={1} variant={"xs"}>
+                {height.metric} cm
+              </BText>
             </BView>
           )}
         </BView>
@@ -163,10 +173,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: MHS._12,
     marginTop: MHS._4,
+    width: "100%",
   },
   measurementItem: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
     gap: MHS._4,
   },
   normalText: {
